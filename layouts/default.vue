@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!--
+      <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -24,6 +25,8 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    -->
+    <!--
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
@@ -41,11 +44,13 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
+    -->
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
+    <!--
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
@@ -58,36 +63,42 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    -->
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
+      <span>&copy; 2019 Sebastian Di Luzio</span>
     </v-footer>
   </v-app>
 </template>
 
-<script>
-export default {
-  data() {
+<script lang="ts">
+import Vue from 'vue';
+import { Component } from 'nuxt-property-decorator';
+
+@Component({})
+export default class Default extends Vue {
+  fixed= false;
+
+  /* data() {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
           title: 'Welcome',
-          to: '/'
+          to: '/',
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
-          to: '/inspire'
-        }
+          to: '/inspire',
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
-}
+      title: 'Vuetify.js',
+    };
+  }, */
+};
 </script>
