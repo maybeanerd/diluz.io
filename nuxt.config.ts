@@ -10,16 +10,16 @@ const config: Configuration = {
       {
         defaultAssets: {
           font: {
-            family: 'Roboto'
+            family: 'Roboto',
           },
-          icons: 'mdi'
-        }
-      }
-    ]
+          icons: 'mdi',
+        },
+      },
+    ],
   ],
   typescript: {
     typeCheck: true,
-    ignoreNotFoundWarnings: true
+    ignoreNotFoundWarnings: true,
   },
   /*
    ** Headers of the page
@@ -28,45 +28,45 @@ const config: Configuration = {
     title: pkg.name,
     meta: [
       {
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         name: 'theme-color',
-        content: '#1f222a'
+        content: '#1f222a',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Computer Scientist. Games Engineer. Geek.'
+        content: 'Computer Scientist. Games Engineer. Geek.',
       },
       {
         hid: 'title',
         name: 'title',
-        content: 'Sebastian Di Luzio'
-      }
-    ]
+        content: 'Sebastian Di Luzio',
+      },
+    ],
   },
 
   /*
    ** Customize the progress-bar color
    */
   loading: {
-    color: 'white'
+    color: 'white',
   },
 
   /*
    ** Global CSS
    */
-  css: ['~/assets/style/normalize.css', '~/assets/style/app.scss'],
+  // css: ['~/assets/style/normalize.css', '~/assets/style/app.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vuetify'],
+  // plugins: ['~/plugins/vuetify'],
 
   /*
    ** Nuxt.js modules
@@ -75,15 +75,15 @@ const config: Configuration = {
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/toast',
-    /*[
+    /* [
       '@nuxtjs/google-tag-manager',
       {
         id: 'GTM-PDT5WHT',
         pageTracking: true,
         layer: 'dataLayer',
       },
-    ],*/
-    'nuxt-clipboard2'
+    ], */
+    'nuxt-clipboard2',
   ],
   // override purgecss settings: not done here
 
@@ -91,8 +91,8 @@ const config: Configuration = {
   pwa: {
     manifest: {
       name: 'Sebastian Di Luzio',
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
   // endof pwa options
 
@@ -100,7 +100,7 @@ const config: Configuration = {
   toast: {
     position: 'top-right',
     duration: '5000',
-    containerClass: 'toast-container'
+    containerClass: 'toast-container',
   },
 
   /*
@@ -110,8 +110,8 @@ const config: Configuration = {
     babel: {
       plugins: [
         ['@babel/plugin-proposal-decorators', { legacy: true }],
-        ['@babel/plugin-proposal-class-properties', { loose: true }]
-      ] /*
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ], /*
       presets: [
         [
           '@nuxt/babel-preset-app',
@@ -119,7 +119,7 @@ const config: Configuration = {
             modules: 'commonjs'
           }
         ]
-      ]*/
+      ] */
     },
     extractCSS: true,
     /*
@@ -138,9 +138,9 @@ const config: Configuration = {
             ]
           }
         }
-      });*/
-    }
-  }
+      }); */
+    },
+  },
 };
 // module.exports = config;
 export default config;
