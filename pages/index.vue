@@ -3,7 +3,6 @@
     <v-flex xs12 sm8 md6>
       <div class="text-center">
         <Logo />
-        <VuetifyLogo />
       </div>
       <v-card>
         <v-card-title class="headline">Welcome to diluz.io</v-card-title>
@@ -20,14 +19,17 @@
   </v-layout>
 </template>
 
-<script>
+<script lang="ts">
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
+import { Component } from 'nuxt-property-decorator';
+import Vue from 'vue';
 
-export default {
+@Component({
   components: {
     Logo,
-    VuetifyLogo,
-  },
-};
+    VuetifyLogo
+  }
+})
+export default class homePage extends Vue {}
 </script>
