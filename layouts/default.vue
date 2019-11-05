@@ -65,7 +65,22 @@
     </v-navigation-drawer>
     -->
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2019 Sebastian Di Luzio</span>
+      <span>&copy; {{new Date().getFullYear()}} Sebastian Di Luzio</span>
+      <v-spacer></v-spacer>
+      <span>
+        powered by
+        <a href="https://www.typescriptlang.org/">
+          <img class="textheight" src="~assets/icons/typescript.svg" />
+        </a>
+        +
+        <a href="https://nuxtjs.org/">
+          <img class="textheight" src="~assets/icons/nuxt-square.svg" />
+        </a>
+        +
+        <a href="https://vuetifyjs.com/">
+          <img class="textheight" src="~assets/icons/vuetify-icon.png" />
+        </a>
+      </span>
     </v-footer>
   </v-app>
 </template>
@@ -76,7 +91,7 @@ import { Component } from 'nuxt-property-decorator';
 
 @Component({})
 export default class Default extends Vue {
-  fixed= false;
+  fixed = false;
 
   /* data() {
     return {
@@ -100,5 +115,14 @@ export default class Default extends Vue {
       title: 'Vuetify.js',
     };
   }, */
-};
+}
 </script>
+
+<style lang="scss" scoped>
+.textheight {
+  vertical-align: middle;
+  height: 1rem;
+  width: 1rem;
+  margin-bottom: 2px;
+}
+</style>
