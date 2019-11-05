@@ -11,7 +11,7 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "generate": "nuxt-ts generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "push-dir --dir=dist --branch=master --cleanup",
     "publish": "npm run generate && npm run deploy",
     "count": "cloc ./ --exclude-dir=node_modules"
   },
