@@ -53,7 +53,7 @@
     "mime-types": "^2.1.24",
     "morgan": "~1.9.1",
     "nodemailer": "^6.3.1",
-    "nuxt": "^2.10.2",
+    "nuxt": "^2.15.0",
     "nuxt-clipboard2": "^0.2.1",
     "nuxt-property-decorator": "^2.5.0",
     "nuxt-purgecss": "^0.2.1",
