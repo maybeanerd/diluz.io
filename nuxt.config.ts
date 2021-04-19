@@ -21,6 +21,9 @@ const config: Configuration = {
     typeCheck: true,
     ignoreNotFoundWarnings: true,
   },
+
+  target: 'static',
+
   /*
    ** Headers of the page
    */
