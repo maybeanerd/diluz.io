@@ -32,7 +32,7 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "debug": "^4.3.1",
+    "debug": "^4.3.2",
     "deckstrings": "^2.2.1",
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^8.2.0",
