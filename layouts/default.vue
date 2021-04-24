@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <!--
       <v-navigation-drawer
       v-model="drawer"
@@ -45,13 +45,7 @@
       </v-btn>
     </v-app-bar>
     -->
-    <v-main>
-      <dvd>
-        <v-container>
-          <nuxt />
-        </v-container>
-      </dvd>
-    </v-main>
+    <v-main><dvd /><nuxt /></v-main>
     <!--
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
@@ -67,18 +61,22 @@
     </v-navigation-drawer>
     -->
     <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} Sebastian Di Luzio</span>
+      <span
+        >&copy;
+        <!-- {{ new Date().getFullYear() }} -->
+        Sebastian Di Luzio</span
+      >
       <v-spacer></v-spacer>
       <span>
-        powered by
+        made with
         <a href="https://www.typescriptlang.org/">
           <img class="textheight" src="~assets/icons/typescript.svg" />
         </a>
-        +
+
         <a href="https://nuxtjs.org/">
           <img class="textheight" src="~assets/icons/nuxt-square.svg" />
         </a>
-        +
+
         <a href="https://vuetifyjs.com/">
           <img class="textheight" src="~assets/icons/vuetify-icon.png" />
         </a>

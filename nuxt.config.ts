@@ -1,8 +1,6 @@
-import { Configuration } from '@nuxt/types';
+import { NuxtConfig } from '@nuxt/types';
 
-const pkg = require('./package');
-
-const config: Configuration = {
+const config: NuxtConfig = {
   buildModules: [
     '@nuxt/typescript-build',
     [
@@ -13,6 +11,10 @@ const config: Configuration = {
             family: 'Roboto',
           },
           icons: 'mdi',
+        },
+        /*           treeShake: true,         */
+        theme: {
+          dark: true,
         },
       },
     ],
@@ -28,7 +30,7 @@ const config: Configuration = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'diluz.io',
     meta: [
       {
         charset: 'utf-8',
@@ -114,7 +116,7 @@ const config: Configuration = {
       plugins: [
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ], /*
+      ] /*
       presets: [
         [
           '@nuxt/babel-preset-app',
@@ -122,7 +124,7 @@ const config: Configuration = {
             modules: 'commonjs'
           }
         ]
-      ] */
+      ] */,
     },
     extractCSS: true,
     /*
