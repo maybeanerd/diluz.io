@@ -1,0 +1,254 @@
+<template>
+  <section>
+    <section class="fill">
+      <div id="dvd" class="dvd">
+        <img v-if="imgIndex === 0" src="~assets/images/basti/emote0.png" />
+        <img
+          v-else-if="imgIndex === 1"
+          src="~assets/images/basti/emote1.png"
+        /><img
+          v-else-if="imgIndex === 2"
+          src="~assets/images/basti/emote2.png"
+        /><img
+          v-else-if="imgIndex === 3"
+          src="~assets/images/basti/emote3.png"
+        /><img
+          v-else-if="imgIndex === 4"
+          src="~assets/images/basti/emote4.png"
+        />
+        <img
+          v-else-if="imgIndex === 5"
+          src="~assets/images/basti/pp0.png"
+        /><img v-else-if="imgIndex === 6" src="~assets/images/basti/pp1.png" />
+        <!-- falback -->
+        <img v-else src="~assets/images/basti/emote0.png" />
+      </div>
+    </section>
+    <slot />
+  </section>
+</template>
+
+<script lang="ts">
+import { Component } from 'nuxt-property-decorator';
+import Vue from 'vue';
+
+function getVendor() {
+  const ua = navigator.userAgent.toLowerCase();
+  const match = /opera/.exec(ua)
+    || /msie/.exec(ua)
+    || /firefox/.exec(ua)
+    || /(chrome|safari)/.exec(ua)
+    || /trident/.exec(ua);
+  const vendors = {
+    opera: '-o-',
+    chrome: '-webkit-',
+    safari: '-webkit-',
+    firefox: '-moz-',
+    trident: '-ms-',
+    msie: '-ms-',
+  };
+  return match && vendors[match[0]];
+}
+
+function setStyle(element, properties) {
+  const prefix = getVendor();
+  let css = '';
+  const propertiesArray = Object.entries(properties);
+  propertiesArray.forEach(([key, val]) => {
+    css += `${key}: ${val};`;
+    css += `${prefix + key}: ${val};`;
+  });
+  // eslint-disable-next-line no-param-reassign
+  element.style.cssText += css;
+}
+
+function runAnimation(context: ImageDvDMove) {
+  requestAnimationFrame(runAnimation.bind(null, context));
+  // setTimeout(this.init);
+  context.move();
+}
+
+const imgURLs = [
+  'emote0',
+  'emote1',
+  'emote2',
+  'emote3',
+  'emote4',
+  'pp0',
+  'pp1',
+];
+const xMin = 0;
+const yMin = 0;
+@Component({})
+export default class ImageDvDMove extends Vue {
+  imgIndex = 0;
+
+  mounted() {
+    if (process.browser) {
+      this.initDvd();
+    }
+  }
+
+  switchImage() {
+    let index = Math.floor(Math.random() * imgURLs.length);
+
+    while (index === this.imgIndex) {
+      index = Math.floor(Math.random() * imgURLs.length);
+    }
+
+    this.imgIndex = index;
+  }
+
+  box: HTMLElement | null = null;
+
+  win: HTMLElement | null = null;
+
+  ww: number | null = null;
+
+  wh: number | null = null;
+
+  translateX = 0;
+
+  translateY = 0;
+
+  boxWidth = 0;
+
+  boxHeight = 0;
+
+  xMax = 0;
+
+  yMax = 0;
+
+  direction = 'ne';
+
+  speed = 2;
+
+  timeout: any = null;
+
+  update() {
+    const win = this.win!;
+    this.ww = win.clientWidth;
+    this.wh = win.clientHeight;
+    this.translateX = Math.floor(Math.random() * this.ww + 1);
+    this.translateY = Math.floor(Math.random() * this.wh + 1);
+    const box = this.box!;
+    this.boxWidth = box.offsetWidth;
+    this.boxHeight = box.offsetHeight;
+    this.xMax = this.ww - this.boxWidth;
+    this.yMax = this.wh - this.boxHeight;
+  }
+
+  move() {
+    switch (this.direction) {
+    case 'ne':
+      this.translateX += this.speed;
+      this.translateY -= this.speed;
+      break;
+    case 'nw':
+      this.translateX -= this.speed;
+      this.translateY -= this.speed;
+      break;
+    case 'se':
+      this.translateX += this.speed;
+      this.translateY += this.speed;
+      break;
+    case 'sw':
+      this.translateX -= this.speed;
+      this.translateY += this.speed;
+      break;
+    default:
+      break;
+    }
+    if (this.translateY <= yMin) {
+      if (this.direction === 'nw') {
+        this.direction = 'sw';
+      } else if (this.direction === 'ne') {
+        this.direction = 'se';
+      }
+      this.switchImage();
+    }
+    if (this.translateY >= this.yMax) {
+      if (this.direction === 'se') {
+        this.direction = 'ne';
+      } else if (this.direction === 'sw') {
+        this.direction = 'nw';
+      }
+      this.switchImage();
+    }
+    if (this.translateX <= xMin) {
+      if (this.direction === 'nw') {
+        this.direction = 'ne';
+      } else if (this.direction === 'sw') {
+        this.direction = 'se';
+      }
+      this.switchImage();
+    }
+    if (this.translateX >= this.xMax) {
+      if (this.direction === 'ne') {
+        this.direction = 'nw';
+      } else if (this.direction === 'se') {
+        this.direction = 'sw';
+      }
+      this.switchImage();
+    }
+    setStyle(this.box, {
+      transform: `translate3d(${this.translateX}px, ${this.translateY}px, 0)`,
+    });
+  }
+
+  initDvd() {
+    // reset constraints
+    this.box = document.getElementById('dvd')!;
+    this.win = this.box.parentElement!;
+    this.update();
+    // reset constraints on resize
+    window.addEventListener(
+      'resize',
+      () => {
+        if (this.timeout) {
+          clearTimeout(this.timeout);
+        }
+        this.timeout = setTimeout(this.update, 100);
+      },
+      false,
+    );
+
+    runAnimation(this);
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.fill {
+  //z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dvd {
+  // z-index: 1;
+  position: absolute;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .dvd {
+    width: 125px;
+    height: 125px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .dvd {
+    width: 100px;
+    height: 100px;
+  }
+}
+</style>
