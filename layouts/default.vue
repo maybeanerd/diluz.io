@@ -46,9 +46,11 @@
     </v-app-bar>
     -->
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <dvd>
+        <v-container>
+          <nuxt />
+        </v-container>
+      </dvd>
     </v-main>
     <!--
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -65,7 +67,7 @@
     </v-navigation-drawer>
     -->
     <v-footer :fixed="fixed" app>
-      <span>&copy; {{new Date().getFullYear()}} Sebastian Di Luzio</span>
+      <span>&copy; {{ new Date().getFullYear() }} Sebastian Di Luzio</span>
       <v-spacer></v-spacer>
       <span>
         powered by
@@ -88,8 +90,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component } from 'nuxt-property-decorator';
+import dvd from '~/components/ImageDvDMove.vue';
 
-@Component({})
+@Component({ components: { dvd } })
 export default class Default extends Vue {
   fixed = false;
 

@@ -20,16 +20,16 @@
 </template>
 
 <script lang="ts">
-import Logo from '~/components/Logo.vue';
-import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { Component } from 'nuxt-property-decorator';
 import Vue from 'vue';
+import Logo from '~/components/Logo.vue';
+import VuetifyLogo from '~/components/VuetifyLogo.vue';
 
 @Component({
   components: {
     Logo,
-    VuetifyLogo
-  }
+    VuetifyLogo,
+  },
 })
 export default class homePage extends Vue {}
 </script>
