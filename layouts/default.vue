@@ -29,7 +29,7 @@
       <v-spacer />
     </v-app-bar>
     <v-main><nuxt /></v-main>
-    <v-footer app>
+    <v-footer>
       <span
         >&copy;
         <!-- {{ new Date().getFullYear() }} -->

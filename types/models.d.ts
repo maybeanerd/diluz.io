@@ -30,6 +30,6 @@ type skills = {
 type profile = {
   person: person;
   projects: Array<project>;
-  skills?: skills;
+  skills: skills;
   hobbies?: Array<{ title: string; icon?: string }>;
 };

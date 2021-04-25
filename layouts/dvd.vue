@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main><dvd /><nuxt /></v-main>
-    <v-footer :fixed="fixed" app>
+    <v-footer>
       <span
         >&copy;
         <!-- {{ new Date().getFullYear() }} -->
@@ -32,32 +32,7 @@ import { Component } from 'nuxt-property-decorator';
 import dvd from '~/components/ImageDvDMove.vue';
 
 @Component({ components: { dvd } })
-export default class Default extends Vue {
-  fixed = false;
-
-  /* data() {
-    return {
-      clipped: false,
-      drawer: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    };
-  }, */
-}
+export default class Default extends Vue {}
 </script>
 
 <style lang="scss" scoped>

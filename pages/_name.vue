@@ -5,8 +5,49 @@
         <v-col class="column">
           <v-card class="card">
             <v-card-title class="headline">Sebastian Di Luzio</v-card-title>
-            <v-card-text> TODO </v-card-text
-            ><v-card-text> {{ profile }} </v-card-text>
+
+            <v-card-text> {{ profile.person }} </v-card-text>
+          </v-card>
+
+          <v-card class="card">
+            <v-card-title v-if="profile.skills.languages" class="headline"
+              >Languages</v-card-title
+            >
+            <v-card-text v-if="profile.skills.languages">
+              {{ profile.skills.languages }}
+            </v-card-text>
+
+            <v-card-title
+              v-if="profile.skills.programminglangs"
+              class="headline"
+              >Programming Languages</v-card-title
+            >
+            <v-card-text v-if="profile.skills.programminglangs">
+              {{ profile.skills.programminglangs }}
+            </v-card-text>
+
+            <v-card-title v-if="profile.skills.misc" class="headline"
+              >Misc. Skills</v-card-title
+            >
+            <v-card-text v-if="profile.skills.misc">
+              {{ profile.skills.misc }}
+            </v-card-text>
+
+            <v-card-title v-if="profile.hobbies" class="headline"
+              >Hobbies</v-card-title
+            >
+            <v-card-text v-if="profile.hobbies">
+              {{ profile.hobbies }}
+            </v-card-text>
+          </v-card>
+          <v-card v-if="profile.projects" class="card">
+            <v-card-title class="headline">Projects</v-card-title>
+            <v-card-text
+              v-for="project in profile.projects"
+              :key="project.title"
+            >
+              {{ project }}
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
