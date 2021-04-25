@@ -79,6 +79,8 @@ const imgURLs = [
 ];
 const xMin = 0;
 const yMin = 0;
+
+const animationSpeed = 3;
 @Component({})
 export default class ImageDvDMove extends Vue {
   imgIndex = 0;
@@ -121,7 +123,7 @@ export default class ImageDvDMove extends Vue {
 
   direction = 'ne';
 
-  speed = 2;
+  lastFrameTime: number | null = null;
 
   timeout: any = null;
 
@@ -139,22 +141,27 @@ export default class ImageDvDMove extends Vue {
   }
 
   move() {
+    const lastTime = this.lastFrameTime;
+    const timeNow = new Date().getTime();
+    this.lastFrameTime = timeNow;
+    const timeToMove = (lastTime ? timeNow - lastTime : 0) / 10;
+    const movement = animationSpeed * timeToMove;
     switch (this.direction) {
     case 'ne':
-      this.translateX += this.speed;
-      this.translateY -= this.speed;
+      this.translateX += movement;
+      this.translateY -= movement;
       break;
     case 'nw':
-      this.translateX -= this.speed;
-      this.translateY -= this.speed;
+      this.translateX -= movement;
+      this.translateY -= movement;
       break;
     case 'se':
-      this.translateX += this.speed;
-      this.translateY += this.speed;
+      this.translateX += movement;
+      this.translateY += movement;
       break;
     case 'sw':
-      this.translateX -= this.speed;
-      this.translateY += this.speed;
+      this.translateX -= movement;
+      this.translateY += movement;
       break;
     default:
       break;
