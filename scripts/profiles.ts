@@ -20,6 +20,8 @@ const sebastian: profile = {
     languages: [
       { lang: 'German', skilllevel: 1 },
       { lang: 'English', skilllevel: 1 },
+      { lang: 'Japanese', skilllevel: 0.6 },
+      { lang: 'Latin', skilllevel: 0.01 },
     ],
     programminglangs: [
       { lang: 'TypeScript', skilllevel: 1 },
@@ -30,6 +32,8 @@ const sebastian: profile = {
       { lang: 'C', skilllevel: 0.6 },
       { lang: 'C#', skilllevel: 0.5 },
       { lang: 'C++', skilllevel: 0.6 },
+      { lang: 'Python', skilllevel: 0.3 },
+      { lang: 'PHP', skilllevel: 0.15 },
     ],
     misc: [{ title: 'Monster Hunting', skilllevel: 1 }],
   },
