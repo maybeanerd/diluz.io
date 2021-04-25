@@ -16,11 +16,20 @@ type project = {
   role: string;
   image?: string;
   description: string;
+  url?: string;
   timeframe?: { start?: Date; end?: Date | 'current' };
   subprojects?: Array<project>;
+};
+
+type skills = {
+  languages?: Array<{ lang: string; skilllevel: number }>;
+  programminglangs?: Array<{ lang: string; skilllevel: number }>;
+  misc?: Array<{ title: string; skilllevel: number }>;
 };
 
 type profile = {
   person: person;
   projects: Array<project>;
+  skills?: skills;
+  hobbies?: Array<{ title: string; icon?: string }>;
 };

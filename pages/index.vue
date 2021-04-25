@@ -27,9 +27,7 @@
     <v-snackbar v-model="snackbar" color="green" light centered
       >{{ alert }}
       <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
+        <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
       </template></v-snackbar
     >
   </v-container>
@@ -46,6 +44,7 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue';
     Logo,
     VuetifyLogo,
   },
+  layout: 'dvd',
 })
 export default class homePage extends Vue {
   gotoGithub() {
@@ -57,8 +56,9 @@ export default class homePage extends Vue {
   alert: string | false = false;
 
   goToUser(name: string) {
-    this.alert = 'Still under construction.';
-    this.snackbar = true;
+    /* this.alert = 'Still under construction.';
+    this.snackbar = true; */
+    this.$router.push({ path: name });
   }
 }
 </script>
