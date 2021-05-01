@@ -15,7 +15,7 @@
           </v-row>
         </v-card>
         <v-card class="card">
-          <v-card-title class="headline">Check out the diluz.io's</v-card-title>
+          <v-card-title class="headline">Check out the diluz.ios</v-card-title>
           <v-card-text>
             <v-btn @click="() => goToUser('sebastian')"
               >Sebastian Di Luzio</v-btn
