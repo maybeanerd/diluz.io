@@ -89,3 +89,7 @@ export default class Default extends Vue {
   margin-bottom: 2px;
 }
 </style>
+
+<!-- <style lang="scss">
+@import '~/assets/variables.scss';
+</style> -->

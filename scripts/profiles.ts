@@ -1,5 +1,7 @@
 // This file handles all profiles that the website hosts
 
+import { languageProficiency, proficiency, profile } from '~/types/CV';
+
 /* TODO later on i want to build an editor for others to fill in their data,
  *  which exports them a correct json
  */
@@ -7,37 +9,44 @@
 const sebastian: profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
-    profession: 'Fullstack Developer, Games Engineer.',
+    profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     // image: '',
     services: {
       linkedin: 'sebastian-di-luzio-357185171',
       // change to https://www.linkedin.com/in/sebastian-di-luzio-357185171/ in FE
-      github: 'totproduction', // change to URL in FE
+      github: 't0tproduction', // change to URL in FE
     },
-    // image
+    email: 'sebastian@diluz.io',
+    website: 'https://diluz.io',
+    shortText:
+      "Im the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
+    interests: [
+      { title: 'Gaming', icon: 'gamepad-square' },
+      { title: 'Monster Hunting', icon: 'sword-cross' },
+      { title: 'Fullstack Development', icon: 'code-braces' },
+    ],
   },
   skills: {
     languages: [
-      { lang: 'German', skilllevel: 1 },
-      { lang: 'English', skilllevel: 1 },
-      { lang: 'Japanese', skilllevel: 0.6 },
-      { lang: 'Latin', skilllevel: 0.01 },
+      { lang: 'German', proficiency: languageProficiency.native },
+      { lang: 'English', proficiency: languageProficiency.native },
+      // these are not true, only for testing:
+      { lang: 'Japanese', proficiency: languageProficiency.A1 },
+      { lang: 'Latin', proficiency: languageProficiency.B1 },
     ],
     programminglangs: [
-      { lang: 'TypeScript', skilllevel: 1 },
-      { lang: 'JavaScript', skilllevel: 1 },
-      { lang: 'Java', skilllevel: 0.6 },
-      { lang: 'SQL', skilllevel: 0.8 },
-      { lang: 'MongoDB', skilllevel: 0.6 },
-      { lang: 'C', skilllevel: 0.6 },
-      { lang: 'C#', skilllevel: 0.5 },
-      { lang: 'C++', skilllevel: 0.6 },
-      { lang: 'Python', skilllevel: 0.3 },
-      { lang: 'PHP', skilllevel: 0.15 },
+      { lang: 'TypeScript', proficiency: proficiency.strong },
+      { lang: 'JavaScript', proficiency: proficiency.strong },
+      { lang: 'Java', proficiency: proficiency.knowledgeable },
+      { lang: 'SQL', proficiency: proficiency.strong },
+      { lang: 'MongoDB', proficiency: proficiency.knowledgeable },
+      { lang: 'C', proficiency: proficiency.knowledgeable },
+      { lang: 'C#', proficiency: proficiency.knowledgeable },
+      { lang: 'C++', proficiency: proficiency.knowledgeable },
     ],
-    misc: [{ title: 'Monster Hunting', skilllevel: 1 }],
+    certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
+    misc: [{ title: 'Adobe After Effects' }, { title: 'Adobe Premiere Pro' }],
   },
-  hobbies: [{ title: 'Gaming', icon: 'gamepad-square' }],
   projects: [
     {
       title: 'diluz.io',
