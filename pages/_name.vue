@@ -64,13 +64,76 @@
         </v-col>
         <v-col class="column">
           <v-card v-if="profile.projects" class="card">
-            <v-card-title>Projects</v-card-title>
-            <v-card-text
-              v-for="project in profile.projects"
-              :key="project.title"
-            >
-              {{ project }}
-            </v-card-text>
+            <v-card-title>Projects and Jobs</v-card-title>
+            <v-timeline dense style="padding-right: 1rem">
+              <v-timeline-item
+                v-for="project in profile.projects"
+                :key="project.title"
+                color="pink darken-3"
+              >
+                <v-card class="elevation-2" color="grey darken-3">
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="overline mb-4">
+                        <v-icon left> mdi-calendar </v-icon
+                        ><v-chip class="ma-2">
+                          {{ project.timeframe.start.toDateString() }} </v-chip
+                        >-<v-chip class="ma-2">
+                          {{
+                            project.timeframe.end === typeof Date
+                              ? project.timeframe.endtoDateString()
+                              : 'current'
+                          }}
+                        </v-chip>
+                      </div>
+                      <v-list-item-title class="headline mb-1">
+                        {{ project.title }}
+                      </v-list-item-title>
+                      <v-list-item-subtitle v-if="project.url"
+                        ><a :href="project.url" class="link">{{
+                          project.url
+                        }}</a></v-list-item-subtitle
+                      >
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item-avatar
+                    v-if="project.image"
+                    tile
+                    size="80"
+                    color="grey"
+                  ></v-list-item-avatar>
+                  <v-card-text style="text-align: left; padding-bottom: 0px">
+                    <strong> Role:</strong>
+                  </v-card-text>
+                  <v-card-text>
+                    {{ project.role }}
+                  </v-card-text>
+                  <v-card-text style="text-align: left; padding-bottom: 0px">
+                    <strong> Description:</strong>
+                  </v-card-text>
+                  <v-card-text>
+                    {{ project.description }}
+                  </v-card-text>
+                  <v-card-text
+                    v-if="project.subprojects"
+                    style="text-align: left; padding-bottom: 0px"
+                  >
+                    <strong> Subprojects:</strong>
+                  </v-card-text>
+                  <v-card-text v-if="project.subprojects">
+                    {{ project.subprojects }}
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+              <v-timeline-item color="pink darken-3">
+                <v-card class="elevation-2" color="grey darken-3">
+                  <!-- <v-card-title class="headline">
+                    The beginning of time
+                  </v-card-title> -->
+                  <v-card-text> The beginning of time</v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>
           </v-card>
         </v-col>
         <v-col class="column">
