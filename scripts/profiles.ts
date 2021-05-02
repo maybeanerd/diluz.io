@@ -44,6 +44,14 @@ const sebastian: profile = {
       { lang: 'C#', proficiency: proficiency.knowledgeable },
       { lang: 'C++', proficiency: proficiency.knowledgeable },
     ],
+    education: [
+      {
+        title: 'Bachelor of Science: Games Engineering',
+        source: 'Technical University Munich',
+        date: new Date('08/2019'),
+        link: 'https://tum.de',
+      },
+    ],
     certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
     misc: [{ title: 'Adobe After Effects' }, { title: 'Adobe Premiere Pro' }],
   },
@@ -56,12 +64,14 @@ const sebastian: profile = {
         end: 'current',
       },
       url: 'https://diluz.io',
+      technologies: ['TypeScript', 'Nuxt.js', 'Vue.js', 'SCSS'],
       description:
         'My personal website as well as a collection of CVs for all Di Luzios.',
     },
     {
       title: 'Magibot',
       role: 'Developer and maintainer',
+      url: 'https://bots.ondiscord.xyz/bots/384820232583249921',
       timeframe: {
         start: new Date(2017, 7),
         end: 'current',

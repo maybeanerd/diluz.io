@@ -10,51 +10,55 @@
               >{{ profile.person.shortText }}</v-card-text
             ><v-card-text v-if="profile.person.email"
               ><v-icon left>mdi-email</v-icon
-              ><a :href="'mailto: ' + profile.person.email" class="link">{{
-                profile.person.email
-              }}</a></v-card-text
+              ><a
+                :href="'mailto: ' + profile.person.email"
+                class="link"
+                target="_blank"
+                >{{ profile.person.email }}</a
+              ></v-card-text
             ><v-card-text v-if="profile.person.website"
               ><v-icon left>mdi-web</v-icon
-              ><a :href="profile.person.website" class="link">{{
+              ><a :href="profile.person.website" class="link" target="_blank">{{
                 profile.person.website
               }}</a></v-card-text
             >
-            <v-card-text
+            <v-card-title
               v-if="profile.person.services"
-              style="text-align: left; padding-bottom: 0px"
+              style="padding-bottom: 0px"
             >
-              <strong> Socials:</strong> </v-card-text
+              <strong> Socials:</strong> </v-card-title
             ><v-card-text v-if="profile.person.services">
               <v-chip
                 v-for="(name, service) in profile.person.services"
                 :key="service"
-                class="ma-2"
+                class="ma-1"
                 :href="goToProfileOfService(service, name)"
+                target="_blank"
               >
                 <v-icon left> mdi-{{ service }} </v-icon>
                 {{ capitalizeFirstLetter(service) }}
               </v-chip>
             </v-card-text>
-            <v-card-text
-              v-if="profile.person.profession"
-              style="text-align: left; padding-bottom: 0px"
+            <v-card-title
+              v-if="profile.person.services"
+              style="padding-bottom: 0px"
             >
               <strong> Profession:</strong>
-            </v-card-text>
+            </v-card-title>
             <v-card-text v-if="profile.person.profession">
               {{ profile.person.profession }}
             </v-card-text>
-            <v-card-text
-              v-if="profile.person.interests"
-              style="text-align: left; padding-bottom: 0px"
+            <v-card-title
+              v-if="profile.person.services"
+              style="padding-bottom: 0px"
             >
-              <strong> Interested in:</strong>
-            </v-card-text>
+              <strong> Interests:</strong>
+            </v-card-title>
             <v-card-text v-if="profile.person.interests">
               <v-chip
                 v-for="funfact in profile.person.interests"
                 :key="funfact.title"
-                class="ma-2"
+                class="ma-1"
               >
                 <v-icon left> mdi-{{ funfact.icon }} </v-icon>
                 {{ funfact.title }}
@@ -62,7 +66,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col class="column">
+        <v-col class="column column-projects">
           <v-card v-if="profile.projects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
             <v-timeline dense style="padding-right: 1rem">
@@ -74,23 +78,20 @@
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <div class="overline mb-4">
-                        <v-icon left> mdi-calendar </v-icon
-                        ><v-chip class="ma-2">
-                          {{ project.timeframe.start.toDateString() }} </v-chip
-                        >-<v-chip class="ma-2">
-                          {{
-                            project.timeframe.end === typeof Date
-                              ? project.timeframe.endtoDateString()
-                              : 'current'
-                          }}
+                      <div>
+                        <v-chip class="ma-1">
+                          <v-icon left> mdi-calendar-start </v-icon
+                          >{{ formatDate(project.timeframe.start) }} </v-chip
+                        ><v-chip class="ma-1">
+                          <v-icon left> mdi-calendar-end </v-icon
+                          >{{ formatDate(project.timeframe.end) }}
                         </v-chip>
                       </div>
                       <v-list-item-title class="headline mb-1">
                         {{ project.title }}
                       </v-list-item-title>
                       <v-list-item-subtitle v-if="project.url"
-                        ><a :href="project.url" class="link">{{
+                        ><a :href="project.url" class="link" target="_blank">{{
                           project.url
                         }}</a></v-list-item-subtitle
                       >
@@ -105,14 +106,29 @@
                   <v-card-text style="text-align: left; padding-bottom: 0px">
                     <strong> Role:</strong>
                   </v-card-text>
-                  <v-card-text>
+                  <v-card-text style="text-align: left" class="pt-1 pb-1">
                     {{ project.role }}
                   </v-card-text>
                   <v-card-text style="text-align: left; padding-bottom: 0px">
                     <strong> Description:</strong>
                   </v-card-text>
-                  <v-card-text>
+                  <v-card-text style="text-align: left" class="pt-1 pb-1">
                     {{ project.description }}
+                  </v-card-text>
+                  <v-card-text
+                    v-if="project.technologies"
+                    style="text-align: left; padding-bottom: 0px"
+                  >
+                    <strong> Technologies used:</strong>
+                  </v-card-text>
+                  <v-card-text v-if="project.technologies" class="pt-1 pb-1">
+                    <v-chip
+                      v-for="tech in project.technologies"
+                      :key="tech"
+                      class="ma-1"
+                    >
+                      {{ tech }}
+                    </v-chip>
                   </v-card-text>
                   <v-card-text
                     v-if="project.subprojects"
@@ -145,12 +161,38 @@
               <v-chip
                 v-for="language in profile.skills.languages"
                 :key="language.lang"
-                class="ma-2"
+                class="ma-1"
               >
                 {{ language.lang }} [{{ language.proficiency }}]
               </v-chip>
             </v-card-text>
 
+            <v-card-title v-if="profile.skills.education"
+              >Education</v-card-title
+            >
+            <v-card-text
+              v-for="skill in profile.skills.education"
+              :key="skill.title"
+              class="ma-1"
+              :href="skill.link || ''"
+              target="_blank"
+            >
+              {{ skill.date }}: {{ skill.title }} @ {{ skill.source }}
+            </v-card-text>
+            <v-card-title v-if="profile.skills.certificates"
+              >Certificates</v-card-title
+            >
+            <v-card-text v-if="profile.skills.certificates">
+              <v-chip
+                v-for="skill in profile.skills.certificates"
+                :key="skill.title"
+                class="ma-1"
+                :href="skill.link || ''"
+                target="_blank"
+              >
+                {{ skill.title }}
+              </v-chip>
+            </v-card-text>
             <v-card-title v-if="profile.skills.programminglangs"
               >Programming Languages
             </v-card-title>
@@ -163,7 +205,7 @@
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
-                    class="ma-2"
+                    class="ma-1"
                     :color="
                       language.proficiency === programmingProficiency.strong
                         ? 'pink darken-3'
@@ -181,25 +223,12 @@
                 }}</span>
               </v-tooltip>
             </v-card-text>
-            <v-card-title v-if="profile.skills.certificates"
-              >Certificates</v-card-title
-            >
-            <v-card-text v-if="profile.skills.certificates">
-              <v-chip
-                v-for="skill in profile.skills.certificates"
-                :key="skill.title"
-                class="ma-2"
-                :href="skill.link || ''"
-              >
-                {{ skill.title }}
-              </v-chip>
-            </v-card-text>
             <v-card-title v-if="profile.skills.misc">Misc. Skills</v-card-title>
             <v-card-text v-if="profile.skills.misc">
               <v-chip
                 v-for="skill in profile.skills.misc"
                 :key="skill.title"
-                class="ma-2"
+                class="ma-1"
               >
                 {{ skill.title }}
               </v-chip>
@@ -243,6 +272,16 @@ export default class homePage extends Vue {
     window.open('https://github.com/T0TProduction/diluz.io', '_blank');
   }
 
+  formatDate(date?: Date | 'current') {
+    if (!date || date === 'current') {
+      return 'current';
+    }
+    return date.toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'numeric',
+    });
+  }
+
   programmingProficiency = proficiency;
 
   snackbar = false;
@@ -281,7 +320,10 @@ export default class homePage extends Vue {
 }
 .column {
   max-width: 400px;
-  min-width: 320px;
+  min-width: 350px;
+  &-projects {
+    max-width: 600px;
+  }
 }
 .card {
   margin-top: 2rem;
@@ -299,9 +341,16 @@ export default class homePage extends Vue {
   .service {
     height: 64px;
   }
+  .column {
+    min-width: 305px;
+  }
 }
 
 .link {
+  max-width: 150px;
+  text-overflow: ellipsis;
   color: white;
+  overflow: hidden;
+  white-space: nowrap;
 }
 </style>

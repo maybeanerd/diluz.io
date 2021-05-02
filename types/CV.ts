@@ -21,6 +21,7 @@ type project = {
   image?: string;
   description: string;
   url?: string;
+  technologies?: Array<string>;
   timeframe?: { start?: Date; end?: Date | 'current' };
   subprojects?: Array<project>;
 };
@@ -44,6 +45,12 @@ type skills = {
   languages?: Array<{ lang: string; proficiency: languageProficiency }>;
   programminglangs?: Array<{ lang: string; proficiency: proficiency }>;
   certificates?: Array<{ title: string; link?: string }>;
+  education?: Array<{
+    source: string;
+    title: string;
+    date?: Date;
+    link?: string;
+  }>;
   misc?: Array<{ title: string }>;
 };
 
