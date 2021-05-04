@@ -2,26 +2,21 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <img v-if="imgIndex === 0" src="~assets/images/basti/emote0.png" />
+        <img v-show="imgIndex === 0" src="~assets/images/basti/emote0.png" />
         <img
-          v-else-if="imgIndex === 1"
+          v-show="imgIndex === 1"
           src="~assets/images/basti/emote1.png"
         /><img
-          v-else-if="imgIndex === 2"
+          v-show="imgIndex === 2"
           src="~assets/images/basti/emote2.png"
         /><img
-          v-else-if="imgIndex === 3"
+          v-show="imgIndex === 3"
           src="~assets/images/basti/emote3.png"
-        /><img
-          v-else-if="imgIndex === 4"
-          src="~assets/images/basti/emote4.png"
+        /><img v-show="imgIndex === 4" src="~assets/images/basti/emote4.png" />
+        <img v-show="imgIndex === 5" src="~assets/images/basti/pp0.png" /><img
+          v-show="imgIndex === 6"
+          src="~assets/images/basti/pp1.png"
         />
-        <img
-          v-else-if="imgIndex === 5"
-          src="~assets/images/basti/pp0.png"
-        /><img v-else-if="imgIndex === 6" src="~assets/images/basti/pp1.png" />
-        <!-- falback -->
-        <img v-else src="~assets/images/basti/emote0.png" />
       </div>
     </section>
     <slot />
