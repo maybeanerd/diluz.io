@@ -173,6 +173,7 @@ export default class ImageDvDMove extends Vue {
         this.direction = 'se';
       }
       this.switchImage();
+      this.translateY = yMin;
     }
     if (this.translateY >= this.yMax) {
       if (this.direction === 'se') {
@@ -181,6 +182,7 @@ export default class ImageDvDMove extends Vue {
         this.direction = 'nw';
       }
       this.switchImage();
+      this.translateY = this.yMax;
     }
     if (this.translateX <= xMin) {
       if (this.direction === 'nw') {
@@ -189,6 +191,7 @@ export default class ImageDvDMove extends Vue {
         this.direction = 'se';
       }
       this.switchImage();
+      this.translateX = xMin;
     }
     if (this.translateX >= this.xMax) {
       if (this.direction === 'ne') {
@@ -197,6 +200,7 @@ export default class ImageDvDMove extends Vue {
         this.direction = 'sw';
       }
       this.switchImage();
+      this.translateX = this.xMax;
     }
     setStyle(this.box, {
       transform: `translate3d(${this.translateX}px, ${this.translateY}px, 0)`,
