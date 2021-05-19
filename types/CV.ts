@@ -15,6 +15,7 @@ type person = {
   interests?: Array<{ title: string; icon?: string }>; // this is unecessary
   languages?: Array<{ lang: string; proficiency: languageProficiency }>;
   nationalities?: Array<{ title: string }>;
+  basedIn?: { country: string; city?: string };
 };
 
 type project = {

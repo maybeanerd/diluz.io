@@ -10,16 +10,18 @@ const sebastian: profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
-    // image: '',
+    image:
+      'https://s.gravatar.com/avatar/4e5bc2d2836035b465f1552e6b1fdeb8?s=128',
     services: {
       linkedin: 'sebastian-di-luzio-357185171',
-      // change to https://www.linkedin.com/in/sebastian-di-luzio-357185171/ in FE
-      github: 't0tproduction', // change to URL in FE
+      github: 't0tproduction',
     },
     email: 'sebastian@diluz.io',
-    website: 'https://diluz.io',
+    // we are already on this page
+    /* website: 'https://diluz.io', */
     shortText:
       "Im the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
+    // i dont want this to be in my professional CV
     /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
       { title: 'Monster Hunting', icon: 'sword-cross' },
@@ -28,11 +30,9 @@ const sebastian: profile = {
     languages: [
       { lang: 'German', proficiency: languageProficiency.native },
       { lang: 'English', proficiency: languageProficiency.native },
-      // these are not true, only for testing:
-      /* { lang: 'Japanese', proficiency: languageProficiency.A1 },
-      { lang: 'Latin', proficiency: languageProficiency.B1 }, */
     ],
     nationalities: [{ title: 'German' }, { title: 'US-American' }],
+    basedIn: { country: 'Germany', city: 'Munich' },
   },
   skills: {
     technical: [
@@ -51,7 +51,7 @@ const sebastian: profile = {
       {
         title: 'Bachelor of Science: Games Engineering',
         source: 'Technical University Munich',
-        date: new Date('08/2019'),
+        date: new Date(2019, 7),
         link: 'https://tum.de',
       },
     ],
@@ -67,7 +67,7 @@ const sebastian: profile = {
       title: 'diluz.io',
       role: 'Developer and maintainer',
       timeframe: {
-        start: new Date(2021, 4),
+        start: new Date(2021, 3),
         end: 'current',
       },
       url: 'https://github.com/T0TProduction/diluz.io',
@@ -80,7 +80,7 @@ const sebastian: profile = {
       role: 'Developer and maintainer',
       url: 'https://bots.ondiscord.xyz/bots/384820232583249921',
       timeframe: {
-        start: new Date(2017, 7),
+        start: new Date(2017, 6),
         end: 'current',
       },
       technologies: ['TypeScript', 'Node.js', 'Discord API', 'MongoDB'],

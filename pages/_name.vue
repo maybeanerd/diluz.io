@@ -4,8 +4,14 @@
       <v-row align="start" justify="center">
         <v-col class="column">
           <v-card class="card">
-            <v-card-title class="headline">Sebastian Di Luzio</v-card-title>
-            <v-card-text v-if="profile.person.shortText"
+            <v-card-title class="headline"
+              >{{ profile.person.name.first }}
+              {{ profile.person.name.last }}</v-card-title
+            >
+            <v-list-item-avatar v-if="profile.person.image" size="128"
+              ><img :src="profile.person.image"
+            /></v-list-item-avatar>
+            <v-card-text v-if="profile.person.shortText" class="short-text"
               ><v-icon left>mdi-comment</v-icon
               >{{ profile.person.shortText }}</v-card-text
             ><v-card-text v-if="profile.person.email"
@@ -21,6 +27,13 @@
               ><a :href="profile.person.website" class="link" target="_blank">{{
                 profile.person.website
               }}</a></v-card-text
+            ><v-card-text v-if="profile.person.basedIn"
+              ><v-icon left>mdi-earth</v-icon
+              >{{
+                profile.person.basedIn.city
+                  ? profile.person.basedIn.city + ', '
+                  : ''
+              }}{{ profile.person.basedIn.country }}</v-card-text
             >
             <v-card-title
               v-if="profile.person.services"
@@ -45,7 +58,10 @@
             >
               <strong> Profession:</strong>
             </v-card-title>
-            <v-card-text v-if="profile.person.profession">
+            <v-card-text
+              v-if="profile.person.profession"
+              class="align-text-left"
+            >
               {{ profile.person.profession }}
             </v-card-text>
             <v-card-title v-if="profile.person.languages"
@@ -104,15 +120,16 @@
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <div class="date-spread">
-                        <v-chip class="ma-1">
+                      <v-card-text class="date-spread">
+                        <div class="ma-1">
                           <v-icon left> mdi-calendar-start </v-icon
-                          >{{ formatDate(project.timeframe.start) }} </v-chip
-                        ><v-chip class="ma-1">
+                          >{{ formatDate(project.timeframe.start) }}
+                        </div>
+                        <div class="ma-1">
                           <v-icon left> mdi-calendar-end </v-icon
                           >{{ formatDate(project.timeframe.end) }}
-                        </v-chip>
-                      </div>
+                        </div>
+                      </v-card-text>
                       <v-list-item-title class="headline mb-1">
                         {{ project.title }}
                       </v-list-item-title>
@@ -128,22 +145,23 @@
                     tile
                     size="80"
                     color="grey"
-                  ></v-list-item-avatar>
-                  <v-card-text style="text-align: left; padding-bottom: 0px">
+                    ><img :src="project.image"
+                  /></v-list-item-avatar>
+                  <v-card-text class="align-text-left pb-0">
                     <strong> Role:</strong>
                   </v-card-text>
-                  <v-card-text style="text-align: left" class="pt-1 pb-1">
+                  <v-card-text class="align-text-left pt-1 pb-1">
                     {{ project.role }}
                   </v-card-text>
-                  <v-card-text style="text-align: left; padding-bottom: 0px">
+                  <v-card-text class="align-text-left pb-0">
                     <strong> Description:</strong>
                   </v-card-text>
-                  <v-card-text style="text-align: left" class="pt-1 pb-1">
+                  <v-card-text class="align-text-left pt-1 pb-1">
                     {{ project.description }}
                   </v-card-text>
                   <v-card-text
                     v-if="project.technologies"
-                    style="text-align: left; padding-bottom: 0px"
+                    class="align-text-left pb-0"
                   >
                     <strong> Technologies used:</strong>
                   </v-card-text>
@@ -158,7 +176,7 @@
                   </v-card-text>
                   <v-card-text
                     v-if="project.subprojects"
-                    style="text-align: left; padding-bottom: 0px"
+                    class="align-text-left pb-0"
                   >
                     <strong> Subprojects:</strong>
                   </v-card-text>
@@ -186,11 +204,12 @@
             <v-card-text
               v-for="skill in profile.skills.education"
               :key="skill.title"
-              class="ma-1"
+              class="align-text-left ma-1"
               :href="skill.link || ''"
               target="_blank"
             >
-              {{ skill.date }}: {{ skill.title }} @ {{ skill.source }}
+              {{ formatDate(skill.date) }}: {{ skill.title }} @
+              {{ skill.source }}
             </v-card-text>
             <v-card-title v-if="profile.skills.certificates"
               >Certificates</v-card-title
@@ -215,7 +234,7 @@
                   strongProgrammingLangs && strongProgrammingLangs.length > 0
                 "
               >
-                <p style="text-align: left" class="pt-1 pb-0 mb-0">Strong</p>
+                <p class="align-text-left pt-1 pb-0 mb-0">Strong</p>
                 <v-chip
                   v-for="language in strongProgrammingLangs"
                   :key="language.title"
@@ -230,9 +249,7 @@
                   knowledgeableProgrammingLangs.length > 0
                 "
               >
-                <p style="text-align: left" class="pt-1 pb-0 mb-0">
-                  Knowledgeable
-                </p>
+                <p class="align-text-left pt-1 pb-0 mb-0">Knowledgeable</p>
                 <v-chip
                   v-for="language in knowledgeableProgrammingLangs"
                   :key="language.title"
@@ -289,7 +306,7 @@ import { proficiency, profile } from '~/types/CV';
 export default class homePage extends Vue {
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
-      return 'current';
+      return 'now';
     }
     return date.toLocaleString('en-US', {
       year: 'numeric',
@@ -375,9 +392,19 @@ export default class homePage extends Vue {
   }
 }
 
+.align-text-left {
+  text-align: left;
+}
+
+.short-text {
+  display: flex;
+  justify-content: center;
+}
+
 .date-spread {
   display: flex;
   justify-content: space-between;
+  padding: 0px;
 }
 
 .link {
