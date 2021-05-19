@@ -44,7 +44,7 @@ export enum proficiency {
 }
 
 type skills = {
-  programminglangs?: Array<{ lang: string; proficiency: proficiency }>;
+  technical?: Array<{ title: string; proficiency: proficiency }>;
   certificates?: Array<{ title: string; link?: string }>;
   education?: Array<{
     source: string;

@@ -35,15 +35,17 @@ const sebastian: profile = {
     nationalities: [{ title: 'German' }, { title: 'US-American' }],
   },
   skills: {
-    programminglangs: [
-      { lang: 'TypeScript', proficiency: proficiency.strong },
-      { lang: 'JavaScript', proficiency: proficiency.strong },
-      { lang: 'Java', proficiency: proficiency.knowledgeable },
-      { lang: 'SQL', proficiency: proficiency.strong },
-      { lang: 'MongoDB', proficiency: proficiency.knowledgeable },
-      { lang: 'C', proficiency: proficiency.knowledgeable },
-      { lang: 'C#', proficiency: proficiency.knowledgeable },
-      { lang: 'C++', proficiency: proficiency.knowledgeable },
+    technical: [
+      { title: 'TypeScript', proficiency: proficiency.strong },
+      { title: 'JavaScript', proficiency: proficiency.strong },
+      { title: 'Java', proficiency: proficiency.knowledgeable },
+      { title: 'SQL', proficiency: proficiency.strong },
+      { title: 'MongoDB', proficiency: proficiency.knowledgeable },
+      { title: 'C', proficiency: proficiency.knowledgeable },
+      { title: 'C#', proficiency: proficiency.knowledgeable },
+      { title: 'C++', proficiency: proficiency.knowledgeable },
+      { title: 'Unity', proficiency: proficiency.knowledgeable },
+      { title: 'Unreal', proficiency: proficiency.knowledgeable },
     ],
     education: [
       {
@@ -54,7 +56,11 @@ const sebastian: profile = {
       },
     ],
     certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
-    misc: [{ title: 'Adobe After Effects' }, { title: 'Adobe Premiere Pro' }],
+    misc: [
+      { title: 'Adobe After Effects' },
+      { title: 'Adobe Premiere Pro' },
+      { title: 'Community Management' },
+    ],
   },
   projects: [
     {
@@ -64,7 +70,7 @@ const sebastian: profile = {
         start: new Date(2021, 4),
         end: 'current',
       },
-      url: 'https://diluz.io',
+      url: 'https://github.com/T0TProduction/diluz.io',
       technologies: ['TypeScript', 'Nuxt.js', 'Vue.js', 'SCSS'],
       description:
         'My personal website as well as a collection of CVs for all Di Luzios.',
@@ -77,6 +83,8 @@ const sebastian: profile = {
         start: new Date(2017, 7),
         end: 'current',
       },
+      technologies: ['TypeScript', 'Node.js', 'Discord API', 'MongoDB'],
+
       description:
         'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently in over 1200 guilds serving 350.000+ users.',
     },

@@ -206,26 +206,10 @@
                 {{ skill.title }}
               </v-chip>
             </v-card-text>
-            <v-card-title v-if="profile.skills.programminglangs"
-              >Programming Languages
+            <v-card-title v-if="profile.skills.technical"
+              >Technical Skills
             </v-card-title>
-            <v-card-text v-if="profile.skills.programminglangs">
-              <!-- <v-tooltip
-                v-for="language in profile.skills.programminglangs"
-                :key="language.lang"
-                top
-              >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-chip v-bind="attrs" class="ma-1" v-on="on">
-                    {{ language.lang }}
-                  </v-chip>
-                </template>
-                <span>{{
-                  language.proficiency === programmingProficiency.strong
-                    ? 'Strong'
-                    : 'Knowledgeable'
-                }}</span>
-              </v-tooltip> -->
+            <v-card-text v-if="profile.skills.technical">
               <section
                 v-if="
                   strongProgrammingLangs && strongProgrammingLangs.length > 0
@@ -234,10 +218,10 @@
                 <p style="text-align: left" class="pt-1 pb-0 mb-0">Strong</p>
                 <v-chip
                   v-for="language in strongProgrammingLangs"
-                  :key="language.lang"
+                  :key="language.title"
                   class="ma-1"
                 >
-                  {{ language.lang }}
+                  {{ language.title }}
                 </v-chip>
               </section>
               <section
@@ -251,10 +235,10 @@
                 </p>
                 <v-chip
                   v-for="language in knowledgeableProgrammingLangs"
-                  :key="language.lang"
+                  :key="language.title"
                   class="ma-1"
                 >
-                  {{ language.lang }}
+                  {{ language.title }}
                 </v-chip>
               </section>
             </v-card-text>
@@ -318,13 +302,13 @@ export default class homePage extends Vue {
   programmingProficiency = proficiency;
 
   get strongProgrammingLangs() {
-    return this.profile.skills.programminglangs?.filter(
+    return this.profile.skills.technical?.filter(
       l => l.proficiency === proficiency.strong,
     );
   }
 
   get knowledgeableProgrammingLangs() {
-    return this.profile.skills.programminglangs?.filter(
+    return this.profile.skills.technical?.filter(
       l => l.proficiency === proficiency.knowledgeable,
     );
   }
