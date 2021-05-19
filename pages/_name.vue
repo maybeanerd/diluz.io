@@ -222,7 +222,7 @@
               :key="skill.title"
               class="education-row ma-1"
             >
-              <v-icon right>mdi-file-certificate</v-icon>
+              <v-icon right>mdi-{{ skill.type }}</v-icon>
               <section>
                 <v-card-text
                   class="align-text-left greyed-out-text pt-0 pb-0 mt-1"

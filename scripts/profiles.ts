@@ -1,6 +1,11 @@
 // This file handles all profiles that the website hosts
 
-import { languageProficiency, proficiency, profile } from '~/types/CV';
+import {
+  educationTypes,
+  languageProficiency,
+  proficiency,
+  profile,
+} from '~/types/CV';
 
 /* TODO later on i want to build an editor for others to fill in their data,
  *  which exports them a correct json
@@ -50,12 +55,20 @@ const sebastian: profile = {
     education: [
       {
         title: 'Bachelor of Science: Games Engineering',
+        type: educationTypes.university,
         source: 'Technical University Munich',
         date: new Date(2019, 7),
         link: 'https://tum.de',
       },
+      {
+        title: 'High School Degree',
+        type: educationTypes.school,
+        source: 'Ignaz Taschner Gymnasium Dachau',
+        date: new Date(2015, 4),
+        link: 'https://itg.bayern/startseite.html',
+      },
     ],
-    certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
+    // certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
     misc: [
       { title: 'Adobe After Effects' },
       { title: 'Adobe Premiere Pro' },

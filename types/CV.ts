@@ -45,6 +45,11 @@ export enum proficiency {
   knowledgeable = 0x1001,
 }
 
+export enum educationTypes {
+  school = 'school',
+  university = 'file-certificate',
+}
+
 type skills = {
   technical?: Array<{ title: string; proficiency: proficiency }>;
   certificates?: Array<{ title: string; link?: string }>;
@@ -53,6 +58,7 @@ type skills = {
     title: string;
     date?: Date;
     link?: string;
+    type: educationTypes;
   }>;
   misc?: Array<{ title: string }>;
 };
