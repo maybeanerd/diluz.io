@@ -18,7 +18,7 @@ type person = {
   basedIn?: { country: string; city?: string };
 };
 
-type project = {
+export type project = {
   title: string;
   role: string;
   image?: string;
@@ -26,7 +26,7 @@ type project = {
   highlights?: Array<string>;
   url?: string;
   technologies?: Array<string>;
-  timeframe?: { start?: Date; end?: Date | 'current' };
+  timeframe: { start: Date; end: Date | 'current' };
   subprojects?: Array<project>;
 };
 

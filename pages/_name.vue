@@ -109,11 +109,11 @@
           </v-card>
         </v-col>
         <v-col class="column column-projects">
-          <v-card v-if="profile.projects" class="card">
+          <v-card v-if="orderedProjects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
             <v-timeline dense style="padding-right: 2rem">
               <v-timeline-item
-                v-for="project in profile.projects"
+                v-for="project in orderedProjects"
                 :key="project.title"
                 color="grey darken-1"
               >
@@ -320,7 +320,21 @@ import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
-import { proficiency, profile } from '~/types/CV';
+import { proficiency, profile, project } from '~/types/CV';
+
+function compareProjects(a: project, b: project) {
+  // this prioritizes still working on it over the start date.
+  if (a.timeframe.end === 'current' && b.timeframe.end === 'current') {
+    return b.timeframe.start.getTime() - a.timeframe.start.getTime();
+  }
+  if (a.timeframe.end === 'current') {
+    return -1;
+  }
+  if (b.timeframe.end === 'current') {
+    return 1;
+  }
+  return b.timeframe.start.getTime() - a.timeframe.start.getTime();
+}
 
 @Component({
   components: {
@@ -360,6 +374,10 @@ export default class homePage extends Vue {
     return this.profile.skills.technical?.filter(
       l => l.proficiency === proficiency.knowledgeable,
     );
+  }
+
+  get orderedProjects() {
+    return this.profile.projects.sort(compareProjects);
   }
 
   snackbar = false;
