@@ -48,8 +48,34 @@
             <v-card-text v-if="profile.person.profession">
               {{ profile.person.profession }}
             </v-card-text>
+            <v-card-title v-if="profile.person.languages"
+              >Languages</v-card-title
+            >
+            <v-card-text v-if="profile.person.languages">
+              <v-chip
+                v-for="language in profile.person.languages"
+                :key="language.lang"
+                class="ma-1"
+              >
+                {{ language.lang }} [{{ language.proficiency }}]
+              </v-chip>
+            </v-card-text>
+            <v-card-title v-if="profile.person.nationalities">{{
+              profile.person.nationalities.length > 1
+                ? 'Nationalities'
+                : 'Nationality'
+            }}</v-card-title>
+            <v-card-text v-if="profile.person.nationalities">
+              <v-chip
+                v-for="nationality in profile.person.nationalities"
+                :key="nationality.title"
+                class="ma-1"
+              >
+                {{ nationality.title }}
+              </v-chip>
+            </v-card-text>
             <v-card-title
-              v-if="profile.person.services"
+              v-if="profile.person.interests"
               style="padding-bottom: 0px"
             >
               <strong> Interests:</strong>
@@ -73,12 +99,12 @@
               <v-timeline-item
                 v-for="project in profile.projects"
                 :key="project.title"
-                color="pink darken-3"
+                color="grey darken-1"
               >
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <div>
+                      <div class="date-spread">
                         <v-chip class="ma-1">
                           <v-icon left> mdi-calendar-start </v-icon
                           >{{ formatDate(project.timeframe.start) }} </v-chip
@@ -141,7 +167,7 @@
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
-              <v-timeline-item color="pink darken-3">
+              <v-timeline-item color="grey darken-1">
                 <v-card class="elevation-2" color="grey darken-3">
                   <!-- <v-card-title class="headline">
                     The beginning of time
@@ -154,19 +180,6 @@
         </v-col>
         <v-col class="column">
           <v-card class="card">
-            <v-card-title v-if="profile.skills.languages"
-              >Languages</v-card-title
-            >
-            <v-card-text v-if="profile.skills.languages">
-              <v-chip
-                v-for="language in profile.skills.languages"
-                :key="language.lang"
-                class="ma-1"
-              >
-                {{ language.lang }} [{{ language.proficiency }}]
-              </v-chip>
-            </v-card-text>
-
             <v-card-title v-if="profile.skills.education"
               >Education</v-card-title
             >
@@ -197,22 +210,13 @@
               >Programming Languages
             </v-card-title>
             <v-card-text v-if="profile.skills.programminglangs">
-              <v-tooltip
+              <!-- <v-tooltip
                 v-for="language in profile.skills.programminglangs"
                 :key="language.lang"
                 top
               >
                 <template v-slot:activator="{ on, attrs }">
-                  <v-chip
-                    v-bind="attrs"
-                    class="ma-1"
-                    :color="
-                      language.proficiency === programmingProficiency.strong
-                        ? 'pink darken-3'
-                        : ''
-                    "
-                    v-on="on"
-                  >
+                  <v-chip v-bind="attrs" class="ma-1" v-on="on">
                     {{ language.lang }}
                   </v-chip>
                 </template>
@@ -221,7 +225,38 @@
                     ? 'Strong'
                     : 'Knowledgeable'
                 }}</span>
-              </v-tooltip>
+              </v-tooltip> -->
+              <section
+                v-if="
+                  strongProgrammingLangs && strongProgrammingLangs.length > 0
+                "
+              >
+                <p style="text-align: left" class="pt-1 pb-0 mb-0">Strong</p>
+                <v-chip
+                  v-for="language in strongProgrammingLangs"
+                  :key="language.lang"
+                  class="ma-1"
+                >
+                  {{ language.lang }}
+                </v-chip>
+              </section>
+              <section
+                v-if="
+                  knowledgeableProgrammingLangs &&
+                  knowledgeableProgrammingLangs.length > 0
+                "
+              >
+                <p style="text-align: left" class="pt-1 pb-0 mb-0">
+                  Knowledgeable
+                </p>
+                <v-chip
+                  v-for="language in knowledgeableProgrammingLangs"
+                  :key="language.lang"
+                  class="ma-1"
+                >
+                  {{ language.lang }}
+                </v-chip>
+              </section>
             </v-card-text>
             <v-card-title v-if="profile.skills.misc">Misc. Skills</v-card-title>
             <v-card-text v-if="profile.skills.misc">
@@ -252,7 +287,7 @@ import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
-import { proficiency } from '~/types/CV';
+import { proficiency, profile } from '~/types/CV';
 
 @Component({
   components: {
@@ -260,18 +295,14 @@ import { proficiency } from '~/types/CV';
     VuetifyLogo,
   },
   asyncData: async ({ params, redirect }) => {
-    const profile = profiles.get(params.name.toLowerCase());
-    if (profile) {
-      return { profile };
+    const prof = profiles.get(params.name.toLowerCase());
+    if (prof) {
+      return { profile: prof };
     }
     return redirect('/');
   },
 })
 export default class homePage extends Vue {
-  gotoGithub() {
-    window.open('https://github.com/T0TProduction/diluz.io', '_blank');
-  }
-
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
       return 'current';
@@ -282,7 +313,21 @@ export default class homePage extends Vue {
     });
   }
 
+  profile!: profile;
+
   programmingProficiency = proficiency;
+
+  get strongProgrammingLangs() {
+    return this.profile.skills.programminglangs?.filter(
+      l => l.proficiency === proficiency.strong,
+    );
+  }
+
+  get knowledgeableProgrammingLangs() {
+    return this.profile.skills.programminglangs?.filter(
+      l => l.proficiency === proficiency.knowledgeable,
+    );
+  }
 
   snackbar = false;
 
@@ -344,6 +389,11 @@ export default class homePage extends Vue {
   .column {
     min-width: 305px;
   }
+}
+
+.date-spread {
+  display: flex;
+  justify-content: space-between;
 }
 
 .link {

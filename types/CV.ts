@@ -12,7 +12,9 @@ type person = {
   email?: string;
   website?: string;
   services: services;
-  interests?: Array<{ title: string; icon?: string }>;
+  interests?: Array<{ title: string; icon?: string }>; // this is unecessary
+  languages?: Array<{ lang: string; proficiency: languageProficiency }>;
+  nationalities?: Array<{ title: string }>;
 };
 
 type project = {
@@ -42,7 +44,6 @@ export enum proficiency {
 }
 
 type skills = {
-  languages?: Array<{ lang: string; proficiency: languageProficiency }>;
   programminglangs?: Array<{ lang: string; proficiency: proficiency }>;
   certificates?: Array<{ title: string; link?: string }>;
   education?: Array<{

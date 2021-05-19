@@ -20,20 +20,21 @@ const sebastian: profile = {
     website: 'https://diluz.io',
     shortText:
       "Im the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
-    interests: [
+    /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
       { title: 'Monster Hunting', icon: 'sword-cross' },
       { title: 'Fullstack Development', icon: 'code-braces' },
-    ],
-  },
-  skills: {
+    ], */
     languages: [
       { lang: 'German', proficiency: languageProficiency.native },
       { lang: 'English', proficiency: languageProficiency.native },
       // these are not true, only for testing:
-      { lang: 'Japanese', proficiency: languageProficiency.A1 },
-      { lang: 'Latin', proficiency: languageProficiency.B1 },
+      /* { lang: 'Japanese', proficiency: languageProficiency.A1 },
+      { lang: 'Latin', proficiency: languageProficiency.B1 }, */
     ],
+    nationalities: [{ title: 'German' }, { title: 'US-American' }],
+  },
+  skills: {
     programminglangs: [
       { lang: 'TypeScript', proficiency: proficiency.strong },
       { lang: 'JavaScript', proficiency: proficiency.strong },
