@@ -72,6 +72,7 @@ const sebastian: profile = {
       },
       url: 'https://github.com/T0TProduction/diluz.io',
       technologies: ['TypeScript', 'Nuxt.js', 'Vue.js', 'SCSS'],
+      highlights: ['Open Source', 'Statically generated and hosted on Netlify'],
       description:
         'My personal website as well as a collection of CVs for all Di Luzios.',
     },

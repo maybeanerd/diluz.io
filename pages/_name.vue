@@ -111,7 +111,7 @@
         <v-col class="column column-projects">
           <v-card v-if="profile.projects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
-            <v-timeline dense style="padding-right: 1rem">
+            <v-timeline dense style="padding-right: 2rem">
               <v-timeline-item
                 v-for="project in profile.projects"
                 :key="project.title"
@@ -160,6 +160,25 @@
                     {{ project.description }}
                   </v-card-text>
                   <v-card-text
+                    v-if="project.highlights"
+                    class="align-text-left pb-0"
+                  >
+                    <strong> Highlights:</strong>
+                  </v-card-text>
+                  <v-card-text
+                    v-if="project.highlights"
+                    class="align-text-left pt-1 pb-1"
+                  >
+                    <ul>
+                      <li
+                        v-for="highlight in project.highlights"
+                        :key="highlight"
+                      >
+                        {{ highlight }}
+                      </li>
+                    </ul>
+                  </v-card-text>
+                  <v-card-text
                     v-if="project.technologies"
                     class="align-text-left pb-0"
                   >
@@ -187,9 +206,6 @@
               </v-timeline-item>
               <v-timeline-item color="grey darken-1">
                 <v-card class="elevation-2" color="grey darken-3">
-                  <!-- <v-card-title class="headline">
-                    The beginning of time
-                  </v-card-title> -->
                   <v-card-text> The beginning of time</v-card-text>
                 </v-card>
               </v-timeline-item>
@@ -201,16 +217,32 @@
             <v-card-title v-if="profile.skills.education"
               >Education</v-card-title
             >
-            <v-card-text
+            <div
               v-for="skill in profile.skills.education"
               :key="skill.title"
-              class="align-text-left ma-1"
-              :href="skill.link || ''"
-              target="_blank"
+              class="education-row ma-1"
             >
-              {{ formatDate(skill.date) }}: {{ skill.title }} @
-              {{ skill.source }}
-            </v-card-text>
+              <v-icon right>mdi-file-certificate</v-icon>
+              <section>
+                <v-card-text
+                  class="align-text-left greyed-out-text pt-0 pb-0 mt-1"
+                >
+                  {{ formatDate(skill.date) }}
+                </v-card-text>
+                <v-card-text class="align-text-left pt-0 pb-0">
+                  {{ skill.title }}
+                </v-card-text>
+                <v-card-text class="align-text-left pt-0 pb-0 mb-1">
+                  <a
+                    :href="skill.link || ''"
+                    target="_blank"
+                    class="education-link greyed-out-text"
+                  >
+                    at {{ skill.source }}</a
+                  >
+                </v-card-text>
+              </section>
+            </div>
             <v-card-title v-if="profile.skills.certificates"
               >Certificates</v-card-title
             >
@@ -306,7 +338,7 @@ import { proficiency, profile } from '~/types/CV';
 export default class homePage extends Vue {
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
-      return 'now';
+      return 'Present';
     }
     return date.toLocaleString('en-US', {
       year: 'numeric',
@@ -400,11 +432,23 @@ export default class homePage extends Vue {
   display: flex;
   justify-content: center;
 }
+.education-row {
+  display: flex;
+  justify-content: left;
+}
+.education-link {
+  text-decoration: none;
+}
 
 .date-spread {
   display: flex;
   justify-content: space-between;
   padding: 0px;
+}
+
+.greyed-out-text {
+  //color: $grey-darken-1;
+  color: $grey-lighten-1;
 }
 
 .link {

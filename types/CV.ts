@@ -23,6 +23,7 @@ type project = {
   role: string;
   image?: string;
   description: string;
+  highlights?: Array<string>;
   url?: string;
   technologies?: Array<string>;
   timeframe?: { start?: Date; end?: Date | 'current' };
