@@ -12,24 +12,27 @@
               ><img :src="profile.person.image"
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text"
-              ><v-icon left>mdi-comment</v-icon
-              >{{ profile.person.shortText }}</v-card-text
+              ><!-- <v-icon left>mdi-comment</v-icon
+              > -->{{ profile.person.shortText }}</v-card-text
             ><v-card-text v-if="profile.person.email"
-              ><v-icon left>mdi-email</v-icon
-              ><a
+              ><!-- <v-icon left>mdi-email</v-icon
+              > --><a
                 :href="'mailto: ' + profile.person.email"
                 class="link"
                 target="_blank"
                 >{{ profile.person.email }}</a
               ></v-card-text
             ><v-card-text v-if="profile.person.website"
-              ><v-icon left>mdi-web</v-icon
-              ><a :href="profile.person.website" class="link" target="_blank">{{
-                profile.person.website
-              }}</a></v-card-text
+              ><!-- <v-icon left>mdi-web</v-icon
+              > --><a
+                :href="profile.person.website"
+                class="link"
+                target="_blank"
+                >{{ profile.person.website }}</a
+              ></v-card-text
             ><v-card-text v-if="profile.person.basedIn"
-              ><v-icon left>mdi-earth</v-icon
-              >{{
+              ><!-- <v-icon left>mdi-earth</v-icon
+              > -->{{
                 profile.person.basedIn.city
                   ? profile.person.basedIn.city + ', '
                   : ''
@@ -108,6 +111,7 @@
             </v-card-text>
           </v-card>
         </v-col>
+        <educationComponent v-if="switchEducationToLeft" :profile="profile" />
         <v-col class="column column-projects">
           <v-card v-if="orderedProjects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
@@ -212,97 +216,7 @@
             </v-timeline>
           </v-card>
         </v-col>
-        <v-col class="column">
-          <v-card class="card">
-            <v-card-title v-if="profile.skills.education"
-              >Education</v-card-title
-            >
-            <div
-              v-for="skill in profile.skills.education"
-              :key="skill.title"
-              class="education-row ma-1"
-            >
-              <v-icon right>mdi-{{ skill.type }}</v-icon>
-              <section>
-                <v-card-text
-                  class="align-text-left greyed-out-text pt-0 pb-0 mt-1"
-                >
-                  {{ formatDate(skill.date) }}
-                </v-card-text>
-                <v-card-text class="align-text-left pt-0 pb-0">
-                  {{ skill.title }}
-                </v-card-text>
-                <v-card-text class="align-text-left pt-0 pb-0 mb-1">
-                  <a
-                    :href="skill.link || ''"
-                    target="_blank"
-                    class="education-link greyed-out-text"
-                  >
-                    at {{ skill.source }}</a
-                  >
-                </v-card-text>
-              </section>
-            </div>
-            <v-card-title v-if="profile.skills.certificates"
-              >Certificates</v-card-title
-            >
-            <v-card-text v-if="profile.skills.certificates">
-              <v-chip
-                v-for="skill in profile.skills.certificates"
-                :key="skill.title"
-                class="ma-1"
-                :href="skill.link || ''"
-                target="_blank"
-              >
-                {{ skill.title }}
-              </v-chip>
-            </v-card-text>
-            <v-card-title v-if="profile.skills.technical"
-              >Technical Skills
-            </v-card-title>
-            <v-card-text v-if="profile.skills.technical">
-              <section
-                v-if="
-                  strongProgrammingLangs && strongProgrammingLangs.length > 0
-                "
-              >
-                <p class="align-text-left pt-1 pb-0 mb-0">Strong</p>
-                <v-chip
-                  v-for="language in strongProgrammingLangs"
-                  :key="language.title"
-                  class="ma-1"
-                >
-                  {{ language.title }}
-                </v-chip>
-              </section>
-              <section
-                v-if="
-                  knowledgeableProgrammingLangs &&
-                  knowledgeableProgrammingLangs.length > 0
-                "
-              >
-                <p class="align-text-left pt-1 pb-0 mb-0">Knowledgeable</p>
-                <v-chip
-                  v-for="language in knowledgeableProgrammingLangs"
-                  :key="language.title"
-                  class="ma-1"
-                >
-                  {{ language.title }}
-                </v-chip>
-              </section>
-            </v-card-text>
-            <v-card-title v-if="profile.skills.misc">Misc. Skills</v-card-title>
-            <v-card-text v-if="profile.skills.misc">
-              <v-chip
-                v-for="skill in profile.skills.misc"
-                :key="skill.title"
-                class="ma-1"
-              >
-                {{ skill.title }}
-              </v-chip>
-            </v-card-text>
-          </v-card>
-        </v-col>
+        <educationComponent v-if="!switchEducationToLeft" :profile="profile" />
       </v-row>
       <v-snackbar v-model="snackbar" color="green" light centered
         >{{ alert }}
@@ -321,6 +235,7 @@ import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
 import { proficiency, profile, project } from '~/types/CV';
+import educationComponent from '~/components/educationComponent.vue';
 
 function compareProjects(a: project, b: project) {
   // this prioritizes still working on it over the start date.
@@ -340,6 +255,7 @@ function compareProjects(a: project, b: project) {
   components: {
     Logo,
     VuetifyLogo,
+    educationComponent,
   },
   asyncData: async ({ params, redirect }) => {
     const prof = profiles.get(params.name.toLowerCase());
@@ -364,20 +280,12 @@ export default class homePage extends Vue {
 
   programmingProficiency = proficiency;
 
-  get strongProgrammingLangs() {
-    return this.profile.skills.technical?.filter(
-      l => l.proficiency === proficiency.strong,
-    );
-  }
-
-  get knowledgeableProgrammingLangs() {
-    return this.profile.skills.technical?.filter(
-      l => l.proficiency === proficiency.knowledgeable,
-    );
-  }
-
   get orderedProjects() {
     return this.profile.projects.sort(compareProjects);
+  }
+
+  get switchEducationToLeft() {
+    return this.$vuetify.breakpoint.mdAndDown;
   }
 
   snackbar = false;
@@ -410,70 +318,5 @@ export default class homePage extends Vue {
 
 <style lang="scss" scoped>
 @import '~/assets/variables.scss';
-
-.container {
-  background-color: none;
-}
-.column {
-  max-width: 400px;
-  min-width: 350px;
-  &-projects {
-    max-width: 600px;
-  }
-}
-.card {
-  margin-top: 2rem;
-  text-align: center;
-}
-.services {
-  background: none;
-  box-shadow: none !important;
-}
-.service {
-  height: 96px;
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .service {
-    height: 64px;
-  }
-  .column {
-    min-width: 305px;
-  }
-}
-
-.align-text-left {
-  text-align: left;
-}
-
-.short-text {
-  display: flex;
-  justify-content: center;
-}
-.education-row {
-  display: flex;
-  justify-content: left;
-}
-.education-link {
-  text-decoration: none;
-}
-
-.date-spread {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.greyed-out-text {
-  //color: $grey-darken-1;
-  color: $grey-lighten-1;
-}
-
-.link {
-  max-width: 150px;
-  text-overflow: ellipsis;
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-}
+@import '~/assets/shared-styles.scss';
 </style>
