@@ -8,10 +8,12 @@
     >
       <v-icon right>mdi-{{ skill.type }}</v-icon>
       <section>
-        <v-card-text class="align-text-left greyed-out-text pt-0 pb-0 mt-1">
+        <v-card-text
+          class="education-date align-text-left greyed-out-text pt-0 pb-0 mt-1"
+        >
           {{ formatDate(skill.date) }}
         </v-card-text>
-        <v-card-text class="align-text-left pt-0 pb-0">
+        <v-card-text class="education-title align-text-left pt-0 pb-0">
           {{ skill.title }}
         </v-card-text>
         <v-card-text class="align-text-left pt-0 pb-0 mb-1">
@@ -119,4 +121,11 @@ export default class ImageDvDMove extends Vue {
 <style lang="scss" scoped>
 @import '~/assets/variables.scss';
 @import '~/assets/shared-styles.scss';
+
+.education-date {
+  font-size: 12px;
+}
+.education-title {
+  font-size: 18px;
+}
 </style>
