@@ -138,7 +138,8 @@ const sebastian: profile = {
         'Thousands of active users',
         'Dev-Lead for teams of up to 5',
         'Working with many Game-APIs',
-        'Building core systems like auth, chat, matching, etc.',
+        'Built core systems like auth, chat, matching, etc.',
+        'Collected 180.000€ in funding',
       ],
       description:
         "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent their gaming identity. The main way this was done is by so called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
@@ -193,7 +194,7 @@ const sebastian: profile = {
       },
       technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MySQL'],
       description:
-        'A fun sideproject to build a Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
+        'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
     },
     {
       title: 'BlessFPS',
