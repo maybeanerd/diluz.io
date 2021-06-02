@@ -138,9 +138,12 @@
                         {{ project.title }}
                       </v-list-item-title>
                       <v-list-item-subtitle v-if="project.url"
-                        ><a :href="project.url" class="link" target="_blank">{{
-                          project.url
-                        }}</a></v-list-item-subtitle
+                        ><a
+                          :href="project.url"
+                          class="project-url link"
+                          target="_blank"
+                          >{{ project.url }}</a
+                        ></v-list-item-subtitle
                       >
                     </v-list-item-content>
                   </v-list-item>
@@ -330,6 +333,10 @@ export default class homePage extends Vue {
   .timeline {
     padding-right: 1rem;
   }
+}
+.project-url {
+  font-size: 12px;
+  color: $grey-lighten-1;
 }
 </style>
 

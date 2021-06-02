@@ -50,7 +50,7 @@
         <v-chip
           v-for="language in strongProgrammingLangs"
           :key="language.title"
-          class="ma-1"
+          class="tech-skill ma-1"
         >
           {{ language.title }}
         </v-chip>
@@ -65,7 +65,7 @@
         <v-chip
           v-for="language in knowledgeableProgrammingLangs"
           :key="language.title"
-          class="ma-1"
+          class="tech-skill ma-1"
         >
           {{ language.title }}
         </v-chip>
@@ -127,5 +127,8 @@ export default class ImageDvDMove extends Vue {
 }
 .education-title {
   font-size: 18px;
+}
+.tech-skill {
+  min-width: 45px;
 }
 </style>
