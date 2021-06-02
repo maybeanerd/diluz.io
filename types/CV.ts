@@ -7,7 +7,7 @@ type person = {
   };
   image?: string;
   birthday?: Date;
-  profession: string;
+  profession?: string;
   shortText?: string;
   email?: string;
   website?: string;

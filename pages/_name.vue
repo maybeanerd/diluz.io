@@ -56,7 +56,7 @@
               </v-chip>
             </v-card-text>
             <v-card-title
-              v-if="profile.person.services"
+              v-if="profile.person.profession"
               style="padding-bottom: 0px"
             >
               <strong> Profession:</strong>
@@ -110,8 +110,8 @@
               </v-chip>
             </v-card-text>
           </v-card>
+          <educationComponent v-if="switchEducationToLeft" :profile="profile" />
         </v-col>
-        <educationComponent v-if="switchEducationToLeft" :profile="profile" />
         <v-col class="column column-projects">
           <v-card v-if="orderedProjects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
@@ -216,7 +216,9 @@
             </v-timeline>
           </v-card>
         </v-col>
-        <educationComponent v-if="!switchEducationToLeft" :profile="profile" />
+        <v-col v-if="!switchEducationToLeft" class="column">
+          <educationComponent :profile="profile" />
+        </v-col>
       </v-row>
       <v-snackbar v-model="snackbar" color="green" light centered
         >{{ alert }}

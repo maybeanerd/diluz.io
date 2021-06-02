@@ -13,6 +13,7 @@
   min-width: 350px;
   &-projects {
     max-width: 600px;
+    min-width: 440px;
   }
 }
 .card {
@@ -33,6 +34,10 @@
   }
   .column {
     min-width: 305px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /* &-projects {
+      } */
   }
 }
 @media (min-width: 87.5em) {
