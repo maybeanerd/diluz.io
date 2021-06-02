@@ -51,6 +51,7 @@ const sebastian: profile = {
       { title: 'C++', proficiency: proficiency.knowledgeable },
       { title: 'Unity', proficiency: proficiency.knowledgeable },
       { title: 'Unreal', proficiency: proficiency.knowledgeable },
+      { title: 'AWS', proficiency: proficiency.knowledgeable },
     ],
     education: [
       {
@@ -123,7 +124,7 @@ const sebastian: profile = {
       url: 'https://flint.gg',
       timeframe: {
         start: new Date(2019, 7),
-        end: new Date(2021, 5),
+        end: new Date(2021, 6),
       },
       technologies: [
         'TypeScript',
@@ -131,9 +132,16 @@ const sebastian: profile = {
         'Nuxt.js',
         'Vue.js',
         'PostgreSQL',
+        'AWS',
       ],
-      highlights: ['More than 3000 users', 'Built from the ground up', 'TODO'],
-      description: 'TODO.',
+      highlights: [
+        'Thousands of active users',
+        'Dev-Lead for teams of up to 5',
+        'Working with many Game-APIs',
+        'Building core systems like auth, chat, matching, etc.',
+      ],
+      description:
+        "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent their gaming identity. The main way this was done is by so called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
     },
     {
       title: 'easyshare',
@@ -141,7 +149,7 @@ const sebastian: profile = {
       url: 'https://github.com/flint-gg/easyshare',
       timeframe: {
         start: new Date(2020, 5),
-        end: new Date(2021, 5),
+        end: new Date(2021, 6),
       },
       technologies: [
         'TypeScript',
@@ -149,6 +157,7 @@ const sebastian: profile = {
         'Nuxt.js',
         'Vue.js',
         'PostgreSQL',
+        'AWS',
       ],
       highlights: [
         'More than 5000 images and videos shared',
@@ -165,7 +174,7 @@ const sebastian: profile = {
         start: new Date(2018, 9),
         end: new Date(2019, 6),
       },
-      technologies: ['JavaScript', 'Node.js', 'C'],
+      technologies: ['JavaScript', 'Node.js', 'Node-API', 'C'],
       highlights: [
         'Fully functional network driver in idiomatic JavaScript',
         'Outperformed Python with low level JavaScript',
