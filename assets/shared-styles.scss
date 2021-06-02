@@ -5,68 +5,8 @@
   text-align: center;
 }
 
-.container {
-  background-color: none;
-}
-.column {
-  max-width: 400px;
-  min-width: 350px;
-  &-projects {
-    max-width: 600px;
-    min-width: 440px;
-  }
-}
-.card {
-  margin-top: 2rem;
-  text-align: center;
-}
-.services {
-  background: none;
-  box-shadow: none !important;
-}
-.service {
-  height: 96px;
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .service {
-    height: 64px;
-  }
-  .column {
-    min-width: 305px;
-    padding-left: 0px;
-    padding-right: 0px;
-    /* &-projects {
-      } */
-  }
-}
-@media (min-width: 87.5em) {
-}
 .align-text-left {
   text-align: left;
-}
-
-.short-text {
-  display: flex;
-  justify-content: center;
-}
-.education-row {
-  display: flex;
-  justify-content: left;
-}
-.education-link {
-  text-decoration: none;
-}
-
-.date-spread {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.greyed-out-text {
-  //color: $grey-darken-1;
-  color: $grey-lighten-1;
 }
 
 .link {

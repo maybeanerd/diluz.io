@@ -325,6 +325,45 @@ export default class homePage extends Vue {
 @import '~/assets/variables.scss';
 @import '~/assets/shared-styles.scss';
 
+.container {
+  background-color: none;
+}
+.column {
+  max-width: 400px;
+  min-width: 350px;
+  &-projects {
+    max-width: 600px;
+    min-width: 440px;
+  }
+}
+.services {
+  background: none;
+  box-shadow: none !important;
+}
+.service {
+  height: 96px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .service {
+    height: 64px;
+  }
+  .column {
+    min-width: 305px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /* &-projects {
+      } */
+  }
+}
+.short-text {
+  display: flex;
+  justify-content: center;
+}.date-spread {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+}
 .timeline {
   padding-right: 2rem;
 }

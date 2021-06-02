@@ -122,6 +122,18 @@ export default class ImageDvDMove extends Vue {
 @import '~/assets/variables.scss';
 @import '~/assets/shared-styles.scss';
 
+.greyed-out-text {
+  //color: $grey-darken-1;
+  color: $grey-lighten-1;
+}
+
+.education-row {
+  display: flex;
+  justify-content: left;
+}
+.education-link {
+  text-decoration: none;
+}
 .education-date {
   font-size: 12px;
 }
