@@ -115,7 +115,7 @@
         <v-col class="column column-projects">
           <v-card v-if="orderedProjects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
-            <v-timeline dense style="padding-right: 2rem">
+            <v-timeline dense class="timeline">
               <v-timeline-item
                 v-for="project in orderedProjects"
                 :key="project.title"
@@ -321,4 +321,32 @@ export default class homePage extends Vue {
 <style lang="scss" scoped>
 @import '~/assets/variables.scss';
 @import '~/assets/shared-styles.scss';
+
+.timeline {
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 1263px) {
+  .timeline {
+    padding-right: 1rem;
+  }
+}
+</style>
+
+<style lang="scss">
+.v-timeline-item__dot {
+  box-shadow: none;
+}
+@media screen and (max-width: 600px) {
+  .v-timeline--dense .v-timeline-item__body {
+    max-width: calc(100% - 56px);
+  }
+  .v-timeline-item__divider {
+    min-width: 50px;
+    justify-content: left;
+  }
+  .v-application--is-ltr .v-timeline--dense:not(.v-timeline--reverse):before {
+    left: calc(25px - 1px);
+  }
+}
 </style>
