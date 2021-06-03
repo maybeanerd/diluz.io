@@ -4,10 +4,7 @@
       <v-col class="column"
         ><v-card class="services">
           <v-row justify="center">
-            <!-- <img
-            class="service"
-            src="~assets/images/services/LinkedIn/LI-In-Bug.png"
-          /> --><img
+            <img
               class="service"
               src="~assets/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"
@@ -17,8 +14,8 @@
         <v-card class="card">
           <v-card-title class="headline">Check out the diluz.ios</v-card-title>
           <v-card-text>
-            <v-btn @click="() => goToUser('sebastian')"
-              >Sebastian Di Luzio</v-btn
+            <nuxt-link to="sebastian" class="unstyled-link">
+              <v-btn>Sebastian Di Luzio</v-btn></nuxt-link
             >
           </v-card-text>
         </v-card>
@@ -64,6 +61,9 @@ export default class homePage extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.unstyled-link {
+  text-decoration: none;
+}
 .container {
   background-color: none;
 }
