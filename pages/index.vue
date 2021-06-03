@@ -4,10 +4,7 @@
       <v-col class="column"
         ><v-card class="services">
           <v-row justify="center">
-            <!-- <img
-            class="service"
-            src="~assets/images/services/LinkedIn/LI-In-Bug.png"
-          /> --><img
+            <img
               class="service"
               src="~assets/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"
@@ -15,10 +12,10 @@
           </v-row>
         </v-card>
         <v-card class="card">
-          <v-card-title class="headline">Check out the diluz.io's</v-card-title>
+          <v-card-title class="headline">Check out the diluz.ios</v-card-title>
           <v-card-text>
-            <v-btn @click="() => goToUser('sebastian')"
-              >Sebastian Di Luzio</v-btn
+            <nuxt-link to="sebastian" class="unstyled-link">
+              <v-btn>Sebastian Di Luzio</v-btn></nuxt-link
             >
           </v-card-text>
         </v-card>
@@ -27,9 +24,7 @@
     <v-snackbar v-model="snackbar" color="green" light centered
       >{{ alert }}
       <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
+        <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
       </template></v-snackbar
     >
   </v-container>
@@ -46,6 +41,7 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue';
     Logo,
     VuetifyLogo,
   },
+  layout: 'dvd',
 })
 export default class homePage extends Vue {
   gotoGithub() {
@@ -56,14 +52,17 @@ export default class homePage extends Vue {
 
   alert: string | false = false;
 
-  goToUser(name: string) {
+  /* underConstructionNotice() {
     this.alert = 'Still under construction.';
     this.snackbar = true;
-  }
+  } */
 }
 </script>
 
 <style lang="scss" scoped>
+.unstyled-link {
+  text-decoration: none;
+}
 .container {
   background-color: none;
 }

@@ -1,29 +1,216 @@
 // This file handles all profiles that the website hosts
 
+import {
+  educationTypes,
+  languageProficiency,
+  proficiency,
+  profile,
+} from '~/types/CV';
 
 /* TODO later on i want to build an editor for others to fill in their data,
-*  which exports them a correct json
-*/
+ *  which exports them a correct json
+ */
 
-export const sebastian: profile = {
+const sebastian: profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
-    profession: 'Fullstack Developer, Games Engineer.',
+    // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
+    image:
+      'https://s.gravatar.com/avatar/4e5bc2d2836035b465f1552e6b1fdeb8?s=128',
     services: {
       linkedin: 'sebastian-di-luzio-357185171',
-      // change to https://www.linkedin.com/in/sebastian-di-luzio-357185171/ in FE
+      github: 't0tproduction',
     },
-    // image
+    email: 'sebastian@diluz.io',
+    // we are already on this page
+    /* website: 'https://diluz.io', */
+    shortText:
+      "I'm the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
+    // i dont want this to be in my professional CV
+    /* interests: [
+      { title: 'Gaming', icon: 'gamepad-square' },
+      { title: 'Monster Hunting', icon: 'sword-cross' },
+      { title: 'Fullstack Development', icon: 'code-braces' },
+    ], */
+    languages: [
+      { lang: 'German', proficiency: languageProficiency.native },
+      { lang: 'English', proficiency: languageProficiency.C1 },
+    ],
+    nationalities: [{ title: 'German' }, { title: 'US-American' }],
+    basedIn: { country: 'Germany', city: 'Munich' },
+  },
+  skills: {
+    technical: [
+      { title: 'TypeScript', proficiency: proficiency.strong },
+      { title: 'JavaScript', proficiency: proficiency.strong },
+      { title: 'Java', proficiency: proficiency.knowledgeable },
+      { title: 'SQL', proficiency: proficiency.strong },
+      { title: 'MongoDB', proficiency: proficiency.knowledgeable },
+      { title: 'C', proficiency: proficiency.knowledgeable },
+      { title: 'C#', proficiency: proficiency.knowledgeable },
+      { title: 'C++', proficiency: proficiency.knowledgeable },
+      { title: 'Unity', proficiency: proficiency.knowledgeable },
+      { title: 'Unreal', proficiency: proficiency.knowledgeable },
+      { title: 'AWS', proficiency: proficiency.knowledgeable },
+    ],
+    education: [
+      {
+        title: 'Bachelor of Science: Games Engineering',
+        type: educationTypes.university,
+        source: 'Technical University of Munich ',
+        date: new Date(2019, 7),
+        link: 'https://tum.de',
+      },
+      {
+        title: 'High School Degree',
+        type: educationTypes.school,
+        source: 'Ignaz-Taschner-Gymnasium Dachau',
+        date: new Date(2015, 4),
+        link: 'https://itg.bayern/startseite.html',
+      },
+    ],
+    // certificates: [{ title: 'Official Basti', link: 'https:google.com/basti' }],
+    misc: [
+      { title: 'Adobe After Effects' },
+      { title: 'Adobe Premiere Pro' },
+      { title: 'Community Management' },
+    ],
   },
   projects: [
     {
-      title: 'Magibot',
+      title: 'diluz.io',
       role: 'Developer and maintainer',
       timeframe: {
-        start: new Date(2017, 7),
+        start: new Date(2021, 3),
         end: 'current',
       },
-      description: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently in over 1200 guilds serving 350.000+ users.',
+      url: 'https://github.com/T0TProduction/diluz.io',
+      technologies: ['TypeScript', 'Nuxt.js', 'Vue.js', 'SCSS'],
+      highlights: ['Open Source', 'Statically generated and hosted on Netlify'],
+      description:
+        'My personal website as well as a collection of CVs of various other Di Luzios.',
+    },
+    {
+      title: 'Magibot',
+      role: 'Developer and maintainer',
+      url: 'https://bots.ondiscord.xyz/bots/384820232583249921',
+      timeframe: {
+        start: new Date(2017, 6),
+        end: 'current',
+      },
+      technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MongoDB'],
+      description:
+        'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 900.000+ users in over 2000 guilds.',
+    },
+    {
+      title: 'BLAPI - the BotListAPI',
+      role: 'Developer and maintainer',
+      url: 'https://github.com/botblock/BLAPI',
+      timeframe: {
+        start: new Date(2018, 7),
+        end: 'current',
+      },
+      technologies: ['TypeScript', 'Node.js', 'Discord.js', 'NPM'],
+      highlights: [
+        'Open Source',
+        'Actively  used npm package with more than 22k downloads',
+      ],
+      description:
+        'BLAPI - the BotListAPI. A TypeScript package to automatically post Discord bot stats to all botlists.',
+    },
+    {
+      title: 'flint.gg',
+      role: 'Co-Founder and CTO',
+      url: 'https://flint.gg',
+      timeframe: {
+        start: new Date(2019, 7),
+        end: new Date(2021, 6),
+      },
+      technologies: [
+        'TypeScript',
+        'Node.js',
+        'Nuxt.js',
+        'Vue.js',
+        'PostgreSQL',
+        'AWS',
+      ],
+      highlights: [
+        'Thousands of active users',
+        'Dev-Lead for teams of up to 5',
+        'Implemented multiple Game-APIs',
+        'Built core systems like auth, chat, matching, etc.',
+        'Collected 180.000€ in funding',
+      ],
+      description:
+        "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
+    },
+    {
+      title: 'easyshare',
+      role: 'Developer and maintainer',
+      url: 'https://github.com/flint-gg/easyshare',
+      timeframe: {
+        start: new Date(2020, 5),
+        end: new Date(2021, 6),
+      },
+      technologies: [
+        'TypeScript',
+        'Node.js',
+        'Nuxt.js',
+        'Vue.js',
+        'PostgreSQL',
+        'AWS',
+      ],
+      highlights: [
+        'More than 5000 images and videos shared',
+        'Use of Twitter API and Google Photos API',
+      ],
+      description:
+        'Getting media, such as screenshots and videos, from your Nintendo Switch or Playstation 4 to your computer, smartphone and social media is difficult. Easyshare takes care of all the difficulties and makes it easy for you.',
+    },
+    {
+      title: 'ixy.js',
+      role: 'Developer',
+      url: 'https://github.com/ixy-languages/ixy.js',
+      timeframe: {
+        start: new Date(2018, 9),
+        end: new Date(2019, 6),
+      },
+      technologies: ['JavaScript', 'Node.js', 'Node-API', 'C'],
+      highlights: [
+        'Fully functional network driver in idiomatic JavaScript',
+        'Outperformed Python with low level JavaScript',
+        'Compiled modules into the Node.js engine',
+      ],
+      description:
+        'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
+    },
+    {
+      title: 'Hogwarts but better bot',
+      role: 'Developer and maintainer',
+      url: 'https://github.com/T0TProduction/hogwarts-but-better-bot',
+      timeframe: {
+        start: new Date(2020, 9),
+        end: 'current',
+      },
+      technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MySQL'],
+      description:
+        'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
+    },
+    {
+      title: 'BlessFPS',
+      role: 'Developer',
+      url: 'https://github.com/T0TProduction/BlessFPS',
+      timeframe: {
+        start: new Date(2018, 4),
+        end: new Date(2018, 7),
+      },
+      technologies: ['Java'],
+      description:
+        'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
     },
   ],
 };
+
+export const profiles: Map<string, profile> = new Map([
+  ['sebastian', sebastian],
+]);

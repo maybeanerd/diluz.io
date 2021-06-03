@@ -1,0 +1,18 @@
+@import "~/assets/variables.scss";
+
+.card {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.align-text-left {
+  text-align: left;
+}
+
+.link {
+  max-width: 150px;
+  text-overflow: ellipsis;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
