@@ -73,7 +73,7 @@
                 :key="language.lang"
                 class="ma-1"
               >
-                {{ language.lang }} [{{ language.proficiency }}]
+                {{ language.lang }} ({{ language.proficiency }})
               </v-chip>
             </v-card-text>
             <v-card-title v-if="profile.person.nationalities">{{
@@ -118,20 +118,20 @@
                 :key="project.title"
                 color="grey darken-1"
               >
-                <v-card class="elevation-2" color="grey darken-3">
+                <v-card class="elevation-2 pb-4" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
                       <v-card-text class="date-line"
-                        ><v-icon left dense>
+                        ><!-- <v-icon left dense>
                           mdi-{{
                             project.timeframe.end !== 'current'
                               ? 'check-circle-outline'
                               : 'motion-play-outline'
                           }} </v-icon
-                        >{{ formatDate(project.timeframe.start) }} -
+                        > -->{{ formatDate(project.timeframe.start) }} -
                         {{ formatDate(project.timeframe.end) }}
                       </v-card-text>
-                      <v-list-item-title class="headline mb-1 pt-3">
+                      <v-list-item-title class="headline mb-1 pt-5">
                         {{ project.title }}
                       </v-list-item-title>
                       <v-list-item-subtitle v-if="project.url"
@@ -184,7 +184,7 @@
                   </v-card-text>
                   <v-card-text
                     v-if="project.technologies"
-                    class="align-text-left pb-0"
+                    class="align-text-left pb-3"
                   >
                     <strong> Technologies used</strong>
                   </v-card-text>

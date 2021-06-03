@@ -25,7 +25,7 @@ const sebastian: profile = {
     // we are already on this page
     /* website: 'https://diluz.io', */
     shortText:
-      "Im the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
+      "I'm the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
     // i dont want this to be in my professional CV
     /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
@@ -34,7 +34,7 @@ const sebastian: profile = {
     ], */
     languages: [
       { lang: 'German', proficiency: languageProficiency.native },
-      { lang: 'English', proficiency: languageProficiency.native },
+      { lang: 'English', proficiency: languageProficiency.C1 },
     ],
     nationalities: [{ title: 'German' }, { title: 'US-American' }],
     basedIn: { country: 'Germany', city: 'Munich' },
@@ -57,14 +57,14 @@ const sebastian: profile = {
       {
         title: 'Bachelor of Science: Games Engineering',
         type: educationTypes.university,
-        source: 'Technical University Munich',
+        source: 'Technical University of Munich ',
         date: new Date(2019, 7),
         link: 'https://tum.de',
       },
       {
         title: 'High School Degree',
         type: educationTypes.school,
-        source: 'Ignaz Taschner Gymnasium Dachau',
+        source: 'Ignaz-Taschner-Gymnasium Dachau',
         date: new Date(2015, 4),
         link: 'https://itg.bayern/startseite.html',
       },
@@ -88,7 +88,7 @@ const sebastian: profile = {
       technologies: ['TypeScript', 'Nuxt.js', 'Vue.js', 'SCSS'],
       highlights: ['Open Source', 'Statically generated and hosted on Netlify'],
       description:
-        'My personal website as well as a collection of CVs for all Di Luzios.',
+        'My personal website as well as a collection of CVs of various other Di Luzios.',
     },
     {
       title: 'Magibot',
@@ -100,7 +100,7 @@ const sebastian: profile = {
       },
       technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MongoDB'],
       description:
-        'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently in over 2000 guilds serving 900.000+ users.',
+        'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 900.000+ users in over 2000 guilds.',
     },
     {
       title: 'BLAPI - the BotListAPI',
@@ -116,7 +116,7 @@ const sebastian: profile = {
         'Actively  used npm package with more than 22k downloads',
       ],
       description:
-        'BLAPI - the BotListAPI. A TypeScript package to handle automatically posting discord bot stats to all botlists.',
+        'BLAPI - the BotListAPI. A TypeScript package to automatically post Discord bot stats to all botlists.',
     },
     {
       title: 'flint.gg',
@@ -137,12 +137,12 @@ const sebastian: profile = {
       highlights: [
         'Thousands of active users',
         'Dev-Lead for teams of up to 5',
-        'Working with many Game-APIs',
+        'Implemented multiple Game-APIs',
         'Built core systems like auth, chat, matching, etc.',
         'Collected 180.000€ in funding',
       ],
       description:
-        "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent their gaming identity. The main way this was done is by so called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
+        "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
     },
     {
       title: 'easyshare',
@@ -182,7 +182,7 @@ const sebastian: profile = {
         'Compiled modules into the Node.js engine',
       ],
       description:
-        'This was my Bachelors Thesis. The JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
+        'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
     },
     {
       title: 'Hogwarts but better bot',
@@ -206,7 +206,7 @@ const sebastian: profile = {
       },
       technologies: ['Java'],
       description:
-        'A small sideproject to help optimize the game settings for the videogame "Bless Online", since it had heavy optimization issues. The settings applied were collected through reddit communities and brought together to provide a one stop solution.',
+        'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
     },
   ],
 };
