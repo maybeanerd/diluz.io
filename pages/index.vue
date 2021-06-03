@@ -52,11 +52,10 @@ export default class homePage extends Vue {
 
   alert: string | false = false;
 
-  goToUser(name: string) {
-    /* this.alert = 'Still under construction.';
-    this.snackbar = true; */
-    this.$router.push({ path: name });
-  }
+  /* underConstructionNotice() {
+    this.alert = 'Still under construction.';
+    this.snackbar = true;
+  } */
 }
 </script>
 
