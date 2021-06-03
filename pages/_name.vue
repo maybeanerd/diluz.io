@@ -42,7 +42,7 @@
               v-if="profile.person.services"
               style="padding-bottom: 0px"
             >
-              <strong> Socials:</strong> </v-card-title
+              <strong> Socials</strong> </v-card-title
             ><v-card-text v-if="profile.person.services">
               <v-chip
                 v-for="(name, service) in profile.person.services"
@@ -59,7 +59,7 @@
               v-if="profile.person.profession"
               style="padding-bottom: 0px"
             >
-              <strong> Profession:</strong>
+              <strong> Profession</strong>
             </v-card-title>
             <v-card-text
               v-if="profile.person.profession"
@@ -97,7 +97,7 @@
               v-if="profile.person.interests"
               style="padding-bottom: 0px"
             >
-              <strong> Interests:</strong>
+              <strong> Interests</strong>
             </v-card-title>
             <v-card-text v-if="profile.person.interests">
               <v-chip
@@ -155,13 +155,13 @@
                     ><img :src="project.image"
                   /></v-list-item-avatar>
                   <v-card-text class="align-text-left pb-0">
-                    <strong> Role:</strong>
+                    <strong> Role</strong>
                   </v-card-text>
                   <v-card-text class="align-text-left pt-1 pb-1">
                     {{ project.role }}
                   </v-card-text>
                   <v-card-text class="align-text-left pb-0">
-                    <strong> Description:</strong>
+                    <strong> Description</strong>
                   </v-card-text>
                   <v-card-text class="align-text-left pt-1 pb-1">
                     {{ project.description }}
@@ -170,7 +170,7 @@
                     v-if="project.highlights"
                     class="align-text-left pb-0"
                   >
-                    <strong> Highlights:</strong>
+                    <strong> Highlights</strong>
                   </v-card-text>
                   <v-card-text
                     v-if="project.highlights"
@@ -189,7 +189,7 @@
                     v-if="project.technologies"
                     class="align-text-left pb-0"
                   >
-                    <strong> Technologies used:</strong>
+                    <strong> Technologies used</strong>
                   </v-card-text>
                   <v-card-text v-if="project.technologies" class="pt-1 pb-1">
                     <v-chip
@@ -204,7 +204,7 @@
                     v-if="project.subprojects"
                     class="align-text-left pb-0"
                   >
-                    <strong> Subprojects:</strong>
+                    <strong> Subprojects</strong>
                   </v-card-text>
                   <v-card-text v-if="project.subprojects">
                     {{ project.subprojects }}
@@ -359,7 +359,8 @@ export default class homePage extends Vue {
 .short-text {
   display: flex;
   justify-content: center;
-}.date-spread {
+}
+.date-spread {
   display: flex;
   justify-content: space-between;
   padding: 0px;
