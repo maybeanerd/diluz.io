@@ -38,10 +38,7 @@
                   : ''
               }}{{ profile.person.basedIn.country }}</v-card-text
             >
-            <v-card-title
-              v-if="profile.person.services"
-              style="padding-bottom: 0px"
-            >
+            <v-card-title v-if="profile.person.services">
               <strong> Socials</strong> </v-card-title
             ><v-card-text v-if="profile.person.services">
               <v-chip
@@ -124,17 +121,17 @@
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <v-card-text class="date-spread">
-                        <div class="ma-1">
-                          <v-icon left> mdi-calendar-start </v-icon
-                          >{{ formatDate(project.timeframe.start) }}
-                        </div>
-                        <div class="ma-1">
-                          <v-icon left> mdi-calendar-end </v-icon
-                          >{{ formatDate(project.timeframe.end) }}
-                        </div>
+                      <v-card-text class="date-line"
+                        ><v-icon left dense>
+                          mdi-{{
+                            project.timeframe.end !== 'current'
+                              ? 'check-circle-outline'
+                              : 'motion-play-outline'
+                          }} </v-icon
+                        >{{ formatDate(project.timeframe.start) }} -
+                        {{ formatDate(project.timeframe.end) }}
                       </v-card-text>
-                      <v-list-item-title class="headline mb-1">
+                      <v-list-item-title class="headline mb-1 pt-3">
                         {{ project.title }}
                       </v-list-item-title>
                       <v-list-item-subtitle v-if="project.url"
@@ -360,9 +357,10 @@ export default class homePage extends Vue {
   display: flex;
   justify-content: center;
 }
-.date-spread {
+.date-line {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
   padding: 0px;
 }
 .timeline {
