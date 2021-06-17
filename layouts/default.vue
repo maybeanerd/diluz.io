@@ -75,7 +75,7 @@ export default class Default extends Vue {
     profiles.forEach(profile => this.items.push({
       icon: 'mdi-account-circle',
       title: profile.person.name.first,
-      to: `/${profile.person.name.first}`,
+      to: `/${profile.person.name.first.toLowerCase()}`,
     }));
   }
 }

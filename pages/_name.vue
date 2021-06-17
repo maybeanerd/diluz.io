@@ -210,7 +210,14 @@
               </v-timeline-item>
               <v-timeline-item color="grey darken-1">
                 <v-card class="elevation-2" color="grey darken-3">
-                  <v-card-text> The beginning of time</v-card-text>
+                  <v-list-item-title class="headline mb-1 pt-5">
+                    The beginning of time
+                  </v-list-item-title>
+                  <v-card-text>
+                    If you want to see more side projects, take a look at my
+                    GitHub. There's a lot more that just wasn't relevant enough
+                    to list here.
+                  </v-card-text>
                 </v-card>
               </v-timeline-item>
             </v-timeline>
@@ -236,19 +243,32 @@ import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
-import { proficiency, profile, project } from '~/types/CV';
+import {
+  proficiency, profile, project, projectType,
+} from '~/types/CV';
 import educationComponent from '~/components/educationComponent.vue';
 
+const prioritizeRunning = false;
+const prioritizeJobs = false;
+
 function compareProjects(a: project, b: project) {
+  // prioritize jobs over side projects
+  if (prioritizeJobs) {
+    if (a.type === projectType.job && b.type !== projectType.job) {
+      return -1;
+    }
+    if (b.type === projectType.job && a.type !== projectType.job) {
+      return 1;
+    }
+  }
   // this prioritizes still working on it over the start date.
-  if (a.timeframe.end === 'current' && b.timeframe.end === 'current') {
-    return b.timeframe.start.getTime() - a.timeframe.start.getTime();
-  }
-  if (a.timeframe.end === 'current') {
-    return -1;
-  }
-  if (b.timeframe.end === 'current') {
-    return 1;
+  if (prioritizeRunning) {
+    if (a.timeframe.end === 'current' && b.timeframe.end !== 'current') {
+      return -1;
+    }
+    if (b.timeframe.end === 'current' && a.timeframe.end !== 'current') {
+      return 1;
+    }
   }
   return b.timeframe.start.getTime() - a.timeframe.start.getTime();
 }
@@ -283,7 +303,9 @@ export default class homePage extends Vue {
   programmingProficiency = proficiency;
 
   get orderedProjects() {
-    return this.profile.projects.sort(compareProjects);
+    return this.profile.projects
+      .filter(proj => proj.showInProfile)
+      .sort(compareProjects);
   }
 
   get switchEducationToLeft() {

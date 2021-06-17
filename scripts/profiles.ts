@@ -5,6 +5,7 @@ import {
   languageProficiency,
   proficiency,
   profile,
+  projectType,
 } from '~/types/CV';
 
 /* TODO later on i want to build an editor for others to fill in their data,
@@ -89,6 +90,8 @@ const sebastian: profile = {
       highlights: ['Open Source', 'Statically generated and hosted on Netlify'],
       description:
         'My personal website as well as a collection of CVs of various other Di Luzios.',
+      showInProfile: false,
+      type: projectType.sideproject,
     },
     {
       title: 'Magibot',
@@ -101,6 +104,8 @@ const sebastian: profile = {
       technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MongoDB'],
       description:
         'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 900.000+ users in over 2000 guilds.',
+      showInProfile: true,
+      type: projectType.sideproject,
     },
     {
       title: 'BLAPI - the BotListAPI',
@@ -117,6 +122,8 @@ const sebastian: profile = {
       ],
       description:
         'BLAPI - the BotListAPI. A TypeScript package to automatically post Discord bot stats to all botlists.',
+      showInProfile: true,
+      type: projectType.sideproject,
     },
     {
       title: 'flint.gg',
@@ -143,6 +150,8 @@ const sebastian: profile = {
       ],
       description:
         "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
+      showInProfile: true,
+      type: projectType.job,
     },
     {
       title: 'easyshare',
@@ -166,6 +175,8 @@ const sebastian: profile = {
       ],
       description:
         'Getting media, such as screenshots and videos, from your Nintendo Switch or Playstation 4 to your computer, smartphone and social media is difficult. Easyshare takes care of all the difficulties and makes it easy for you.',
+      showInProfile: true,
+      type: projectType.job,
     },
     {
       title: 'ixy.js',
@@ -183,6 +194,8 @@ const sebastian: profile = {
       ],
       description:
         'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
+      showInProfile: true,
+      type: projectType.sideproject,
     },
     {
       title: 'Hogwarts but better bot',
@@ -195,6 +208,9 @@ const sebastian: profile = {
       technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MySQL'],
       description:
         'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
+
+      showInProfile: false,
+      type: projectType.sideproject,
     },
     {
       title: 'BlessFPS',
@@ -207,6 +223,8 @@ const sebastian: profile = {
       technologies: ['Java'],
       description:
         'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
+      showInProfile: false,
+      type: projectType.sideproject,
     },
   ],
 };

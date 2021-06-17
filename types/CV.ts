@@ -18,6 +18,11 @@ type person = {
   basedIn?: { country: string; city?: string };
 };
 
+export enum projectType {
+  sideproject,
+  job,
+}
+
 export type project = {
   title: string;
   role: string;
@@ -28,6 +33,8 @@ export type project = {
   technologies?: Array<string>;
   timeframe: { start: Date; end: Date | 'current' };
   subprojects?: Array<project>;
+  showInProfile: boolean;
+  type: projectType;
 };
 
 export enum languageProficiency {
