@@ -45,7 +45,13 @@ const sebastian: profile = {
       { title: 'TypeScript', proficiency: proficiency.strong },
       { title: 'JavaScript', proficiency: proficiency.strong },
       { title: 'Java', proficiency: proficiency.knowledgeable },
-      { title: 'SQL', proficiency: proficiency.strong },
+      { title: 'HTML', proficiency: proficiency.knowledgeable },
+      { title: 'SCSS', proficiency: proficiency.knowledgeable },
+      { title: 'Node.js', proficiency: proficiency.strong },
+      { title: 'Nuxt.js', proficiency: proficiency.strong },
+      { title: 'Vue.js', proficiency: proficiency.strong },
+      { title: 'PostgreSQL', proficiency: proficiency.strong },
+      { title: 'SQL', proficiency: proficiency.knowledgeable },
       { title: 'MongoDB', proficiency: proficiency.knowledgeable },
       { title: 'C', proficiency: proficiency.knowledgeable },
       { title: 'C#', proficiency: proficiency.knowledgeable },
@@ -80,7 +86,7 @@ const sebastian: profile = {
   projects: [
     {
       title: 'diluz.io',
-      role: 'Developer and maintainer',
+      role: 'Creator and maintainer',
       timeframe: {
         start: new Date(2021, 3),
         end: 'current',
@@ -95,7 +101,7 @@ const sebastian: profile = {
     },
     {
       title: 'Magibot',
-      role: 'Developer and maintainer',
+      role: 'Creator and maintainer',
       url: 'https://bots.ondiscord.xyz/bots/384820232583249921',
       timeframe: {
         start: new Date(2017, 6),
@@ -109,7 +115,7 @@ const sebastian: profile = {
     },
     {
       title: 'BLAPI - the BotListAPI',
-      role: 'Developer and maintainer',
+      role: 'Creator and maintainer',
       url: 'https://github.com/botblock/BLAPI',
       timeframe: {
         start: new Date(2018, 7),
@@ -155,7 +161,7 @@ const sebastian: profile = {
     },
     {
       title: 'easyshare',
-      role: 'Developer and maintainer',
+      role: 'Creator and maintainer',
       url: 'https://github.com/flint-gg/easyshare',
       timeframe: {
         start: new Date(2020, 5),
@@ -180,7 +186,7 @@ const sebastian: profile = {
     },
     {
       title: 'ixy.js',
-      role: 'Developer',
+      role: 'Creator',
       url: 'https://github.com/ixy-languages/ixy.js',
       timeframe: {
         start: new Date(2018, 9),
@@ -199,7 +205,7 @@ const sebastian: profile = {
     },
     {
       title: 'Hogwarts but better bot',
-      role: 'Developer and maintainer',
+      role: 'Creator and maintainer',
       url: 'https://github.com/T0TProduction/hogwarts-but-better-bot',
       timeframe: {
         start: new Date(2020, 9),
@@ -214,7 +220,7 @@ const sebastian: profile = {
     },
     {
       title: 'BlessFPS',
-      role: 'Developer',
+      role: 'Creator',
       url: 'https://github.com/T0TProduction/BlessFPS',
       timeframe: {
         start: new Date(2018, 4),
