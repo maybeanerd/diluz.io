@@ -19,7 +19,7 @@ const sebastian: profile = {
     image:
       'https://s.gravatar.com/avatar/4e5bc2d2836035b465f1552e6b1fdeb8?s=128',
     services: {
-      linkedin: 'sebastian-di-luzio-357185171',
+      linkedin: 'sebastian-di-luzio',
       github: 't0tproduction',
     },
     email: 'sebastian@diluz.io',
