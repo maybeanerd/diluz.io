@@ -85,7 +85,7 @@ const sebastian: profile = {
   },
   projects: [
     {
-      title: 'IU International University of Applied Sciences',
+      title: 'IU International University',
       role: 'Full Stack Developer',
       url: 'https://www.iu.org',
       timeframe: {
@@ -100,9 +100,9 @@ const sebastian: profile = {
         'Vue.js',
         'AWS',
       ],
-      highlights: [
-
-      ],
+      /* highlights: [
+        'something',
+      ], */
       description:
         'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
       showInProfile: true,
