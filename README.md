@@ -2,6 +2,8 @@
 
 This project is supposed to be a collection of subdomains for Di Luzios.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b564c41c-6271-48dd-ba15-6667ec73d1b1/deploy-status)](https://app.netlify.com/sites/diluzio/deploys)
+
 ## Build Setup
 
 ``` bash
