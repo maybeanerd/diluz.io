@@ -259,6 +259,64 @@ const sebastian: profile = {
   ],
 };
 
+const marc: profile = {
+  person: {
+    name: { first: 'Marc', last: 'Di Luzio' },
+    image:
+      'https://en.gravatar.com/userimage/14518944/fd1fcbeb85db4e616f521525a5ec0a10.png',
+    services: {
+      linkedin: 'marcdiluzio',
+      github: 'mdiluz',
+    },
+    email: 'marc@diluz.io',
+    // Fill this in
+    // shortText: "Lorem Ipsum",
+    languages: [
+      { lang: 'English', proficiency: languageProficiency.native },
+    ],
+    nationalities: [{ title: 'British' }, { title: 'US-American' }],
+    basedIn: { country: 'England', city: 'London' },
+  },
+  skills: {
+    technical: [
+      { title: 'C#', proficiency: proficiency.strong },
+      { title: 'C++', proficiency: proficiency.strong },
+      { title: 'C', proficiency: proficiency.strong },
+      { title: 'Linux', proficiency: proficiency.strong },
+      { title: 'Python', proficiency: proficiency.strong },
+      { title: 'Bash', proficiency: proficiency.strong },
+      { title: 'Unity', proficiency: proficiency.strong },
+      { title: 'Docker', proficiency: proficiency.strong },
+
+      { title: 'ASP.Net', proficiency: proficiency.knowledgeable },
+      { title: 'Golang', proficiency: proficiency.knowledgeable },
+      { title: 'SQL', proficiency: proficiency.knowledgeable },
+      { title: 'K8s', proficiency: proficiency.knowledgeable },
+      { title: 'OpenGL', proficiency: proficiency.knowledgeable },
+      { title: 'Vulkan', proficiency: proficiency.knowledgeable },
+      { title: 'Perl', proficiency: proficiency.knowledgeable },
+    ],
+    education: [
+      {
+        title: 'MSc, Video Game Development',
+        type: educationTypes.university,
+        source: 'Birmingham City University (Sony Scholarship)',
+        date: new Date(2013),
+      },
+      {
+        title: 'Ba, Computer Visualisation and Animation',
+        type: educationTypes.university,
+        source: 'Bournemouth University',
+        date: new Date(2012),
+      },
+    ],
+  },
+  projects: [
+    // TODO
+  ],
+};
+
 export const profiles: Map<string, profile> = new Map([
   ['sebastian', sebastian],
+  ['marc', marc]
 ]);
