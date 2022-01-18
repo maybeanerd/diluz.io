@@ -308,6 +308,7 @@ const marc: profile = {
         type: educationTypes.university,
         source: 'Bournemouth University',
         date: new Date(2012, 7),
+      },
     ],
   },
   projects: [
