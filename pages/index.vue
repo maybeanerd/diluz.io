@@ -15,8 +15,9 @@
           <v-card-title class="headline">Check out the diluz.ios</v-card-title>
           <v-card-text>
             <nuxt-link to="sebastian" class="unstyled-link">
-              <v-btn>Sebastian Di Luzio</v-btn></nuxt-link
-            >
+              <v-btn>Sebastian Di Luzio</v-btn></nuxt-link>
+            <nuxt-link to="marc" class="unstyled-link">
+              <v-btn>Marc Di Luzio</v-btn></nuxt-link>
           </v-card-text>
         </v-card>
       </v-col>
