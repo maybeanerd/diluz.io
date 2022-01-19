@@ -12,11 +12,18 @@
           </v-row>
         </v-card>
         <v-card class="card">
-          <v-card-title class="headline">Check out the diluz.ios</v-card-title>
+          <v-card-title class="headline justify-center">Check out the diluz.ios</v-card-title>
           <v-card-text>
-            <nuxt-link to="sebastian" class="unstyled-link">
-              <v-btn>Sebastian Di Luzio</v-btn></nuxt-link
-            >
+            <v-row class="pa-2" align="center" justify="center">
+              <nuxt-link to="sebastian" class="unstyled-link">
+                <v-btn>Sebastian Di Luzio</v-btn>
+              </nuxt-link>
+            </v-row>
+            <v-row class="pa-2" align="center" justify="center">
+              <nuxt-link to="marc" class="unstyled-link">
+                <v-btn>Marc Di Luzio</v-btn>
+              </nuxt-link>
+            </v-row>
           </v-card-text>
         </v-card>
       </v-col>
