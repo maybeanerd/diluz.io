@@ -316,7 +316,7 @@ const marc: profile = {
       title: "Unity",
       role: "Lead Software Engineer",
       url: "https://unity.com/",
-      image: "unity.png",
+      image: "profile/marc/unity.png",
       description: "Leading a tools team in Release Engineering, working on a variety of projects focusing on better release workflows, bug tracking and quality barriers.",
       timeframe: {
         start: new Date(2021, 12),
@@ -337,7 +337,7 @@ const marc: profile = {
       title: "Unity",
       role: "Senior Software Engineer",
       url: "https://unity.com/",
-      image: "unity.png",
+      image: "profile/marc/unity.png",
       description: "Worked in Sustained Engineering, focusing on Linux bugs and infrastructure.",
       timeframe: {
         start: new Date(2018, 4),
@@ -358,7 +358,7 @@ const marc: profile = {
       title: "Rove",
       role: "Developer and Designer",
       url: "https://github.com/mdiluz/rove",
-      image: "rove.png",
+      image: "profile/marc/rove.png",
       description: "An asynchronous nomadic game about exploring as part of a loose community.",
       timeframe: {
         start: new Date(2020, 3),
@@ -398,7 +398,7 @@ const marc: profile = {
       title: "Feral Interactive",
       role: "Linux Group lead",
       url: "https://www.feralinteractive.com/en/",
-      image: "feral_interactive.png",
+      image: "profile/marc/feral_interactive.png",
       description: "Lead the Linux platform development while porting many AAA games such as XCOM2, Mad Max and HITMAN",
       timeframe: {
         start: new Date(2013, 8),
@@ -420,7 +420,7 @@ const marc: profile = {
       title: "Feral Interactive",
       role: "Software Developer",
       url: "https://www.feralinteractive.com/en/",
-      image: "feral_interactive.png",
+      image: "profile/marc/feral_interactive.png",
       description: "Worked on Mac and Linux ports for a variety of games including ROME: Total War, Tomb Raider and XCOM",
       timeframe: {
         start: new Date(2015, 5),
