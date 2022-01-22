@@ -147,8 +147,8 @@
                   <v-list-item-avatar
                     v-if="project.image"
                     tile
-                    size="80"
-                    color="grey"
+                    height="auto"
+                    width="auto"
                     ><img :src="project.image"
                   /></v-list-item-avatar>
                   <v-card-text class="align-text-left pb-0">
