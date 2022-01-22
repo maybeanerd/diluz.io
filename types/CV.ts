@@ -1,4 +1,23 @@
 type services = { linkedin?: string; github?: string };
+export enum languageProficiency {
+  native = 'Native',
+  C2 = 'C2',
+  C1 = 'C1',
+  B2 = 'B2',
+  B1 = 'B1',
+  A2 = 'A2',
+  A1 = 'A1',
+}
+
+export enum proficiency {
+  strong = 0x0001,
+  knowledgeable = 0x1001,
+}
+
+export enum educationTypes {
+  school = 'school',
+  university = 'file-certificate',
+}
 
 type person = {
   name: {
@@ -36,26 +55,6 @@ export type project = {
   showInProfile: boolean;
   type: projectType;
 };
-
-export enum languageProficiency {
-  native = 'Native',
-  C2 = 'C2',
-  C1 = 'C1',
-  B2 = 'B2',
-  B1 = 'B1',
-  A2 = 'A2',
-  A1 = 'A1',
-}
-
-export enum proficiency {
-  strong = 0x0001,
-  knowledgeable = 0x1001,
-}
-
-export enum educationTypes {
-  school = 'school',
-  university = 'file-certificate',
-}
 
 type skills = {
   technical?: Array<{ title: string; proficiency: proficiency }>;

@@ -229,7 +229,7 @@
       </v-row>
       <v-snackbar v-model="snackbar" color="green" light centered
         >{{ alert }}
-        <template v-slot:action="{ attrs }">
+        <template #action="{ attrs }">
           <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
         </template></v-snackbar
       >
@@ -304,7 +304,7 @@ export default class homePage extends Vue {
 
   get orderedProjects() {
     return this.profile.projects
-      .filter(proj => proj.showInProfile)
+      .filter((proj) => proj.showInProfile)
       .sort(compareProjects);
   }
 

@@ -106,13 +106,13 @@ export default class ImageDvDMove extends Vue {
 
   get strongProgrammingLangs() {
     return this.profile.skills.technical?.filter(
-      l => l.proficiency === proficiency.strong,
+      (l) => l.proficiency === proficiency.strong,
     );
   }
 
   get knowledgeableProgrammingLangs() {
     return this.profile.skills.technical?.filter(
-      l => l.proficiency === proficiency.knowledgeable,
+      (l) => l.proficiency === proficiency.knowledgeable,
     );
   }
 }

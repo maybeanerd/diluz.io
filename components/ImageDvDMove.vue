@@ -56,6 +56,7 @@ function setStyle(element, properties) {
   element.style.cssText += css;
 }
 
+// eslint-disable-next-line no-use-before-define
 function runAnimation(context: ImageDvDMove) {
   requestAnimationFrame(runAnimation.bind(null, context));
   // setTimeout(this.init);

@@ -110,7 +110,7 @@ const config: NuxtConfig = {
     /*
      ** You can extend webpack config here
      */
-    extend(conf /* , ctx */) {
+    extend(/* conf /* , ctx */) {
       /* conf.module!.rules.push({
         test: /\.vue$/,
         loader: 'vue-svg-inline-loader',
