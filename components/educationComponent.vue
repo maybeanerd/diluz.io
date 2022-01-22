@@ -104,6 +104,10 @@ export default class ImageDvDMove extends Vue {
     });
   }
 
+  created() {
+    console.log('profile from educationComponent:', this.profile?.person.name);
+  }
+
   get strongProgrammingLangs() {
     return this.profile.skills.technical?.filter(
       (l) => l.proficiency === proficiency.strong,

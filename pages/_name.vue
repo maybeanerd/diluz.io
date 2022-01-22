@@ -281,6 +281,7 @@ function compareProjects(a: project, b: project) {
   },
   asyncData: async ({ params, redirect }) => {
     const prof = profiles.get(params.name.toLowerCase());
+    console.log('profile from _name:', prof?.person.name);
     if (prof) {
       return { profile: prof };
     }
