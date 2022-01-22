@@ -149,7 +149,10 @@
                     tile
                     height="auto"
                     width="auto"
-                    ><img :src="project.image"
+                    ><img
+                      :src="
+                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${project.image}`)
+                      "
                   /></v-list-item-avatar>
                   <v-card-text class="align-text-left pb-0">
                     <strong> Role</strong>
