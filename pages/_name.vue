@@ -292,10 +292,9 @@ function compareProjects(a: Project, b: Project) {
     educationComponent,
   },
   asyncData: async ({ params, redirect }) => {
-    const prof = profiles.get(params.name.toLowerCase());
-    console.log('profile from _name:', prof?.person.name);
-    if (prof) {
-      return { profile: prof };
+    const profile = profiles.get(params.name.toLowerCase());
+    if (profile) {
+      return { profile };
     }
     return redirect('/');
   },
