@@ -12,28 +12,28 @@
           </v-row>
         </v-card>
         <v-card class="card">
-          <v-card-title class="headline justify-center">Check out the diluz.ios</v-card-title>
+          <v-card-title class="headline justify-center"
+            >Check out the diluz.ios</v-card-title
+          >
           <v-card-text>
-            <v-row class="pa-2" align="center" justify="center">
-              <nuxt-link to="sebastian" class="unstyled-link">
-                <v-btn>Sebastian Di Luzio</v-btn>
-              </nuxt-link>
-            </v-row>
-            <v-row class="pa-2" align="center" justify="center">
-              <nuxt-link to="marc" class="unstyled-link">
-                <v-btn>Marc Di Luzio</v-btn>
+            <v-row
+              v-for="[name, profile] in profiles"
+              :key="name"
+              class="pa-2"
+              align="center"
+              justify="center"
+            >
+              <nuxt-link
+                :to="profile.person.name.first.toLowerCase()"
+                class="unstyled-link"
+              >
+                <v-btn>{{ profile.person.name.first }}</v-btn>
               </nuxt-link>
             </v-row>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
-    <v-snackbar v-model="snackbar" color="green" light centered
-      >{{ alert }}
-      <template #action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
-      </template></v-snackbar
-    >
   </v-container>
 </template>
 
@@ -42,6 +42,7 @@ import { Component } from 'nuxt-property-decorator';
 import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
+import { profiles } from '~/scripts/profiles';
 
 @Component({
   components: {
@@ -55,14 +56,7 @@ export default class homePage extends Vue {
     window.open('https://github.com/T0TProduction/diluz.io', '_blank');
   }
 
-  snackbar = false;
-
-  alert: string | false = false;
-
-  /* underConstructionNotice() {
-    this.alert = 'Still under construction.';
-    this.snackbar = true;
-  } */
+  profiles = profiles;
 }
 </script>
 

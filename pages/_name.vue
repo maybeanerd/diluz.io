@@ -11,28 +11,25 @@
             <v-list-item-avatar v-if="profile.person.image" size="128"
               ><img :src="profile.person.image"
             /></v-list-item-avatar>
-            <v-card-text v-if="profile.person.shortText" class="short-text"
-              ><!-- <v-icon left>mdi-comment</v-icon
-              > -->{{ profile.person.shortText }}</v-card-text
-            ><v-card-text v-if="profile.person.email"
-              ><!-- <v-icon left>mdi-email</v-icon
-              > --><a
+            <v-card-text v-if="profile.person.shortText" class="short-text">
+              <!-- <v-icon left>mdi-comment</v-icon> -->
+              {{ profile.person.shortText }}</v-card-text
+            ><v-card-text v-if="profile.person.email">
+              <!-- <v-icon left>mdi-email</v-icon> -->
+              <a
                 :href="'mailto: ' + profile.person.email"
                 class="link"
                 target="_blank"
                 >{{ profile.person.email }}</a
               ></v-card-text
-            ><v-card-text v-if="profile.person.website"
-              ><!-- <v-icon left>mdi-web</v-icon
-              > --><a
-                :href="profile.person.website"
-                class="link"
-                target="_blank"
-                >{{ profile.person.website }}</a
-              ></v-card-text
-            ><v-card-text v-if="profile.person.basedIn"
-              ><!-- <v-icon left>mdi-earth</v-icon
-              > -->{{
+            ><v-card-text v-if="profile.person.website">
+              <!-- <v-icon left>mdi-web</v-icon> -->
+              <a :href="profile.person.website" class="link" target="_blank">{{
+                profile.person.website
+              }}</a></v-card-text
+            ><v-card-text v-if="profile.person.basedIn">
+              <!-- <v-icon left>mdi-earth</v-icon> -->
+              {{
                 profile.person.basedIn.city
                   ? profile.person.basedIn.city + ', '
                   : ''
@@ -124,14 +121,14 @@
                 <v-card class="elevation-2 pb-4" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <v-card-text class="date-line"
-                        ><!-- <v-icon left dense>
+                      <v-card-text class="date-line">
+                        <!-- <v-icon left dense>
                           mdi-{{
                             project.timeframe.end !== 'current'
                               ? 'check-circle-outline'
                               : 'motion-play-outline'
-                          }} </v-icon
-                        > -->{{ formatDate(project.timeframe.start) }} -
+                          }} </v-icon> -->
+                        {{ formatDate(project.timeframe.start) }} -
                         {{ formatDate(project.timeframe.end) }}
                       </v-card-text>
                       <v-list-item-title class="headline mb-1 pt-5">
@@ -239,12 +236,6 @@
           <educationComponent :profileProp="profile" />
         </v-col>
       </v-row>
-      <v-snackbar v-model="snackbar" color="green" light centered
-        >{{ alert }}
-        <template #action="{ attrs }">
-          <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
-        </template></v-snackbar
-      >
     </v-container>
   </section>
 </template>
@@ -323,14 +314,6 @@ export default class homePage extends Vue {
   get switchEducationToLeft() {
     return this.$vuetify.breakpoint.mdAndDown;
   }
-
-  snackbar = false;
-
-  drawer = false;
-
-  group = true;
-
-  alert: string | false = false;
 
   capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
