@@ -16,8 +16,7 @@ const sebastian: Profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
-    image:
-      'https://s.gravatar.com/avatar/4e5bc2d2836035b465f1552e6b1fdeb8?s=128',
+    image: { isURL: false, path: 'pp.png' },
     services: {
       linkedin: 'sebastian-di-luzio',
       github: 't0tproduction',
@@ -262,8 +261,7 @@ const sebastian: Profile = {
 const marc: Profile = {
   person: {
     name: { first: 'Marc', last: 'Di Luzio' },
-    image:
-      'https://en.gravatar.com/userimage/14518944/fd1fcbeb85db4e616f521525a5ec0a10.png',
+    image: { isURL: false, path: 'pp.png' },
     services: {
       linkedin: 'marcdiluzio',
       github: 'mdiluz',
@@ -271,9 +269,7 @@ const marc: Profile = {
     email: 'marc@diluz.io',
     // Fill this in
     // shortText: "Lorem Ipsum",
-    languages: [
-      { lang: 'English', proficiency: LanguageProficiency.native },
-    ],
+    languages: [{ lang: 'English', proficiency: LanguageProficiency.native }],
     nationalities: [{ title: 'British' }, { title: 'US-American' }],
     basedIn: { country: 'England', city: 'London' },
   },
@@ -317,60 +313,47 @@ const marc: Profile = {
       role: 'Lead Software Engineer',
       url: 'https://unity.com/',
       image: 'unity.png',
-      description: 'Leading a tools team in Release Engineering, working on a variety of projects focusing on better release workflows, bug tracking and quality barriers.',
+      description:
+        'Leading a tools team in Release Engineering, working on a variety of projects focusing on better release workflows, bug tracking and quality barriers.',
       timeframe: {
         start: new Date(2021, 12),
         end: 'current',
       },
       showInProfile: true,
       type: ProjectType.job,
-      technologies: [
-        'ASP.NET',
-        'Kubernetes',
-        'CI/CD',
-      ],
-      highlights: [
-        'Building a team of fantastic developers',
-      ],
+      technologies: ['ASP.NET', 'Kubernetes', 'CI/CD'],
+      highlights: ['Building a team of fantastic developers'],
     },
     {
       title: 'Unity',
       role: 'Senior Software Engineer',
       url: 'https://unity.com/',
       image: 'unity.png',
-      description: 'Worked in Sustained Engineering, focusing on Linux bugs and infrastructure.',
+      description:
+        'Worked in Sustained Engineering, focusing on Linux bugs and infrastructure.',
       timeframe: {
         start: new Date(2018, 4),
         end: new Date(2021, 12),
       },
       showInProfile: true,
       type: ProjectType.job,
-      highlights: [
-        'Releasing the Linux Editor out of Preview',
-      ],
-      technologies: [
-        'C/C++/C#',
-        'Vulkan/OpenGL',
-        'CI/CD',
-      ],
+      highlights: ['Releasing the Linux Editor out of Preview'],
+      technologies: ['C/C++/C#', 'Vulkan/OpenGL', 'CI/CD'],
     },
     {
       title: 'Rove',
       role: 'Developer and Designer',
       url: 'https://github.com/mdiluz/rove',
       image: 'rove.png',
-      description: 'An asynchronous nomadic game about exploring as part of a loose community.',
+      description:
+        'An asynchronous nomadic game about exploring as part of a loose community.',
       timeframe: {
         start: new Date(2020, 3),
         end: 'current',
       },
       showInProfile: true,
       type: ProjectType.sideproject,
-      technologies: [
-        'Golang',
-        'protobuf',
-        'GRPC',
-      ],
+      technologies: ['Golang', 'protobuf', 'GRPC'],
     },
 
     {
@@ -387,19 +370,15 @@ const marc: Profile = {
       highlights: [
         'Added as a default package shipped with all Ubuntu Desktop installs',
       ],
-      technologies: [
-        'C',
-        'SDbus',
-        'Meson',
-        'Inih',
-      ],
+      technologies: ['C', 'SDbus', 'Meson', 'Inih'],
     },
     {
       title: 'Feral Interactive',
       role: 'Linux Group lead',
       url: 'https://www.feralinteractive.com/en/',
       image: 'feral_interactive.png',
-      description: 'Lead the Linux platform development while porting many AAA games such as XCOM2, Mad Max and HITMAN',
+      description:
+        'Lead the Linux platform development while porting many AAA games such as XCOM2, Mad Max and HITMAN',
       timeframe: {
         start: new Date(2013, 8),
         end: new Date(2015, 5),
@@ -411,17 +390,15 @@ const marc: Profile = {
         'Spearheaded Vulkan games development on Linux with Mad Max',
         'Shipped over 30 titles to Linux',
       ],
-      technologies: [
-        'C++',
-        'Vulkan/OpenGL',
-      ],
+      technologies: ['C++', 'Vulkan/OpenGL'],
     },
     {
       title: 'Feral Interactive',
       role: 'Software Developer',
       url: 'https://www.feralinteractive.com/en/',
       image: 'feral_interactive.png',
-      description: 'Worked on Mac and Linux ports for a variety of games including ROME: Total War, Tomb Raider and XCOM',
+      description:
+        'Worked on Mac and Linux ports for a variety of games including ROME: Total War, Tomb Raider and XCOM',
       timeframe: {
         start: new Date(2015, 5),
         end: new Date(2018, 3),
@@ -432,12 +409,7 @@ const marc: Profile = {
         "Shipped a single executable supporting both ROME and it's standalone expansions on Mac",
         'Worked on shipping the first Linux game Feral sold',
       ],
-      technologies: [
-        'C++',
-        'OpenGL',
-        'CMake',
-        'Perl',
-      ],
+      technologies: ['C++', 'OpenGL', 'CMake', 'Perl'],
     },
   ],
 };

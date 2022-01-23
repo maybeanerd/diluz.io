@@ -32,7 +32,6 @@
     <v-footer>
       <span
         >&copy;
-        <!-- {{ new Date().getFullYear() }} -->
         Sebastian Di Luzio</span
       >
       <v-spacer></v-spacer>

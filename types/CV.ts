@@ -25,7 +25,7 @@ type Person = {
     first: string;
     last: 'Di Luzio'; // we could support other spellings of the name later on
   };
-  image?: string;
+  image?: { isURL: boolean; path: string };
   birthday?: Date;
   profession?: string;
   shortText?: string;

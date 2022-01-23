@@ -8,8 +8,8 @@
               >{{ profile.person.name.first }}
               {{ profile.person.name.last }}</v-card-title
             >
-            <v-list-item-avatar v-if="profile.person.image" size="128"
-              ><img :src="profile.person.image"
+            <v-list-item-avatar v-if="profilePicture" size="128"
+              ><img :src="profilePicture"
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
@@ -250,6 +250,7 @@ import {
   Proficiency, Profile, Project, ProjectType,
 } from '~/types/CV';
 import educationComponent from '~/components/educationComponent.vue';
+import { getProfilePictureFromProfile } from '~/scripts/util';
 
 const prioritizeRunning = false;
 const prioritizeJobs = false;
@@ -313,6 +314,10 @@ export default class homePage extends Vue {
 
   get switchEducationToLeft() {
     return this.$vuetify.breakpoint.mdAndDown;
+  }
+
+  get profilePicture() {
+    return getProfilePictureFromProfile(this.profile);
   }
 
   capitalizeFirstLetter(string: string) {
