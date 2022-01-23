@@ -22,6 +22,23 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
+        <v-list-item
+          v-for="[name, profile] in profiles"
+          :key="name"
+          :to="`/${profile.person.name.first.toLowerCase()}`"
+          router
+          exact
+        >
+          <v-list-item-action>
+            <img
+              class="profileIcon"
+              :src="getProfilePictureFromProfile(profile)"
+            />
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="profile.person.name.first" />
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar fixed app>
@@ -30,10 +47,7 @@
     </v-app-bar>
     <v-main><nuxt /></v-main>
     <v-footer>
-      <span
-        >&copy;
-        Sebastian Di Luzio</span
-      >
+      <span>&copy; Sebastian Di Luzio</span>
       <v-spacer></v-spacer>
       <span>
         made with
@@ -57,6 +71,7 @@
 import Vue from 'vue';
 import { Component } from 'nuxt-property-decorator';
 import { profiles } from '~/scripts/profiles';
+import { getProfilePictureFromProfile } from '~/scripts/util';
 
 @Component({ components: {} })
 export default class Default extends Vue {
@@ -70,17 +85,15 @@ export default class Default extends Vue {
     },
   ];
 
-  mounted() {
-    profiles.forEach((profile) => this.items.push({
-      icon: 'mdi-account-circle',
-      title: profile.person.name.first,
-      to: `/${profile.person.name.first.toLowerCase()}`,
-    }));
-  }
+  profiles = profiles;
+
+  getProfilePictureFromProfile = getProfilePictureFromProfile;
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/shared-styles.scss';
+
 .textheight {
   vertical-align: middle;
   height: 1rem;
@@ -88,7 +101,3 @@ export default class Default extends Vue {
   margin-bottom: 2px;
 }
 </style>
-
-<!-- <style lang="scss">
-@import '~/assets/variables.scss';
-</style> -->
