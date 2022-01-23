@@ -114,8 +114,8 @@
             <v-card-title>Projects and Jobs</v-card-title>
             <v-timeline dense class="timeline">
               <v-timeline-item
-                v-for="project in orderedProjects"
-                :key="project.title"
+                v-for="(project, index) in orderedProjects"
+                :key="index"
                 color="grey darken-1"
               >
                 <v-card class="elevation-2 pb-4" color="grey darken-3">
@@ -149,11 +149,17 @@
                     tile
                     height="auto"
                     width="auto"
-                    ><img
+                  >
+                    <!-- eslint-disable max-len -->
+                    <img
                       :src="
-                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${project.image}`)
+                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
+                          project.image
+                        }`)
                       "
-                  /></v-list-item-avatar>
+                    />
+                    <!-- eslint-enable max-len -->
+                  </v-list-item-avatar>
                   <v-card-text class="align-text-left pb-0">
                     <strong> Role</strong>
                   </v-card-text>
