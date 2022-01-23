@@ -107,7 +107,10 @@
               </v-chip>
             </v-card-text>
           </v-card>
-          <educationComponent v-if="switchEducationToLeft" :profile="profile" />
+          <educationComponent
+            v-if="switchEducationToLeft"
+            :profileProp="profile"
+          />
         </v-col>
         <v-col class="column column-projects">
           <v-card v-if="orderedProjects" class="card">
@@ -233,7 +236,7 @@
           </v-card>
         </v-col>
         <v-col v-if="!switchEducationToLeft" class="column">
-          <educationComponent :profile="profile" />
+          <educationComponent :profileProp="profile" />
         </v-col>
       </v-row>
       <v-snackbar v-model="snackbar" color="green" light centered
@@ -253,20 +256,20 @@ import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
 import {
-  proficiency, profile, project, projectType,
+  Proficiency, Profile, Project, ProjectType,
 } from '~/types/CV';
 import educationComponent from '~/components/educationComponent.vue';
 
 const prioritizeRunning = false;
 const prioritizeJobs = false;
 
-function compareProjects(a: project, b: project) {
+function compareProjects(a: Project, b: Project) {
   // prioritize jobs over side projects
   if (prioritizeJobs) {
-    if (a.type === projectType.job && b.type !== projectType.job) {
+    if (a.type === ProjectType.job && b.type !== ProjectType.job) {
       return -1;
     }
-    if (b.type === projectType.job && a.type !== projectType.job) {
+    if (b.type === ProjectType.job && a.type !== ProjectType.job) {
       return 1;
     }
   }
@@ -308,9 +311,9 @@ export default class homePage extends Vue {
     });
   }
 
-  profile!: profile;
+  profile!: Profile;
 
-  programmingProficiency = proficiency;
+  programmingProficiency = Proficiency;
 
   get orderedProjects() {
     return this.profile.projects
@@ -381,8 +384,6 @@ export default class homePage extends Vue {
     min-width: 305px;
     padding-left: 0px;
     padding-right: 0px;
-    /* &-projects {
-      } */
   }
 }
 .short-text {

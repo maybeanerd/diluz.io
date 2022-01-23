@@ -1,18 +1,18 @@
 // This file handles all profiles that the website hosts
 
 import {
-  educationTypes,
-  languageProficiency,
-  proficiency,
-  profile,
-  projectType,
+  EducationTypes,
+  LanguageProficiency,
+  Proficiency,
+  Profile,
+  ProjectType,
 } from '~/types/CV';
 
 /* TODO later on i want to build an editor for others to fill in their data,
  *  which exports them a correct json
  */
 
-const sebastian: profile = {
+const sebastian: Profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
@@ -34,43 +34,43 @@ const sebastian: profile = {
       { title: 'Fullstack Development', icon: 'code-braces' },
     ], */
     languages: [
-      { lang: 'German', proficiency: languageProficiency.native },
-      { lang: 'English', proficiency: languageProficiency.C1 },
+      { lang: 'German', proficiency: LanguageProficiency.native },
+      { lang: 'English', proficiency: LanguageProficiency.C1 },
     ],
     nationalities: [{ title: 'German' }, { title: 'US-American' }],
     basedIn: { country: 'Germany', city: 'Munich' },
   },
   skills: {
     technical: [
-      { title: 'TypeScript', proficiency: proficiency.strong },
-      { title: 'JavaScript', proficiency: proficiency.strong },
-      { title: 'Java', proficiency: proficiency.knowledgeable },
-      { title: 'HTML', proficiency: proficiency.knowledgeable },
-      { title: 'SCSS', proficiency: proficiency.knowledgeable },
-      { title: 'Node.js', proficiency: proficiency.strong },
-      { title: 'Nuxt.js', proficiency: proficiency.strong },
-      { title: 'Vue.js', proficiency: proficiency.strong },
-      { title: 'PostgreSQL', proficiency: proficiency.strong },
-      { title: 'SQL', proficiency: proficiency.knowledgeable },
-      { title: 'MongoDB', proficiency: proficiency.knowledgeable },
-      { title: 'C', proficiency: proficiency.knowledgeable },
-      { title: 'C#', proficiency: proficiency.knowledgeable },
-      { title: 'C++', proficiency: proficiency.knowledgeable },
-      { title: 'Unity', proficiency: proficiency.knowledgeable },
-      { title: 'Unreal', proficiency: proficiency.knowledgeable },
-      { title: 'AWS', proficiency: proficiency.knowledgeable },
+      { title: 'TypeScript', proficiency: Proficiency.strong },
+      { title: 'JavaScript', proficiency: Proficiency.strong },
+      { title: 'Java', proficiency: Proficiency.knowledgeable },
+      { title: 'HTML', proficiency: Proficiency.knowledgeable },
+      { title: 'SCSS', proficiency: Proficiency.knowledgeable },
+      { title: 'Node.js', proficiency: Proficiency.strong },
+      { title: 'Nuxt.js', proficiency: Proficiency.strong },
+      { title: 'Vue.js', proficiency: Proficiency.strong },
+      { title: 'PostgreSQL', proficiency: Proficiency.strong },
+      { title: 'SQL', proficiency: Proficiency.knowledgeable },
+      { title: 'MongoDB', proficiency: Proficiency.knowledgeable },
+      { title: 'C', proficiency: Proficiency.knowledgeable },
+      { title: 'C#', proficiency: Proficiency.knowledgeable },
+      { title: 'C++', proficiency: Proficiency.knowledgeable },
+      { title: 'Unity', proficiency: Proficiency.knowledgeable },
+      { title: 'Unreal', proficiency: Proficiency.knowledgeable },
+      { title: 'AWS', proficiency: Proficiency.knowledgeable },
     ],
     education: [
       {
         title: 'Bachelor of Science: Games Engineering',
-        type: educationTypes.university,
+        type: EducationTypes.university,
         source: 'Technical University of Munich ',
         date: new Date(2019, 7),
         link: 'https://tum.de',
       },
       {
         title: 'High School Degree',
-        type: educationTypes.school,
+        type: EducationTypes.school,
         source: 'Ignaz-Taschner-Gymnasium Dachau',
         date: new Date(2015, 4),
         link: 'https://itg.bayern/startseite.html',
@@ -106,7 +106,7 @@ const sebastian: profile = {
       description:
         'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
     },
     {
       title: 'diluz.io',
@@ -121,7 +121,7 @@ const sebastian: profile = {
       description:
         'My personal website as well as a collection of CVs of various other Di Luzios.',
       showInProfile: false,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
     {
       title: 'Magibot',
@@ -135,7 +135,7 @@ const sebastian: profile = {
       description:
         'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 900.000+ users in over 2000 guilds.',
       showInProfile: true,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
     {
       title: 'BLAPI - the BotListAPI',
@@ -153,7 +153,7 @@ const sebastian: profile = {
       description:
         'BLAPI - the BotListAPI. A TypeScript package to automatically post Discord bot stats to all botlists.',
       showInProfile: true,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
     {
       title: 'flint.gg',
@@ -181,7 +181,7 @@ const sebastian: profile = {
       description:
         "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
     },
     {
       title: 'easyshare',
@@ -206,7 +206,7 @@ const sebastian: profile = {
       description:
         'Getting media, such as screenshots and videos, from your Nintendo Switch or Playstation 4 to your computer, smartphone and social media is difficult. Easyshare takes care of all the difficulties and makes it easy for you.',
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
     },
     {
       title: 'ixy.js',
@@ -225,7 +225,7 @@ const sebastian: profile = {
       description:
         'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
       showInProfile: true,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
     {
       title: 'Hogwarts but better bot',
@@ -240,7 +240,7 @@ const sebastian: profile = {
         'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
 
       showInProfile: false,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
     {
       title: 'BlessFPS',
@@ -254,12 +254,12 @@ const sebastian: profile = {
       description:
         'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
       showInProfile: false,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
     },
   ],
 };
 
-const marc: profile = {
+const marc: Profile = {
   person: {
     name: { first: 'Marc', last: 'Di Luzio' },
     image:
@@ -272,40 +272,40 @@ const marc: profile = {
     // Fill this in
     // shortText: "Lorem Ipsum",
     languages: [
-      { lang: 'English', proficiency: languageProficiency.native },
+      { lang: 'English', proficiency: LanguageProficiency.native },
     ],
     nationalities: [{ title: 'British' }, { title: 'US-American' }],
     basedIn: { country: 'England', city: 'London' },
   },
   skills: {
     technical: [
-      { title: 'C#', proficiency: proficiency.strong },
-      { title: 'C++', proficiency: proficiency.strong },
-      { title: 'C', proficiency: proficiency.strong },
-      { title: 'Linux', proficiency: proficiency.strong },
-      { title: 'Python', proficiency: proficiency.strong },
-      { title: 'Bash', proficiency: proficiency.strong },
-      { title: 'Unity', proficiency: proficiency.strong },
-      { title: 'Docker', proficiency: proficiency.strong },
+      { title: 'C#', proficiency: Proficiency.strong },
+      { title: 'C++', proficiency: Proficiency.strong },
+      { title: 'C', proficiency: Proficiency.strong },
+      { title: 'Linux', proficiency: Proficiency.strong },
+      { title: 'Python', proficiency: Proficiency.strong },
+      { title: 'Bash', proficiency: Proficiency.strong },
+      { title: 'Unity', proficiency: Proficiency.strong },
+      { title: 'Docker', proficiency: Proficiency.strong },
 
-      { title: 'ASP.Net', proficiency: proficiency.knowledgeable },
-      { title: 'Golang', proficiency: proficiency.knowledgeable },
-      { title: 'SQL', proficiency: proficiency.knowledgeable },
-      { title: 'K8s', proficiency: proficiency.knowledgeable },
-      { title: 'OpenGL', proficiency: proficiency.knowledgeable },
-      { title: 'Vulkan', proficiency: proficiency.knowledgeable },
-      { title: 'Perl', proficiency: proficiency.knowledgeable },
+      { title: 'ASP.Net', proficiency: Proficiency.knowledgeable },
+      { title: 'Golang', proficiency: Proficiency.knowledgeable },
+      { title: 'SQL', proficiency: Proficiency.knowledgeable },
+      { title: 'K8s', proficiency: Proficiency.knowledgeable },
+      { title: 'OpenGL', proficiency: Proficiency.knowledgeable },
+      { title: 'Vulkan', proficiency: Proficiency.knowledgeable },
+      { title: 'Perl', proficiency: Proficiency.knowledgeable },
     ],
     education: [
       {
         title: 'MSc, Video Game Development',
-        type: educationTypes.university,
+        type: EducationTypes.university,
         source: 'Birmingham City University (Sony Scholarship)',
         date: new Date(2013, 7),
       },
       {
         title: 'Ba, Computer Visualisation and Animation',
-        type: educationTypes.university,
+        type: EducationTypes.university,
         source: 'Bournemouth University',
         date: new Date(2012, 7),
       },
@@ -323,7 +323,7 @@ const marc: profile = {
         end: 'current',
       },
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
       technologies: [
         'ASP.NET',
         'Kubernetes',
@@ -344,7 +344,7 @@ const marc: profile = {
         end: new Date(2021, 12),
       },
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
       highlights: [
         'Releasing the Linux Editor out of Preview',
       ],
@@ -365,7 +365,7 @@ const marc: profile = {
         end: 'current',
       },
       showInProfile: true,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
       technologies: [
         'Golang',
         'protobuf',
@@ -383,7 +383,7 @@ const marc: profile = {
         end: 'current',
       },
       showInProfile: true,
-      type: projectType.sideproject,
+      type: ProjectType.sideproject,
       highlights: [
         'Added as a default package shipped with all Ubuntu Desktop installs',
       ],
@@ -405,7 +405,7 @@ const marc: profile = {
         end: new Date(2015, 5),
       },
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
       highlights: [
         'Built a small team of great developers',
         'Spearheaded Vulkan games development on Linux with Mad Max',
@@ -427,7 +427,7 @@ const marc: profile = {
         end: new Date(2018, 3),
       },
       showInProfile: true,
-      type: projectType.job,
+      type: ProjectType.job,
       highlights: [
         "Shipped a single executable supporting both ROME and it's standalone expansions on Mac",
         'Worked on shipping the first Linux game Feral sold',
@@ -442,7 +442,7 @@ const marc: profile = {
   ],
 };
 
-export const profiles: Map<string, profile> = new Map([
+export const profiles: Map<string, Profile> = new Map([
   ['sebastian', sebastian],
   ['marc', marc],
 ]);

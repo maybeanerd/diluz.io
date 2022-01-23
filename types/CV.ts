@@ -1,5 +1,6 @@
-type services = { linkedin?: string; github?: string };
-export enum languageProficiency {
+type Services = { linkedin?: string; github?: string };
+
+export enum LanguageProficiency {
   native = 'Native',
   C2 = 'C2',
   C1 = 'C1',
@@ -9,17 +10,17 @@ export enum languageProficiency {
   A1 = 'A1',
 }
 
-export enum proficiency {
+export enum Proficiency {
   strong = 0x0001,
   knowledgeable = 0x1001,
 }
 
-export enum educationTypes {
+export enum EducationTypes {
   school = 'school',
   university = 'file-certificate',
 }
 
-type person = {
+type Person = {
   name: {
     first: string;
     last: 'Di Luzio'; // we could support other spellings of the name later on
@@ -30,19 +31,19 @@ type person = {
   shortText?: string;
   email?: string;
   website?: string;
-  services: services;
+  services: Services;
   interests?: Array<{ title: string; icon?: string }>; // this is unecessary
-  languages?: Array<{ lang: string; proficiency: languageProficiency }>;
+  languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
   nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };
 };
 
-export enum projectType {
+export enum ProjectType {
   sideproject,
   job,
 }
 
-export type project = {
+export type Project = {
   title: string;
   role: string;
   image?: string;
@@ -51,26 +52,26 @@ export type project = {
   url?: string;
   technologies?: Array<string>;
   timeframe: { start: Date; end: Date | 'current' };
-  subprojects?: Array<project>;
+  subprojects?: Array<Project>;
   showInProfile: boolean;
-  type: projectType;
+  type: ProjectType;
 };
 
-type skills = {
-  technical?: Array<{ title: string; proficiency: proficiency }>;
+type Skills = {
+  technical?: Array<{ title: string; proficiency: Proficiency }>;
   certificates?: Array<{ title: string; link?: string }>;
   education?: Array<{
     source: string;
     title: string;
     date?: Date;
     link?: string;
-    type: educationTypes;
+    type: EducationTypes;
   }>;
   misc?: Array<{ title: string }>;
 };
 
-export type profile = {
-  person: person;
-  projects: Array<project>;
-  skills: skills;
+export type Profile = {
+  person: Person;
+  projects: Array<Project>;
+  skills: Skills;
 };

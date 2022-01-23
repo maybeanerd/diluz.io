@@ -85,14 +85,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop } from 'nuxt-property-decorator';
+import { Component, PropSync } from 'nuxt-property-decorator';
 import Vue from 'vue';
-import { proficiency, profile } from '~/types/CV';
+import { Proficiency, Profile } from '~/types/CV';
 
 @Component({})
-export default class ImageDvDMove extends Vue {
-  @Prop({ required: true })
-  profile!: profile;
+export default class educationComponent extends Vue {
+  @PropSync('profileProp', { required: true })
+  profile!: Profile;
 
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
@@ -104,19 +104,15 @@ export default class ImageDvDMove extends Vue {
     });
   }
 
-  created() {
-    console.log('profile from educationComponent:', this.profile?.person.name);
-  }
-
   get strongProgrammingLangs() {
     return this.profile.skills.technical?.filter(
-      (l) => l.proficiency === proficiency.strong,
+      (l) => l.proficiency === Proficiency.strong,
     );
   }
 
   get knowledgeableProgrammingLangs() {
     return this.profile.skills.technical?.filter(
-      (l) => l.proficiency === proficiency.knowledgeable,
+      (l) => l.proficiency === Proficiency.knowledgeable,
     );
   }
 }
@@ -127,7 +123,6 @@ export default class ImageDvDMove extends Vue {
 @import '~/assets/shared-styles.scss';
 
 .greyed-out-text {
-  //color: $grey-darken-1;
   color: $grey-lighten-1;
 }
 
