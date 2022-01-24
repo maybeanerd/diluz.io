@@ -9,7 +9,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in navigationItems"
           :key="i"
           :to="item.to"
           router
@@ -77,7 +77,7 @@ import { getProfilePictureFromProfile } from '~/scripts/util';
 export default class Default extends Vue {
   drawer = false;
 
-  items = [
+  navigationItems = [
     {
       icon: 'mdi-home',
       title: 'Home',

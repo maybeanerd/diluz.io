@@ -1,10 +1,10 @@
 {
   "name": "diluz.io",
   "version": "0.0.1",
-  "description": "Computer Scientist. Games Engineer. Geek.",
+  "description": "A collection of Di Luzios",
   "author": "Sebastian Di Luzio",
   "engines": {
-    "node": ">=16.x"
+    "node": "16.x"
   },
   "private": true,
   "scripts": {

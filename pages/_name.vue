@@ -294,6 +294,33 @@ function compareProjects(a: Project, b: Project) {
   },
 })
 export default class homePage extends Vue {
+  head() {
+    const title = `${this.profile.person.name.first} ${this.profile.person.name.last}`;
+    return {
+      title,
+      meta: [
+        { hid: 'og-title', property: 'og:title', content: title },
+        //  { hid: }
+
+        /* <!--  Essential META Tags -->
+<meta property="og:title" content="European Travel Destinations">
+<meta property="og:type" content="article" />
+<meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
+<meta property="og:url" content="http://euro-travel-example.com/index.htm">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--  Non-Essential, But Recommended -->
+<meta property="og:description" content="Offering tour packages for individuals or groups.">
+<meta property="og:site_name" content="European Travel, Inc.">
+<meta name="twitter:image:alt" content="Alt text for image">
+
+<!--  Non-Essential, But Required for Analytics -->
+<meta property="fb:app_id" content="your_app_id" />
+<meta name="twitter:site" content="@website-username"> */
+      ],
+    };
+  }
+
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
       return 'Present';
