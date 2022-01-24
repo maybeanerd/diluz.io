@@ -425,7 +425,4 @@ const marc: Profile = {
   },
 };
 
-export const profiles: Map<string, Profile> = new Map([
-  ['sebastian', sebastian],
-  ['marc', marc],
-]);
+export const profiles: Array<Profile> = [sebastian, marc];

@@ -8,8 +8,8 @@
           >
           <v-card-text>
             <v-row
-              v-for="[name, profile] in profiles"
-              :key="name"
+              v-for="profile in profiles"
+              :key="profile.name"
               class="pb-3 pt-1"
               align="center"
               justify="center"

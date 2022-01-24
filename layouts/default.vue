@@ -23,8 +23,8 @@
           </v-list-item-content>
         </v-list-item>
         <v-list-item
-          v-for="[name, profile] in profiles"
-          :key="name"
+          v-for="profile in profiles"
+          :key="profile.name"
           :to="`/${profile.person.name.first.toLowerCase()}`"
           router
           exact

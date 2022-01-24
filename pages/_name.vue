@@ -217,7 +217,10 @@
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
-              <v-timeline-item v-if="profile.projects.final" color="grey darken-1">
+              <v-timeline-item
+                v-if="profile.projects.final"
+                color="grey darken-1"
+              >
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item-title class="headline mb-1 pt-5">
                     {{ profile.projects.final.title }}
@@ -280,7 +283,10 @@ function compareProjects(a: Project, b: Project) {
     educationComponent,
   },
   asyncData: async ({ params, redirect }) => {
-    const profile = profiles.get(params.name.toLowerCase());
+    const profile = profiles.find(
+      (searchedProfile) => params.name.toLowerCase()
+        === searchedProfile.person.name.first.toLowerCase(),
+    );
     if (profile) {
       return { profile };
     }
