@@ -72,6 +72,12 @@ type Skills = {
 
 export type Profile = {
   person: Person;
-  projects: Array<Project>;
   skills: Skills;
+  projects: {
+    list: Array<Project>;
+    final?: {
+      title: string;
+      text: string;
+    };
+  };
 };

@@ -217,16 +217,12 @@
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
-              <v-timeline-item color="grey darken-1">
+              <v-timeline-item v-if="profile.projects.final" color="grey darken-1">
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item-title class="headline mb-1 pt-5">
-                    The beginning of time
+                    {{ profile.projects.final.title }}
                   </v-list-item-title>
-                  <v-card-text>
-                    If you want to see more side projects, take a look at my
-                    GitHub. There's a lot more that just wasn't relevant enough
-                    to list here.
-                  </v-card-text>
+                  <v-card-text> {{ profile.projects.final.text }} </v-card-text>
                 </v-card>
               </v-timeline-item>
             </v-timeline>
@@ -307,7 +303,7 @@ export default class homePage extends Vue {
   programmingProficiency = Proficiency;
 
   get orderedProjects() {
-    return this.profile.projects
+    return this.profile.projects.list
       .filter((proj) => proj.showInProfile)
       .sort(compareProjects);
   }
