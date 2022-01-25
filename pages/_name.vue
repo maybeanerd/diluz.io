@@ -295,28 +295,37 @@ function compareProjects(a: Project, b: Project) {
 })
 export default class homePage extends Vue {
   head() {
-    const title = `${this.profile.person.name.first} ${this.profile.person.name.last}`;
+    const fullName = `${this.profile.person.name.first} ${this.profile.person.name.last}`;
     return {
-      title,
+      title: fullName,
       meta: [
-        { hid: 'og-title', property: 'og:title', content: title },
-        //  { hid: }
-
-        /* <!--  Essential META Tags -->
-<meta property="og:title" content="European Travel Destinations">
-<meta property="og:type" content="article" />
-<meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
-<meta property="og:url" content="http://euro-travel-example.com/index.htm">
-<meta name="twitter:card" content="summary_large_image">
-
-<!--  Non-Essential, But Recommended -->
-<meta property="og:description" content="Offering tour packages for individuals or groups.">
-<meta property="og:site_name" content="European Travel, Inc.">
-<meta name="twitter:image:alt" content="Alt text for image">
-
-<!--  Non-Essential, But Required for Analytics -->
-<meta property="fb:app_id" content="your_app_id" />
-<meta name="twitter:site" content="@website-username"> */
+        // Essential META Tags
+        { hid: 'og-title', property: 'og:title', content: fullName },
+        // { hid: 'og-type', property: 'og:type', content: 'TODO' },
+        { hid: 'og-image', property: 'og:image', content: this.profilePicture },
+        // { hid: 'og-url', property: 'og:url', content: this.profilePicture }, // do we want this?
+        {
+          hid: 'twitter-card',
+          property: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        // Non-Essential, But Recommended
+        {
+          hid: 'og-description',
+          property: 'og:description',
+          content: this.profile.person.shortText || fullName,
+        },
+        { hid: 'og-site_name', property: 'og:site_name', content: fullName },
+        {
+          hid: 'twitter-image:alt',
+          property: 'twitter:image:alt',
+          content: fullName,
+        },
+        // Non-Essential, But Required for Analytics
+        // { hid: 'fb-app_id', property: 'fb:app_id', content: 'appId' },
+        // TODO add option to link twitter
+        /* { hid: 'twitter-site', property: 'twitter:site',
+         content: '@'+this.profile.person.services.twitter }, */
       ],
     };
   }
