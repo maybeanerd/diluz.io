@@ -15,6 +15,7 @@ export function getHeaders(
   const meta = [
     // Essential META Tags
     { hid: 'og-title', property: 'og:title', content: title },
+    { hid: 'title', property: 'title', content: title },
     { hid: 'og-type', property: 'og:type', content: 'website' },
     { hid: 'og-url', property: 'og:url', content: path },
     {
@@ -25,6 +26,7 @@ export function getHeaders(
   ];
   if (image) {
     meta.push({ hid: 'og-image', property: 'og:image', content: image });
+    meta.push({ hid: 'image', property: 'image', content: image });
   }
 
   // Non-Essential, But Recommended
@@ -33,6 +35,11 @@ export function getHeaders(
       {
         hid: 'og-description',
         property: 'og:description',
+        content: description,
+      },
+      {
+        hid: 'description',
+        property: 'description',
         content: description,
       },
       { hid: 'og-site_name', property: 'og:site_name', content: title },
