@@ -4,6 +4,7 @@
       v-model="drawer"
       fixed
       app
+      temporary
     >
       <v-list>
         <v-list-item
