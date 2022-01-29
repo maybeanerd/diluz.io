@@ -19,7 +19,7 @@ export const sebastian: Profile = {
     // we are already on this page
     /* website: 'https://diluz.io', */
     shortText:
-      "I'm the creator of this website. If you're a Di Luzio yourself, reach out and we can set up your own page here as well!",
+      'Full Stack Developer, Gamer and TypeScript enthusiast.',
     // i dont want this to be in my professional CV
     /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
@@ -52,6 +52,7 @@ export const sebastian: Profile = {
       { title: 'Unity', proficiency: Proficiency.knowledgeable },
       { title: 'Unreal', proficiency: Proficiency.knowledgeable },
       { title: 'AWS', proficiency: Proficiency.knowledgeable },
+      { title: 'Docker', proficiency: Proficiency.knowledgeable },
     ],
     education: [
       {
@@ -93,10 +94,12 @@ export const sebastian: Profile = {
           'GraphQL',
           'Vue.js',
           'AWS',
+          'Docker',
         ],
-        /* highlights: [
-        'something',
-      ], */
+        highlights: [
+          'Backend built using microservice architecture',
+          'Micro-Frontends that are used across platforms within multiple clients',
+        ],
         description:
           'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
         showInProfile: true,
