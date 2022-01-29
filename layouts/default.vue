@@ -4,8 +4,6 @@
       v-model="drawer"
       fixed
       app
-      disable-resize-watcher
-      disable-route-watcher
     >
       <v-list>
         <v-list-item
@@ -54,11 +52,9 @@
         <a href="https://www.typescriptlang.org/">
           <img class="textheight" src="~assets/icons/typescript.svg" />
         </a>
-
         <a href="https://nuxtjs.org/">
           <img class="textheight" src="~assets/icons/nuxt-square.svg" />
         </a>
-
         <a href="https://vuetifyjs.com/">
           <img class="textheight" src="~assets/icons/vuetify-icon.png" />
         </a>
