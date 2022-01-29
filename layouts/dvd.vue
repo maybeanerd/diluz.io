@@ -1,23 +1,17 @@
 <template>
   <v-app>
-    <v-main><dvd /><nuxt /></v-main>
+    <v-main><dvd :active="dvdActive" /><nuxt /></v-main>
     <v-footer>
-      <span
-        >&copy;
-        <!-- {{ new Date().getFullYear() }} -->
-        Sebastian Di Luzio</span
-      >
+      <span @click="clickEasteregg">&copy; Sebastian Di Luzio</span>
       <v-spacer></v-spacer>
       <span>
         made with
         <a href="https://www.typescriptlang.org/">
           <img class="textheight" src="~assets/icons/typescript.svg" />
         </a>
-
         <a href="https://nuxtjs.org/">
           <img class="textheight" src="~assets/icons/nuxt-square.svg" />
         </a>
-
         <a href="https://vuetifyjs.com/">
           <img class="textheight" src="~assets/icons/vuetify-icon.png" />
         </a>
@@ -30,9 +24,26 @@
 import Vue from 'vue';
 import { Component } from 'nuxt-property-decorator';
 import dvd from '~/components/ImageDvDMove.vue';
+import { getHeaders } from '~/scripts/helpers/head';
 
 @Component({ components: { dvd } })
-export default class Default extends Vue {}
+export default class Default extends Vue {
+  head() {
+    return getHeaders(this.$route.fullPath);
+  }
+
+  dvdActive = false;
+
+  counter = 0;
+
+  clickEasteregg() {
+    if (this.counter < 4) {
+      this.counter++;
+    } else {
+      this.dvdActive = true;
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

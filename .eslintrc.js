@@ -5,13 +5,23 @@ module.exports = {
     '@nuxtjs',
     'eslint:recommended',
     'plugin:vue/recommended',
-    //'plugin:prettier/recommended',
-    'prettier/vue',
-    'airbnb',
+    'prettier',
+    'airbnb-base',
   ],
   rules: {
     'import/no-unresolved': 'error', //maybe we do not need this
     'import/prefer-default-export': 'off',
+    'import/extensions': ['error', 'always', {
+      ignorePackages: true,
+      pattern: {
+        "ts": "never"
+      }
+    }],
+    "vue/multi-word-component-names": ["error", {
+      "ignores": ['error'] // error page needs to be named that way
+    }],
+    'no-shadow': 'off', // let TS version handle this
+    '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     'no-extra-semi': 0,
     semi: 2,
@@ -24,7 +34,7 @@ module.exports = {
         avoidEscape: true,
       },
     ],
-    camelcase: 0, //'warn',
+    camelcase: 0,
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

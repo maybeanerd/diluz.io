@@ -8,31 +8,28 @@
               >{{ profile.person.name.first }}
               {{ profile.person.name.last }}</v-card-title
             >
-            <v-list-item-avatar v-if="profile.person.image" size="128"
-              ><img :src="profile.person.image"
+            <v-list-item-avatar v-if="profilePicture" size="128"
+              ><img :src="profilePicture"
             /></v-list-item-avatar>
-            <v-card-text v-if="profile.person.shortText" class="short-text"
-              ><!-- <v-icon left>mdi-comment</v-icon
-              > -->{{ profile.person.shortText }}</v-card-text
-            ><v-card-text v-if="profile.person.email"
-              ><!-- <v-icon left>mdi-email</v-icon
-              > --><a
+            <v-card-text v-if="profile.person.shortText" class="short-text">
+              <!-- <v-icon left>mdi-comment</v-icon> -->
+              {{ profile.person.shortText }}</v-card-text
+            ><v-card-text v-if="profile.person.email">
+              <!-- <v-icon left>mdi-email</v-icon> -->
+              <a
                 :href="'mailto: ' + profile.person.email"
                 class="link"
                 target="_blank"
                 >{{ profile.person.email }}</a
               ></v-card-text
-            ><v-card-text v-if="profile.person.website"
-              ><!-- <v-icon left>mdi-web</v-icon
-              > --><a
-                :href="profile.person.website"
-                class="link"
-                target="_blank"
-                >{{ profile.person.website }}</a
-              ></v-card-text
-            ><v-card-text v-if="profile.person.basedIn"
-              ><!-- <v-icon left>mdi-earth</v-icon
-              > -->{{
+            ><v-card-text v-if="profile.person.website">
+              <!-- <v-icon left>mdi-web</v-icon> -->
+              <a :href="profile.person.website" class="link" target="_blank">{{
+                profile.person.website
+              }}</a></v-card-text
+            ><v-card-text v-if="profile.person.basedIn">
+              <!-- <v-icon left>mdi-earth</v-icon> -->
+              {{
                 profile.person.basedIn.city
                   ? profile.person.basedIn.city + ', '
                   : ''
@@ -107,28 +104,31 @@
               </v-chip>
             </v-card-text>
           </v-card>
-          <educationComponent v-if="switchEducationToLeft" :profile="profile" />
+          <educationComponent
+            v-if="switchEducationToLeft"
+            :profileProp="profile"
+          />
         </v-col>
         <v-col class="column column-projects">
           <v-card v-if="orderedProjects" class="card">
             <v-card-title>Projects and Jobs</v-card-title>
             <v-timeline dense class="timeline">
               <v-timeline-item
-                v-for="project in orderedProjects"
-                :key="project.title"
+                v-for="(project, index) in orderedProjects"
+                :key="index"
                 color="grey darken-1"
               >
                 <v-card class="elevation-2 pb-4" color="grey darken-3">
                   <v-list-item three-line>
                     <v-list-item-content>
-                      <v-card-text class="date-line"
-                        ><!-- <v-icon left dense>
+                      <v-card-text class="date-line">
+                        <!-- <v-icon left dense>
                           mdi-{{
                             project.timeframe.end !== 'current'
                               ? 'check-circle-outline'
                               : 'motion-play-outline'
-                          }} </v-icon
-                        > -->{{ formatDate(project.timeframe.start) }} -
+                          }} </v-icon> -->
+                        {{ formatDate(project.timeframe.start) }} -
                         {{ formatDate(project.timeframe.end) }}
                       </v-card-text>
                       <v-list-item-title class="headline mb-1 pt-5">
@@ -149,11 +149,17 @@
                     tile
                     height="auto"
                     width="auto"
-                    ><img
+                  >
+                    <!-- eslint-disable max-len -->
+                    <img
                       :src="
-                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${project.image}`)
+                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
+                          project.image
+                        }`)
                       "
-                  /></v-list-item-avatar>
+                    />
+                    <!-- eslint-enable max-len -->
+                  </v-list-item-avatar>
                   <v-card-text class="align-text-left pb-0">
                     <strong> Role</strong>
                   </v-card-text>
@@ -211,31 +217,24 @@
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
-              <v-timeline-item color="grey darken-1">
+              <v-timeline-item
+                v-if="profile.projects.final"
+                color="grey darken-1"
+              >
                 <v-card class="elevation-2" color="grey darken-3">
                   <v-list-item-title class="headline mb-1 pt-5">
-                    The beginning of time
+                    {{ profile.projects.final.title }}
                   </v-list-item-title>
-                  <v-card-text>
-                    If you want to see more side projects, take a look at my
-                    GitHub. There's a lot more that just wasn't relevant enough
-                    to list here.
-                  </v-card-text>
+                  <v-card-text> {{ profile.projects.final.text }} </v-card-text>
                 </v-card>
               </v-timeline-item>
             </v-timeline>
           </v-card>
         </v-col>
         <v-col v-if="!switchEducationToLeft" class="column">
-          <educationComponent :profile="profile" />
+          <educationComponent :profileProp="profile" />
         </v-col>
       </v-row>
-      <v-snackbar v-model="snackbar" color="green" light centered
-        >{{ alert }}
-        <template v-slot:action="{ attrs }">
-          <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
-        </template></v-snackbar
-      >
     </v-container>
   </section>
 </template>
@@ -247,20 +246,22 @@ import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
 import {
-  proficiency, profile, project, projectType,
+  Proficiency, Profile, Project, ProjectType,
 } from '~/types/CV';
 import educationComponent from '~/components/educationComponent.vue';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
+import { getHeaders } from '~/scripts/helpers/head';
 
 const prioritizeRunning = false;
 const prioritizeJobs = false;
 
-function compareProjects(a: project, b: project) {
+function compareProjects(a: Project, b: Project) {
   // prioritize jobs over side projects
   if (prioritizeJobs) {
-    if (a.type === projectType.job && b.type !== projectType.job) {
+    if (a.type === ProjectType.job && b.type !== ProjectType.job) {
       return -1;
     }
-    if (b.type === projectType.job && a.type !== projectType.job) {
+    if (b.type === ProjectType.job && a.type !== ProjectType.job) {
       return 1;
     }
   }
@@ -283,14 +284,28 @@ function compareProjects(a: project, b: project) {
     educationComponent,
   },
   asyncData: async ({ params, redirect }) => {
-    const prof = profiles.get(params.name.toLowerCase());
-    if (prof) {
-      return { profile: prof };
+    const profile = profiles.find(
+      (searchedProfile) => params.name.toLowerCase()
+        === searchedProfile.person.name.first.toLowerCase(),
+    );
+    if (profile) {
+      return { profile };
     }
     return redirect('/');
   },
 })
 export default class homePage extends Vue {
+  head() {
+    const fullName = `${this.profile.person.name.first} ${this.profile.person.name.last}`;
+    const description = this.profile.person.shortText || fullName;
+    return getHeaders(
+      this.$route.fullPath,
+      fullName,
+      description,
+      this.profilePicture,
+    );
+  }
+
   formatDate(date?: Date | 'current') {
     if (!date || date === 'current') {
       return 'Present';
@@ -301,13 +316,13 @@ export default class homePage extends Vue {
     });
   }
 
-  profile!: profile;
+  profile!: Profile;
 
-  programmingProficiency = proficiency;
+  programmingProficiency = Proficiency;
 
   get orderedProjects() {
-    return this.profile.projects
-      .filter(proj => proj.showInProfile)
+    return this.profile.projects.list
+      .filter((proj) => proj.showInProfile)
       .sort(compareProjects);
   }
 
@@ -315,13 +330,9 @@ export default class homePage extends Vue {
     return this.$vuetify.breakpoint.mdAndDown;
   }
 
-  snackbar = false;
-
-  drawer = false;
-
-  group = true;
-
-  alert: string | false = false;
+  get profilePicture() {
+    return getProfilePictureFromProfile(this.profile);
+  }
 
   capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -374,8 +385,6 @@ export default class homePage extends Vue {
     min-width: 305px;
     padding-left: 0px;
     padding-right: 0px;
-    /* &-projects {
-      } */
   }
 }
 .short-text {

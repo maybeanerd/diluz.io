@@ -2,20 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <img
-          v-show="imgIndex === 0"
-          src="~assets/images/basti/emote1.png"
-        /><img
-          v-show="imgIndex === 1"
-          src="~assets/images/basti/emote2.png"
-        /><img
-          v-show="imgIndex === 2"
-          src="~assets/images/basti/emote3.png"
-        /><img v-show="imgIndex === 3" src="~assets/images/basti/emote4.png" />
-        <img v-show="imgIndex === 4" src="~assets/images/basti/pp0.png" /><img
-          v-show="imgIndex === 5"
-          src="~assets/images/basti/pp1.png"
-        />
+        <img v-show="isActive" :src="images[imgIndex]" />
       </div>
     </section>
     <slot />
@@ -23,8 +10,10 @@
 </template>
 
 <script lang="ts">
-import { Component } from 'nuxt-property-decorator';
+import { Component, PropSync } from 'nuxt-property-decorator';
 import Vue from 'vue';
+import { profiles } from '~/scripts/profiles';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
 
 function getVendor() {
   const ua = navigator.userAgent.toLowerCase();
@@ -56,13 +45,13 @@ function setStyle(element, properties) {
   element.style.cssText += css;
 }
 
+// eslint-disable-next-line no-use-before-define
 function runAnimation(context: ImageDvDMove) {
   requestAnimationFrame(runAnimation.bind(null, context));
   // setTimeout(this.init);
   context.move();
 }
 
-const imgURLs = ['emote1', 'emote2', 'emote3', 'emote4', 'pp0', 'pp1'];
 const xMin = 0;
 const yMin = 0;
 
@@ -72,20 +61,31 @@ export default class ImageDvDMove extends Vue {
   imgIndex = 0;
 
   mounted() {
+    profiles.forEach((profile) => {
+      const image = getProfilePictureFromProfile(profile);
+      if (image) {
+        this.images.push(image);
+      }
+    });
     if (process.browser) {
       this.initDvd();
     }
   }
 
+  @PropSync('active', { default: true })
+  isActive!: boolean;
+
   switchImage() {
-    let index = Math.floor(Math.random() * imgURLs.length);
+    let index = Math.floor(Math.random() * this.images.length);
 
     while (index === this.imgIndex) {
-      index = Math.floor(Math.random() * imgURLs.length);
+      index = Math.floor(Math.random() * this.images.length);
     }
 
     this.imgIndex = index;
   }
+
+  images: Array<string> = [];
 
   box: HTMLElement | null = null;
 
@@ -222,6 +222,10 @@ export default class ImageDvDMove extends Vue {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+.invisible {
+  display: none;
 }
 
 .dvd {
