@@ -12,7 +12,6 @@ const config: NuxtConfig = {
           },
           icons: 'mdi',
         },
-        /*           treeShake: true,         */
         theme: {
           dark: true,
         },
@@ -43,16 +42,6 @@ const config: NuxtConfig = {
         name: 'theme-color',
         content: '#1f222a',
       },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Computer Scientist. Games Engineer. Geek.',
-      },
-      {
-        hid: 'title',
-        name: 'title',
-        content: 'Sebastian Di Luzio',
-      },
     ],
   },
 
@@ -76,17 +65,8 @@ const config: NuxtConfig = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios'],
   // override purgecss settings: not done here
-
-  // pwa options
-  pwa: {
-    manifest: {
-      name: 'Sebastian Di Luzio',
-      lang: 'en',
-    },
-  },
-  // endof pwa options
 
   /*
    ** Build configuration

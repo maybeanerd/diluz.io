@@ -249,7 +249,8 @@ import {
   Proficiency, Profile, Project, ProjectType,
 } from '~/types/CV';
 import educationComponent from '~/components/educationComponent.vue';
-import { getProfilePictureFromProfile } from '~/scripts/util';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
+import { getHeaders } from '~/scripts/helpers/head';
 
 const prioritizeRunning = false;
 const prioritizeJobs = false;
@@ -296,38 +297,13 @@ function compareProjects(a: Project, b: Project) {
 export default class homePage extends Vue {
   head() {
     const fullName = `${this.profile.person.name.first} ${this.profile.person.name.last}`;
-    return {
-      title: fullName,
-      meta: [
-        // Essential META Tags
-        { hid: 'og-title', property: 'og:title', content: fullName },
-        // { hid: 'og-type', property: 'og:type', content: 'TODO' },
-        { hid: 'og-image', property: 'og:image', content: this.profilePicture },
-        // { hid: 'og-url', property: 'og:url', content: this.profilePicture }, // do we want this?
-        {
-          hid: 'twitter-card',
-          property: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        // Non-Essential, But Recommended
-        {
-          hid: 'og-description',
-          property: 'og:description',
-          content: this.profile.person.shortText || fullName,
-        },
-        { hid: 'og-site_name', property: 'og:site_name', content: fullName },
-        {
-          hid: 'twitter-image:alt',
-          property: 'twitter:image:alt',
-          content: fullName,
-        },
-        // Non-Essential, But Required for Analytics
-        // { hid: 'fb-app_id', property: 'fb:app_id', content: 'appId' },
-        // TODO add option to link twitter
-        /* { hid: 'twitter-site', property: 'twitter:site',
-         content: '@'+this.profile.person.services.twitter }, */
-      ],
-    };
+    const description = this.profile.person.shortText || fullName;
+    return getHeaders(
+      this.$route.fullPath,
+      fullName,
+      description,
+      this.profilePicture,
+    );
   }
 
   formatDate(date?: Date | 'current') {

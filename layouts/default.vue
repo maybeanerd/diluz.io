@@ -71,10 +71,15 @@
 import Vue from 'vue';
 import { Component } from 'nuxt-property-decorator';
 import { profiles } from '~/scripts/profiles';
-import { getProfilePictureFromProfile } from '~/scripts/util';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
+import { getHeaders } from '~/scripts/helpers/head';
 
 @Component({ components: {} })
 export default class Default extends Vue {
+  head() {
+    return getHeaders(this.$route.fullPath);
+  }
+
   drawer = false;
 
   navigationItems = [

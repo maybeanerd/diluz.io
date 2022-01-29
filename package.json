@@ -1,6 +1,6 @@
 {
   "name": "diluz.io",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A collection of Di Luzios",
   "author": "Sebastian Di Luzio",
   "engines": {
@@ -18,14 +18,13 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "^1.12.3",
     "axios": "^0.25.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "nuxt": "^2.15.8",
-    "vue": "^2.6.12",
     "nuxt-property-decorator": "^2.9.1",
-    "nuxt-purgecss": "^1.0.0"
+    "nuxt-purgecss": "^1.0.0",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "1.0.1",

@@ -13,7 +13,7 @@
 import { Component, PropSync } from 'nuxt-property-decorator';
 import Vue from 'vue';
 import { profiles } from '~/scripts/profiles';
-import { getProfilePictureFromProfile } from '~/scripts/util';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
 
 function getVendor() {
   const ua = navigator.userAgent.toLowerCase();

@@ -26,9 +26,14 @@
 import Vue from 'vue';
 import { Component } from 'nuxt-property-decorator';
 import dvd from '~/components/ImageDvDMove.vue';
+import { getHeaders } from '~/scripts/helpers/head';
 
 @Component({ components: { dvd } })
 export default class Default extends Vue {
+  head() {
+    return getHeaders(this.$route.fullPath);
+  }
+
   dvdActive = false;
 
   counter = 0;

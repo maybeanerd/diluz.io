@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { getHeaders } from '~/scripts/helpers/head';
+
 export default {
   layout: 'empty',
   props: {
@@ -29,9 +31,7 @@ export default {
   },
   head() {
     const title = this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
-    return {
-      title,
-    };
+    return getHeaders(this.$route.fullPath, title);
   },
 };
 </script>

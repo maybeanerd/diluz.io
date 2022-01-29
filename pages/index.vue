@@ -52,7 +52,7 @@ import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
-import { getProfilePictureFromProfile } from '~/scripts/util';
+import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
 
 @Component({
   components: {
@@ -62,43 +62,6 @@ import { getProfilePictureFromProfile } from '~/scripts/util';
   layout: 'dvd',
 })
 export default class homePage extends Vue {
-  head() {
-    const title = 'diluz.io';
-    const description = 'A collection of Di Luzios.';
-    return {
-      title,
-      meta: [
-        // Essential META Tags
-        { hid: 'og-title', property: 'og:title', content: title },
-        // { hid: 'og-type', property: 'og:type', content: 'TODO' },
-        // { hid: 'og-image', property: 'og:image', content: this.profilePicture },
-        // { hid: 'og-url', property: 'og:url', content: this.profilePicture }, // do we want this?
-        {
-          hid: 'twitter-card',
-          property: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        // Non-Essential, But Recommended
-        {
-          hid: 'og-description',
-          property: 'og:description',
-          content: description,
-        },
-        { hid: 'og-site_name', property: 'og:site_name', content: title },
-        {
-          hid: 'twitter-image:alt',
-          property: 'twitter:image:alt',
-          content: title,
-        },
-        // Non-Essential, But Required for Analytics
-        // { hid: 'fb-app_id', property: 'fb:app_id', content: 'appId' },
-        // TODO add option to link twitter
-        /* { hid: 'twitter-site', property: 'twitter:site',
-         content: '@'+this.profile.person.services.twitter }, */
-      ],
-    };
-  }
-
   gotoGithub() {
     window.open('https://github.com/T0TProduction/diluz.io', '_blank');
   }
