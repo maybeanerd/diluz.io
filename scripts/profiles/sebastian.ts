@@ -18,8 +18,7 @@ export const sebastian: Profile = {
     email: 'sebastian@diluz.io',
     // we are already on this page
     /* website: 'https://diluz.io', */
-    shortText:
-      'Full Stack Developer, Gamer and TypeScript enthusiast.',
+    shortText: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
     // i dont want this to be in my professional CV
     /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
@@ -143,6 +142,7 @@ export const sebastian: Profile = {
         title: 'BLAPI - the BotListAPI',
         role: 'Creator and maintainer',
         url: 'https://github.com/botblock/BLAPI',
+        image: 'botblock.png',
         timeframe: {
           start: new Date(2018, 7),
           end: 'current',
