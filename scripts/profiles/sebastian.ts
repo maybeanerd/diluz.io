@@ -18,8 +18,7 @@ export const sebastian: Profile = {
     email: 'sebastian@diluz.io',
     // we are already on this page
     /* website: 'https://diluz.io', */
-    shortText:
-      'Full Stack Developer, Gamer and TypeScript enthusiast.',
+    shortText: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
     // i dont want this to be in my professional CV
     /* interests: [
       { title: 'Gaming', icon: 'gamepad-square' },
@@ -83,6 +82,7 @@ export const sebastian: Profile = {
         title: 'IU International University',
         role: 'Full Stack Developer',
         url: 'https://www.iu.org',
+        image: 'iu.png',
         timeframe: {
           start: new Date(2021, 9),
           end: 'current',
@@ -127,6 +127,7 @@ export const sebastian: Profile = {
         title: 'Magibot',
         role: 'Creator and maintainer',
         url: 'https://bots.ondiscord.xyz/bots/384820232583249921',
+        image: 'magibot.png',
         timeframe: {
           start: new Date(2017, 6),
           end: 'current',
@@ -141,6 +142,7 @@ export const sebastian: Profile = {
         title: 'BLAPI - the BotListAPI',
         role: 'Creator and maintainer',
         url: 'https://github.com/botblock/BLAPI',
+        image: 'botblock.png',
         timeframe: {
           start: new Date(2018, 7),
           end: 'current',
@@ -159,6 +161,7 @@ export const sebastian: Profile = {
         title: 'flint.gg',
         role: 'Co-Founder and CTO',
         url: 'https://flint.gg',
+        image: 'flint.png',
         timeframe: {
           start: new Date(2019, 7),
           end: new Date(2021, 6),
@@ -187,6 +190,7 @@ export const sebastian: Profile = {
         title: 'easyshare',
         role: 'Creator and maintainer',
         url: 'https://github.com/flint-gg/easyshare',
+        image: 'easyshare.png',
         timeframe: {
           start: new Date(2020, 5),
           end: new Date(2021, 6),
