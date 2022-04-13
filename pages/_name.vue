@@ -411,7 +411,10 @@ export default class homePage extends Vue {
 }
 
 .project-image {
-  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   min-width: 128px;
   max-width: 100%;
   max-height: 256px;
