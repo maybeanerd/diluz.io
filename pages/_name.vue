@@ -9,7 +9,7 @@
               {{ profile.person.name.last }}</v-card-title
             >
             <v-list-item-avatar v-if="profilePicture" size="128"
-              ><img :src="profilePicture"
+              ><img class="contained-image" :src="profilePicture"
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
@@ -144,22 +144,17 @@
                       >
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item-avatar
+                  <!-- eslint-disable max-len -->
+                  <img
                     v-if="project.image"
-                    tile
-                    height="auto"
-                    width="auto"
-                  >
-                    <!-- eslint-disable max-len -->
-                    <img
-                      :src="
-                        require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
-                          project.image
-                        }`)
-                      "
-                    />
-                    <!-- eslint-enable max-len -->
-                  </v-list-item-avatar>
+                    class="project-image contained-image"
+                    :src="
+                      require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
+                        project.image
+                      }`)
+                    "
+                  />
+                  <!-- eslint-enable max-len -->
                   <v-card-text class="align-text-left pb-0">
                     <strong> Role</strong>
                   </v-card-text>
@@ -409,6 +404,17 @@ export default class homePage extends Vue {
 .project-url {
   font-size: 12px;
   color: $grey-lighten-1;
+}
+
+.contained-image {
+  object-fit: contain;
+}
+
+.project-image {
+  padding: 0.5rem;
+  min-width: 128px;
+  max-width: 100%;
+  max-height: 256px;
 }
 </style>
 
