@@ -33,7 +33,7 @@
           <v-row justify="center">
             <nuxt-img
               class="service"
-              src="/services/GitHub/GitHub-Mark-Light-120px-plus.png"
+              src="/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"
             />
           </v-row>

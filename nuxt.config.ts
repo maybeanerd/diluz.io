@@ -54,12 +54,7 @@ const config: NuxtConfig = {
   },
 
   // customize nuxt/image
-  image: {
-    image: {
-      dir: 'assets/images',
-    },
-    provider: 'static',
-  },
+  image: {},
 
   /*
    ** Global CSS

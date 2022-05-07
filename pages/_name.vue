@@ -148,10 +148,9 @@
                   <nuxt-img
                     v-if="project.image"
                     class="project-image contained-image"
-                    :src="
-                      require(`~/assets/images/profile/${profile.person.name.first.toLowerCase()}/${
+                    :src="`/images/profile/${profile.person.name.first.toLowerCase()}/${
                         project.image
-                      }`)
+                      }`
                     "
                   />
                   <!-- eslint-enable max-len -->
