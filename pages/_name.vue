@@ -9,7 +9,7 @@
               {{ profile.person.name.last }}</v-card-title
             >
             <v-list-item-avatar v-if="profilePicture" size="128"
-              ><nuxt-img :src="profilePicture" preset="avatar"
+              ><nuxt-img :src="profilePicture" preset="avatar" preload
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
