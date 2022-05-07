@@ -19,7 +19,7 @@
                 class="unstyled-link"
               >
                 <v-btn
-                  ><img
+                  ><nuxt-img
                     class="profileIcon mr-2"
                     :src="getProfilePictureFromProfile(profile)"
                   />
@@ -31,9 +31,9 @@
         </v-card>
         <v-card class="services">
           <v-row justify="center">
-            <img
+            <nuxt-img
               class="service"
-              src="~assets/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
+              src="/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"
             />
           </v-row>

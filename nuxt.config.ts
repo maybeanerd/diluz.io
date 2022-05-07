@@ -17,6 +17,7 @@ const config: NuxtConfig = {
         },
       },
     ],
+    '@nuxt/image',
   ],
   typescript: {
     typeCheck: true,
@@ -50,6 +51,14 @@ const config: NuxtConfig = {
    */
   loading: {
     color: 'white',
+  },
+
+  // customize nuxt/image
+  image: {
+    image: {
+      dir: 'assets/images',
+    },
+    provider: 'static',
   },
 
   /*

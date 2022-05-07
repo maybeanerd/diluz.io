@@ -7,13 +7,13 @@
       <span>
         made with
         <a href="https://www.typescriptlang.org/">
-          <img class="textheight" src="~assets/icons/typescript.svg" />
+          <nuxt-img class="textheight" src="/icons/typescript.svg" />
         </a>
         <a href="https://nuxtjs.org/">
-          <img class="textheight" src="~assets/icons/nuxt-square.svg" />
+          <nuxt-img class="textheight" src="/icons/nuxt-square.svg" />
         </a>
         <a href="https://vuetifyjs.com/">
-          <img class="textheight" src="~assets/icons/vuetify-icon.png" />
+          <nuxt-img class="textheight" src="/icons/vuetify-icon.png" />
         </a>
       </span>
     </v-footer>

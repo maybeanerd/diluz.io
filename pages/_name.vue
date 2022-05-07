@@ -9,7 +9,7 @@
               {{ profile.person.name.last }}</v-card-title
             >
             <v-list-item-avatar v-if="profilePicture" size="128"
-              ><img class="contained-image" :src="profilePicture"
+              ><nuxt-img class="contained-image" :src="profilePicture"
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
@@ -145,11 +145,11 @@
                     </v-list-item-content>
                   </v-list-item>
                   <!-- eslint-disable max-len -->
-                  <img
+                  <nuxt-img
                     v-if="project.image"
                     class="project-image contained-image"
                     :src="
-                      require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
+                      require(`~/assets/images/profile/${profile.person.name.first.toLowerCase()}/${
                         project.image
                       }`)
                     "

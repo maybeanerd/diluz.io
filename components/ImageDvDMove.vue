@@ -2,7 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <img v-show="isActive" :src="images[imgIndex]" />
+        <nuxt-img v-show="isActive" :src="images[imgIndex]" />
       </div>
     </section>
     <slot />
@@ -56,17 +56,21 @@ const xMin = 0;
 const yMin = 0;
 
 const animationSpeed = 3;
+
+const images: Array<string> = [];
+
+profiles.forEach((profile) => {
+  const image = getProfilePictureFromProfile(profile);
+  if (image) {
+    images.push(image);
+  }
+});
+
 @Component({})
 export default class ImageDvDMove extends Vue {
   imgIndex = 0;
 
   mounted() {
-    profiles.forEach((profile) => {
-      const image = getProfilePictureFromProfile(profile);
-      if (image) {
-        this.images.push(image);
-      }
-    });
     if (process.browser) {
       this.initDvd();
     }
@@ -76,16 +80,18 @@ export default class ImageDvDMove extends Vue {
   isActive!: boolean;
 
   switchImage() {
-    let index = Math.floor(Math.random() * this.images.length);
+    let index = Math.floor(Math.random() * images.length);
 
     while (index === this.imgIndex) {
-      index = Math.floor(Math.random() * this.images.length);
+      index = Math.floor(Math.random() * images.length);
     }
 
     this.imgIndex = index;
   }
 
-  images: Array<string> = [];
+  get images() {
+    return images;
+  }
 
   box: HTMLElement | null = null;
 
