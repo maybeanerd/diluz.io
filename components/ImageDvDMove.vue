@@ -2,7 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <nuxt-img v-show="isActive" :src="images[imgIndex]" />
+        <nuxt-img v-show="isActive" :src="images[imgIndex]" preset="dvd" />
       </div>
     </section>
     <slot />

@@ -1,11 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-      temporary
-    >
+    <v-navigation-drawer v-model="drawer" fixed app temporary>
       <v-list>
         <v-list-item
           v-for="(item, i) in navigationItems"
@@ -30,6 +25,7 @@
         >
           <v-list-item-action>
             <nuxt-img
+              preset="miniAvatar"
               class="profileIcon"
               :src="getProfilePictureFromProfile(profile)"
             />
@@ -51,13 +47,25 @@
       <span>
         made with
         <a href="https://www.typescriptlang.org/">
-          <nuxt-img class="textheight" src="/icons/typescript.svg" />
+          <nuxt-img
+            class="textheight"
+            src="/icons/typescript.svg"
+            preset="techIcon"
+          />
         </a>
         <a href="https://nuxtjs.org/">
-          <nuxt-img class="textheight" src="/icons/nuxt-square.svg" />
+          <nuxt-img
+            class="textheight"
+            src="/icons/nuxt-square.svg"
+            preset="techIcon"
+          />
         </a>
         <a href="https://vuetifyjs.com/">
-          <nuxt-img class="textheight" src="/icons/vuetify-icon.png" />
+          <nuxt-img
+            class="textheight"
+            src="/icons/vuetify-icon.png"
+            preset="techIcon"
+          />
         </a>
       </span>
     </v-footer>

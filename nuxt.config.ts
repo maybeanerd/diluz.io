@@ -54,7 +54,58 @@ const config: NuxtConfig = {
   },
 
   // customize nuxt/image
-  image: {},
+  image: {
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 128,
+          height: 128,
+          fit: 'inside',
+        },
+      },
+      miniAvatar: {
+        modifiers: {
+          format: 'webp',
+          width: 26,
+          height: 26,
+          fit: 'inside',
+        },
+      },
+      project: {
+        modifiers: {
+          format: 'webp',
+          width: 432,
+          height: 256,
+          fit: 'inside',
+        },
+      },
+      dvd: {
+        modifiers: {
+          format: 'webp',
+          width: 200,
+          height: 200,
+          fit: 'inside',
+        },
+      },
+      techIcon: {
+        modifiers: {
+          format: 'webp',
+          width: 16,
+          height: 16,
+          fit: 'inside',
+        },
+      },
+      githubRepo: {
+        modifiers: {
+          format: 'webp',
+          width: 96,
+          height: 96,
+          fit: 'inside',
+        },
+      },
+    },
+  },
 
   /*
    ** Global CSS
