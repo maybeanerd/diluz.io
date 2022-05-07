@@ -149,6 +149,7 @@
                     v-if="project.image"
                     class="project-image"
                     preset="project"
+                    loading="lazy"
                     :src="`/images/profile/${profile.person.name.first.toLowerCase()}/${
                       project.image
                     }`"
