@@ -2,7 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <nuxt-img v-show="isActive" :src="images[imgIndex]" preset="dvd" />
+        <nuxt-img v-show="isActive" :src="images[imgIndex]" preset="avatar" />
       </div>
     </section>
     <slot />
@@ -239,8 +239,8 @@ export default class ImageDvDMove extends Vue {
   position: absolute;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 128px;
+  height: 128px;
   > img {
     width: 100%;
     height: 100%;

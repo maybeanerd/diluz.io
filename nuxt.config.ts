@@ -64,14 +64,6 @@ const config: NuxtConfig = {
           fit: 'inside',
         },
       },
-      miniAvatar: {
-        modifiers: {
-          format: 'webp',
-          width: 26,
-          height: 26,
-          fit: 'inside',
-        },
-      },
       project: {
         modifiers: {
           format: 'webp',
@@ -80,27 +72,11 @@ const config: NuxtConfig = {
           fit: 'inside',
         },
       },
-      dvd: {
+      footerIcon: {
         modifiers: {
           format: 'webp',
-          width: 200,
-          height: 200,
-          fit: 'inside',
-        },
-      },
-      techIcon: {
-        modifiers: {
-          format: 'webp',
-          width: 16,
-          height: 16,
-          fit: 'inside',
-        },
-      },
-      githubRepo: {
-        modifiers: {
-          format: 'webp',
-          width: 96,
-          height: 96,
+          width: 64,
+          height: 64,
           fit: 'inside',
         },
       },

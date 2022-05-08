@@ -20,7 +20,7 @@
               >
                 <v-btn
                   ><nuxt-img
-                    preset="miniAvatar"
+                    preset="avatar"
                     class="profileIcon mr-2"
                     :src="getProfilePictureFromProfile(profile)"
                   />
@@ -33,7 +33,7 @@
         <v-card class="services">
           <v-row justify="center">
             <nuxt-img
-              preset="githubRepo"
+              preset="avatar"
               class="service"
               src="/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"

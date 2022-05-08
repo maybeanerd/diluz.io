@@ -25,7 +25,7 @@
         >
           <v-list-item-action>
             <nuxt-img
-              preset="miniAvatar"
+              preset="avatar"
               class="profileIcon"
               :src="getProfilePictureFromProfile(profile)"
             />
@@ -50,21 +50,21 @@
           <nuxt-img
             class="textheight"
             src="/icons/typescript.svg"
-            preset="techIcon"
+            preset="footerIcon"
           />
         </a>
         <a href="https://nuxtjs.org/">
           <nuxt-img
             class="textheight"
             src="/icons/nuxt-square.svg"
-            preset="techIcon"
+            preset="footerIcon"
           />
         </a>
         <a href="https://vuetifyjs.com/">
           <nuxt-img
             class="textheight"
             src="/icons/vuetify-icon.png"
-            preset="techIcon"
+            preset="footerIcon"
           />
         </a>
       </span>
