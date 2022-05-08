@@ -17,6 +17,7 @@ const config: NuxtConfig = {
         },
       },
     ],
+    '@nuxt/image',
   ],
   typescript: {
     typeCheck: true,
@@ -50,6 +51,36 @@ const config: NuxtConfig = {
    */
   loading: {
     color: 'white',
+  },
+
+  // customize nuxt/image
+  image: {
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 256,
+          height: 256,
+          fit: 'inside',
+        },
+      },
+      project: {
+        modifiers: {
+          format: 'webp',
+          width: 432,
+          height: 256,
+          fit: 'inside',
+        },
+      },
+      footerIcon: {
+        modifiers: {
+          format: 'webp',
+          width: 64,
+          height: 64,
+          fit: 'inside',
+        },
+      },
+    },
   },
 
   /*

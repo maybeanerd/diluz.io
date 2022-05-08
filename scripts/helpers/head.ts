@@ -25,6 +25,7 @@ export function getHeaders(
     },
   ];
   if (image) {
+    // TODO somehow get the nuxt/image generated URL here instead of the full size image?
     meta.push({ hid: 'og-image', property: 'og:image', content: image });
     meta.push({ hid: 'image', property: 'image', content: image });
   }

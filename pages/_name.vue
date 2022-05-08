@@ -9,7 +9,7 @@
               {{ profile.person.name.last }}</v-card-title
             >
             <v-list-item-avatar v-if="profilePicture" size="128"
-              ><img class="contained-image" :src="profilePicture"
+              ><nuxt-img :src="profilePicture" preset="avatar" preload
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
@@ -145,14 +145,14 @@
                     </v-list-item-content>
                   </v-list-item>
                   <!-- eslint-disable max-len -->
-                  <img
+                  <nuxt-img
                     v-if="project.image"
-                    class="project-image contained-image"
-                    :src="
-                      require(`../assets/images/profile/${profile.person.name.first.toLowerCase()}/${
-                        project.image
-                      }`)
-                    "
+                    class="project-image"
+                    preset="project"
+                    loading="lazy"
+                    :src="`/images/profile/${profile.person.name.first.toLowerCase()}/${
+                      project.image
+                    }`"
                   />
                   <!-- eslint-enable max-len -->
                   <v-card-text class="align-text-left pb-0">
@@ -237,8 +237,6 @@
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator';
 import Vue from 'vue';
-import Logo from '~/components/Logo.vue';
-import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
 import {
   Proficiency, Profile, Project, ProjectType,
@@ -274,8 +272,6 @@ function compareProjects(a: Project, b: Project) {
 
 @Component({
   components: {
-    Logo,
-    VuetifyLogo,
     educationComponent,
   },
   asyncData: async ({ params, redirect }) => {
@@ -406,18 +402,12 @@ export default class homePage extends Vue {
   color: $grey-lighten-1;
 }
 
-.contained-image {
-  object-fit: contain;
-}
-
 .project-image {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  min-width: 128px;
   max-width: 100%;
-  max-height: 256px;
 }
 </style>
 
