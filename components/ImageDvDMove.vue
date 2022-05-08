@@ -2,7 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <nuxt-img v-show="isActive" :src="images[imgIndex]" preset="avatar" />
+        <nuxt-img v-if="isActive" :src="images[imgIndex]" preset="avatar" />
       </div>
     </section>
     <slot />
@@ -43,13 +43,6 @@ function setStyle(element, properties) {
   });
   // eslint-disable-next-line no-param-reassign
   element.style.cssText += css;
-}
-
-// eslint-disable-next-line no-use-before-define
-function runAnimation(context: ImageDvDMove) {
-  requestAnimationFrame(runAnimation.bind(null, context));
-  // setTimeout(this.init);
-  context.move();
 }
 
 const xMin = 0;
@@ -199,6 +192,13 @@ export default class ImageDvDMove extends Vue {
     });
   }
 
+  runAnimation() {
+    requestAnimationFrame(this.runAnimation);
+    if (this.isActive) {
+      this.move();
+    }
+  }
+
   initDvd() {
     // reset constraints
     this.box = document.getElementById('dvd')!;
@@ -216,7 +216,7 @@ export default class ImageDvDMove extends Vue {
       false,
     );
 
-    runAnimation(this);
+    this.runAnimation();
   }
 }
 </script>

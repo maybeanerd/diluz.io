@@ -59,8 +59,8 @@ const config: NuxtConfig = {
       avatar: {
         modifiers: {
           format: 'webp',
-          width: 128,
-          height: 128,
+          width: 256,
+          height: 256,
           fit: 'inside',
         },
       },
