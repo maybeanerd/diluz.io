@@ -27,6 +27,7 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
+    "@nuxt/image": "0.6.2",
     "@nuxtjs/eslint-config": "1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",

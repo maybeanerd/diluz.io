@@ -19,7 +19,8 @@
                 class="unstyled-link"
               >
                 <v-btn
-                  ><img
+                  ><nuxt-img
+                    preset="avatar"
                     class="profileIcon mr-2"
                     :src="getProfilePictureFromProfile(profile)"
                   />
@@ -31,9 +32,10 @@
         </v-card>
         <v-card class="services">
           <v-row justify="center">
-            <img
+            <nuxt-img
+              preset="avatar"
               class="service"
-              src="~assets/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
+              src="/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
               @click="gotoGithub"
             />
           </v-row>
@@ -49,16 +51,10 @@
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator';
 import Vue from 'vue';
-import Logo from '~/components/Logo.vue';
-import VuetifyLogo from '~/components/VuetifyLogo.vue';
 import { profiles } from '~/scripts/profiles';
 import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
 
 @Component({
-  components: {
-    Logo,
-    VuetifyLogo,
-  },
   layout: 'dvd',
 })
 export default class homePage extends Vue {

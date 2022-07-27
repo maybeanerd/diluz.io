@@ -2,7 +2,7 @@
   <section>
     <section class="fill">
       <div id="dvd" class="dvd">
-        <img v-show="isActive" :src="images[imgIndex]" />
+        <nuxt-img v-if="isActive" :src="images[imgIndex]" preset="avatar" />
       </div>
     </section>
     <slot />
@@ -45,28 +45,25 @@ function setStyle(element, properties) {
   element.style.cssText += css;
 }
 
-// eslint-disable-next-line no-use-before-define
-function runAnimation(context: ImageDvDMove) {
-  requestAnimationFrame(runAnimation.bind(null, context));
-  // setTimeout(this.init);
-  context.move();
-}
-
 const xMin = 0;
 const yMin = 0;
 
 const animationSpeed = 3;
+
+const images: Array<string> = [];
+
+profiles.forEach((profile) => {
+  const image = getProfilePictureFromProfile(profile);
+  if (image) {
+    images.push(image);
+  }
+});
+
 @Component({})
 export default class ImageDvDMove extends Vue {
   imgIndex = 0;
 
   mounted() {
-    profiles.forEach((profile) => {
-      const image = getProfilePictureFromProfile(profile);
-      if (image) {
-        this.images.push(image);
-      }
-    });
     if (process.browser) {
       this.initDvd();
     }
@@ -76,16 +73,18 @@ export default class ImageDvDMove extends Vue {
   isActive!: boolean;
 
   switchImage() {
-    let index = Math.floor(Math.random() * this.images.length);
+    let index = Math.floor(Math.random() * images.length);
 
     while (index === this.imgIndex) {
-      index = Math.floor(Math.random() * this.images.length);
+      index = Math.floor(Math.random() * images.length);
     }
 
     this.imgIndex = index;
   }
 
-  images: Array<string> = [];
+  get images() {
+    return images;
+  }
 
   box: HTMLElement | null = null;
 
@@ -193,6 +192,13 @@ export default class ImageDvDMove extends Vue {
     });
   }
 
+  runAnimation() {
+    requestAnimationFrame(this.runAnimation);
+    if (this.isActive) {
+      this.move();
+    }
+  }
+
   initDvd() {
     // reset constraints
     this.box = document.getElementById('dvd')!;
@@ -210,7 +216,7 @@ export default class ImageDvDMove extends Vue {
       false,
     );
 
-    runAnimation(this);
+    this.runAnimation();
   }
 }
 </script>
@@ -233,8 +239,8 @@ export default class ImageDvDMove extends Vue {
   position: absolute;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 128px;
+  height: 128px;
   > img {
     width: 100%;
     height: 100%;

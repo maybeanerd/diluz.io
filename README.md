@@ -8,7 +8,7 @@ This project is supposed to be a collection of subdomains for Di Luzios.
 
 ``` bash
 # install dependencies
-$ npm i
+$ npm ci
 
 # serve with hot reload at localhost:3000
 $ npm run dev
