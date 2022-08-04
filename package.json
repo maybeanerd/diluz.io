@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "0.7.1",
-    "@nuxtjs/eslint-config": "1.0.1",
+    "@nuxtjs/eslint-config": "1.1.2",
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@typescript-eslint/parser": "5.10.0",
     "eslint-config-prettier": "8.3.0",
