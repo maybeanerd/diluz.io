@@ -29,16 +29,16 @@
   "devDependencies": {
     "@nuxt/image": "0.7.1",
     "@nuxtjs/eslint-config": "1.1.2",
-    "@typescript-eslint/eslint-plugin": "5.36.1",
-    "@typescript-eslint/parser": "5.36.1",
+    "@typescript-eslint/eslint-plugin": "5.38.0",
+    "@typescript-eslint/parser": "5.38.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "16.0.3",
-    "eslint-import-resolver-typescript": "3.5.0",
+    "eslint-import-resolver-typescript": "3.5.1",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-standard": "5.0.0",
     "eslint-plugin-vue": "8.7.1",
     "prettier": "2.7.1",
-    "typescript": "4.8.2"
+    "typescript": "4.8.3"
   },
   "heroku-run-build-script": true
 }
