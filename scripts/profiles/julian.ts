@@ -3,7 +3,7 @@ import {
   LanguageProficiency,
   Proficiency,
   Profile,
-  ProjectType,
+  // ProjectType,
 } from '~/types/CV';
 
 export const julian: Profile = {
@@ -51,10 +51,10 @@ export const julian: Profile = {
     ],
   },
   projects: {
-    list: [    ],
+    list: [],
     final: {
       title: 'The beginning of time',
-      text: "If you want to see some side projects, take a look at my GitHub.",
+      text: 'If you want to see some side projects, take a look at my GitHub.',
     },
   },
 };
