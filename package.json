@@ -33,7 +33,7 @@
     "@typescript-eslint/parser": "5.47.1",
     "eslint-config-prettier": "8.6.0",
     "eslint-config-standard": "16.0.3",
-    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-import-resolver-typescript": "3.5.3",
     "eslint-plugin-import": "2.27.4",
     "eslint-plugin-standard": "5.0.0",
     "eslint-plugin-vue": "8.7.1",
