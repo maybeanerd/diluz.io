@@ -15,7 +15,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/types": "2.15.8",
+    "@nuxt/types": "2.16.0",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/vuetify": "1.12.3",
