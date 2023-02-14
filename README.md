@@ -13,10 +13,13 @@ $ npm ci
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and deploy
-$ npm run publish
+# run tests
+$ npm run test
 
-# generate static project without deploy
+# create snapshots to base tests off
+$ npm run test:create
+
+# generate static /dist
 $ npm run generate
 ```
 
