@@ -10,7 +10,7 @@ module.exports = {
     'airbnb-base',
   ],
   rules: {
-    'import/no-unresolved': 'error', //maybe we do not need this
+    'import/no-unresolved': 'error', // maybe we do not need this
     'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
