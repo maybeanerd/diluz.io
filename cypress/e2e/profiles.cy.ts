@@ -1,12 +1,17 @@
 import { profiles } from '~/scripts/profiles';
+import { viewPortSizes } from '~/cypress/support/util';
 
 describe('Profiles', () => {
   profiles.forEach((profile) => {
-    const firstName = profile.person.name.first;
-    it(`should display the profile page correctly for ${firstName}`, () => {
-      cy.visit(`/${firstName}`);
-      cy.compareSnapshot(firstName, 0.0);
-      cy.compareSnapshot(firstName, 0.1);
+    viewPortSizes.forEach((viewPortSize) => {
+      const firstName = profile.person.name.first;
+      it(`should display the profile page correctly for ${firstName} (${viewPortSize})`, () => {
+        cy.viewport(viewPortSize);
+
+        cy.visit(`/${firstName}`);
+
+        cy.compareSnapshot(`${firstName} (${viewPortSize})`, 0.1);
+      });
     });
   });
 });

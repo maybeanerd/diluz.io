@@ -1,9 +1,14 @@
-describe('Main', () => {
-  it('should display the main page correctly', () => {
-    cy.visit('/');
+import { viewPortSizes } from '~/cypress/support/util';
 
-    cy.compareSnapshot('main', 0.0);
-    cy.compareSnapshot('main', 0.1);
+describe('Main', () => {
+  viewPortSizes.forEach((viewPortSize) => {
+    it(`should display the main page correctly (${viewPortSize})`, () => {
+      cy.viewport(viewPortSize);
+
+      cy.visit('/');
+
+      cy.compareSnapshot(viewPortSize, 0.1);
+    });
   });
 });
 
