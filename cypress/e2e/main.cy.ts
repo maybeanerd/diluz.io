@@ -1,4 +1,4 @@
-describe('Login', () => {
+describe('Main', () => {
   it('should display the main page correctly', () => {
     cy.visit('/');
 
