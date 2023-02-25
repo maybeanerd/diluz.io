@@ -13,6 +13,11 @@ export function takeComparisonSnapshots(page: string = '') {
 
     cy.visit(`/${page}`);
 
-    cy.compareSnapshot(`${page ? `${page}-` : ''}${viewPort}`, 0.1);
+    cy.compareSnapshot(`${page ? `${page}-` : ''}${viewPort}`, {
+      errorThreshold: 0.1,
+      onAfterScreenshot: (_, props) => {
+        console.log('path', props.path);
+      },
+    });
   });
 }
