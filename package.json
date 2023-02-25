@@ -14,11 +14,12 @@
     "lint:fix": "eslint --ext .ts,.js,.vue --fix .",
     "build": "nuxt build",
     "generate": "nuxt generate",
+    "start": "nuxt start",
     "test": "cypress run",
     "test:open": "cypress open --browser chrome",
     "test:create:base": "cypress run --env type=base",
-    "test:create": "start-server-and-test dev http://localhost:3000 test:create:base",
-    "test:ci": "start-server-and-test dev http://localhost:3000 test"
+    "test:create": "start-server-and-test start http://localhost:3000 test:create:base",
+    "test:ci": "start-server-and-test start http://localhost:3000 test"
   },
   "dependencies": {
     "@nuxt/types": "2.16.0",

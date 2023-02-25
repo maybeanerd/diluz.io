@@ -90,6 +90,6 @@ sw.*
 *.swp
 
 # Cypress videos and screenshots
-/cypress/screenshots
 /cypress/videos
+/cypress/snapshots/actual
 /cypress/snapshots/diff

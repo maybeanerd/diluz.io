@@ -2,11 +2,11 @@ import { defineConfig } from 'cypress';
 import getCompareSnapshotsPlugin from 'cypress-visual-regression/dist/plugin';
 
 export default defineConfig({
+  screenshotsFolder: './cypress/snapshots/actual',
+  video: false,
+  trashAssetsBeforeRuns: true,
   env: {
-    screenshotsFolder: './cypress/snapshots/actual',
-    SNAPSHOT_BASE_DIRECTORY: './cypress/snapshots/base',
-    trashAssetsBeforeRuns: true,
-    video: false,
+    // SNAPSHOT_BASE_DIRECTORY: './cypress/snapshots/base',
     type: 'actual',
   },
   e2e: {
