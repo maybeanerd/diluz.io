@@ -16,11 +16,6 @@ $ npm run dev
 # run tests
 $ npm run test
 
-# create snapshots to base tests off
-$ npm run test:create
-
 # generate static /dist
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
