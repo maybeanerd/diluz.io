@@ -31,16 +31,19 @@
           </v-card-text>
         </v-card>
         <v-card class="services">
-          <v-row justify="center">
-            <nuxt-img
-              preset="avatar"
-              class="service"
-              src="/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
-              @click="gotoGithub"
-            />
+          <v-row justify="center"
+            ><a :href="gitHubUrl">
+              <nuxt-img
+                preset="avatar"
+                class="service"
+                src="/images/services/GitHub/GitHub-Mark-Light-120px-plus.png"
+              />
+            </a>
           </v-row>
-          <v-card-title class="justify-center pointer" @click="gotoGithub"
-            >View the sourcecode on GitHub</v-card-title
+          <v-card-title class="justify-center pointer"
+            ><a :href="gitHubUrl" class="unstyled-link"
+              >View the sourcecode on GitHub</a
+            ></v-card-title
           >
         </v-card>
       </v-col>
@@ -58,9 +61,7 @@ import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
   layout: 'dvd',
 })
 export default class homePage extends Vue {
-  gotoGithub() {
-    window.open('https://github.com/T0TProduction/diluz.io', '_blank');
-  }
+  gitHubUrl = 'https://github.com/T0TProduction/diluz.io';
 
   getProfilePictureFromProfile = getProfilePictureFromProfile;
 
@@ -73,6 +74,7 @@ export default class homePage extends Vue {
 
 .unstyled-link {
   text-decoration: none;
+  color: unset;
 }
 .container {
   background-color: none;
