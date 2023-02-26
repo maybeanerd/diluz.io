@@ -37,7 +37,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon data-testid="navbar-hamburger" @click.stop="drawer = !drawer" />
       <v-spacer />
     </v-app-bar>
     <v-main><nuxt /></v-main>
