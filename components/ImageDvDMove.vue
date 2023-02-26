@@ -1,12 +1,12 @@
 <template>
-  <section>
-    <section class="fill">
-      <div id="dvd" class="dvd">
-        <nuxt-img v-if="isActive" :src="images[imgIndex]" preset="avatar" />
+  <div>
+    <div class="fill">
+      <div v-show="isActive" id="dvd" class="dvd" data-testid="dvd-easteregg">
+        <nuxt-img :src="images[imgIndex]" preset="avatar" />
       </div>
-    </section>
+    </div>
     <slot />
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
