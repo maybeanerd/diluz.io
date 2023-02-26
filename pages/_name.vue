@@ -9,7 +9,7 @@
               {{ profile.person.name.last }}</v-card-title
             >
             <v-list-item-avatar v-if="profilePicture" size="128"
-              ><nuxt-img :src="profilePicture" preset="avatar" preload
+              ><nuxt-img :src="profilePicture" preset="avatar" preload data-testid="profile-picture"
             /></v-list-item-avatar>
             <v-card-text v-if="profile.person.shortText" class="short-text">
               <!-- <v-icon left>mdi-comment</v-icon> -->
@@ -244,6 +244,7 @@ import {
 import educationComponent from '~/components/educationComponent.vue';
 import { getProfilePictureFromProfile } from '~/scripts/helpers/profilepicture';
 import { getHeaders } from '~/scripts/helpers/head';
+import { capitalizeFirstLetter } from '~/scripts/helpers/stringManipulation';
 
 const prioritizeRunning = false;
 const prioritizeJobs = false;
@@ -325,9 +326,7 @@ export default class homePage extends Vue {
     return getProfilePictureFromProfile(this.profile);
   }
 
-  capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  capitalizeFirstLetter = capitalizeFirstLetter;
 
   goToProfileOfService(service: string, name: string) {
     if (service === 'github') {

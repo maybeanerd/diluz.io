@@ -22,7 +22,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install dependencies
         run: npm ci
-      - name: lint
+      - name: validate code style
         run: npm run lint
+      - name: build and typecheck
+        run: npm run build
       - name: generate static pages
         run: npm run generate
+      - name: run tests
+        run: npm run test:ci

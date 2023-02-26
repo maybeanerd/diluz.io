@@ -12,12 +12,19 @@
     "strict": true,
     "noImplicitAny": false,
     "noEmit": true,
-    "isolatedModules":true,
+    "isolatedModules": true,
     "baseUrl": ".",
     "strictNullChecks": true,
     // not sure if both of these should be defined:
     "typeRoots": ["types", "node_modules/@types"],
-    "types": ["@types/node", "@nuxt/types", "@nuxtjs/vuetify", "@nuxt/image"],
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "@nuxtjs/vuetify",
+      "@nuxt/image",
+      "cypress",
+      "@testing-library/cypress"
+    ],
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
     /* Additional Checks */
     // for now lets keep this out:

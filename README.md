@@ -13,11 +13,9 @@ $ npm ci
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and deploy
-$ npm run publish
+# run tests
+$ npm run test
 
-# generate static project without deploy
+# generate static /dist
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

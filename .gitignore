@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Cypress videos and screenshots
+/cypress/videos
+/cypress/screenshots
