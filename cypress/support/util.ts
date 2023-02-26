@@ -16,3 +16,7 @@ export function runTestForAllViewports(
     return testingFunction();
   });
 }
+
+export function findAtLeastOneByText(text:string) {
+  cy.findAllByText(text).should('have.length.at.least', 1);
+}

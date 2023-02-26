@@ -1,12 +1,16 @@
 import { profiles } from '~/scripts/profiles';
-import { runTestForAllViewports } from '~/cypress/support/util';
+import {
+  findAtLeastOneByText,
+  runTestForAllViewports,
+} from '~/cypress/support/util';
+import { capitalizeFirstLetter } from '~/scripts/helpers/stringManipulation';
 
 describe('Profiles', () => {
   describe('Navbar', () => {
     it('should be openable and link to all users', () => {
-      const firstName = profiles[// switch to .at when we upgrade to node 18
-        Math.floor(Math.random() * profiles.length)
-      ].person.name.first.toLowerCase();
+      const firstName = profiles
+        .at(Math.floor(Math.random() * profiles.length))!
+        .person.name.first.toLowerCase();
 
       runTestForAllViewports(() => {
         cy.visit(`/${firstName}`);
@@ -90,17 +94,86 @@ describe('Profiles', () => {
         });
       });
 
+      it('should have the details about person', () => {
+        runTestForAllViewports(() => {
+          cy.visit(`/${firstName}`);
+
+          const { person } = profile;
+
+          findAtLeastOneByText(
+            `${person.name.first} ${profile.person.name.last}`,
+          );
+
+          if (person.shortText) {
+            cy.findByText(person.shortText);
+          }
+
+          if (person.image) {
+            cy.findByTestId('profile-picture');
+          }
+
+          Object.keys(person.services).forEach((service) => {
+            cy.findByText(capitalizeFirstLetter(service));
+          });
+        });
+      });
+
       it('should have the projects and jobs', () => {
         runTestForAllViewports(() => {
           cy.visit(`/${firstName}`);
 
           cy.findByText('Projects and Jobs');
 
-          // TODO add useful tests
+          profile.projects.list.forEach((project) => {
+            if (project.showInProfile) {
+              findAtLeastOneByText(project.title);
+              cy.findByText(project.description);
+
+              if (project.url) {
+                findAtLeastOneByText(project.url);
+              }
+            }
+          });
+
+          const finalProject = profile.projects.final;
+          if (finalProject) {
+            findAtLeastOneByText(finalProject.title);
+            cy.findByText(finalProject.text);
+          }
         });
       });
 
-      // TODO add tests for the other sections
+      it('should have the skills and education', () => {
+        runTestForAllViewports(() => {
+          cy.visit(`/${firstName}`);
+
+          const { skills } = profile;
+
+          const technicalSkills = skills.technical;
+          if (technicalSkills) {
+            cy.findByText('Technical Skills');
+            technicalSkills.forEach((skill) => {
+              findAtLeastOneByText(skill.title);
+            });
+          }
+
+          const { education } = skills;
+          if (education) {
+            cy.findByText('Education');
+            education.forEach((educationItem) => {
+              cy.findByText(educationItem.title);
+            });
+          }
+
+          const miscSkills = skills.misc;
+          if (miscSkills) {
+            cy.findByText('Misc. Skills');
+            miscSkills.forEach((skill) => {
+              cy.findByText(skill.title);
+            });
+          }
+        });
+      });
     });
   });
 });
