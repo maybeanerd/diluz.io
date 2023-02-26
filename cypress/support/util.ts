@@ -7,17 +7,12 @@ const viewPortSizes: Array<Cypress.ViewportPreset> = [
   'macbook-13',
 ];
 
-export function takeComparisonSnapshots(page: string = '') {
+export function runTestForAllViewports(
+  testingFunction: () => void | Promise<void>,
+) {
   viewPortSizes.forEach((viewPort) => {
     cy.viewport(viewPort);
 
-    cy.visit(`/${page}`);
-
-    cy.compareSnapshot(`${page ? `${page}-` : ''}${viewPort}`, {
-      errorThreshold: 0.1,
-      onAfterScreenshot: (_, props) => {
-        console.log('path', props.path);
-      },
-    });
+    return testingFunction();
   });
 }

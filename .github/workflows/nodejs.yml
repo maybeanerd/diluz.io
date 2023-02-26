@@ -28,5 +28,5 @@ jobs:
         run: npm run build
       - name: generate static pages
         run: npm run generate
-      - name: run snapshot tests
+      - name: run tests
         run: npm run test:ci

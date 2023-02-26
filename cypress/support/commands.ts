@@ -1,3 +1,2 @@
-import compareSnapshotCommand from 'cypress-visual-regression/dist/command';
-
-compareSnapshotCommand();
+// eslint-disable-next-line import/no-extraneous-dependencies
+import '@testing-library/cypress/add-commands';
