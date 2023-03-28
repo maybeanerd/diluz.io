@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxt/types": "2.16.3",
-    "@nuxt/typescript-build": "3.0.0",
+    "@nuxt/typescript-build": "3.0.1",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/vuetify": "1.12.3",
     "axios": "0.27.2",
