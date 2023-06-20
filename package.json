@@ -4,7 +4,7 @@
   "description": "A collection of Di Luzios",
   "author": "Sebastian Di Luzio",
   "engines": {
-    "node": "18.16.0"
+    "node": "18.16.1"
   },
   "type": "module",
   "private": true,
