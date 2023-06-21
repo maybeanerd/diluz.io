@@ -1,20 +1,16 @@
-# Nuxt 3 Minimal Starter
+# diluz.io
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is a collection of personal pages and CVs for Di Luzios.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b564c41c-6271-48dd-ba15-6667ec73d1b1/deploy-status)](https://app.netlify.com/sites/diluzio/deploys)
+
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
+pnpm i
 ```
 
 ## Development Server
@@ -22,14 +18,7 @@ yarn install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+pnpm  dev
 ```
 
 ## Production
@@ -37,27 +26,13 @@ yarn dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+pnpm  build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+pnpm  preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
