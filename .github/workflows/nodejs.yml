@@ -16,13 +16,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - name: install pnpm
+        run: npm i -g pnpm      
       - name: install dependencies
-        run: npm ci
+        run: pnpm i
       - name: validate code style
-        run: npm run lint
+        run: pnpm lint
       - name: build and typecheck
-        run: npm run build
+        run: pnpm build
       - name: generate static pages
-        run: npm run generate
+        run: pnpm generate
       - name: run tests
-        run: npm run test:ci
+        run: pnpm test:ci
