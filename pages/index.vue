@@ -1,3 +1,3 @@
 <template>
-  <Profile />
+  <ProfileList />
 </template>
