@@ -7,10 +7,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "pnpm lint:js && pnpm lint:prettier",
-    "lint:js": "eslint --ext \".ts,.vue\" .",
-    "lint:prettier": "prettier --check .",
-    "lint:fix": "prettier --write --list-different . && pnpm lint:js --fix"
+    "lint": "eslint --ext \".ts,.vue\" .",
+    "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -18,8 +16,6 @@
     "@types/node": "^18",
     "@typescript-eslint/parser": "5.60.0",
     "eslint": "8.43.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-prettier": "4.2.1",
     "nuxt": "^3.5.2",
     "prettier": "2.8.8",
     "typescript": "5.1.3"
