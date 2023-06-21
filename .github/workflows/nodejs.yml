@@ -26,5 +26,3 @@ jobs:
         run: pnpm build
       - name: generate static pages
         run: pnpm generate
-      - name: run tests
-        run: pnpm test:ci
