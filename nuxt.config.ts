@@ -6,4 +6,11 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });

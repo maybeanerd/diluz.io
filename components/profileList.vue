@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Profile</h1>
+    <h1>
+      Profile List
+    </h1>
     <div>
       <div v-for="(profile, index) in profiles" :key="index">
         {{ profile.person.name }}
