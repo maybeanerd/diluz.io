@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { profiles } from '../server/profiles';
+import { profiles } from '~/server/profiles';
 
 const router = useRouter();
 const props = defineProps<{name: string}>();
