@@ -1,11 +1,16 @@
 <template>
-  <div class="h-screen bg-gray-900 text-gray-200">
-    <NConfigProvider :theme="darkTheme" :locale="enUS" :date-locale="dateDeDE">
+  <NConfigProvider
+    :theme="darkTheme"
+    :locale="enUS"
+    :date-locale="dateDeDE"
+    class="h-screen"
+  >
+    <div class="flex flex-col min-h-full justify-between">
       <Header />
       <slot />
       <Footer />
-    </NConfigProvider>
-  </div>
+    </div>
+  </NConfigProvider>
 </template>
 
 <script setup lang="ts">
