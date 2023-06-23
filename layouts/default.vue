@@ -6,9 +6,8 @@
     class="h-screen"
   >
     <div class="flex flex-col min-h-full justify-between">
-      <Navbar class="min-h-full">
-        <slot />
-      </Navbar>
+      <Header />
+      <slot />
       <Footer />
     </div>
   </NConfigProvider>
