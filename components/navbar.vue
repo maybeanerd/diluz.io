@@ -1,6 +1,6 @@
 <template>
   <NDrawer v-model:show="isOpen" :width="502" placement="left">
-    <NDrawerContent title="Menu">
+    <NDrawerContent title="The Di Luzios">
       <ProfileList />
     </NDrawerContent>
   </NDrawer>
@@ -11,4 +11,11 @@ import { NDrawer, NDrawerContent } from 'naive-ui';
 import { useMenu } from '~/composables/useMenu';
 
 const { isOpen } = useMenu();
+
+const router = useRouter();
+
+router.beforeEach(() => {
+  // Close navbar on route change
+  isOpen.value = false;
+});
 </script>
