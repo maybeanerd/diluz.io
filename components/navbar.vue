@@ -1,7 +1,7 @@
 <template>
   <NDrawer v-model:show="isOpen" :width="502" placement="left">
-    <NDrawerContent title="Stoner">
-      Stoner is a 1965 novel by the American writer John Williams.
+    <NDrawerContent title="Menu">
+      <ProfileList />
     </NDrawerContent>
   </NDrawer>
 </template>
