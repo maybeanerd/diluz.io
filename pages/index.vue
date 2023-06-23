@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-const defaultProfile = 'sebastian';
+import { defaultProfile } from '~/constants/defaultProfile';
 </script>

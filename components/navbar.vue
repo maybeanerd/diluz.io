@@ -1,6 +1,6 @@
 <template>
-  <NDrawer v-model:show="isOpen" :width="502" placement="left">
-    <NDrawerContent title="The Di Luzios">
+  <NDrawer v-model:show="isOpen" placement="left">
+    <NDrawerContent title="The Di Luzios" closable>
       <ProfileList />
     </NDrawerContent>
   </NDrawer>
