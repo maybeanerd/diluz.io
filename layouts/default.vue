@@ -7,7 +7,9 @@
   >
     <div class="flex flex-col min-h-full justify-between">
       <Header />
-      <slot />
+      <div class="m-4 lg:m-8">
+        <slot />
+      </div>
       <Footer />
     </div>
   </NConfigProvider>

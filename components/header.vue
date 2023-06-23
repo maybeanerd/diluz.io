@@ -1,14 +1,20 @@
 <template>
   <Navbar />
-  <div class="border-2 p-2">
-    <NButton @click="toggleMenu">
-      Open menu
+  <div class=" p-2">
+    <NButton quaternary round @click="toggleMenu">
+      <template #icon>
+        <NIcon size="26">
+          <Menu />
+        </NIcon>
+      </template>
     </NButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { NButton } from 'naive-ui';
+import { NButton, NIcon } from 'naive-ui';
+import { Menu } from '@vicons/ionicons5';
+
 import { useMenu } from '~/composables/useMenu';
 
 const { isOpen } = useMenu();
