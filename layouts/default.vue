@@ -5,6 +5,7 @@
     :date-locale="dateDeDE"
     class="h-screen"
   >
+    <Navbar />
     <div class="flex flex-col min-h-full justify-between">
       <Header />
       <div class="m-4 lg:m-8">
