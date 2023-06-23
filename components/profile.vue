@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Profile of {{ props.name }}</h1>
+    <NH1>Profile of {{ props.name }}</NH1>
     <div v-if="profile !== null">
-      {{ profile.projects.list.at(0) }}
+      {{ profile }}
     </div>
     <div v-else>
       Profile not found
@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import { NH1 } from 'naive-ui';
 import { profiles } from '~/server/profiles';
 
 const router = useRouter();
