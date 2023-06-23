@@ -7,5 +7,5 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
 
-const buildDate = (runtimeConfig.public.buildDate as Date).toLocaleString();
+const buildDate = new Date(runtimeConfig.public.buildDate).toLocaleString('de-DE');
 </script>
