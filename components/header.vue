@@ -1,6 +1,5 @@
 <template>
-  <Navbar />
-  <div class=" p-2">
+  <div class="p-2 sticky top-0 bg-gray-900 border-b-2 border-gray-700">
     <NButton quaternary round @click="toggleMenu">
       <template #icon>
         <NIcon size="26">
