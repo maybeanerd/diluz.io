@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import gitCommitInfo from 'git-commit-info';
+const runtimeConfig = useRuntimeConfig();
 
-const commitHash = gitCommitInfo().shortHash;
+const { commitHash } = runtimeConfig.public;
 </script>
