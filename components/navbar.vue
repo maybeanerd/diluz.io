@@ -14,7 +14,7 @@ const { isOpen } = useMenu();
 
 const router = useRouter();
 
-router.beforeEach(() => {
+router.afterEach(() => {
   // Close navbar on route change
   isOpen.value = false;
 });
