@@ -33,6 +33,6 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    public: { buildDate: new Date() },
+    public: {},
   },
 });
