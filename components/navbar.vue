@@ -1,7 +1,11 @@
 <template>
   <NDrawer v-model:show="isOpen" placement="left">
     <NDrawerContent title="The Di Luzios" closable>
-      <NMenu :options="menuOptions" @update:value="handleNavbarLinkClicked" />
+      <NMenu
+        v-model:value="selectedProfile"
+        :options="menuOptions"
+        @update:value="handleNavbarLinkClicked"
+      />
     </NDrawerContent>
   </NDrawer>
 </template>
@@ -13,6 +17,7 @@ import { RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles } from '~/server/profiles';
+import { defaultProfile } from '~/constants/defaultProfile';
 
 const { isOpen } = useMenu();
 
@@ -29,24 +34,33 @@ function renderIcon (icon: Component) {
 const menuOptions = profiles.map((profile) => {
   const name = profile.person.name.first.toLowerCase();
 
-  const menuOption: MenuOption =
-    {
-      label: () =>
-        h(
-          RouterLink,
-          {
-            to: {
-              path: `/${name}`,
-
-            },
+  const menuOption: MenuOption = {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: `/${name}`,
           },
-          upperCaseFirstLetter(name),
-        ),
-      key: name,
-      icon: renderIcon(Airplane),
-    };
+        },
+        upperCaseFirstLetter(name),
+      ),
+    key: name,
+    icon: renderIcon(Airplane),
+  };
 
   return menuOption;
 });
 
+const route = useRoute();
+
+function getCurrentProfile () {
+  return (
+    menuOptions
+      .find(option => option.key === route.path.slice(1))
+      ?.key?.toString() ?? defaultProfile
+  );
+}
+
+const selectedProfile = ref<string | null>(getCurrentProfile());
 </script>
