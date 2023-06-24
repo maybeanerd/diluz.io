@@ -3,17 +3,20 @@ import gitCommitInfo from 'git-commit-info';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxtjs/i18n', '@vite-pwa/nuxt'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    '@vite-pwa/nuxt',
+    '@nuxtjs/tailwindcss',
+  ],
   pwa: {},
   nitro: {
     prerender: {
       crawlLinks: true,
     },
   },
-  css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
-      tailwindcss: {},
       autoprefixer: {},
     },
   },
