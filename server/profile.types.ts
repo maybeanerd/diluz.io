@@ -1,4 +1,4 @@
-type Services = { linkedin?: string; github?: string };
+export enum Service { linkedin, github, email, website, mastodon }
 
 export enum LanguageProficiency {
   native = 'Native',
@@ -15,7 +15,7 @@ export enum Proficiency {
   knowledgeable = 0x1001,
 }
 
-export enum EducationTypes {
+export enum EducationType {
   school = 'school',
   university = 'file-certificate',
 }
@@ -26,13 +26,8 @@ type Person = {
     last: 'Di Luzio'; // we could support other spellings of the name later on
   };
   image?: { isURL: boolean; path: string };
-  birthday?: Date;
-  profession?: string;
   shortText?: string;
-  email?: string;
-  website?: string;
-  services: Services;
-  interests?: Array<{ title: string; icon?: string }>; // this is unecessary
+  services: Array<{ type: Service; name: string }>;
   languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
   nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };
@@ -65,7 +60,7 @@ type Skills = {
     title: string;
     date?: Date;
     link?: string;
-    type: EducationTypes;
+    type: EducationType;
   }>;
   misc?: Array<{ title: string }>;
 };

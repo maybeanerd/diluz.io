@@ -1,9 +1,10 @@
 import {
-  EducationTypes,
+  EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   // ProjectType,
+  Service,
 } from '../profile.types';
 
 export const julian: Profile = {
@@ -11,11 +12,11 @@ export const julian: Profile = {
     name: { first: 'Julian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
-    services: {
-      linkedin: 'julian-di-luzio',
-      github: '7crmbs2',
-    },
-    email: 'julian@diluz.io',
+    services: [
+      { type: Service.github, name: '7crmbs2' },
+      { type: Service.linkedin, name: 'julian-di-luzio' },
+      { type: Service.email, name: 'julian@diluz.io' },
+    ],
     shortText: 'cyber security enthusiast, baseball player, biker.',
     languages: [
       { lang: 'German', proficiency: LanguageProficiency.native },
@@ -43,7 +44,7 @@ export const julian: Profile = {
     education: [
       {
         title: 'secondary school certificate',
-        type: EducationTypes.school,
+        type: EducationType.school,
         source: 'Dr.-Josef-Schwalber-Realschule Dachau ',
         date: new Date(2017, 6),
         link: 'https://realschuledachau.de/',

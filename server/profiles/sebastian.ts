@@ -1,9 +1,10 @@
 import {
-  EducationTypes,
+  EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
+  Service,
 } from '../profile.types';
 
 export const sebastian: Profile = {
@@ -11,11 +12,12 @@ export const sebastian: Profile = {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
-    services: {
-      linkedin: 'sebastian-di-luzio',
-      github: 't0tproduction',
-    },
-    email: 'sebastian@diluz.io',
+    services: [
+      { type: Service.github, name: 't0tproduction' },
+      { type: Service.mastodon, name: '@maybeanerd@bumscode.com' },
+      { type: Service.linkedin, name: 'sebastian-di-luzio' },
+      { type: Service.email, name: 'sebastian@diluz.io' },
+    ],
     // we are already on this page
     /* website: 'https://diluz.io', */
     shortText: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
@@ -56,14 +58,14 @@ export const sebastian: Profile = {
     education: [
       {
         title: 'Bachelor of Science: Games Engineering',
-        type: EducationTypes.university,
+        type: EducationType.university,
         source: 'Technical University of Munich ',
         date: new Date(2019, 7),
         link: 'https://tum.de',
       },
       {
         title: 'High School Degree',
-        type: EducationTypes.school,
+        type: EducationType.school,
         source: 'Ignaz-Taschner-Gymnasium Dachau',
         date: new Date(2015, 4),
         link: 'https://itg.bayern/startseite.html',
