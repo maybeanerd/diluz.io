@@ -5,10 +5,15 @@
         <NMenu v-model:value="selectedProfile" :options="menuOptions" />
         <div>
           <NDivider />
-          <div class="text-center text-sm">
-            commit {{ commitHash }}<br>
+          <div class="text-center text-xs">
+            commit
+            <CustomLink :url="getLinkToCommit(commitHash)">
+              {{ commitHash }}
+            </CustomLink><br>
             built on
-            {{ buildDate.toLocaleDateString('de-DE') }}
+            <CustomLink :url="latestBuildsUrl">
+              {{ buildDate.toLocaleDateString('de-DE') }}
+            </CustomLink>
           </div>
         </div>
       </div>
@@ -31,6 +36,7 @@ import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles } from '~/server/profiles';
 import { defaultProfile } from '~/constants/defaultProfile';
+import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 
 // TODO change this to render the image of a profile
 function renderIcon (icon: Component) {
