@@ -3,10 +3,13 @@
     <NDrawerContent title="The Di Luzios" closable>
       <div class="h-full flex flex-col justify-between">
         <NMenu v-model:value="selectedProfile" :options="menuOptions" />
-        <div class="text-center text-sm">
-          commit {{ commitHash }}<br>
-          built on
-          {{ buildDate.toLocaleDateString('de-DE') }}
+        <div>
+          <NDivider />
+          <div class="text-center text-sm">
+            commit {{ commitHash }}<br>
+            built on
+            {{ buildDate.toLocaleDateString('de-DE') }}
+          </div>
         </div>
       </div>
     </NDrawerContent>
@@ -14,7 +17,14 @@
 </template>
 
 <script setup lang="ts">
-import { MenuOption, NDrawer, NDrawerContent, NIcon, NMenu } from 'naive-ui';
+import {
+  MenuOption,
+  NDrawer,
+  NDrawerContent,
+  NIcon,
+  NMenu,
+  NDivider,
+} from 'naive-ui';
 import { Airplane } from '@vicons/ionicons5';
 import { RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
