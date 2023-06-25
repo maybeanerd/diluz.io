@@ -1,7 +1,23 @@
 <template>
   <div>
-    <NH1>Person</NH1>
-    <div>{{ props.person }}</div>
+    <NH1>{{ props.person.name.first }} {{ props.person.name.last }}</NH1>
+    <div>
+      <div>
+        {{ props.person.shortText }}
+      </div>
+      <div>{{ props.person.basedIn }}</div>
+      <div>
+        {{ props.person.languages }}
+      </div>
+      <div>
+        {{ props.person.nationalities }}
+      </div>
+      <Service
+        v-for="service in props.person.services"
+        :key="service.type"
+        :service="service"
+      />
+    </div>
   </div>
 </template>
 

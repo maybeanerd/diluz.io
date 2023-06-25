@@ -1,20 +1,21 @@
 import {
-  EducationTypes,
+  EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
+  Service,
 } from '../profile.types';
 
 export const marc: Profile = {
   person: {
     name: { first: 'Marc', last: 'Di Luzio' },
     image: { isURL: false, path: 'pp.png' },
-    services: {
-      linkedin: 'marcdiluzio',
-      github: 'mdiluz',
-    },
-    email: 'marc@diluz.io',
+    services: [
+      { type: Service.github, name: 'mdiluz' },
+      { type: Service.linkedin, name: 'marcdiluzio' },
+      { type: Service.email, name: 'marc@diluz.io' },
+    ],
     // Fill this in
     // shortText: "Lorem Ipsum",
     languages: [{ lang: 'English', proficiency: LanguageProficiency.native }],
@@ -43,13 +44,13 @@ export const marc: Profile = {
     education: [
       {
         title: 'MSc, Video Game Development',
-        type: EducationTypes.university,
+        type: EducationType.university,
         source: 'Birmingham City University (Sony Scholarship)',
         date: new Date(2013, 7),
       },
       {
         title: 'Ba, Computer Visualisation and Animation',
-        type: EducationTypes.university,
+        type: EducationType.university,
         source: 'Bournemouth University',
         date: new Date(2012, 7),
       },

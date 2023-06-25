@@ -1,10 +1,9 @@
 <template>
-  <Profile :name="name ?? defaultProfile" />
+  <Profile :profile="profile" />
 </template>
 
 <script setup lang="ts">
 import { useHeader } from '~/composables/useHeader';
-import { defaultProfile } from '~/constants/defaultProfile';
 import { profiles } from '~/server/profiles';
 
 definePageMeta({
@@ -23,6 +22,10 @@ definePageMeta({
 const route = useRoute();
 const name = route.params.name as string;
 
+const profile = profiles.find(
+  searchedProfile => searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
+)!;
+
 const { title } = useHeader();
-title.value = name;
+title.value = `${profile?.person.name.first} ${profile?.person.name.last}`;
 </script>
