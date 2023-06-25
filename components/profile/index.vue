@@ -1,8 +1,16 @@
 <template>
-  <div v-if="profile !== null">
-    <ProfilePerson :person="profile.person" />
-    <ProfileSkills :skills="profile.skills" />
-    <ProfileProjects :projects="profile.projects" />
+  <div v-if="profile !== null" class="flex">
+    <div class="max-lg:hidden flex-shrink-0 w-72 m-4 flex flex-col">
+      <ProfilePerson :person="profile.person" />
+      <ProfileSkills :skills="profile.skills" />
+    </div>
+    <div class="flex flex-col m-4">
+      <div class="lg:hidden">
+        <ProfilePerson :person="profile.person" />
+        <ProfileSkills :skills="profile.skills" />
+      </div>
+      <ProfileProjects :projects="profile.projects" />
+    </div>
   </div>
   <div v-else>
     Profile not found
