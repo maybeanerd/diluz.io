@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <NH1>Profile of {{ props.name }}</NH1>
-    <div v-if="profile !== null">
-      <ProfilePerson :person="profile.person" />
-    </div>
-    <div v-else>
-      Profile not found
-    </div>
+  <div v-if="profile !== null">
+    <ProfilePerson :person="profile.person" />
+    <ProfileSkills :skills="profile.skills" />
+    <ProfileProjects :projects="profile.projects" />
+  </div>
+  <div v-else>
+    Profile not found
   </div>
 </template>
 
 <script setup lang="ts">
-import { NH1 } from 'naive-ui';
 import { profiles } from '~/server/profiles';
 
 const router = useRouter();

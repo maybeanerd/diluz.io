@@ -63,7 +63,7 @@ const route = useRoute();
 function getCurrentProfile () {
   return (
     menuOptions
-      .find(option => option.key === route.path.slice(1))
+      .find(option => route.path.endsWith(option.key?.toString() ?? ''))
       ?.key?.toString() ?? defaultProfile
   );
 }
