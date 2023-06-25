@@ -1,4 +1,4 @@
-export enum Service { linkedin, github, email, website, mastodon }
+export enum Social { linkedin, github, email, website, mastodon }
 
 export enum LanguageProficiency {
   native = 'Native',
@@ -27,7 +27,7 @@ type Person = {
   };
   image?: { isURL: boolean; path: string };
   shortText?: string;
-  services: Array<{ type: Service; name: string }>;
+  socials: Array<{ type: Social; name: string }>;
   languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
   nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };

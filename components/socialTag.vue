@@ -1,8 +1,8 @@
 <template>
   <NTag>
-    {{ props.service.name }}
+    {{ props.social.name }}
     <template #icon>
-      <NIcon :component="getIconOfServiceType(props.service.type)" />
+      <NIcon :component="getIconOfServiceType(props.social.type)" />
     </template>
   </NTag>
 </template>
@@ -15,19 +15,19 @@ import {
   LogoMastodon,
   Mail,
 } from '@vicons/ionicons5';
-import { Profile, Service } from '~/server/profile.types';
+import { Profile, Social } from '~/server/profile.types';
 
-const props = defineProps<{ service: Profile['person']['services'][0] }>();
+const props = defineProps<{ social: Profile['person']['socials'][0] }>();
 
-function getIconOfServiceType (type: Service) {
+function getIconOfServiceType (type: Social) {
   switch (type) {
-    case Service.linkedin:
+    case Social.linkedin:
       return LogoLinkedin;
-    case Service.github:
+    case Social.github:
       return LogoGithub;
-    case Service.mastodon:
+    case Social.mastodon:
       return LogoMastodon;
-    case Service.email:
+    case Social.email:
       return Mail;
     default:
       return LogoLinkedin;

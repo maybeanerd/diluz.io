@@ -4,7 +4,7 @@ import {
   Proficiency,
   Profile,
   ProjectType,
-  Service,
+  Social,
 } from '../profile.types';
 
 export const sebastian: Profile = {
@@ -12,11 +12,11 @@ export const sebastian: Profile = {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
-    services: [
-      { type: Service.github, name: 't0tproduction' },
-      { type: Service.mastodon, name: '@maybeanerd@bumscode.com' },
-      { type: Service.linkedin, name: 'sebastian-di-luzio' },
-      { type: Service.email, name: 'sebastian@diluz.io' },
+    socials: [
+      { type: Social.github, name: 't0tproduction' },
+      { type: Social.mastodon, name: '@maybeanerd@bumscode.com' },
+      { type: Social.linkedin, name: 'sebastian-di-luzio' },
+      { type: Social.email, name: 'sebastian@diluz.io' },
     ],
     // we are already on this page
     /* website: 'https://diluz.io', */

@@ -4,7 +4,7 @@ import {
   Proficiency,
   Profile,
   // ProjectType,
-  Service,
+  Social,
 } from '../profile.types';
 
 export const julian: Profile = {
@@ -12,10 +12,10 @@ export const julian: Profile = {
     name: { first: 'Julian', last: 'Di Luzio' },
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
-    services: [
-      { type: Service.github, name: '7crmbs2' },
-      { type: Service.linkedin, name: 'julian-di-luzio' },
-      { type: Service.email, name: 'julian@diluz.io' },
+    socials: [
+      { type: Social.github, name: '7crmbs2' },
+      { type: Social.linkedin, name: 'julian-di-luzio' },
+      { type: Social.email, name: 'julian@diluz.io' },
     ],
     shortText: 'cyber security enthusiast, baseball player, biker.',
     languages: [
