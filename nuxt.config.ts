@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       commitHash: gitCommitInfo().shortHash,
+      buildDate: new Date().toISOString(),
     },
   },
 });

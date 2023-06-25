@@ -1,11 +1,18 @@
 <template>
   <NDrawer v-model:show="isOpen" placement="left">
     <NDrawerContent title="The Di Luzios" closable>
-      <NMenu
-        v-model:value="selectedProfile"
-        :options="menuOptions"
-        @update:value="handleNavbarLinkClicked"
-      />
+      <div class="h-full flex flex-col justify-between">
+        <NMenu
+          v-model:value="selectedProfile"
+          :options="menuOptions"
+          @update:value="handleNavbarLinkClicked"
+        />
+        <div class="text-center text-sm">
+          commit {{ commitHash }}<br>
+          built on
+          {{ buildDate.toLocaleDateString('de-DE') }}
+        </div>
+      </div>
     </NDrawerContent>
   </NDrawer>
 </template>
@@ -63,4 +70,9 @@ function getCurrentProfile () {
 }
 
 const selectedProfile = ref<string | null>(getCurrentProfile());
+
+const runtimeConfig = useRuntimeConfig();
+
+const { commitHash } = runtimeConfig.public;
+const buildDate = new Date(runtimeConfig.public.buildDate);
 </script>
