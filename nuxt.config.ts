@@ -15,11 +15,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-    },
-  },
   build: {
     transpile:
       process.env.NODE_ENV === 'production'
