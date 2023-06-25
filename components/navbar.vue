@@ -2,11 +2,7 @@
   <NDrawer v-model:show="isOpen" placement="left">
     <NDrawerContent title="The Di Luzios" closable>
       <div class="h-full flex flex-col justify-between">
-        <NMenu
-          v-model:value="selectedProfile"
-          :options="menuOptions"
-          @update:value="handleNavbarLinkClicked"
-        />
+        <NMenu v-model:value="selectedProfile" :options="menuOptions" />
         <div class="text-center text-sm">
           commit {{ commitHash }}<br>
           built on
@@ -25,13 +21,6 @@ import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles } from '~/server/profiles';
 import { defaultProfile } from '~/constants/defaultProfile';
-
-const { isOpen } = useMenu();
-
-function handleNavbarLinkClicked () {
-  // Close navbar when it was used
-  isOpen.value = false;
-}
 
 // TODO change this to render the image of a profile
 function renderIcon (icon: Component) {
@@ -70,6 +59,16 @@ function getCurrentProfile () {
 }
 
 const selectedProfile = ref<string | null>(getCurrentProfile());
+
+const router = useRouter();
+const { isOpen } = useMenu();
+
+router.afterEach(() => {
+  selectedProfile.value = getCurrentProfile();
+
+  // Close navbar when any navigation occurs
+  isOpen.value = false;
+});
 
 const runtimeConfig = useRuntimeConfig();
 
