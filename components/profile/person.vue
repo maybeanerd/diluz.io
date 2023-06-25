@@ -12,9 +12,10 @@
       <div>
         {{ props.person.nationalities }}
       </div>
-      <Service
+      <ServiceTag
         v-for="service in props.person.services"
         :key="service.type"
+        class="m-1"
         :service="service"
       />
     </div>
