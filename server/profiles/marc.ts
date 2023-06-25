@@ -4,17 +4,17 @@ import {
   Proficiency,
   Profile,
   ProjectType,
-  Service,
+  Social,
 } from '../profile.types';
 
 export const marc: Profile = {
   person: {
     name: { first: 'Marc', last: 'Di Luzio' },
     image: { isURL: false, path: 'pp.png' },
-    services: [
-      { type: Service.github, name: 'mdiluz' },
-      { type: Service.linkedin, name: 'marcdiluzio' },
-      { type: Service.email, name: 'marc@diluz.io' },
+    socials: [
+      { type: Social.github, name: 'mdiluz' },
+      { type: Social.linkedin, name: 'marcdiluzio' },
+      { type: Social.email, name: 'marc@diluz.io' },
     ],
     // Fill this in
     // shortText: "Lorem Ipsum",
