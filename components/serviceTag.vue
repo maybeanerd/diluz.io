@@ -1,20 +1,23 @@
 <template>
-  <NIcon size="28">
-    <component :is="getIconOfServiceType(props.type)" />
-  </NIcon>
+  <NTag>
+    {{ props.service.name }}
+    <template #icon>
+      <NIcon :component="getIconOfServiceType(props.service.type)" />
+    </template>
+  </NTag>
 </template>
 
 <script setup lang="ts">
-import { NIcon } from 'naive-ui';
+import { NTag, NIcon } from 'naive-ui';
 import {
   LogoLinkedin,
   LogoGithub,
   LogoMastodon,
   Mail,
 } from '@vicons/ionicons5';
-import { Service } from '~/server/profile.types';
+import { Profile, Service } from '~/server/profile.types';
 
-const props = defineProps<{ type: Service }>();
+const props = defineProps<{ service: Profile['person']['services'][0] }>();
 
 function getIconOfServiceType (type: Service) {
   switch (type) {
