@@ -1,10 +1,11 @@
 import {
+  BasicSocial,
   EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
-  Social,
+  SpecialSocial,
 } from '../profile.types';
 
 export const sebastian: Profile = {
@@ -13,10 +14,10 @@ export const sebastian: Profile = {
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
     socials: [
-      { type: Social.github, name: 't0tproduction' },
-      { type: Social.mastodon, name: '@maybeanerd@bumscode.com' },
-      { type: Social.linkedin, name: 'sebastian-di-luzio' },
-      { type: Social.email, name: 'sebastian@diluz.io' },
+      { type: BasicSocial.github, userName: 't0tproduction' },
+      { type: SpecialSocial.mastodon, userName: 'maybeanerd', instance: new URL('https://bumscode.com') },
+      { type: BasicSocial.linkedin, userName: 'sebastian-di-luzio' },
+      { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
     // we are already on this page
     /* website: 'https://diluz.io', */
