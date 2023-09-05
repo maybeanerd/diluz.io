@@ -1,10 +1,11 @@
 import {
+  BasicSocial,
   EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   // ProjectType,
-  Social,
+  SpecialSocial,
 } from '../profile.types';
 
 export const julian: Profile = {
@@ -13,9 +14,9 @@ export const julian: Profile = {
     // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
     socials: [
-      { type: Social.github, name: '7crmbs2' },
-      { type: Social.linkedin, name: 'julian-di-luzio' },
-      { type: Social.email, name: 'julian@diluz.io' },
+      { type: BasicSocial.github, userName: '7crmbs2' },
+      { type: BasicSocial.linkedin, userName: 'julian-di-luzio' },
+      { type: SpecialSocial.email, email: 'julian@diluz.io' },
     ],
     shortText: 'cyber security enthusiast, baseball player, biker.',
     languages: [

@@ -1,10 +1,11 @@
 import {
+  BasicSocial,
   EducationType,
   LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
-  Social,
+  SpecialSocial,
 } from '../profile.types';
 
 export const marc: Profile = {
@@ -12,9 +13,9 @@ export const marc: Profile = {
     name: { first: 'Marc', last: 'Di Luzio' },
     image: { isURL: false, path: 'pp.png' },
     socials: [
-      { type: Social.github, name: 'mdiluz' },
-      { type: Social.linkedin, name: 'marcdiluzio' },
-      { type: Social.email, name: 'marc@diluz.io' },
+      { type: BasicSocial.github, userName: 'mdiluz' },
+      { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
+      { type: SpecialSocial.email, email: 'marc@diluz.io' },
     ],
     // Fill this in
     // shortText: "Lorem Ipsum",

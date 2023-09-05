@@ -1,4 +1,13 @@
-export enum Social { linkedin, github, email, website, mastodon }
+export enum BasicSocial {
+  linkedin = 'linkedin',
+  github = 'github',
+}
+export enum SpecialSocial {
+  mastodon = 'mastodon',
+  website = 'website',
+  email = 'email',
+}
+export type Social = BasicSocial | SpecialSocial;
 
 export enum LanguageProficiency {
   native = 'Native',
@@ -20,6 +29,19 @@ export enum EducationType {
   university = 'file-certificate',
 }
 
+export type SocialInfo =
+  | { type: BasicSocial; userName: string }
+  | {
+      type: SpecialSocial.mastodon;
+      userName: string;
+      instance: URL;
+    }
+  | {
+      type: SpecialSocial.website;
+      url: URL } | {
+      type: SpecialSocial.email;
+      email: string };
+
 type Person = {
   name: {
     first: string;
@@ -27,7 +49,7 @@ type Person = {
   };
   image?: { isURL: boolean; path: string };
   shortText?: string;
-  socials: Array<{ type: Social; name: string }>; // TODO handle mastodon nicer by adding support for username+instance and not expecting both inside a single string
+  socials: Array<SocialInfo>;
   languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
   nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };
