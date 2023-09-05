@@ -27,7 +27,7 @@ type Person = {
   };
   image?: { isURL: boolean; path: string };
   shortText?: string;
-  socials: Array<{ type: Social; name: string }>;
+  socials: Array<{ type: Social; name: string }>; // TODO handle mastodon nicer by adding support for username+instance and not expecting both inside a single string
   languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
   nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };
