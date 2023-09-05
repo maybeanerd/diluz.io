@@ -5,9 +5,9 @@
       v-for="(dependency, index) in notableDependencies"
       :key="dependency.name"
     >
-      <CustomLink :url="dependency.url">
+      <InlineLink :to="dependency.url">
         {{ dependency.name }}
-      </CustomLink>{{ index === notableDependencies.length - 1 ? '.' : ',&nbsp;' }}
+      </InlineLink>{{ index === notableDependencies.length - 1 ? '.' : ',&nbsp;' }}
     </template>
   </div>
 </template>

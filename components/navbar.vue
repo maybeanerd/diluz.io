@@ -7,13 +7,13 @@
           <NDivider />
           <div class="text-center text-xs">
             commit
-            <CustomLink :url="getLinkToCommit(commitHash)">
+            <InlineLink :to="getLinkToCommit(commitHash)">
               {{ commitHash }}
-            </CustomLink><br>
+            </InlineLink><br>
             built on
-            <CustomLink :url="latestBuildsUrl">
+            <InlineLink :to="latestBuildsUrl">
               {{ buildDate.toLocaleDateString('de-DE') }}
-            </CustomLink>
+            </InlineLink>
           </div>
         </div>
       </div>

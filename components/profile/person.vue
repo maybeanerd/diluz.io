@@ -5,7 +5,7 @@
       <div>
         {{ props.person.shortText }}
       </div>
-      <div>{{ props.person.basedIn }}</div>
+      <LocationTag v-if="props.person.basedIn" :location="props.person.basedIn" />
       <div>
         {{ props.person.languages }}
       </div>
