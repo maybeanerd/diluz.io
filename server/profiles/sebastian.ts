@@ -215,7 +215,7 @@ export const sebastian: Profile = {
       },
     ],
     final: {
-      title: 'The beginning of time',
+      title: 'Want to see more?',
       text: "If you want to see more side projects, take a look at my GitHub. There's a lot more that just wasn't relevant enough to list here.",
     },
   },
