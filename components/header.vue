@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 sticky top-0 bg-gray-900 border-b-[1px] border-gray-700 flex">
+  <div class="p-2 sticky top-0 bg-gray-900 border-b-[1px] border-gray-700 flex z-30">
     <NButton quaternary round @click="toggleMenu">
       <template #icon>
         <NIcon size="26">
