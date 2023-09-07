@@ -2,12 +2,12 @@
   <div class="flex">
     <div class="max-lg:hidden flex-shrink-0 w-72 m-4 flex flex-col">
       <ProfilePerson :person="props.profile.person" />
-      <ProfileSkills :skills="props.profile.skills" />
+      <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
     </div>
     <div class="flex flex-col m-4">
       <div class="lg:hidden">
         <ProfilePerson :person="props.profile.person" />
-        <ProfileSkills :skills="props.profile.skills" />
+        <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
       </div>
       <ProfileProjects :projects="props.profile.projects" />
     </div>

@@ -9,16 +9,6 @@ export enum SpecialSocial {
 }
 export type Social = BasicSocial | SpecialSocial;
 
-export enum Proficiency {
-  strong = 0x0001,
-  knowledgeable = 0x1001,
-}
-
-export enum EducationType {
-  school = 'school',
-  university = 'file-certificate',
-}
-
 export type SocialInfo =
   | { type: BasicSocial; userName: string }
   | {
@@ -48,6 +38,12 @@ export enum ProjectType {
   job,
 }
 
+// TODO maybe add these to project types?
+export enum EducationType {
+  school = 'school',
+  university = 'file-certificate',
+}
+
 export type Project = {
   title: string;
   role: string;
@@ -62,22 +58,13 @@ export type Project = {
   type: ProjectType;
 };
 
-type Skills = {
-  technical?: Array<{ title: string; proficiency: Proficiency }>;
-  certificates?: Array<{ title: string; link?: string }>;
-  education?: Array<{
-    source: string;
-    title: string;
-    date?: Date;
-    link?: string;
-    type: EducationType;
-  }>;
-  misc?: Array<{ title: string }>;
-};
+export type Technology = Array<{
+  title: string;
+ }>
 
 export type Profile = {
   person: Person;
-  skills: Skills;
+  favoriteTech: Technology;
   projects: {
     list: Array<Project>;
     final?: {
