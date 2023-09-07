@@ -35,7 +35,7 @@ export const julian: Profile = {
   projects: {
     list: [],
     final: {
-      title: 'The beginning of time',
+      title: 'Want to see more?',
       text: 'If you want to see some side projects, take a look at my GitHub.',
     },
   },

@@ -22,12 +22,9 @@ export const sebastian: Profile = {
     { title: 'TypeScript' },
     { title: 'Vue.js' },
     { title: 'TailwindCSS' },
-    { title: 'Node.js' },
     { title: 'Nest.js' },
+    { title: 'Fastify' },
     { title: 'PostgreSQL' },
-    { title: 'MongoDB' },
-    { title: 'AWS' },
-    { title: 'Docker' },
   ],
   projects: {
     list: [
