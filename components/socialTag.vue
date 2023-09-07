@@ -5,7 +5,7 @@
     <NTag round type="success">
       {{ userName }}
       <template #icon>
-        <NIcon :component="getIconOfServiceType(props.social.type)" />
+        <NIcon :component="getIconOfServiceType(props.social.type)" class="ml-1" />
       </template>
     </NTag>
   </CustomRouterLink>
@@ -49,7 +49,7 @@ function getDataOfService (social: SocialInfo) : {
   if (social.type === SpecialSocial.mastodon) {
     return {
       link: new URL(`@${social.userName}`, social.instance),
-      userName: `@${social.userName}@${social.instance.host}`,
+      userName: `${social.userName}@${social.instance.host}`,
     };
   }
   // special case since mailto is not a url
