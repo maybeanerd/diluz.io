@@ -1,17 +1,14 @@
 import {
   BasicSocial,
   EducationType,
-  LanguageProficiency,
   Proficiency,
   Profile,
-  // ProjectType,
   SpecialSocial,
 } from '../profile.types';
 
 export const julian: Profile = {
   person: {
     name: { first: 'Julian', last: 'Di Luzio' },
-    // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
     socials: [
       { type: BasicSocial.github, userName: '7crmbs2' },
@@ -19,11 +16,6 @@ export const julian: Profile = {
       { type: SpecialSocial.email, email: 'julian@diluz.io' },
     ],
     shortText: 'cyber security enthusiast, baseball player, biker.',
-    languages: [
-      { lang: 'German', proficiency: LanguageProficiency.native },
-      { lang: 'English', proficiency: LanguageProficiency.native },
-    ],
-    nationalities: [{ title: 'German' }, { title: 'US-American' }],
     basedIn: { country: 'Germany', city: 'Munich' },
   },
   skills: {

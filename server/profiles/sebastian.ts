@@ -1,7 +1,6 @@
 import {
   BasicSocial,
   EducationType,
-  LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
@@ -11,7 +10,6 @@ import {
 export const sebastian: Profile = {
   person: {
     name: { first: 'Sebastian', last: 'Di Luzio' },
-    // profession: 'Fullstack Developer, Games Engineer. CTO @ flint.gg',
     image: { isURL: false, path: 'pp.png' },
     socials: [
       { type: BasicSocial.github, userName: 't0tproduction' },
@@ -19,20 +17,7 @@ export const sebastian: Profile = {
       { type: BasicSocial.linkedin, userName: 'sebastian-di-luzio' },
       { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
-    // we are already on this page
-    /* website: 'https://diluz.io', */
     shortText: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
-    // i dont want this to be in my professional CV
-    /* interests: [
-      { title: 'Gaming', icon: 'gamepad-square' },
-      { title: 'Monster Hunting', icon: 'sword-cross' },
-      { title: 'Fullstack Development', icon: 'code-braces' },
-    ], */
-    languages: [
-      { lang: 'German', proficiency: LanguageProficiency.native },
-      { lang: 'English', proficiency: LanguageProficiency.C1 },
-    ],
-    nationalities: [{ title: 'German' }, { title: 'US-American' }],
     basedIn: { country: 'Germany', city: 'Munich' },
   },
   skills: {
