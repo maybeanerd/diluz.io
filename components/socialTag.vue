@@ -2,7 +2,7 @@
   <CustomRouterLink
     :to="link"
   >
-    <NTag round type="success">
+    <NTag round type="success" class="m-1">
       {{ userName }}
       <template #icon>
         <NIcon :component="getIconOfServiceType(props.social.type)" class="ml-1" />
