@@ -6,12 +6,6 @@
         {{ props.person.shortText }}
       </div>
       <LocationTag v-if="props.person.basedIn" :location="props.person.basedIn" />
-      <div>
-        {{ props.person.languages }}
-      </div>
-      <div>
-        {{ props.person.nationalities }}
-      </div>
       <SocialTag
         v-for="social in props.person.socials"
         :key="social.type"

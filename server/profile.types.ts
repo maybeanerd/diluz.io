@@ -9,16 +9,6 @@ export enum SpecialSocial {
 }
 export type Social = BasicSocial | SpecialSocial;
 
-export enum LanguageProficiency {
-  native = 'Native',
-  C2 = 'C2',
-  C1 = 'C1',
-  B2 = 'B2',
-  B1 = 'B1',
-  A2 = 'A2',
-  A1 = 'A1',
-}
-
 export enum Proficiency {
   strong = 0x0001,
   knowledgeable = 0x1001,
@@ -50,8 +40,6 @@ type Person = {
   image?: { isURL: boolean; path: string };
   shortText?: string;
   socials: Array<SocialInfo>;
-  languages?: Array<{ lang: string; proficiency: LanguageProficiency }>;
-  nationalities?: Array<{ title: string }>;
   basedIn?: { country: string; city?: string };
 };
 

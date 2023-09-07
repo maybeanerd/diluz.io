@@ -1,7 +1,6 @@
 import {
   BasicSocial,
   EducationType,
-  LanguageProficiency,
   Proficiency,
   Profile,
   ProjectType,
@@ -17,10 +16,8 @@ export const marc: Profile = {
       { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
       { type: SpecialSocial.email, email: 'marc@diluz.io' },
     ],
-    // Fill this in
+    // TODO Fill this in
     // shortText: "Lorem Ipsum",
-    languages: [{ lang: 'English', proficiency: LanguageProficiency.native }],
-    nationalities: [{ title: 'British' }, { title: 'US-American' }],
     basedIn: { country: 'England', city: 'London' },
   },
   skills: {
