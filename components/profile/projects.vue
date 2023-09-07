@@ -3,25 +3,6 @@
     <NH1>Projects</NH1>
     <div class="mx-4">
       <NTimeline>
-        <NTimelineItem content="Oops" />
-        <NTimelineItem
-          type="success"
-          title="Success"
-          content="success content"
-          time="2018-04-03 20:46"
-        />
-        <NTimelineItem
-          type="error"
-          content="Error content"
-          time="2018-04-03 20:46"
-        />
-        <NTimelineItem
-          type="warning"
-          title="Warning"
-          content="warning content"
-          time="2018-04-03 20:46"
-        />
-        <NTimelineItem content="Oops" />
         <ProfileProjectItem
           v-for="(project, index) in props.projects.list"
           :key="index"
@@ -35,9 +16,8 @@
             line-type="dashed"
           />
           <NTimelineItem
-            type="info"
             title="The beginning of time"
-            :time="new Date(0).toDateString()"
+            :time="new Date(0).toLocaleDateString()"
           />
         </template>
       </NTimeline>

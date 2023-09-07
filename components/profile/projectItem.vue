@@ -1,10 +1,12 @@
 <template>
   <NTimelineItem
-    type="info"
-    title="Info"
-    :content="JSON.stringify(props.project,null,2)"
-    time="2018-04-03 20:46"
-  />
+    type="success"
+    :title="props.project.title"
+    :time="stringifyTimeframe(props.project.timeframe)"
+  >
+    {{
+      props.project }}
+  </NTimelineItem>
 </template>
 
 <script setup lang="ts">
@@ -13,4 +15,9 @@ import { NTimelineItem } from 'naive-ui';
 import type { Project } from '~/server/profile.types';
 
 const props = defineProps<{ project: Project}>();
+
+function stringifyTimeframe (timeframe : Project['timeframe']) {
+  const { start, end } = timeframe;
+  return `${start.toLocaleDateString()} - ${end instanceof Date ? end.toLocaleDateString() : end}`;
+}
 </script>
