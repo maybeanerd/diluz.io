@@ -1,7 +1,5 @@
 import {
   BasicSocial,
-  EducationType,
-  Proficiency,
   Profile,
   ProjectType,
   SpecialSocial,
@@ -20,40 +18,23 @@ export const marc: Profile = {
     // shortText: "Lorem Ipsum",
     basedIn: { country: 'England', city: 'London' },
   },
-  skills: {
-    technical: [
-      { title: 'C#', proficiency: Proficiency.strong },
-      { title: 'C++', proficiency: Proficiency.strong },
-      { title: 'C', proficiency: Proficiency.strong },
-      { title: 'Linux', proficiency: Proficiency.strong },
-      { title: 'Python', proficiency: Proficiency.strong },
-      { title: 'Bash', proficiency: Proficiency.strong },
-      { title: 'Unity', proficiency: Proficiency.strong },
-      { title: 'Docker', proficiency: Proficiency.strong },
-
-      { title: 'ASP.Net', proficiency: Proficiency.knowledgeable },
-      { title: 'Golang', proficiency: Proficiency.knowledgeable },
-      { title: 'SQL', proficiency: Proficiency.knowledgeable },
-      { title: 'K8s', proficiency: Proficiency.knowledgeable },
-      { title: 'OpenGL', proficiency: Proficiency.knowledgeable },
-      { title: 'Vulkan', proficiency: Proficiency.knowledgeable },
-      { title: 'Perl', proficiency: Proficiency.knowledgeable },
-    ],
-    education: [
-      {
-        title: 'MSc, Video Game Development',
-        type: EducationType.university,
-        source: 'Birmingham City University (Sony Scholarship)',
-        date: new Date(2013, 7),
-      },
-      {
-        title: 'Ba, Computer Visualisation and Animation',
-        type: EducationType.university,
-        source: 'Bournemouth University',
-        date: new Date(2012, 7),
-      },
-    ],
-  },
+  favoriteTech: [
+    { title: 'C#' },
+    { title: 'C++' },
+    { title: 'C' },
+    { title: 'Linux' },
+    { title: 'Python' },
+    { title: 'Bash' },
+    { title: 'Unity' },
+    { title: 'Docker' },
+    { title: 'ASP.Net' },
+    { title: 'Golang' },
+    { title: 'SQL' },
+    { title: 'K8s' },
+    { title: 'OpenGL' },
+    { title: 'Vulkan' },
+    { title: 'Perl' },
+  ],
   projects: {
     list: [
       {

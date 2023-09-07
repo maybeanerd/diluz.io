@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-4">
     <NH1>
       {{ props.person.name.first }} {{ props.person.name.last }}
       <LocationTag v-if="props.person.basedIn" :location="props.person.basedIn" />
