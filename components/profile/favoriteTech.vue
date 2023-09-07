@@ -1,8 +1,8 @@
 <template>
   <div>
-    <NH6>Favorite Technologies</NH6>
+    <NH6>Main Technologies</NH6>
     <div>
-      <NTag v-for="(technology, index) in props.technologies" :key="index" round class="mx-1">
+      <NTag v-for="(technology, index) in props.technologies" :key="index" round class="m-1">
         {{ technology.title }}
       </NTag>
     </div>
