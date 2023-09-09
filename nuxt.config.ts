@@ -40,4 +40,8 @@ export default defineNuxtConfig({
       buildDate: new Date().toISOString(),
     },
   },
+  image: {
+    format: ['avif', 'webp', 'png'],
+    dir: 'assets/images',
+  },
 });
