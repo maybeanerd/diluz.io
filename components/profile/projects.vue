@@ -9,6 +9,7 @@
           v-for="(project, index) in orderedProjects"
           :key="index"
           :project="project"
+          :name="props.name"
         />
         <template v-if="props.projects.final">
           <NTimelineItem
@@ -30,9 +31,13 @@
 <script setup lang="ts">
 import { NTimeline, NTimelineItem } from 'naive-ui';
 
-import { ProjectType, type Profile, type Project } from '~/server/profile.types';
+import {
+  ProjectType,
+  type Profile,
+  type Project,
+} from '~/server/profile.types';
 
-const props = defineProps<{ projects: Profile['projects'] }>();
+const props = defineProps<{ projects: Profile['projects']; name: string }>();
 
 function compareProjects (a: Project, b: Project) {
   // prioritize jobs over side projects

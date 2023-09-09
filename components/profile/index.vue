@@ -10,7 +10,7 @@
         <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
       </div>
       <br>
-      <ProfileProjects :projects="props.profile.projects" />
+      <ProfileProjects :projects="props.profile.projects" :name="props.profile.person.name.first" />
     </div>
   </div>
 </template>

@@ -25,15 +25,7 @@ export type SocialInfo =
       email: string;
     };
 
-export type Image =
-  | {
-      isURL: false;
-      path: string;
-    }
-  | {
-      isURL: true;
-      path: URL;
-    };
+export type Image = string;
 
 type Person = {
   name: {
