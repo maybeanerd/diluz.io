@@ -1,7 +1,12 @@
 <template>
   <div class="mb-2">
     <div class="flex space-x-4 md:space-x-8 mb-2 md:mb-4">
-      <ProfilePicture :person="props.person" class="flex-shrink-0" />
+      <ProfilePicture
+        v-if="props.person.image"
+        :image="props.person.image"
+        :name="props.person.name.first"
+        class="flex-shrink-0"
+      />
       <div>
         <h1 class="flex-shrink-0 text-3xl">
           {{ props.person.name.first }} {{ props.person.name.last }}
