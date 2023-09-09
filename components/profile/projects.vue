@@ -1,6 +1,8 @@
 <template>
   <div>
-    <NH1>Projects</NH1>
+    <h2 class="text-xl">
+      Projects
+    </h2>
     <div class="mx-4">
       <NTimeline>
         <ProfileProjectItem
@@ -26,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { NH1, NTimeline, NTimelineItem } from 'naive-ui';
+import { NTimeline, NTimelineItem } from 'naive-ui';
 
 import { ProjectType, type Profile, type Project } from '~/server/profile.types';
 

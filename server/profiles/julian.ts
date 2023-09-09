@@ -1,8 +1,4 @@
-import {
-  BasicSocial,
-  Profile,
-  SpecialSocial,
-} from '../profile.types';
+import { BasicSocial, Profile, SpecialSocial } from '../profile.types';
 
 export const julian: Profile = {
   person: {
@@ -14,7 +10,7 @@ export const julian: Profile = {
       { type: SpecialSocial.email, email: 'julian@diluz.io' },
     ],
     shortText: 'cyber security enthusiast, baseball player, biker.',
-    basedIn: { country: 'Germany', city: 'Munich' },
+    meta: { basedIn: { country: 'Germany', city: 'Munich' } },
   },
   favoriteTech: [
     { title: 'Linux' },

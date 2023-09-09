@@ -18,9 +18,12 @@ export type SocialInfo =
     }
   | {
       type: SpecialSocial.website;
-      url: URL } | {
+      url: URL;
+    }
+  | {
       type: SpecialSocial.email;
-      email: string };
+      email: string;
+    };
 
 type Person = {
   name: {
@@ -30,7 +33,11 @@ type Person = {
   image?: { isURL: boolean; path: string };
   shortText?: string;
   socials: Array<SocialInfo>;
-  basedIn?: { country: string; city?: string };
+  meta: {
+    basedIn?: { country: string; city?: string };
+    pronouns?: Array<string>;
+    languages?: Array<string>;
+  };
 };
 
 export enum ProjectType {
@@ -60,7 +67,7 @@ export type Project = {
 
 export type Technology = Array<{
   title: string;
- }>
+}>;
 
 export type Profile = {
   person: Person;
