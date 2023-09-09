@@ -1,7 +1,5 @@
 <template>
-  <CustomRouterLink
-    :to="link"
-  >
+  <CustomRouterLink :to="link" rel="me">
     <CustomTag type="success" :icon="getIconOfServiceType(props.social.type)">
       {{ userName }}
     </CustomTag>
@@ -16,9 +14,14 @@ import {
   Mail,
   GlobeOutline,
 } from '@vicons/ionicons5';
-import { Social, BasicSocial, SpecialSocial, SocialInfo } from '~/server/profile.types';
+import {
+  Social,
+  BasicSocial,
+  SpecialSocial,
+  SocialInfo,
+} from '~/server/profile.types';
 
-const props = defineProps<{ social: SocialInfo}>();
+const props = defineProps<{ social: SocialInfo }>();
 
 const ServiceIcons: Record<Social, globalThis.Component> = {
   [BasicSocial.linkedin]: LogoLinkedin,
@@ -28,7 +31,7 @@ const ServiceIcons: Record<Social, globalThis.Component> = {
   [SpecialSocial.website]: GlobeOutline,
 };
 
-function getIconOfServiceType (type: Social |SpecialSocial) {
+function getIconOfServiceType (type: Social | SpecialSocial) {
   return ServiceIcons[type];
 }
 
@@ -37,9 +40,9 @@ const ServiceLinks: Record<BasicSocial, string> = {
   [BasicSocial.github]: 'https://github.com/',
 };
 
-function getDataOfService (social: SocialInfo) : {
-  userName: string,
-  link: string | URL
+function getDataOfService (social: SocialInfo): {
+  userName: string;
+  link: string | URL;
 } {
   // special case since mastodon can be on different instances
   if (social.type === SpecialSocial.mastodon) {
@@ -70,7 +73,5 @@ function getDataOfService (social: SocialInfo) : {
   };
 }
 
-const {
-  userName, link,
-} = getDataOfService(props.social);
+const { userName, link } = getDataOfService(props.social);
 </script>
