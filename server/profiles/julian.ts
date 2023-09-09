@@ -3,7 +3,7 @@ import { BasicSocial, Profile, SpecialSocial } from '../profile.types';
 export const julian: Profile = {
   person: {
     name: { first: 'Julian', last: 'Di Luzio' },
-    image: { isURL: false, path: 'pp.png' },
+    image: 'pp.png',
     socials: [
       { type: BasicSocial.github, userName: '7crmbs2' },
       { type: BasicSocial.linkedin, userName: 'julian-di-luzio' },

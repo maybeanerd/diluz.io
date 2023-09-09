@@ -8,7 +8,7 @@ import {
 export const marc: Profile = {
   person: {
     name: { first: 'Marc', last: 'Di Luzio' },
-    image: { isURL: false, path: 'pp.png' },
+    image: 'pp.png',
     socials: [
       { type: BasicSocial.github, userName: 'mdiluz' },
       { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
@@ -41,7 +41,7 @@ export const marc: Profile = {
         title: 'Unity',
         role: 'Lead Software Engineer',
         url: 'https://unity.com/',
-        image: { isURL: false, path: 'unity.png' },
+        image: 'unity.png',
         description:
           'Leading a tools team in Release Engineering, working on a variety of projects focusing on better release workflows, bug tracking and quality barriers.',
         timeframe: {
@@ -57,7 +57,7 @@ export const marc: Profile = {
         title: 'Unity',
         role: 'Senior Software Engineer',
         url: 'https://unity.com/',
-        image: { isURL: false, path: 'unity.png' },
+        image: 'unity.png',
         description:
           'Worked in Sustained Engineering, focusing on Linux bugs and infrastructure.',
         timeframe: {
@@ -73,7 +73,7 @@ export const marc: Profile = {
         title: 'Rove',
         role: 'Developer and Designer',
         url: 'https://github.com/mdiluz/rove',
-        image: { isURL: false, path: 'rove.png' },
+        image: 'rove.png',
         description:
           'An asynchronous nomadic game about exploring as part of a loose community.',
         timeframe: {
@@ -105,7 +105,7 @@ export const marc: Profile = {
         title: 'Feral Interactive',
         role: 'Linux Group lead',
         url: 'https://www.feralinteractive.com/en/',
-        image: { isURL: false, path: 'feral_interactive.png' },
+        image: 'feral_interactive.png',
         description:
           'Lead the Linux platform development while porting many AAA games such as XCOM2, Mad Max and HITMAN',
         timeframe: {
@@ -125,7 +125,7 @@ export const marc: Profile = {
         title: 'Feral Interactive',
         role: 'Software Developer',
         url: 'https://www.feralinteractive.com/en/',
-        image: { isURL: false, path: 'feral_interactive.png' },
+        image: 'feral_interactive.png',
         description:
           'Worked on Mac and Linux ports for a variety of games including ROME: Total War, Tomb Raider and XCOM',
         timeframe: {
