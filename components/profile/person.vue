@@ -1,12 +1,16 @@
 <template>
   <div class="mb-2">
-    <h1 class="flex-shrink-0 text-3xl">
-      {{ props.person.name.first }} {{ props.person.name.last }}
-    </h1>
-
-    <p class="text-base mb-1">
-      {{ props.person.shortText }}
-    </p>
+    <div class="flex space-x-4 md:space-x-8 mb-2 md:mb-4">
+      <ProfilePicture :person="props.person" class="flex-shrink-0" />
+      <div>
+        <h1 class="flex-shrink-0 text-3xl">
+          {{ props.person.name.first }} {{ props.person.name.last }}
+        </h1>
+        <p class="text-base">
+          {{ props.person.shortText }}
+        </p>
+      </div>
+    </div>
     <div>
       <LocationTag
         v-if="props.person.meta.basedIn"

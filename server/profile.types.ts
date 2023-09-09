@@ -25,12 +25,22 @@ export type SocialInfo =
       email: string;
     };
 
+export type Image =
+  | {
+      isURL: false;
+      path: string;
+    }
+  | {
+      isURL: true;
+      path: URL;
+    };
+
 type Person = {
   name: {
     first: string;
     last: 'Di Luzio'; // we could support other spellings of the name later on
   };
-  image?: { isURL: boolean; path: string };
+  image?: Image;
   shortText?: string;
   socials: Array<SocialInfo>;
   meta: {
@@ -54,7 +64,7 @@ export enum EducationType {
 export type Project = {
   title: string;
   role: string;
-  image?: string;
+  image?: Image;
   description: string;
   highlights?: Array<string>;
   url?: string;
