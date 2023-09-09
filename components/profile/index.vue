@@ -9,6 +9,7 @@
         <ProfilePerson :person="props.profile.person" />
         <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
       </div>
+      <br>
       <ProfileProjects :projects="props.profile.projects" />
     </div>
   </div>

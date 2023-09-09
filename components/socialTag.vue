@@ -2,17 +2,13 @@
   <CustomRouterLink
     :to="link"
   >
-    <NTag round type="success" class="m-1">
+    <CustomTag type="success" :icon="getIconOfServiceType(props.social.type)">
       {{ userName }}
-      <template #icon>
-        <NIcon :component="getIconOfServiceType(props.social.type)" class="ml-1" />
-      </template>
-    </NTag>
+    </CustomTag>
   </CustomRouterLink>
 </template>
 
 <script setup lang="ts">
-import { NTag, NIcon } from 'naive-ui';
 import {
   LogoLinkedin,
   LogoGithub,

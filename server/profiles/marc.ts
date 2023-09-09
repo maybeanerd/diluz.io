@@ -16,7 +16,7 @@ export const marc: Profile = {
     ],
     // TODO Fill this in
     // shortText: "Lorem Ipsum",
-    basedIn: { country: 'England', city: 'London' },
+    meta: { basedIn: { country: 'England', city: 'London' } },
   },
   favoriteTech: [
     { title: 'C#' },

@@ -11,12 +11,20 @@ export const sebastian: Profile = {
     image: { isURL: false, path: 'pp.png' },
     socials: [
       { type: BasicSocial.github, userName: 't0tproduction' },
-      { type: SpecialSocial.mastodon, userName: 'maybeanerd', instance: new URL('https://bumscode.com') },
+      {
+        type: SpecialSocial.mastodon,
+        userName: 'maybeanerd',
+        instance: new URL('https://bumscode.com'),
+      },
       { type: BasicSocial.linkedin, userName: 'sebastian-di-luzio' },
       { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
     shortText: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
-    basedIn: { country: 'Germany', city: 'Munich' },
+    meta: {
+      basedIn: { country: 'Germany', city: 'Munich' },
+      pronouns: ['he', 'they'],
+      languages: ['en', 'de'],
+    },
   },
   favoriteTech: [
     { title: 'TypeScript' },

@@ -1,19 +1,18 @@
 <template>
   <div>
-    <NH6>Favorite Technology Stack</NH6>
+    <h2 class="text-lg">
+      Favorite Technology Stack
+    </h2>
     <div>
-      <NTag v-for="(technology, index) in props.technologies" :key="index" round class="m-1">
+      <CustomTag v-for="(technology, index) in props.technologies" :key="index">
         {{ technology.title }}
-      </NTag>
+      </CustomTag>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { NH6, NTag } from 'naive-ui';
-
 import type { Profile } from '~/server/profile.types';
 
 const props = defineProps<{ technologies: Profile['favoriteTech'] }>();
-
 </script>
