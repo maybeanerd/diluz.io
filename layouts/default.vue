@@ -9,7 +9,7 @@
     <NBackTop :right="20" />
     <div class="flex flex-col min-h-full justify-between">
       <Header />
-      <div class="p-4 lg:p-8 w-screen overflow-x-hidden">
+      <div class="p-4 md:p-8 w-screen overflow-x-hidden">
         <slot />
       </div>
       <Footer />
