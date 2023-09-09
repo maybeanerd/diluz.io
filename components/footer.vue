@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-end border-t-[1px] border-gray-700 p-2">
+  <div class="flex justify-end border-t-[1px] border-gray-700 p-2 text-xs sm:text-sm">
     Created with&nbsp;
     <template
       v-for="(dependency, index) in notableDependencies"
