@@ -42,5 +42,6 @@ export default defineNuxtConfig({
   },
   image: {
     format: ['avif', 'webp', 'png'],
+    dir: 'assets/images',
   },
 });
