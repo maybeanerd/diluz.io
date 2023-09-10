@@ -22,15 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  MenuOption,
-  NDrawer,
-  NDrawerContent,
-  NIcon,
-  NMenu,
-  NDivider,
-} from 'naive-ui';
-import { Airplane } from '@vicons/ionicons5';
+import type { MenuOption } from 'naive-ui';
 import { RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
@@ -39,9 +31,9 @@ import { defaultProfile } from '~/constants/defaultProfile';
 import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 
 // TODO change this to render the image of a profile
-function renderIcon (icon: Component) {
+/* function renderIcon (icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) });
-}
+} */
 
 const menuOptions = profiles.map((profile) => {
   const name = profile.person.name.first.toLowerCase();
@@ -58,7 +50,7 @@ const menuOptions = profiles.map((profile) => {
         upperCaseFirstLetter(name),
       ),
     key: name,
-    icon: renderIcon(Airplane),
+    // icon: renderIcon(profile.icon),
   };
 
   return menuOption;

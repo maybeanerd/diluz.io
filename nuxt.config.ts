@@ -9,31 +9,15 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
     '@nuxtjs/tailwindcss',
+    '@bg-dev/nuxt-naiveui',
   ],
   pwa: {},
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: profiles.map(profile => `/${profile.person.name.first.toLowerCase()}`),
-    },
-  },
-  build: {
-    transpile:
-      process.env.NODE_ENV === 'production'
-        ? [
-            'naive-ui',
-            'vueuc',
-            '@css-render/vue3-ssr',
-            '@juggle/resize-observer',
-          ]
-        : ['@juggle/resize-observer'],
-  },
-  vite: {
-    optimizeDeps: {
-      include:
-        process.env.NODE_ENV === 'development'
-          ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
-          : [],
+      routes: profiles.map(
+        (profile) => `/${profile.person.name.first.toLowerCase()}`
+      ),
     },
   },
   runtimeConfig: {
@@ -45,5 +29,8 @@ export default defineNuxtConfig({
   image: {
     format: ['avif', 'webp', 'png'],
     dir: 'assets/images',
+  },
+  tailwindcss: {
+    exposeConfig: true,
   },
 });

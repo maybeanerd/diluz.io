@@ -29,8 +29,6 @@
 </template>
 
 <script setup lang="ts">
-import { NTimeline, NTimelineItem } from 'naive-ui';
-
 import {
   ProjectType,
   type Profile,
