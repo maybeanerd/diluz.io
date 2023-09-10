@@ -1,12 +1,17 @@
 <template>
   <NTimelineItem
     type="success"
-    :title="props.project.title"
     :time="stringifyTimeframe(props.project.timeframe)"
   >
+    <h3 class="text-lg mt--1">
+      {{ props.project.title }}
+    </h3>
     <ProfileProjectPicture v-if="props.project.image" :name="props.name" :image-path="props.project.image" />
-    {{
-      props.project }}
+    <h4 class="text-base">
+      Role
+    </h4><p class="text-sm">
+      {{ props.project.role }}
+    </p>
   </NTimelineItem>
 </template>
 
