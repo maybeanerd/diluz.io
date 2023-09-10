@@ -3,7 +3,7 @@
     type="success"
     :time="stringifyTimeframe(props.project.timeframe)"
   >
-    <h3 class="text-lg mt--1">
+    <h3 class="text-lg -mt-1">
       {{ props.project.title }}
     </h3>
     <ProfileProjectPicture v-if="props.project.image" :name="props.name" :image-path="props.project.image" />
