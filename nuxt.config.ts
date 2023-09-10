@@ -1,4 +1,5 @@
 import gitCommitInfo from 'git-commit-info';
+import { profiles } from './server/profiles';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -13,6 +14,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
+      routes: profiles.map(profile => `/${profile.person.name.first.toLowerCase()}`),
     },
   },
   build: {
