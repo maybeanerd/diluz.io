@@ -1,10 +1,5 @@
 <template>
-  <NConfigProvider
-    :theme="darkTheme"
-    :locale="enUS"
-    :date-locale="dateDeDE"
-    class="h-screen"
-  >
+  <NaiveConfig :theme-config="themeConfig" class="h-screen">
     <Navbar />
     <NBackTop :right="20" />
     <div class="flex flex-col min-h-full justify-between">
@@ -14,9 +9,34 @@
       </div>
       <Footer />
     </div>
-  </NConfigProvider>
+  </NaiveConfig>
 </template>
 
 <script setup lang="ts">
-import { NConfigProvider, darkTheme, enUS, dateDeDE, NBackTop } from 'naive-ui';
+import { ThemeConfig } from '@bg-dev/nuxt-naiveui';
+import { theme } from '#tailwind-config';
+
+// TODO adjust theme
+const themeConfig: ThemeConfig = {
+  shared: {
+    common: {
+      fontFamily: theme.fontFamily.sans.join(', '),
+      lineHeight: theme.lineHeight.normal,
+    },
+  },
+  light: {
+    common: {
+      primaryColor: theme.colors.blue[600],
+      primaryColorHover: theme.colors.blue[500],
+      primaryColorPressed: theme.colors.blue[700],
+    },
+  },
+  dark: {
+    common: {
+      primaryColor: theme.colors.blue[500],
+      primaryColorHover: theme.colors.blue[400],
+      primaryColorPressed: theme.colors.blue[600],
+    },
+  },
+};
 </script>

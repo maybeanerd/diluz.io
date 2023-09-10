@@ -1,17 +1,16 @@
 <template>
   <div
-    class="p-2 sticky top-0 bg-gray-900 border-b-[1px] border-gray-700 flex justify-between z-30"
+    class="p-2 sticky top-0 dark:bg-gray-900 border-b-[1px] border-gray-700 flex justify-between z-30"
   >
     <NButton quaternary round @click="toggleMenu">
       <template #icon>
-        <NIcon size="26">
-          <Menu />
-        </NIcon>
+        <NaiveIcon :size="26" name="ph:list" />
       </template>
     </NButton>
     <div v-if="title" class="self-center text-lg">
       <p>{{ title }}</p>
     </div>
+    <NaiveColorModeSwitch />
     <NSelect
       v-model="selectedLanguage"
       :options="languages"
@@ -22,9 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { NButton, NIcon, NSelect } from 'naive-ui';
-import { Menu } from '@vicons/ionicons5';
-
 import { useMenu } from '~/composables/useMenu';
 import { useHeader } from '~/composables/useHeader';
 

@@ -2,16 +2,16 @@
   <NTag round class="m-1" :type="props.type">
     <slot />
     <template v-if="props.icon" #icon>
-      <NIcon :component="props.icon" class="ml-1" />
+      <NaiveIcon :name="props.icon" class="ml-1" />
     </template>
   </NTag>
 </template>
 
 <script setup lang="ts">
-import { NTag, NIcon, TagProps } from 'naive-ui';
+import type { TagProps } from 'naive-ui';
 
 const props = defineProps<{
-  icon?: globalThis.Component;
+  icon?: string;
   type?: TagProps['type'];
 }>();
 </script>

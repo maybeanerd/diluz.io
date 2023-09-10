@@ -1,11 +1,10 @@
 <template>
-  <CustomTag :icon="LanguageOutline">
+  <CustomTag icon="ph:translate">
     {{ readableLanguages }}
   </CustomTag>
 </template>
 
 <script setup lang="ts">
-import { LanguageOutline } from '@vicons/ionicons5';
 import { Profile } from '~/server/profile.types';
 
 const props = defineProps<{

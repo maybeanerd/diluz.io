@@ -8,13 +8,6 @@
 
 <script setup lang="ts">
 import {
-  LogoLinkedin,
-  LogoGithub,
-  LogoMastodon,
-  Mail,
-  GlobeOutline,
-} from '@vicons/ionicons5';
-import {
   Social,
   BasicSocial,
   SpecialSocial,
@@ -23,12 +16,12 @@ import {
 
 const props = defineProps<{ social: SocialInfo }>();
 
-const ServiceIcons: Record<Social, globalThis.Component> = {
-  [BasicSocial.linkedin]: LogoLinkedin,
-  [BasicSocial.github]: LogoGithub,
-  [SpecialSocial.email]: Mail,
-  [SpecialSocial.mastodon]: LogoMastodon,
-  [SpecialSocial.website]: GlobeOutline,
+const ServiceIcons: Record<Social, string> = {
+  [BasicSocial.linkedin]: 'mdi:linkedin',
+  [BasicSocial.github]: 'mdi:github',
+  [SpecialSocial.email]: 'ph:envelope-simple',
+  [SpecialSocial.mastodon]: 'mdi:mastodon',
+  [SpecialSocial.website]: 'ph:globe',
 };
 
 function getIconOfServiceType (type: Social | SpecialSocial) {

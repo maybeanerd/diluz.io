@@ -1,11 +1,10 @@
 <template>
-  <CustomTag :icon="PersonOutline">
+  <CustomTag icon="ph:user">
     {{ readablePronouns }}
   </CustomTag>
 </template>
 
 <script setup lang="ts">
-import { PersonOutline } from '@vicons/ionicons5';
 import { Profile } from '~/server/profile.types';
 
 const props = defineProps<{
