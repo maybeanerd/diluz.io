@@ -10,13 +10,15 @@
     <div v-if="title" class="self-center text-lg">
       <p>{{ title }}</p>
     </div>
-    <NaiveColorModeSwitch />
-    <NSelect
-      v-model="selectedLanguage"
-      :options="languages"
-      default-value="en"
-      class="w-16"
-    />
+    <div class="flex space-x-4">
+      <NaiveColorModeSwitch />
+      <NSelect
+        v-model="selectedLanguage"
+        :options="languages"
+        default-value="en"
+        class="w-16"
+      />
+    </div>
   </div>
 </template>
 
