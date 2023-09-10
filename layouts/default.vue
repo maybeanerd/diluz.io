@@ -14,7 +14,9 @@
 
 <script setup lang="ts">
 import { ThemeConfig } from '@bg-dev/nuxt-naiveui';
-import { theme } from '#tailwind-config';
+import tailwindConfig from '#tailwind-config';
+
+const { theme } = tailwindConfig;
 
 // TODO adjust theme
 const themeConfig: ThemeConfig = {

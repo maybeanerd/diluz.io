@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: profiles.map(
-        (profile) => `/${profile.person.name.first.toLowerCase()}`
+        profile => `/${profile.person.name.first.toLowerCase()}`,
       ),
     },
   },
