@@ -27,5 +27,5 @@ const profile = profiles.find(
 )!;
 
 const { title } = useHeader();
-title.value = `${profile?.person.name.first} ${profile?.person.name.last}`;
+title.value = profile.person.name.first;
 </script>
