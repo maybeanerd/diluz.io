@@ -101,6 +101,7 @@ const themeConfig: ThemeConfig = {
       primaryColorPressed: theme.colors.primary.action.dark,
     },
   },
+  mobile: themeFallback,
   mobileOrTablet: themeFallback,
 };
 </script>
