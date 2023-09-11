@@ -1,22 +1,41 @@
 <template>
+  <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <NTimelineItem
     type="success"
     :time="stringifyTimeframe(props.project.timeframe)"
   >
-    <h3 class="text-lg -mt-1">
+    <h3 class="text-base -mt-[5px] mb-2">
       {{ props.project.title }}
     </h3>
-    <ProfileProjectPicture
-      v-if="props.project.image"
-      :name="props.name"
-      :image-path="props.project.image"
-    />
-    <h4 class="text-base">
-      Role
-    </h4>
-    <p class="text-sm">
-      {{ props.project.role }}
-    </p>
+    <div class="ml-2">
+      <ProfileProjectPicture
+        v-if="props.project.image"
+        :name="props.name"
+        :image-path="props.project.image"
+      />
+      <ProfileProjectFact :title="'Role'" :value="props.project.role" />
+      <ProfileProjectFact
+        :title="'Description'"
+        :value="props.project.description"
+      />
+      <!-- TODO move description to a dedicated space -->
+      <ProfileProjectFact
+        v-if="props.project.technologies"
+        :title="'Technologies'"
+        :value="props.project.technologies"
+      />
+      <!-- TODO embed link nicely -->
+      <ProfileProjectFact
+        v-if="props.project.url"
+        :title="'URL'"
+        :value="props.project.url"
+      />
+      <ProfileProjectFact
+        v-if="props.project.highlights"
+        :title="'Highlights'"
+        :value="props.project.highlights"
+      />
+    </div>
   </NTimelineItem>
 </template>
 
