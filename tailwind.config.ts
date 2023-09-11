@@ -14,8 +14,14 @@ export default <Partial<Config>>{
           highlight: { light: colors.green[400], dark: colors.green[400] },
           action: { light: colors.green[500], dark: colors.green[500] },
         },
-        background: { light: colors.gray[200], dark: colors.gray[900] },
-        content: { light: colors.gray[900], dark: colors.gray[200] },
+        background: { light: colors.white, dark: colors.gray[900] },
+        content: {
+          primary: { light: colors.gray[900], dark: colors.gray[200] },
+          secondary: {
+            light: colors.gray[300],
+            dark: colors.gray[700],
+          },
+        },
       },
     },
   },
