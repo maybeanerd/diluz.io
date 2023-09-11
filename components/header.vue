@@ -11,7 +11,7 @@
       <p>{{ title }}</p>
     </div>
     <div class="flex space-x-4">
-      <NaiveColorModeSwitch />
+      <ThemePicker class="my-auto" />
       <NSelect
         v-model="selectedLanguage"
         :options="languages"
