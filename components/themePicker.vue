@@ -1,5 +1,5 @@
 <template>
-  <NSwitch v-model:value="isDarkTheme" @change="changeColorMode">
+  <NSwitch v-model:value="isDarkTheme">
     <template #checked-icon>
       🌑
     </template>
@@ -12,15 +12,10 @@
 <script setup lang="ts">
 const { colorMode } = useNaiveColorMode();
 
-const isDarkTheme = computed(() =>
-  unref(colorMode) === 'dark',
-);
-
-function changeColorMode () {
-  if (unref(isDarkTheme)) {
-    colorMode.value = 'light';
-  } else {
-    colorMode.value = 'dark';
-  }
-}
+const isDarkTheme = computed({
+  get: () => unref(colorMode) === 'dark',
+  set: (darkMode: boolean) => {
+    colorMode.value = darkMode ? 'dark' : 'light';
+  },
+});
 </script>
