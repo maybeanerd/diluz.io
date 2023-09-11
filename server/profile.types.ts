@@ -62,7 +62,6 @@ export type Project = {
   url?: string;
   technologies?: Array<string>;
   timeframe: { start: Date; end: Date | 'current' };
-  subprojects?: Array<Project>;
   showInProfile: boolean;
   type: ProjectType;
 };
