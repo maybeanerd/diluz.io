@@ -12,12 +12,7 @@
     </div>
     <div class="flex space-x-4">
       <ThemePicker class="my-auto" />
-      <NSelect
-        v-model="selectedLanguage"
-        :options="languages"
-        default-value="en"
-        class="w-16"
-      />
+      <LanguagePicker />
     </div>
   </div>
 </template>
@@ -33,16 +28,4 @@ function toggleMenu () {
   isOpen.value = !isOpen.value;
 }
 
-const selectedLanguage = ref('en');
-
-const languages = [
-  {
-    label: 'EN',
-    value: 'en',
-  },
-  {
-    label: 'DE',
-    value: 'de',
-  },
-];
 </script>

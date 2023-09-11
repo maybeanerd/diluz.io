@@ -33,4 +33,6 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
   },
+  i18n: {
+  },
 });
