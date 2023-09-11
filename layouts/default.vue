@@ -28,16 +28,16 @@ const themeConfig: ThemeConfig = {
   },
   light: {
     common: {
-      primaryColor: theme.colors.blue[600],
-      primaryColorHover: theme.colors.blue[500],
-      primaryColorPressed: theme.colors.blue[700],
+      primaryColor: theme.colors.primary.base.light,
+      primaryColorHover: theme.colors.primary.highlight.light,
+      primaryColorPressed: theme.colors.primary.action.light,
     },
   },
   dark: {
     common: {
-      primaryColor: theme.colors.blue[500],
-      primaryColorHover: theme.colors.blue[400],
-      primaryColorPressed: theme.colors.blue[600],
+      primaryColor: theme.colors.primary.base.dark,
+      primaryColorHover: theme.colors.primary.highlight.dark,
+      primaryColorPressed: theme.colors.primary.action.dark,
     },
   },
 };
