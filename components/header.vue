@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-2 sticky top-0 dark:bg-gray-900 border-b-[1px] border-gray-700 flex justify-between z-30"
+    class="p-2 sticky top-0 flex justify-between z-30 bg-background-light dark:bg-background-dark border-b-[1px] border-content-secondary-light dark:border-content-secondary-dark"
   >
     <NButton quaternary round @click="toggleMenu">
       <template #icon>
