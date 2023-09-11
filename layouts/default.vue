@@ -1,5 +1,8 @@
 <template>
-  <NaiveConfig :theme-config="themeConfig" class="h-screen">
+  <NaiveConfig
+    :theme-config="themeConfig"
+    class="h-screen"
+  >
     <Navbar />
     <NBackTop :right="20" />
     <div class="flex flex-col min-h-full justify-between">
@@ -16,9 +19,13 @@
 import { ThemeConfig } from '@bg-dev/nuxt-naiveui';
 import tailwindConfig from '#tailwind-config';
 
+const { colorModePreference } = useNaiveColorMode();
+colorModePreference.set('system');
+
 const { theme } = tailwindConfig;
 
-// TODO adjust theme
+// TODO finalize theme
+// TODO somehow disable "mobile theme"
 const themeConfig: ThemeConfig = {
   shared: {
     common: {
