@@ -1,9 +1,6 @@
 <template>
   <div class="mb-2">
-    <div
-      class="flex space-x-4 mb-2 md:mb-4"
-      :class="{'md:space-x-8': props.isFullSize}"
-    >
+    <div class="flex space-x-4 mb-2 md:mb-4 md:space-x-8">
       <ProfilePicture
         v-if="props.person.image"
         :image="props.person.image"
@@ -12,9 +9,7 @@
       />
       <div>
         <h1 class="text-3xl">
-          {{ props.person.name.first }} <br v-if="!props.isFullSize">{{
-            props.person.name.last
-          }}
+          {{ props.person.name.first }} {{ props.person.name.last }}
         </h1>
         <p class="text-base">
           {{ props.person.shortText }}
@@ -48,5 +43,5 @@
 <script setup lang="ts">
 import type { Profile } from '~/server/profile.types';
 
-const props = defineProps<{ person: Profile['person']; isFullSize: boolean }>();
+const props = defineProps<{ person: Profile['person'] }>();
 </script>
