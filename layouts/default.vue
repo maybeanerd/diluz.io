@@ -24,8 +24,62 @@ colorModePreference.set('system');
 
 const { theme } = tailwindConfig;
 
+// We don't want to have a mobile "theme" at all,
+// since all it really does is introduce layout shift after loading the page
+// This fallback makes sure the theme looks like the normal desktop one does
+// might solve this with a feature later as mentioned here https://github.com/becem-gharbi/nuxt-naiveui/issues/21
+const themeFallback = {
+  common: {
+    fontSize: '14px',
+    heightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Form: {
+    labelFontSizeTopMedium: '14px',
+  },
+  Input: {
+    heightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Button: {
+    heightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Card: {
+    fontSizeMedium: '14px',
+  },
+  Avatar: {
+    heightMedium: '34px',
+    fontSize: '14px',
+  },
+  ColorPicker: {
+    heightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Dropdown: {
+    optionHeightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Radio: {
+    buttonHeightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Skeleton: {
+    heightMedium: '34px',
+  },
+  Tag: {
+    heightMedium: '34px',
+    fontSizeMedium: '14px',
+  },
+  Result: {
+    fontSizeMedium: '14px',
+  },
+  Tabs: {
+    tabFontSizeMedium: '14px',
+  },
+};
+
 // TODO finalize theme
-// TODO somehow disable "mobile theme"
 const themeConfig: ThemeConfig = {
   shared: {
     common: {
@@ -47,5 +101,6 @@ const themeConfig: ThemeConfig = {
       primaryColorPressed: theme.colors.primary.action.dark,
     },
   },
+  mobileOrTablet: themeFallback,
 };
 </script>
