@@ -1,5 +1,8 @@
 <template>
-  <CustomRouterLink :to="props.to" class="text-green-300 hover:text-green-400">
+  <CustomRouterLink
+    :to="props.to"
+    class="text-primary-base-light hover:text-primary-highlight-light dark:text-primary-base-dark dark:hover:text-primary-highlight-dark"
+  >
     <slot />
   </CustomRouterLink>
 </template>
