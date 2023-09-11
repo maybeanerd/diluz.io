@@ -1,12 +1,12 @@
 <template>
   <div class="lg:flex">
-    <div class="max-lg:hidden flex-shrink-0 w-72 flex flex-col">
-      <ProfilePerson :person="props.profile.person" />
+    <div class="max-lg:hidden flex-shrink-0 w-96 flex flex-col">
+      <ProfilePerson :person="props.profile.person" :is-full-size="false" />
       <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
     </div>
     <div class="flex flex-col">
       <div class="lg:hidden">
-        <ProfilePerson :person="props.profile.person" />
+        <ProfilePerson :person="props.profile.person" :is-full-size="true" />
         <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
       </div>
       <br>
