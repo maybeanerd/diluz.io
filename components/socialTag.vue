@@ -1,6 +1,6 @@
 <template>
   <CustomRouterLink :to="link" rel="me">
-    <CustomTag type="success" :icon="getIconOfServiceType(props.social.type)">
+    <CustomTag type="primary" :icon="getIconOfServiceType(props.social.type)">
       {{ userName }}
     </CustomTag>
   </CustomRouterLink>
