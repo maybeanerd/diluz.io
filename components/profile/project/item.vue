@@ -13,7 +13,7 @@
         :name="props.name"
         :image-path="props.project.image"
       />
-      <ProfileProjectFact :title="'Role'" :value="props.project.role" />
+      <ProfileProjectFact :title="t('project.role')" :value="props.project.role" />
       <ProfileProjectFact
         :title="'Description'"
         :value="props.project.description"
@@ -21,7 +21,7 @@
       <!-- TODO move description to a dedicated space -->
       <ProfileProjectFact
         v-if="props.project.technologies"
-        :title="'Technologies'"
+        :title="t('project.technologies')"
         :value="props.project.technologies"
       />
       <!-- TODO embed link nicely -->
@@ -41,6 +41,8 @@
 
 <script setup lang="ts">
 import type { Project } from '~/server/profile.types';
+
+const { t } = useI18n();
 
 const props = defineProps<{ project: Project; name: string }>();
 
