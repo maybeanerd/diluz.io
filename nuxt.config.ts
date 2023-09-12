@@ -1,5 +1,6 @@
 import gitCommitInfo from 'git-commit-info';
 import { profiles } from './server/profiles';
+import { i18n } from './config/i18n';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -33,6 +34,5 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
   },
-  i18n: {
-  },
+  i18n,
 });
