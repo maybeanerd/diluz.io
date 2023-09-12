@@ -40,13 +40,21 @@ const pageImage = profile.person.image
   ).url
   : undefined;
 
-useServerSeoMeta({
+useSeoMeta({
   title: pageTitle,
   ogTitle: pageTitle,
   description: pageDescription,
   ogDescription: pageDescription,
   ogImage: pageImage,
   twitterCard: 'summary_large_image',
+});
+
+useHead({
+  link: [{
+    rel: 'icon',
+    type: 'image/png',
+    href: pageImage,
+  }],
 });
 
 const { title } = useHeader();
