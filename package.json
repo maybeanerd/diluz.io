@@ -37,7 +37,7 @@
     "@testing-library/cypress": "9.0.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "cypress": "12.17.4",
+    "cypress": "13.2.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-config-standard": "16.0.3",
     "eslint-import-resolver-typescript": "3.6.0",
