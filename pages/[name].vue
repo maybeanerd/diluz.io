@@ -23,8 +23,31 @@ const route = useRoute();
 const name = route.params.name as string;
 
 const profile = profiles.find(
-  searchedProfile => searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
+  searchedProfile =>
+    searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
 )!;
+
+const pageTitle = `${profile.person.name.first} ${profile.person.name.last}`;
+const pageDescription =
+  profile.person.shortText ?? `${pageTitle}s personal page.`;
+
+const { getImage } = useImage();
+const pageImage = profile.person.image
+  ? getImage(
+      `/profile/${profile.person.name.first.toLowerCase()}/${
+        profile.person.image
+      }`,
+  ).url
+  : undefined;
+
+useServerSeoMeta({
+  title: pageTitle,
+  ogTitle: pageTitle,
+  description: pageDescription,
+  ogDescription: pageDescription,
+  ogImage: pageImage,
+  twitterCard: 'summary_large_image',
+});
 
 const { title } = useHeader();
 title.value = profile.person.name.first;
