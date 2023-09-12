@@ -50,11 +50,13 @@ useSeoMeta({
 });
 
 useHead({
-  link: [{
-    rel: 'icon',
-    type: 'image/png',
-    href: pageImage,
-  }],
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: pageImage,
+    },
+  ],
 });
 
 const { title } = useHeader();
