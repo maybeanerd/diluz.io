@@ -33,7 +33,7 @@ type Person = {
     last: 'Di Luzio'; // we could support other spellings of the name later on
   };
   image?: Image;
-  shortText?: string;
+  shortText: string;
   socials: Array<SocialInfo>;
   meta: {
     basedIn?: { country: string; city?: string };

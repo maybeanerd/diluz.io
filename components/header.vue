@@ -7,8 +7,8 @@
         <NaiveIcon :size="26" name="ph:list" />
       </template>
     </NButton>
-    <div v-if="title" class="self-center text-lg">
-      <p>{{ title }}</p>
+    <div class="self-center text-lg">
+      <p>{{ profile.person.name.first }}</p>
     </div>
     <div class="flex space-x-4">
       <ThemePicker class="my-auto" />
@@ -19,10 +19,9 @@
 
 <script setup lang="ts">
 import { useMenu } from '~/composables/useMenu';
-import { useHeader } from '~/composables/useHeader';
 
 const { isOpen } = useMenu();
-const { title } = useHeader();
+const { profile } = useProfileFromRoute();
 
 function toggleMenu () {
   isOpen.value = !isOpen.value;
