@@ -36,7 +36,7 @@ function setMetaInfo (person: Profile['person']) {
 }
 
 function setProfileByName (name: string) {
-  console.log('useProfileFromRoute', name);
+  // Exit early if the profile hasn't changed
   if (name === unref(profile).person.name.first.toLowerCase()) {
     return;
   }
