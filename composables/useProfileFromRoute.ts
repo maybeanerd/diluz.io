@@ -23,16 +23,6 @@ function setMetaInfo (person: Profile['person']) {
     ogImage: pageImage,
     twitterCard: 'summary_large_image',
   });
-
-  useHead({
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: pageImage,
-      },
-    ],
-  });
 }
 
 function setProfileByName (name: string) {
