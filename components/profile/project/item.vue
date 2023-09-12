@@ -15,7 +15,7 @@
       />
       <ProfileProjectFact :title="t('project.role')" :value="props.project.role" />
       <ProfileProjectFact
-        :title="'Description'"
+        :title="t('project.description')"
         :value="props.project.description"
       />
       <!-- TODO move description to a dedicated space -->

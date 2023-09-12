@@ -1,6 +1,7 @@
 {
   "project": {
     "role": "Role",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "description": "Description"
   }
 }
