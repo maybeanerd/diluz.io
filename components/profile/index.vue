@@ -2,7 +2,11 @@
   <div class="flex flex-col max-w-4xl mx-auto">
     <ProfilePerson :person="props.profile.person" />
     <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
-    <ProfileProjects class="mt-4" :projects="props.profile.projects" :name="props.profile.person.name.first" />
+    <ProfileProjects
+      class="mt-4"
+      :projects="props.profile.projects"
+      :name="props.profile.person.name.first"
+    />
   </div>
 </template>
 
@@ -10,5 +14,4 @@
 import { Profile } from '~/server/profile.types';
 
 const props = defineProps<{ profile: Profile }>();
-
 </script>
