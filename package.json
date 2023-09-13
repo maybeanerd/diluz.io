@@ -34,7 +34,7 @@
   "devDependencies": {
     "@nuxt/image": "0.7.1",
     "@nuxtjs/eslint-config": "1.1.2",
-    "@testing-library/cypress": "9.0.0",
+    "@testing-library/cypress": "10.0.1",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "cypress": "12.17.4",
