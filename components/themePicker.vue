@@ -10,12 +10,13 @@
 </template>
 
 <script setup lang="ts">
-const { colorMode } = useNaiveColorMode();
+const { colorMode, colorModePreference } = useNaiveColorMode();
 
 const isDarkTheme = computed({
   get: () => unref(colorMode) === 'dark',
   set: (darkMode: boolean) => {
-    colorMode.value = darkMode ? 'dark' : 'light';
+    const selectedColorMode = darkMode ? 'dark' : 'light';
+    colorModePreference.set(selectedColorMode);
   },
 });
 </script>
