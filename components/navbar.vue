@@ -12,7 +12,7 @@
             </InlineLink><br>
             built on
             <InlineLink :to="latestBuildsUrl">
-              {{ buildDate.toLocaleDateString('de-DE') }}
+              {{ stringifyDate(buildDate) }}
             </InlineLink>
           </div>
         </div>
@@ -29,11 +29,6 @@ import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles, defaultProfileName } from '~/server/profiles';
 import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 
-// TODO change this to render the image of a profile
-/* function renderIcon (icon: Component) {
-  return () => h(NIcon, null, { default: () => h(icon) });
-} */
-
 const menuOptions = profiles.map((profile) => {
   const name = profile.person.name.first.toLowerCase();
 
@@ -49,6 +44,7 @@ const menuOptions = profiles.map((profile) => {
         upperCaseFirstLetter(name),
       ),
     key: name,
+    // TODO we could add icons of the profiles here if we wanted
     // icon: renderIcon(profile.icon),
   };
 

@@ -52,6 +52,7 @@
 
 <script setup lang="ts">
 import type { Project } from '~/server/profile.types';
+import { stringifyDate } from '~/utils/date';
 
 const { t } = useI18n();
 
@@ -59,8 +60,8 @@ const props = defineProps<{ project: Project; name: string }>();
 
 function stringifyTimeframe (timeframe: Project['timeframe']) {
   const { start, end } = timeframe;
-  return `${start.toLocaleDateString()} - ${
-    end instanceof Date ? end.toLocaleDateString() : end
+  return `${stringifyDate(start)} - ${
+    end instanceof Date ? stringifyDate(end) : end
   }`;
 }
 </script>
