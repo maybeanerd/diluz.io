@@ -1,10 +1,11 @@
 <template>
-  <NSwitch v-model:value="isDarkTheme">
-    <template #checked-icon>
-      🌑
-    </template>
-    <template #unchecked-icon>
-      ☀️
+  <NSwitch v-model:value="isDarkTheme" :rail-style="getRailStyle">
+    <template #icon>
+      <NaiveIcon
+        :name="isDarkTheme ? 'ph:moon' : 'ph:sun'"
+        :size="14"
+        icon-color="#111827"
+      />
     </template>
   </NSwitch>
 </template>
@@ -19,4 +20,10 @@ const isDarkTheme = computed({
     colorModePreference.set(selectedColorMode);
   },
 });
+
+function getRailStyle ({ checked }: { checked: boolean }) {
+  return {
+    backgroundColor: checked ? '#1f2937' : '#e5e7eb',
+  };
+}
 </script>
