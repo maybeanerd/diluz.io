@@ -66,16 +66,15 @@ export type Project = {
   type: ProjectType;
 };
 
-export type Technology = Array<{
-  title: string;
-}>;
-
 export type Profile = {
   person: Person;
-  favoriteTech: Technology;
+  highlights?: {
+    title: string;
+    list: Array<{ title: string }>;
+  };
   projects: {
     list: Array<Project>;
-    orderBy: 'timeframe' | 'none',
+    orderBy: 'timeframe' | 'none';
     final?: {
       title: string;
       text: string;
