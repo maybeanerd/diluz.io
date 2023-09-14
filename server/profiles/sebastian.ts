@@ -26,14 +26,17 @@ export const sebastian: Profile = {
       languages: ['en', 'de'],
     },
   },
-  favoriteTech: [
-    { title: 'TypeScript' },
-    { title: 'Vue.js' },
-    { title: 'TailwindCSS' },
-    { title: 'Nest.js' },
-    { title: 'Fastify' },
-    { title: 'PostgreSQL' },
-  ],
+  highlights: {
+    title: 'Favorite Tech Stack',
+    list: [
+      { title: 'TypeScript' },
+      { title: 'Nuxt.js' },
+      { title: 'TailwindCSS' },
+      { title: 'Nest.js' },
+      { title: 'Fastify' },
+      { title: 'PostgreSQL' },
+    ],
+  },
   projects: {
     orderBy: 'timeframe',
     list: [

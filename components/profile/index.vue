@@ -1,7 +1,11 @@
 <template>
   <div class="flex flex-col max-w-4xl mx-auto">
     <ProfilePerson :person="props.profile.person" />
-    <ProfileFavoriteTech class="mt-8" :technologies="props.profile.favoriteTech" />
+    <ProfileHighlight
+      v-if="props.profile.highlights"
+      class="mt-8"
+      :highlights="props.profile.highlights"
+    />
     <ProfileProjects
       class="mt-8 mx-4"
       :projects="props.profile.projects"
