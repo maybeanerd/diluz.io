@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col max-w-4xl mx-auto">
     <ProfilePerson :person="props.profile.person" />
-    <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
+    <ProfileFavoriteTech class="mt-8" :technologies="props.profile.favoriteTech" />
     <ProfileProjects
-      class="mt-4 mx-4"
+      class="mt-8 mx-4"
       :projects="props.profile.projects"
       :name="props.profile.person.name.first"
     />

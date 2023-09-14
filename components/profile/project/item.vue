@@ -2,17 +2,19 @@
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <NTimelineItem
     type="success"
-    :time="stringifyTimeframe(props.project.timeframe)"
   >
     <h3 class="text-base -mt-[3px]">
       {{ props.project.title }}
     </h3>
+    <p class="text-xs">
+      {{ stringifyTimeframe(props.project.timeframe) }}
+    </p>
     <CustomRouterLink v-if="props.project.url" :to="props.project.url" class="text-xs">
       {{ props.project.url }}
     </CustomRouterLink>
 
     <div class="flex mt-4 space-x-4">
-      <div class="mt-1">
+      <div class="mt-1 shrink-0">
         <ProfileProjectPicture
           v-if="props.project.image"
           :name="props.name"
