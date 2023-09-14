@@ -29,6 +29,7 @@ export const julian: Profile = {
   ],
 
   projects: {
+    orderBy: 'timeframe',
     list: [],
     final: {
       title: 'Want to see more?',

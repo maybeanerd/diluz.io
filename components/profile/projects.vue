@@ -31,6 +31,10 @@ import {
 const props = defineProps<{ projects: Profile['projects']; name: string }>();
 
 function compareProjects (a: Project, b: Project) {
+  if (props.projects.orderBy !== 'timeframe') {
+    return 0;
+  }
+
   // prioritize jobs over side projects
   if (a.type === ProjectType.job && b.type !== ProjectType.job) {
     return -1;
@@ -52,7 +56,7 @@ function compareProjects (a: Project, b: Project) {
 
 const orderedProjects = computed(() => {
   return props.projects.list
-    .filter(proj => proj.showInProfile)
+    .filter(project => project.showInProfile)
     .sort(compareProjects);
 });
 </script>

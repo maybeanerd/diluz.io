@@ -75,6 +75,7 @@ export type Profile = {
   favoriteTech: Technology;
   projects: {
     list: Array<Project>;
+    orderBy: 'timeframe' | 'none',
     final?: {
       title: string;
       text: string;
