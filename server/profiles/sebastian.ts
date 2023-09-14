@@ -93,7 +93,7 @@ export const sebastian: Profile = {
         },
         technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MongoDB'],
         description:
-          'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 900.000+ users in over 2000 guilds.',
+          'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 guilds.',
         showInProfile: true,
         type: ProjectType.sideproject,
       },
