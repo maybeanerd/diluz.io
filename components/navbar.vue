@@ -25,9 +25,7 @@
 import type { MenuOption } from 'naive-ui';
 import { RouteLocationNormalized, RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
-import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles, defaultProfileName } from '~/server/profiles';
-import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 
 const menuOptions = profiles.map((profile) => {
   const name = profile.person.name.first.toLowerCase();
