@@ -1,6 +1,6 @@
 // This file handles all profiles that the website hosts
 
-import { Profile } from './profile.types';
+import type { Profile } from './profile.types';
 import { marc } from './profiles/marc';
 import { sebastian } from './profiles/sebastian';
 import { julian } from './profiles/julian';
@@ -10,3 +10,6 @@ import { julian } from './profiles/julian';
  */
 
 export const profiles: Array<Profile> = [sebastian, marc, julian];
+
+export const defaultProfile = sebastian;
+export const defaultProfileName = sebastian.person.name.first.toLowerCase();

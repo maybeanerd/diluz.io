@@ -26,8 +26,7 @@ import type { MenuOption } from 'naive-ui';
 import { RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
-import { profiles } from '~/server/profiles';
-import { defaultProfileName } from '~/constants/defaultProfile';
+import { profiles, defaultProfileName } from '~/server/profiles';
 import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 
 // TODO change this to render the image of a profile

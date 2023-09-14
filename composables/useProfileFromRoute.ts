@@ -1,6 +1,5 @@
-import { defaultProfile } from '~/constants/defaultProfile';
 import { Profile } from '~/server/profile.types';
-import { profiles } from '~/server/profiles';
+import { profiles, defaultProfile } from '~/server/profiles';
 
 const profile = ref<Profile>(defaultProfile);
 
