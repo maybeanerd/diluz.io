@@ -1,31 +1,24 @@
 <template>
-  <div>
-    <h2 class="text-xl">
-      Projects
-    </h2>
-    <div class="mx-4">
-      <NTimeline>
-        <ProfileProjectItem
-          v-for="(project, index) in orderedProjects"
-          :key="index"
-          :project="project"
-          :name="props.name"
-        />
-        <template v-if="props.projects.final">
-          <NTimelineItem
-            type="info"
-            :title="props.projects.final.title"
-            :content="props.projects.final.text"
-            line-type="dashed"
-          />
-          <NTimelineItem
-            title="The beginning of time"
-            :time="new Date(0).toLocaleDateString()"
-          />
-        </template>
-      </NTimeline>
-    </div>
-  </div>
+  <NTimeline>
+    <ProfileProjectItem
+      v-for="(project, index) in orderedProjects"
+      :key="index"
+      :project="project"
+      :name="props.name"
+    />
+    <template v-if="props.projects.final">
+      <NTimelineItem
+        type="info"
+        :title="props.projects.final.title"
+        :content="props.projects.final.text"
+        line-type="dashed"
+      />
+      <NTimelineItem
+        title="The beginning of time"
+        :time="new Date(0).toLocaleDateString()"
+      />
+    </template>
+  </NTimeline>
 </template>
 
 <script setup lang="ts">
