@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-2">
+  <div>
     <div class="flex space-x-4 mb-2 md:mb-4 md:space-x-8">
       <ProfilePicture
         v-if="props.person.image"
