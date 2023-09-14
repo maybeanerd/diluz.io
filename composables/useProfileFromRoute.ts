@@ -54,19 +54,12 @@ function setMetaInfo (person: Profile['person']) {
 }
 
 function setProfileByName (name: string) {
-  // Exit early if the profile hasn't changed
-  if (name === unref(profile).person.name.first.toLowerCase()) {
-    return;
-  }
-
   const foundProfile = profiles.find(
     searchedProfile =>
       searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
   );
-  if (foundProfile) {
-    profile.value = foundProfile;
-    setMetaInfo(profile.value.person);
-  }
+  profile.value = foundProfile ?? defaultProfile;
+  setMetaInfo(profile.value.person);
 }
 
 export function useProfileFromRoute () {
