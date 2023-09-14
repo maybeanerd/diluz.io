@@ -52,7 +52,6 @@
 
 <script setup lang="ts">
 import type { Project } from '~/server/profile.types';
-import { stringifyDate } from '~/utils/date';
 
 const { t } = useI18n();
 
