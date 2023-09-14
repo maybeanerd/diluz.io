@@ -2,41 +2,48 @@
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <NTimelineItem
     type="success"
-    :title="props.project.title"
     :time="stringifyTimeframe(props.project.timeframe)"
   >
-    <div class="ml-2">
-      <ProfileProjectPicture
-        v-if="props.project.image"
-        :name="props.name"
-        :image-path="props.project.image"
-      />
-      <ProfileProjectFact
-        :title="t('project.role')"
-        :value="props.project.role"
-      />
-      <ProfileProjectFact
-        :title="t('project.description')"
-        :value="props.project.description"
-      />
-      <!-- TODO move description to a dedicated space -->
-      <ProfileProjectFact
-        v-if="props.project.technologies"
-        :title="t('project.technologies')"
-        :value="props.project.technologies"
-      />
-      <!-- TODO embed link nicely -->
-      <ProfileProjectFact
-        v-if="props.project.url"
-        :title="'URL'"
-        :value="props.project.url"
-      />
-      <ProfileProjectFact
-        v-if="props.project.highlights"
-        :title="'Highlights'"
-        :value="props.project.highlights"
-      />
+    <h3 class="text-base -mt-[3px]">
+      {{ props.project.title }}
+    </h3>
+    <CustomRouterLink v-if="props.project.url" :to="props.project.url" class="text-xs">
+      {{ props.project.url }}
+    </CustomRouterLink>
+
+    <div class="flex mt-4 space-x-4">
+      <div class="mt-1">
+        <ProfileProjectPicture
+          v-if="props.project.image"
+          :name="props.name"
+          :image-path="props.project.image"
+        />
+      </div>
+      <div>
+        <p class="text-sm">
+          {{ props.project.role }}
+        </p>
+
+        <ProfileProjectFact
+          v-if="props.project.technologies"
+          class="mt-2"
+          :title="t('project.technologies')"
+          variant="tags"
+          :value="props.project.technologies"
+        />
+      </div>
     </div>
+
+    <p class="my-2 text-sm">
+      {{ props.project.description }}
+    </p>
+
+    <ProfileProjectFact
+      v-if="props.project.highlights"
+      :title="'Highlights'"
+      variant="list"
+      :value="props.project.highlights"
+    />
   </NTimelineItem>
 </template>
 
