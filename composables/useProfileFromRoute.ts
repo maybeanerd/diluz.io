@@ -53,18 +53,21 @@ function setMetaInfo (person: Profile['person']) {
   }
 }
 
-function setProfileByName (name: string) {
-  const foundProfile = profiles.find(
-    searchedProfile =>
-      searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
-  );
+function setProfileByName (name: string | undefined) {
+  const foundProfile = name
+    ? profiles.find(
+      searchedProfile =>
+        searchedProfile.person.name.first.toLowerCase() === name.toLowerCase(),
+    )
+    : undefined;
+
   profile.value = foundProfile ?? defaultProfile;
   setMetaInfo(profile.value.person);
 }
 
 export function useProfileFromRoute () {
   const route = useRoute();
-  setProfileByName(route.params.name as string);
+  setProfileByName(route.params.name as string | undefined);
 
   return {
     profile,

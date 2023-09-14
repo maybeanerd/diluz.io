@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import type { MenuOption } from 'naive-ui';
-import { RouterLink } from '~/.nuxt/vue-router';
+import { RouteLocationNormalized, RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { upperCaseFirstLetter } from '~/utils/string';
 import { profiles, defaultProfileName } from '~/server/profiles';
@@ -57,10 +57,10 @@ const menuOptions = profiles.map((profile) => {
 
 const route = useRoute();
 
-function getCurrentProfile () {
+function getCurrentProfile (to?: RouteLocationNormalized) {
   return (
     menuOptions
-      .find(option => route.path.endsWith(option.key?.toString() ?? ''))
+      .find(option => (to ?? route).path.endsWith(option.key?.toString() ?? ''))
       ?.key?.toString() ?? defaultProfileName
   );
 }
@@ -70,8 +70,8 @@ const selectedProfile = ref<string | null>(getCurrentProfile());
 const router = useRouter();
 const { isOpen } = useMenu();
 
-router.afterEach(() => {
-  selectedProfile.value = getCurrentProfile();
+router.afterEach((to) => {
+  selectedProfile.value = getCurrentProfile(to);
 
   // Close navbar when any navigation occurs
   isOpen.value = false;
