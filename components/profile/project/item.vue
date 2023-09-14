@@ -2,18 +2,19 @@
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <NTimelineItem
     type="success"
+    :title="props.project.title"
     :time="stringifyTimeframe(props.project.timeframe)"
   >
-    <h3 class="text-base -mt-[5px] mb-2">
-      {{ props.project.title }}
-    </h3>
     <div class="ml-2">
       <ProfileProjectPicture
         v-if="props.project.image"
         :name="props.name"
         :image-path="props.project.image"
       />
-      <ProfileProjectFact :title="t('project.role')" :value="props.project.role" />
+      <ProfileProjectFact
+        :title="t('project.role')"
+        :value="props.project.role"
+      />
       <ProfileProjectFact
         :title="t('project.description')"
         :value="props.project.description"

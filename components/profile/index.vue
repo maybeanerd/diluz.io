@@ -3,7 +3,7 @@
     <ProfilePerson :person="props.profile.person" />
     <ProfileFavoriteTech :technologies="props.profile.favoriteTech" />
     <ProfileProjects
-      class="mt-4"
+      class="mt-4 mx-4"
       :projects="props.profile.projects"
       :name="props.profile.person.name.first"
     />
