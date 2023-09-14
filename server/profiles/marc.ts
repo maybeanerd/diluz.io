@@ -14,8 +14,7 @@ export const marc: Profile = {
       { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
       { type: SpecialSocial.email, email: 'marc@diluz.io' },
     ],
-    // TODO Fill this in
-    // shortText: "Lorem Ipsum",
+    shortText: '',
     meta: { basedIn: { country: 'England', city: 'London' } },
   },
   favoriteTech: [
@@ -36,6 +35,7 @@ export const marc: Profile = {
     { title: 'Perl' },
   ],
   projects: {
+    orderBy: 'timeframe',
     list: [
       {
         title: 'Unity',

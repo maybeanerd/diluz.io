@@ -35,6 +35,7 @@ export const sebastian: Profile = {
     { title: 'PostgreSQL' },
   ],
   projects: {
+    orderBy: 'timeframe',
     list: [
       {
         title: 'IU International University',
