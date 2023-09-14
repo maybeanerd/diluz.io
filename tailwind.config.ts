@@ -14,7 +14,11 @@ export default <Partial<Config>>{
           highlight: { light: colors.green[400], dark: colors.green[400] },
           action: { light: colors.green[500], dark: colors.green[500] },
         },
-        background: { light: colors.white, dark: colors.gray[900] },
+        background: {
+          light: colors.white,
+          // This color comes from the naive UI dark theme, we could adjust the theme later on and use any color we want here
+          dark: '#101014',
+        },
         content: {
           primary: { light: colors.gray[900], dark: colors.gray[200] },
           secondary: {
