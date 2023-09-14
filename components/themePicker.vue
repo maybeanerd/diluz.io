@@ -1,11 +1,10 @@
 <template>
   <NSwitch v-model:value="isDarkTheme" :rail-style="getRailStyle">
-    <template #icon>
-      <NaiveIcon
-        :name="isDarkTheme ? 'ph:moon' : 'ph:sun'"
-        :size="14"
-        icon-color="#111827"
-      />
+    <template #checked-icon>
+      <NaiveIcon name="ph:moon" :size="14" icon-color="#111827" />
+    </template>
+    <template #unchecked-icon>
+      <NaiveIcon name="ph:sun" :size="14" icon-color="#111827" />
     </template>
   </NSwitch>
 </template>
