@@ -4,7 +4,11 @@ import { profiles } from '~/server/profiles';
 
 const profile = ref<Profile>(defaultProfile);
 
-function getLowQualityImageUrl (name: string, imagePath: string, format: 'png' | 'webp') {
+function getLowQualityImageUrl (
+  name: string,
+  imagePath: string,
+  format: 'png' | 'webp',
+) {
   // This URL doesn't always exist - it only does if the image is being used in that size
   // which it currently is inside the profilePicture component
   // But it seems not really possible to generate these with the useSizes composable
@@ -31,20 +35,23 @@ function setMetaInfo (person: Profile['person']) {
     twitterCard: 'summary_large_image',
   });
 
-  useHead({
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: getLowQualityImageUrl(person.name.first.toLowerCase(), 'pp.png', 'png'),
-      },
-      {
-        rel: 'icon',
-        type: 'image/webp',
-        href: getLowQualityImageUrl(person.name.first.toLowerCase(), 'pp.webp', 'webp'),
-      },
-    ],
-  });
+  if (person.image) {
+    const name = person.name.first.toLowerCase();
+    useHead({
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: getLowQualityImageUrl(name, person.image, 'png'),
+        },
+        {
+          rel: 'icon',
+          type: 'image/webp',
+          href: getLowQualityImageUrl(name, person.image, 'webp'),
+        },
+      ],
+    });
+  }
 }
 
 function setProfileByName (name: string) {
