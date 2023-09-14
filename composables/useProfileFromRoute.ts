@@ -4,6 +4,13 @@ import { profiles } from '~/server/profiles';
 
 const profile = ref<Profile>(defaultProfile);
 
+function getLowQualityImageUrl (name: string, imagePath: string, format: 'png' | 'webp') {
+  // This URL doesn't always exist - it only does if the image is being used in that size
+  // which it currently is inside the profilePicture component
+  // But it seems not really possible to generate these with the useSizes composable
+  return `/_ipx/w_64&f_${format}/profile/${name}/${imagePath}`;
+}
+
 function setMetaInfo (person: Profile['person']) {
   const pageTitle = `${person.name.first} ${person.name.last}`;
   const pageDescription = person.shortText ?? `${pageTitle}s personal page.`;
@@ -29,7 +36,12 @@ function setMetaInfo (person: Profile['person']) {
       {
         rel: 'icon',
         type: 'image/png',
-        href: pageImage,
+        href: getLowQualityImageUrl(person.name.first.toLowerCase(), 'pp.png', 'png'),
+      },
+      {
+        rel: 'icon',
+        type: 'image/webp',
+        href: getLowQualityImageUrl(person.name.first.toLowerCase(), 'pp.webp', 'webp'),
       },
     ],
   });
