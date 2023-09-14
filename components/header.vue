@@ -11,7 +11,7 @@
       <p>{{ profile.person.name.first }}</p>
     </div>
     <div class="flex space-x-4">
-      <ThemePicker class="my-auto" />
+      <ClientOnly> <ThemePicker class="my-auto" /></ClientOnly>
       <LanguagePicker />
     </div>
   </div>
@@ -26,5 +26,4 @@ const { profile } = useProfileFromRoute();
 function toggleMenu () {
   isOpen.value = !isOpen.value;
 }
-
 </script>
