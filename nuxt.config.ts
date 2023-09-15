@@ -1,6 +1,15 @@
 import gitCommitInfo from 'git-commit-info';
 import { profiles } from './server/profiles';
-import { i18n } from './config/i18n';
+import { i18n, locales } from './config/i18n';
+
+const routesToPrerender: Array<string> = [];
+profiles.forEach((profile) => {
+  locales.forEach((locale) => {
+    routesToPrerender.push(
+      `/${locale.code}/${profile.person.name.first.toLowerCase()}`,
+    );
+  });
+});
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -16,9 +25,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: profiles.map(
-        profile => `/${profile.person.name.first.toLowerCase()}`,
-      ),
+      routes: routesToPrerender,
     },
   },
   runtimeConfig: {
