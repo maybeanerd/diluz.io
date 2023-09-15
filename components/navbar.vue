@@ -28,35 +28,38 @@ import { useMenu } from '~/composables/useMenu';
 import { profiles, defaultProfileName } from '~/server/profiles';
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 
-const menuOptions = profiles.map((profile) => {
-  const name = profile.person.name.first.toLowerCase();
+const menuOptions = computed(() =>
+  profiles.map((profile) => {
+    const name = profile.person.name.first.toLowerCase();
 
-  const menuOption: MenuOption = {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: `/${name}`,
+    const menuOption: MenuOption = {
+      label: () =>
+        h(
+          RouterLink,
+          {
+            to: localePath(`/${name}`),
           },
-        },
-        upperCaseFirstLetter(name),
-      ),
-    key: name,
-    // TODO we could add icons of the profiles here if we wanted
-    // icon: renderIcon(profile.icon),
-  };
+          upperCaseFirstLetter(name),
+        ),
+      key: name,
+      // TODO we could add icons of the profiles here if we wanted
+      // icon: renderIcon(profile.icon),
+    };
 
-  return menuOption;
-});
+    return menuOption;
+  }),
+);
 
 const route = useRoute();
 
 function getCurrentProfile (to?: RouteLocationNormalized) {
   return (
-    menuOptions
-      .find(option => (to ?? route).path.endsWith(option.key?.toString() ?? ''))
+    unref(menuOptions)
+      .find(option =>
+        (to ?? route).path.endsWith(option.key?.toString() ?? ''),
+      )
       ?.key?.toString() ?? defaultProfileName
   );
 }
