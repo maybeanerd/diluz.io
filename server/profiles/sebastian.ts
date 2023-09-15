@@ -28,7 +28,7 @@ export const sebastian: Profile = {
         country: { en: 'Germany', de: 'Deutschland' },
         city: { en: 'Munich', de: 'München' },
       },
-      pronouns: [{ en: 'he' }, { en: 'they' }],
+      pronouns: [{ en: 'he', de: 'er' }, { en: 'they' }],
       languages: ['en', 'de'],
     },
   },
