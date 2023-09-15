@@ -2,7 +2,7 @@
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <NTimelineItem type="success" :line-type="props.lineType">
     <h3 class="text-base -mt-[3px]">
-      {{ useLocalizedString(props.project.title) }}
+      {{ title }}
     </h3>
     <p class="text-xs">
       {{ stringifyTimeframe(props.project.timeframe) }}
@@ -24,7 +24,7 @@
       </div>
       <div>
         <p class="text-sm">
-          {{ useLocalizedString(props.project.role) }}
+          {{ role }}
         </p>
 
         <ProfileProjectFact
@@ -38,7 +38,7 @@
     </div>
 
     <p class="my-2 text-sm">
-      {{ useLocalizedString(props.project.description) }}
+      {{ description }}
     </p>
 
     <ProfileProjectFact
@@ -67,4 +67,8 @@ function stringifyTimeframe (timeframe: Project['timeframe']) {
     end instanceof Date ? stringifyDate(end) : end
   }`;
 }
+
+const title = useLocalizedString(props.project.title);
+const role = useLocalizedString(props.project.role);
+const description = useLocalizedString(props.project.description);
 </script>

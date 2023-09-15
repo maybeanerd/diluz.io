@@ -1,9 +1,9 @@
 <template>
   <CustomTag icon="ph:map-pin">
-    <template v-if="props.location.city !== undefined">
-      {{ useLocalizedString(props.location.city) }},
+    <template v-if="city !== undefined">
+      {{ city }},
     </template>
-    {{ useLocalizedString(props.location.country) }}
+    {{ country }}
   </CustomTag>
 </template>
 
@@ -13,4 +13,9 @@ import { Profile } from '~/server/profile.types';
 const props = defineProps<{
   location: NonNullable<Profile['person']['meta']['basedIn']>;
 }>();
+
+const city = props.location.city
+  ? useLocalizedString(props.location.city)
+  : undefined;
+const country = useLocalizedString(props.location.country);
 </script>
