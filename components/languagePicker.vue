@@ -1,8 +1,7 @@
 <template>
   <NSelect
-    v-model="locale"
+    v-model:value="locale"
     :options="languages"
-    default-value="en"
     class="w-16"
     @update:value="updateLocale"
   />
@@ -10,13 +9,15 @@
 
 <script setup lang="ts">
 const { locale, availableLocales } = useI18n();
+const { push } = useRouter();
+const localePath = useSwitchLocalePath();
 
 const languages = availableLocales.map(locale => ({
   label: locale.toUpperCase(),
   value: locale,
 }));
 
-function updateLocale (newLocale:string) {
-  locale.value = newLocale;
+async function updateLocale (newLocale: string) {
+  await push(localePath(newLocale));
 }
 </script>

@@ -11,7 +11,9 @@
       <p>{{ profile.person.name.first }}</p>
     </div>
     <div class="flex space-x-4">
-      <ClientOnly> <ThemePicker class="my-auto" /></ClientOnly>
+      <ClientOnly>
+        <ThemePicker class="my-auto" />
+      </ClientOnly>
       <LanguagePicker />
     </div>
   </div>
