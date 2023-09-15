@@ -1,7 +1,7 @@
 import { NuxtI18nOptions } from '@nuxtjs/i18n/dist/module';
 import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables';
 
-const locales: Array<LocaleObject> = [
+export const locales: Array<LocaleObject> = [
   {
     code: 'en',
     file: 'en.json',
