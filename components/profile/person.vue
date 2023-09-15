@@ -12,7 +12,7 @@
           {{ props.person.name.first }} {{ props.person.name.last }}
         </h1>
         <p class="text-base">
-          {{ props.person.shortText }}
+          {{ useLocalizedString(props.person.shortText) }}
         </p>
       </div>
     </div>

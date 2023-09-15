@@ -1,3 +1,5 @@
+import type { Locales } from '~/config/i18n';
+
 export enum BasicSocial {
   linkedin = 'linkedin',
   github = 'github',
@@ -27,17 +29,20 @@ export type SocialInfo =
 
 export type Image = string;
 
+// Require en, allow any other language
+export type LocalizedString = { en: string } & Partial<Record<Locales, string>>;
+
 type Person = {
   name: {
     first: string;
     last: 'Di Luzio'; // we could support other spellings of the name later on
   };
   image?: Image;
-  shortText: string;
+  shortText: LocalizedString;
   socials: Array<SocialInfo>;
   meta: {
-    basedIn?: { country: string; city?: string };
-    pronouns?: Array<string>;
+    basedIn?: { country: LocalizedString; city?: LocalizedString };
+    pronouns?: Array<LocalizedString>;
     languages?: Array<string>;
   };
 };
@@ -54,13 +59,13 @@ export enum EducationType {
 }
 
 export type Project = {
-  title: string;
-  role: string;
+  title: LocalizedString;
+  role: LocalizedString;
   image?: Image;
-  description: string;
-  highlights?: Array<string>;
+  description: LocalizedString;
+  highlights?: Array<LocalizedString>;
   url?: string;
-  technologies?: Array<string>;
+  technologies?: Array<LocalizedString>;
   timeframe: { start: Date; end: Date | 'current' };
   showInProfile: boolean;
   type: ProjectType;
@@ -69,15 +74,11 @@ export type Project = {
 export type Profile = {
   person: Person;
   highlights?: {
-    title: string;
-    list: Array<{ title: string }>;
+    title: LocalizedString;
+    list: Array<{ title: LocalizedString }>;
   };
   projects: {
     list: Array<Project>;
     orderBy: 'timeframe' | 'none';
-    final?: {
-      title: string;
-      text: string;
-    };
   };
 };

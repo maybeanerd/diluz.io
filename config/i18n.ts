@@ -14,6 +14,8 @@ const locales: Array<LocaleObject> = [
   },
 ];
 
+export type Locales = 'en' | 'de';
+
 const defaultLocale = 'en';
 
 export const i18n: NuxtI18nOptions = {

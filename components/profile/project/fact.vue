@@ -11,12 +11,12 @@
     <div class="text-sm">
       <div v-if="props.variant === 'tags'">
         <CustomTag v-for="(fact, index) in props.value" :key="index">
-          {{ fact }}
+          {{ useLocalizedString(fact) }}
         </CustomTag>
       </div>
       <ul v-else>
         <li v-for="(fact, index) in props.value" :key="index" class="flex">
-          <NaiveIcon name="ph:dot-outline" /> {{ fact }}
+          <NaiveIcon name="ph:dot-outline" /> {{ useLocalizedString(fact) }}
         </li>
       </ul>
     </div>
@@ -24,9 +24,11 @@
 </template>
 
 <script setup lang="ts">
+import type { LocalizedString } from '~/server/profile.types';
+
 const props = defineProps<{
   title: string;
-  value: Array<string>;
+  value: Array<LocalizedString>;
   variant: 'list' | 'tags';
 }>();
 </script>

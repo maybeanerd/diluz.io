@@ -1,9 +1,9 @@
 <template>
   <CustomTag icon="ph:map-pin">
     <template v-if="props.location.city !== undefined">
-      {{ props.location.city }},
+      {{ useLocalizedString(props.location.city) }},
     </template>
-    {{ props.location.country }}
+    {{ useLocalizedString(props.location.country) }}
   </CustomTag>
 </template>
 

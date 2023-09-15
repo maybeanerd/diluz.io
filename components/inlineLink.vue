@@ -8,5 +8,5 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ to: URL }>();
+const props = defineProps<{ to: URL | string }>();
 </script>

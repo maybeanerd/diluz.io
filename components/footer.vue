@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 const notableDependencies = [
-  { name: 'Nuxt', packageName: 'nuxt', url: new URL('https://nuxt.com/') },
+  { name: 'Nuxt', url: new URL('https://nuxt.com/') },
   {
     name: 'TypeScript',
     url: new URL('https://www.typescriptlang.org/'),
