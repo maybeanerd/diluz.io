@@ -14,10 +14,11 @@ const props = defineProps<{
 const readablePronouns = computed(() => {
   let pronouns = '';
   props.pronouns.forEach((pronoun, index) => {
+    const localizedPronoun = unref(useLocalizedString(pronoun));
     if (index === 0) {
-      pronouns += pronoun;
+      pronouns += localizedPronoun;
     } else {
-      pronouns += `/${pronoun}`;
+      pronouns += `/${localizedPronoun}`;
     }
   });
   return pronouns;

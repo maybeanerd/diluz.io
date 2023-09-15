@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 class="text-lg">
-      {{ props.highlights.title }}
+      {{ useLocalizedString(props.highlights.title) }}
     </h2>
     <div>
       <CustomTag v-for="(highlight, index) in props.highlights.list" :key="index">
-        {{ highlight.title }}
+        {{ useLocalizedString(highlight.title) }}
       </CustomTag>
     </div>
   </div>

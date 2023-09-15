@@ -1,19 +1,19 @@
 <template>
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
-  <NTimelineItem type="success">
+  <NTimelineItem type="success" :line-type="props.lineType">
     <h3 class="text-base -mt-[3px]">
-      {{ props.project.title }}
+      {{ useLocalizedString(props.project.title) }}
     </h3>
     <p class="text-xs">
       {{ stringifyTimeframe(props.project.timeframe) }}
     </p>
-    <CustomRouterLink
+    <InlineLink
       v-if="props.project.url"
       :to="props.project.url"
       class="text-xs"
     >
       {{ props.project.url }}
-    </CustomRouterLink>
+    </InlineLink>
 
     <div class="flex mt-4 space-x-4">
       <div v-if="props.project.image" class="mt-1 shrink-0">
@@ -24,7 +24,7 @@
       </div>
       <div>
         <p class="text-sm">
-          {{ props.project.role }}
+          {{ useLocalizedString(props.project.role) }}
         </p>
 
         <ProfileProjectFact
@@ -38,7 +38,7 @@
     </div>
 
     <p class="my-2 text-sm">
-      {{ props.project.description }}
+      {{ useLocalizedString(props.project.description) }}
     </p>
 
     <ProfileProjectFact
@@ -55,7 +55,11 @@ import type { Project } from '~/server/profile.types';
 
 const { t } = useI18n();
 
-const props = defineProps<{ project: Project; name: string }>();
+const props = defineProps<{
+  project: Project;
+  name: string;
+  lineType: 'default' | 'dashed';
+}>();
 
 function stringifyTimeframe (timeframe: Project['timeframe']) {
   const { start, end } = timeframe;

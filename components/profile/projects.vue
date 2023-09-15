@@ -5,19 +5,13 @@
       :key="index"
       :project="project"
       :name="props.name"
+      :line-type="index < orderedProjects.length - 1 ? 'default' : 'dashed'"
     />
-    <template v-if="props.projects.final">
-      <NTimelineItem
-        type="info"
-        :title="props.projects.final.title"
-        :content="props.projects.final.text"
-        line-type="dashed"
-      />
-      <NTimelineItem
-        title="The beginning of time"
-        :time="new Date(0).toLocaleDateString()"
-      />
-    </template>
+
+    <NTimelineItem
+      title="The beginning of time"
+      :time="stringifyDate(new Date(0))"
+    />
   </NTimeline>
 </template>
 
