@@ -10,13 +10,13 @@
     </h4>
     <div class="text-sm">
       <div v-if="props.variant === 'tags'">
-        <CustomTag v-for="(fact, index) in props.value" :key="index">
-          {{ useLocalizedString(fact) }}
+        <CustomTag v-for="(fact, index) in localizedFacts" :key="index">
+          {{ unref(fact) }}
         </CustomTag>
       </div>
       <ul v-else>
-        <li v-for="(fact, index) in props.value" :key="index" class="flex">
-          <NaiveIcon name="ph:dot-outline" /> {{ useLocalizedString(fact) }}
+        <li v-for="(fact, index) in localizedFacts" :key="index" class="flex">
+          <NaiveIcon name="ph:dot-outline" /> {{ unref(fact) }}
         </li>
       </ul>
     </div>
@@ -31,4 +31,10 @@ const props = defineProps<{
   value: Array<LocalizedString>;
   variant: 'list' | 'tags';
 }>();
+
+const localizedFacts = computed(() => {
+  return props.value.map((fact) => {
+    return useLocalizedString(fact);
+  });
+});
 </script>

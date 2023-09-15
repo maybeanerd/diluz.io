@@ -67,11 +67,15 @@ export const sebastian: Profile = {
         highlights: [
           {
             en: 'Backend built using microservice architecture',
-            de: 'Backend auf Basis von Microservice Architektur gebaut',
+            de: 'Backend auf Basis von Microservice Architektur',
           },
           {
             en: 'Micro-Frontends that are used across platforms within multiple clients',
             de: 'Micro-Frontends die über Clients hinweg auf mehreren Plattformen genutzt werden',
+          },
+          {
+            en: 'Frontend architecture and tooling to enable 8+ teams to work simultaneously on a single product',
+            de: 'Frontend Architektur und Tooling um 8+ Teams gleichzeitig an einem Produkt arbeiten zu lassen',
           },
         ],
         description: {

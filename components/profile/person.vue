@@ -12,7 +12,7 @@
           {{ props.person.name.first }} {{ props.person.name.last }}
         </h1>
         <p class="text-base">
-          {{ useLocalizedString(props.person.shortText) }}
+          {{ shortText }}
         </p>
       </div>
     </div>
@@ -44,4 +44,6 @@
 import type { Profile } from '~/server/profile.types';
 
 const props = defineProps<{ person: Profile['person'] }>();
+
+const shortText = useLocalizedString(props.person.shortText);
 </script>
