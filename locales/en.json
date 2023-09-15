@@ -1,8 +1,6 @@
 {
   "project": {
-    "role": "Role",
     "technologies": "Technologies",
-    "description": "Description",
     "highlights": "Highlights",
     "endOfTimeline": "The beginning of time."
   },

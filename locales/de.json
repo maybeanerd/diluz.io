@@ -1,8 +1,6 @@
 {
   "project": {
-    "role": "Rolle",
     "technologies": "Technologien",
-    "description": "Beschreibung",
     "highlights": "Highlights",
     "endOfTimeline": "Der Start aller Zeit."
   },
