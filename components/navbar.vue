@@ -1,16 +1,16 @@
 <template>
   <NDrawer v-model:show="isOpen" placement="left">
-    <NDrawerContent title="The Di Luzios" closable>
+    <NDrawerContent :title="t('navbar.title')" closable>
       <div class="h-full flex flex-col justify-between">
         <NMenu v-model:value="selectedProfile" :options="menuOptions" />
         <div>
           <NDivider />
           <div class="text-center text-xs">
-            commit
+            {{ t('navbar.commit') }}
             <InlineLink :to="getLinkToCommit(commitHash)">
               {{ commitHash }}
             </InlineLink><br>
-            built on
+            {{ t('navbar.builtOn') }}
             <InlineLink :to="latestBuildsUrl">
               {{ stringifyDate(buildDate) }}
             </InlineLink>
@@ -26,6 +26,8 @@ import type { MenuOption } from 'naive-ui';
 import { RouteLocationNormalized, RouterLink } from '~/.nuxt/vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { profiles, defaultProfileName } from '~/server/profiles';
+
+const { t } = useI18n();
 
 const menuOptions = profiles.map((profile) => {
   const name = profile.person.name.first.toLowerCase();

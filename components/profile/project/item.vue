@@ -26,7 +26,6 @@
         <p class="text-sm">
           {{ role }}
         </p>
-
         <ProfileProjectFact
           v-if="props.project.technologies"
           class="mt-2"
@@ -43,7 +42,7 @@
 
     <ProfileProjectFact
       v-if="props.project.highlights"
-      :title="'Highlights'"
+      :title="t('project.highlights')"
       variant="list"
       :value="props.project.highlights"
     />
