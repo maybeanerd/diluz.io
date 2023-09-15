@@ -211,8 +211,7 @@ export const sebastian: Profile = {
             de: '180.000€ an Finanzierung gesammelt',
           },
         ],
-        description:
-        {
+        description: {
           en: "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
           de: 'flint.gg ist die Heimat der Identität eines jeden Gamers. Es ist ein soziales Netzwerk, das Gamer über alle Spiele und Plattformen hinweg verbindet, indem es ihnen ermöglicht, sich einfach selbst darzustellen. Dies wird mit sogenannten Gamecards erreicht, die Lieblingsausrüstungen, Outfits und Gegenstände sowie Statistiken enthalten, die direkt aus dem Spiel gezogen werden.',
         },
@@ -249,8 +248,7 @@ export const sebastian: Profile = {
             de: 'Nutzung der Twitter API und Google Photos API',
           },
         ],
-        description:
-        {
+        description: {
           en: 'Getting media, such as screenshots and videos, from your Nintendo Switch or Playstation 4 to your computer, smartphone and social media is difficult. Easyshare takes care of all the difficulties and makes it easy for you.',
           de: 'Medien wie Screenshots und Videos von deiner Nintendo Switch oder Playstation 4 auf deinen Computer, Smartphone und Social-Media-Kanäle zu bekommen, ist schwierig. Easyshare kümmert sich um alle Schwierigkeiten und macht es dir leicht.',
         },
@@ -268,7 +266,12 @@ export const sebastian: Profile = {
           start: new Date(2018, 9),
           end: new Date(2019, 6),
         },
-        technologies: [{ en: 'JavaScript' }, { en: 'Node.js' }, { en: 'Node-API' }, { en: 'C' }],
+        technologies: [
+          { en: 'JavaScript' },
+          { en: 'Node.js' },
+          { en: 'Node-API' },
+          { en: 'C' },
+        ],
         highlights: [
           {
             en: 'Fully functional network driver in idiomatic JavaScript',
@@ -283,8 +286,7 @@ export const sebastian: Profile = {
             de: 'Module in die Node.js-Engine kompiliert',
           },
         ],
-        description:
-        {
+        description: {
           en: 'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
           de: 'Dies war Teil meiner Bachelorarbeit: die JavaScript-Implementierung von ixy. Sie beinhaltet einen modernen Netzwerktreiber im User-Space, der in idiomatischem JavaScript auf Node.js ausgeführt wird.',
         },
@@ -292,38 +294,49 @@ export const sebastian: Profile = {
         type: ProjectType.sideproject,
       },
       {
-        title: 'Hogwarts but better bot',
-        role: 'Author and maintainer',
+        title: { en: 'Hogwarts but better bot' },
+        role: {
+          en: 'Author and maintainer',
+          de: 'Autor und Maintainer',
+        },
         url: 'https://github.com/T0TProduction/hogwarts-but-better-bot',
         timeframe: {
           start: new Date(2020, 9),
           end: 'current',
         },
-        technologies: ['TypeScript', 'Node.js', 'Discord.js', 'MySQL'],
-        description:
-          'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
+        technologies: [
+          { en: 'TypeScript' },
+          { en: 'Node.js' },
+          { en: 'Discord.js' },
+          { en: 'MySQL' },
+        ],
+        description: {
+          en: 'A Discord bot to reward/detract "house points" of users and keep track of them, similar to the housecup system in the Harry Potter universe.',
+          de: 'Ein Discord Bot, um "Hauspunkte" an Nutzer zu geben/abzuziehen und sie zu tracken, ähnlich dem Hauspokal-System im Harry Potter-Universum.',
+        },
 
         showInProfile: false,
         type: ProjectType.sideproject,
       },
       {
-        title: 'BlessFPS',
-        role: 'Author',
+        title: { en: 'BlessFPS' },
+        role: {
+          en: 'Author',
+          de: 'Autor',
+        },
         url: 'https://github.com/T0TProduction/BlessFPS',
         timeframe: {
           start: new Date(2018, 4),
           end: new Date(2018, 7),
         },
-        technologies: ['Java'],
-        description:
-          'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
+        technologies: [{ en: 'Java' }],
+        description: {
+          en: 'A small side project to help optimize the game settings for the videogame "Bless Online", which had heavy optimization issues. The applied settings were collected through reddit communities and brought together to provide a one-stop solution.',
+          de: 'Ein kleines Nebenprojekt, um die Spieleinstellungen für das Videospiel "Bless Online" zu optimieren, das starke Optimierungsprobleme hatte. Die angewendeten Einstellungen wurden durch Reddit-Communities gesammelt und zusammengeführt, um eine Lösung aus einer Hand zu bieten.',
+        },
         showInProfile: false,
         type: ProjectType.sideproject,
       },
     ],
-    final: {
-      title: 'Want to see more?',
-      text: "If you want to see more side projects, take a look at my GitHub. There's a lot more that just wasn't relevant enough to list here.",
-    },
   },
 };
