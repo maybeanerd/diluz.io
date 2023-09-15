@@ -2,6 +2,16 @@
   "project": {
     "role": "Role",
     "technologies": "Technologies",
-    "description": "Description"
+    "description": "Description",
+    "highlights": "Highlights",
+    "endOfTimeline": "The beginning of time."
+  },
+  "footer": {
+    "createdWith": "Created with"
+  },
+  "navbar": {
+    "title": "The Di Luzios",
+    "commit": "commit",
+    "builtOn": "built on"
   }
 }

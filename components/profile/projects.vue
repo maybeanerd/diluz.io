@@ -9,7 +9,7 @@
     />
 
     <NTimelineItem
-      title="The beginning of time"
+      :title="t('project.endOfTimeline')"
       :time="stringifyDate(new Date(0))"
     />
   </NTimeline>
@@ -21,6 +21,8 @@ import {
   type Profile,
   type Project,
 } from '~/server/profile.types';
+
+const { t } = useI18n();
 
 const props = defineProps<{ projects: Profile['projects']; name: string }>();
 

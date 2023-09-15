@@ -2,7 +2,7 @@
   <div
     class="flex justify-end border-t-[1px] p-2 text-xs sm:text-sm border-content-secondary-light dark:border-content-secondary-dark"
   >
-    Created with&nbsp;
+    {{ t('footer.createdWith') }}&nbsp;
     <template
       v-for="(dependency, index) in notableDependencies"
       :key="dependency.name"
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
 const notableDependencies = [
   { name: 'Nuxt', url: new URL('https://nuxt.com/') },
   {
