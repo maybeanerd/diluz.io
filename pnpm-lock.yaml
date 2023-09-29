@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@bg-dev/nuxt-naiveui':
-    specifier: 1.4.6
-    version: 1.4.6(rollup@2.79.1)(vue@3.3.4)
+    specifier: 1.4.7
+    version: 1.4.7(rollup@2.79.1)(vue@3.3.4)
   '@css-render/vue3-ssr':
     specifier: 0.15.12
     version: 0.15.12(vue@3.3.4)
@@ -1323,11 +1323,11 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@bg-dev/nuxt-naiveui@1.4.6(rollup@2.79.1)(vue@3.3.4):
-    resolution: {integrity: sha512-qdjS4v9EZ7LdrAuvxWZZa/qbHpWhP1hZSmSNiQoOJwo3bHGhhcMLlLFFxOWHZrLkSRENeRU/cPR4GiZ6s/gdnw==}
+  /@bg-dev/nuxt-naiveui@1.4.7(rollup@2.79.1)(vue@3.3.4):
+    resolution: {integrity: sha512-xlLejSmzA/l9hIK49R9wjPuG3U9C7p8tdzJVNxW9xu5Xq3zmvNOM4ehuJBZkdoFj0/vWDvD+qXXxeS6azn05Hw==}
     dependencies:
       '@iconify/vue': 4.1.1(vue@3.3.4)
-      '@nuxt/kit': 3.7.1(rollup@2.79.1)
+      '@nuxt/kit': 3.7.4(rollup@2.79.1)
       defu: 6.1.2
       naive-ui: 2.34.4(vue@3.3.4)
     transitivePeerDependencies:
@@ -2263,8 +2263,8 @@ packages:
       nuxt: ^3.7.3
       vite: '*'
     dependencies:
-      '@nuxt/kit': 3.7.3(rollup@2.79.1)
-      '@nuxt/schema': 3.7.3(rollup@2.79.1)
+      '@nuxt/kit': 3.7.4(rollup@2.79.1)
+      '@nuxt/schema': 3.7.4(rollup@2.79.1)
       execa: 7.2.0
       nuxt: 3.7.4(@types/node@20.7.1)(eslint@8.50.0)(rollup@2.79.1)(typescript@5.2.2)
       vite: 4.4.9(@types/node@20.7.1)
