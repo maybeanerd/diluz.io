@@ -12,7 +12,7 @@
     "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
-    "@bg-dev/nuxt-naiveui": "1.5.1",
+    "@bg-dev/nuxt-naiveui": "1.5.2",
     "@css-render/vue3-ssr": "0.15.12",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.0.0",
