@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { ThemeConfig } from '@bg-dev/nuxt-naiveui';
+import type { ThemeConfig } from '@bg-dev/nuxt-naiveui';
 import tailwindConfig from '#tailwind-config';
 
 const { colorModePreference } = useNaiveColorMode();

@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { Profile } from '~/server/profile.types';
+import { type Profile } from '~/server/profile.types';
 
 const props = defineProps<{ profile: Profile }>();
 </script>

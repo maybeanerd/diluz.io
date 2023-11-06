@@ -1,4 +1,4 @@
-import { Profile } from '~/server/profile.types';
+import { type Profile } from '~/server/profile.types';
 import { profiles, defaultProfile } from '~/server/profiles';
 
 const profile = ref<Profile>(defaultProfile);
