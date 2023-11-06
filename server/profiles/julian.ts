@@ -1,4 +1,4 @@
-import { BasicSocial, Profile, SpecialSocial } from '../profile.types';
+import { BasicSocial, type Profile, SpecialSocial } from '../profile.types';
 
 export const julian: Profile = {
   person: {

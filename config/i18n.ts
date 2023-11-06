@@ -1,5 +1,5 @@
-import { NuxtI18nOptions } from '@nuxtjs/i18n/dist/module';
-import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables';
+import type { NuxtI18nOptions } from '@nuxtjs/i18n/dist/module';
+import type { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables';
 
 export const locales: Array<LocaleObject> = [
   {
@@ -26,9 +26,4 @@ export const i18n: NuxtI18nOptions = {
   },
   langDir: 'locales',
   defaultLocale,
-  vueI18n: {
-    availableLocales: locales.map(l => l.code),
-    fallbackLocale: defaultLocale,
-    legacy: false,
-  },
 };
