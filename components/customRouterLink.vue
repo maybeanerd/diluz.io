@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLinkProps } from 'vue-router';
+import type { RouterLinkProps } from 'vue-router';
 
 type Props = {
   to: string | RouterLinkProps['to'];

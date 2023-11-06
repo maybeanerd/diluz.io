@@ -8,10 +8,10 @@
 
 <script setup lang="ts">
 import {
-  Social,
+  type Social,
   BasicSocial,
   SpecialSocial,
-  SocialInfo,
+  type SocialInfo,
 } from '~/server/profile.types';
 
 const props = defineProps<{ social: SocialInfo }>();
