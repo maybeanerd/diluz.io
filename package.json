@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".ts,.vue\" .",
-    "lint:fix": "pnpm lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@bg-dev/nuxt-naiveui": "1.5.2",
@@ -28,6 +29,7 @@
     "nuxt": "3.7.4",
     "prettier": "3.0.3",
     "typescript": "5.2.2",
-    "vfonts": "0.0.3"
+    "vfonts": "0.0.3",
+    "vue-tsc": "1.8.22"
   }
 }
