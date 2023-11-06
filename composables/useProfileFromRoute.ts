@@ -16,7 +16,7 @@ function getLowQualityImageUrl (
 
 function setMetaInfo (person: Profile['person']) {
   const pageTitle = `${person.name.first} ${person.name.last}`;
-  const pageDescription = person.shortText ?? `${pageTitle}s personal page.`;
+  const pageDescription = useLocalizedString(person.shortText);
 
   const { getImage } = useImage();
 

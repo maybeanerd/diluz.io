@@ -1,6 +1,6 @@
 import {
   BasicSocial,
-  Profile,
+  type Profile,
   ProjectType,
   SpecialSocial,
 } from '../profile.types';
