@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@bg-dev/nuxt-naiveui':
-    specifier: 1.5.2
-    version: 1.5.2(rollup@2.79.1)(vue@3.3.8)
+    specifier: 1.5.3
+    version: 1.5.3(rollup@2.79.1)(vue@3.3.8)
   '@css-render/vue3-ssr':
     specifier: 0.15.12
     version: 0.15.12(vue@3.3.8)
@@ -1312,8 +1312,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@bg-dev/nuxt-naiveui@1.5.2(rollup@2.79.1)(vue@3.3.8):
-    resolution: {integrity: sha512-vIoOooeg2h9idOH/KRp+L4jsQbRsXCb7iOJcQuXvyhRU/SN9ixIm8N1spCgpaIuOBsxxfTvJfJ3cph7b2EKRzg==}
+  /@bg-dev/nuxt-naiveui@1.5.3(rollup@2.79.1)(vue@3.3.8):
+    resolution: {integrity: sha512-8geLihAhdmnuqespbsiXqhben+AKdsJe8GEv0VyaGMkSA2U4REeOEIeFGA7BMmPUcGXn7/1PY8PP/WOIRkEGtQ==}
     dependencies:
       '@iconify/vue': 4.1.1(vue@3.3.8)
       '@nuxt/kit': 3.8.1(rollup@2.79.1)
@@ -4431,6 +4431,7 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    requiresBuild: true
     dev: true
 
   /color-string@1.9.1:
@@ -5085,6 +5086,7 @@ packages:
 
   /end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
+    requiresBuild: true
     dependencies:
       once: 1.4.0
     dev: true

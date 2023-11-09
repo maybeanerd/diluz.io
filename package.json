@@ -13,7 +13,7 @@
     "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
-    "@bg-dev/nuxt-naiveui": "1.5.2",
+    "@bg-dev/nuxt-naiveui": "1.5.3",
     "@css-render/vue3-ssr": "0.15.12",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.0.0",
