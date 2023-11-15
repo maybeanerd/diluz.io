@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@bg-dev/nuxt-naiveui':
-    specifier: 1.5.3
-    version: 1.5.3(rollup@2.79.1)(vue@3.3.8)
+    specifier: 1.5.5
+    version: 1.5.5(rollup@2.79.1)(vue@3.3.8)
   '@css-render/vue3-ssr':
     specifier: 0.15.12
     version: 0.15.12(vue@3.3.8)
@@ -1312,8 +1312,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@bg-dev/nuxt-naiveui@1.5.3(rollup@2.79.1)(vue@3.3.8):
-    resolution: {integrity: sha512-8geLihAhdmnuqespbsiXqhben+AKdsJe8GEv0VyaGMkSA2U4REeOEIeFGA7BMmPUcGXn7/1PY8PP/WOIRkEGtQ==}
+  /@bg-dev/nuxt-naiveui@1.5.5(rollup@2.79.1)(vue@3.3.8):
+    resolution: {integrity: sha512-nd+bmD5RtCHg5cO5+YEgNV/ohJKHY4Z4E8X8cbMSEBt8T9kEqIfAgH+tsxoFOQyNEjKnjsfci/pXFvj98VMhcg==}
     dependencies:
       '@iconify/vue': 4.1.1(vue@3.3.8)
       '@nuxt/kit': 3.8.1(rollup@2.79.1)
