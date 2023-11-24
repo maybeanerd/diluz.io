@@ -33,8 +33,8 @@ devDependencies:
     specifier: 6.12.0
     version: 6.12.0(eslint@8.54.0)(typescript@5.3.2)
   '@vite-pwa/nuxt':
-    specifier: 0.2.3
-    version: 0.2.3(@nuxt/kit@3.8.2)(vite-plugin-pwa@0.16.7)
+    specifier: 0.3.0
+    version: 0.3.0(rollup@2.79.1)(vite@4.5.0)(workbox-build@7.0.0)(workbox-window@7.0.0)
   autoprefixer:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.31)
@@ -3444,16 +3444,19 @@ packages:
       - supports-color
     dev: true
 
-  /@vite-pwa/nuxt@0.2.3(@nuxt/kit@3.8.2)(vite-plugin-pwa@0.16.7):
-    resolution: {integrity: sha512-dAf7crzDth3/hXQ/JAcO0vh9alFl6gUZ3Sw2so1wL4W4VZOMYIA8D3sMo5AH8zV+loUlkqsb6kutmz8IKdpjmQ==}
-    peerDependencies:
-      '@nuxt/kit': ^3.6.2
-      vite-plugin-pwa: '>=0.16.5 <1'
+  /@vite-pwa/nuxt@0.3.0(rollup@2.79.1)(vite@4.5.0)(workbox-build@7.0.0)(workbox-window@7.0.0):
+    resolution: {integrity: sha512-2e0PgU5kzR/ogKLpHZaYPjeLsOEUHV0IBVyIeFBcAHdgGNSGhRzXSN6hypEO8nmIsgCKcGpuSBS/rK+Fpr9lwg==}
     dependencies:
       '@nuxt/kit': 3.8.2(rollup@2.79.1)
       pathe: 1.1.1
-      ufo: 1.3.1
+      ufo: 1.3.2
       vite-plugin-pwa: 0.16.7(vite@4.5.0)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - vite
+      - workbox-build
+      - workbox-window
     dev: true
 
   /@vitejs/plugin-vue-jsx@3.0.2(vite@4.5.0)(vue@3.3.8):
@@ -6049,7 +6052,7 @@ packages:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
