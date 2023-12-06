@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@bg-dev/nuxt-naiveui':
-    specifier: 1.6.1
-    version: 1.6.1(rollup@2.79.1)(vue@3.3.8)
+    specifier: 1.6.2
+    version: 1.6.2(rollup@2.79.1)(vue@3.3.8)
   '@css-render/vue3-ssr':
     specifier: 0.15.12
     version: 0.15.12(vue@3.3.8)
@@ -1312,12 +1312,13 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@bg-dev/nuxt-naiveui@1.6.1(rollup@2.79.1)(vue@3.3.8):
-    resolution: {integrity: sha512-L1n1QMmUIIfJ/Hg8yIDqDndmheu674+cgy3RJhRfrLRrdHT34ZMZg/Q8Q4O/XMq2GBBPMaywubc/neIOmbWvrQ==}
+  /@bg-dev/nuxt-naiveui@1.6.2(rollup@2.79.1)(vue@3.3.8):
+    resolution: {integrity: sha512-MZ7cjz0wu6iwMcAivBiiq0sQjuAY7nGJ44+kQkjrTNrjCCLpIITxHtwggjp1zzR328zga4WP/cFmChAllGtm8w==}
     dependencies:
       '@iconify/vue': 4.1.1(vue@3.3.8)
       '@nuxt/kit': 3.8.2(rollup@2.79.1)
       defu: 6.1.3
+      js-cookie: 3.0.5
       naive-ui: 2.35.0(vue@3.3.8)
     transitivePeerDependencies:
       - rollup
@@ -6750,6 +6751,11 @@ packages:
   /jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
+    dev: true
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
     dev: true
 
   /js-tokens@4.0.0:
