@@ -10,7 +10,7 @@ export const sebastian: Profile = {
     name: { first: 'Sebastian', last: 'Di Luzio' },
     image: 'pp.png',
     socials: [
-      { type: BasicSocial.github, userName: 't0tproduction' },
+      { type: BasicSocial.github, userName: 'maybeanerd' },
       {
         type: SpecialSocial.mastodon,
         userName: 'maybeanerd',
@@ -95,7 +95,7 @@ export const sebastian: Profile = {
           start: new Date(2021, 3),
           end: 'current',
         },
-        url: 'https://github.com/T0TProduction/diluz.io',
+        url: 'https://github.com/maybeanerd/diluz.io',
         technologies: [
           { en: 'TypeScript' },
           { en: 'Nuxt.js' },
@@ -303,7 +303,7 @@ export const sebastian: Profile = {
           en: 'Author and maintainer',
           de: 'Autor und Maintainer',
         },
-        url: 'https://github.com/T0TProduction/hogwarts-but-better-bot',
+        url: 'https://github.com/maybeanerd/hogwarts-but-better-bot',
         timeframe: {
           start: new Date(2020, 9),
           end: 'current',
@@ -328,7 +328,7 @@ export const sebastian: Profile = {
           en: 'Author',
           de: 'Autor',
         },
-        url: 'https://github.com/T0TProduction/BlessFPS',
+        url: 'https://github.com/maybeanerd/BlessFPS',
         timeframe: {
           start: new Date(2018, 4),
           end: new Date(2018, 7),
