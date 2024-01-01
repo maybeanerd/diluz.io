@@ -22,7 +22,7 @@
     "@nuxtjs/tailwindcss": "6.10.3",
     "@types/node": "20.10.6",
     "@typescript-eslint/parser": "6.13.2",
-    "@vite-pwa/nuxt": "0.3.5",
+    "@vite-pwa/nuxt": "0.4.0",
     "autoprefixer": "10.4.16",
     "eslint": "8.55.0",
     "git-commit-info": "2.0.2",
