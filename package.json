@@ -20,7 +20,7 @@
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.0.0-rc.6",
     "@nuxtjs/tailwindcss": "6.10.4",
-    "@types/node": "20.11.3",
+    "@types/node": "20.11.4",
     "@typescript-eslint/parser": "6.19.0",
     "@vite-pwa/nuxt": "0.4.0",
     "autoprefixer": "10.4.16",
