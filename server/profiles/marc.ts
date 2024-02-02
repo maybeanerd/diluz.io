@@ -12,7 +12,9 @@ export const marc: Profile = {
     socials: [
       { type: BasicSocial.github, userName: 'mdiluz' },
       { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
-      { type: SpecialSocial.email, email: 'marc@diluz.io' },
+      { type: SpecialSocial.mastodon, userName: 'mdiluz', instance: new URL('https://mastodon.gamedev.place/') },
+      { type: SpecialSocial.email, email: 'marc@mdiluz.io' },
+      { type: SpecialSocial.website, url: new URL('blog.mdiluz.io') },
     ],
     shortText: { en: '' },
     meta: { basedIn: { country: { en: 'England' }, city: { en: 'London' } } },
@@ -35,11 +37,38 @@ export const marc: Profile = {
       { title: { en: 'OpenGL' } },
       { title: { en: 'Vulkan' } },
       { title: { en: 'Perl' } },
+      { title: { en: 'TeamCity' } },
+      { title: { en: 'Perforce' } },
     ],
   },
   projects: {
     orderBy: 'timeframe',
     list: [
+      {
+        title: { en: 'Frontier Developments' },
+        role: { en: 'Principle Engine Devops Engineer' },
+        url: 'https://www.frontier.co.uk/',
+        image: 'frontier.png',
+        description: {
+          en: 'Developing, advising and improving devops solutions in the Cobra engine team at Frontier',
+        },
+        timeframe: {
+          start: new Date(2023, 10),
+          end: 'current',
+        },
+        showInProfile: true,
+        type: ProjectType.job,
+        technologies: [
+          { en: 'TeamCity' },
+          { en: 'Perforce' },
+          { en: 'Python' },
+          { en: 'C#' },
+          { en: 'CMake' },
+          { en: 'Java' },
+          { en: 'CI/CD' },
+        ],
+        highlights: [{ en: 'Building a team of fantastic developers' }],
+      },
       {
         title: { en: 'Unity' },
         role: { en: 'Lead Software Engineer' },
@@ -50,7 +79,7 @@ export const marc: Profile = {
         },
         timeframe: {
           start: new Date(2021, 12),
-          end: 'current',
+          end: new Date(2023, 10),
         },
         showInProfile: true,
         type: ProjectType.job,
