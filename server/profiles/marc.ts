@@ -69,7 +69,6 @@ export const marc: Profile = {
           { en: 'Java' },
           { en: 'CI/CD' },
         ],
-        highlights: [{ en: 'Building a team of fantastic developers' }],
       },
       {
         title: { en: 'Unity' },
