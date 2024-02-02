@@ -14,7 +14,7 @@ export const marc: Profile = {
       { type: BasicSocial.linkedin, userName: 'marcdiluzio' },
       { type: SpecialSocial.mastodon, userName: 'mdiluz', instance: new URL('https://mastodon.gamedev.place/') },
       { type: SpecialSocial.email, email: 'marc@mdiluz.io' },
-      { type: SpecialSocial.website, url: new URL('blog.mdiluz.io') },
+      { type: SpecialSocial.website, url: new URL('https://blog.mdiluz.io/') },
     ],
     shortText: { en: '' },
     meta: { basedIn: { country: { en: 'England' }, city: { en: 'London' } } },
