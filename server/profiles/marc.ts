@@ -17,10 +17,10 @@ export const marc: Profile = {
       { type: SpecialSocial.website, url: new URL('https://blog.mdiluz.io/') },
     ],
     shortText: { en: 'Devops, Games and Linux Developer' },
-    meta: { 
-      basedIn: { 
-        country: { en: 'England' }, 
-        city: { en: 'London' } 
+    meta: {
+      basedIn: {
+        country: { en: 'England' },
+        city: { en: 'London' },
       },
       pronouns: [{ en: 'he' }, { en: 'him' }],
       languages: ['en'],
@@ -35,17 +35,12 @@ export const marc: Profile = {
       { title: { en: 'Linux' } },
       { title: { en: 'Python' } },
       { title: { en: 'Bash' } },
-      { title: { en: 'Unity' } },
       { title: { en: 'Docker' } },
       { title: { en: 'ASP.Net' } },
       { title: { en: 'Golang' } },
-      { title: { en: 'SQL' } },
       { title: { en: 'K8s' } },
-      { title: { en: 'OpenGL' } },
       { title: { en: 'Vulkan' } },
-      { title: { en: 'Perl' } },
       { title: { en: 'TeamCity' } },
-      { title: { en: 'Perforce' } },
     ],
   },
   projects: {
