@@ -16,8 +16,15 @@ export const marc: Profile = {
       { type: SpecialSocial.email, email: 'marc@mdiluz.io' },
       { type: SpecialSocial.website, url: new URL('https://blog.mdiluz.io/') },
     ],
-    shortText: { en: '' },
-    meta: { basedIn: { country: { en: 'England' }, city: { en: 'London' } } },
+    shortText: { en: 'Devops, Games and Linux Developer' },
+    meta: { 
+      basedIn: { 
+        country: { en: 'England' }, 
+        city: { en: 'London' } 
+      },
+      pronouns: [{ en: 'he' }, { en: 'him' }],
+      languages: ['en'],
+    },
   },
   highlights: {
     title: { en: 'Favorite Technologies', de: 'Lieblings-Technologien' },
