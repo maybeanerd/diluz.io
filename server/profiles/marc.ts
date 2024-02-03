@@ -163,8 +163,8 @@ export const marc: Profile = {
           en: 'Lead the Linux platform development while porting many AAA games such as XCOM2, Mad Max and HITMAN',
         },
         timeframe: {
-          start: new Date(2013, 8),
-          end: new Date(2015, 5),
+          start: new Date(2015, 5),
+          end: new Date(2018, 3),
         },
         showInProfile: true,
         type: ProjectType.job,
@@ -184,8 +184,8 @@ export const marc: Profile = {
           en: 'Worked on Mac and Linux ports for a variety of games including ROME: Total War, Tomb Raider and XCOM',
         },
         timeframe: {
-          start: new Date(2015, 5),
-          end: new Date(2018, 3),
+          start: new Date(2013, 8),
+          end: new Date(2015, 5),
         },
         showInProfile: true,
         type: ProjectType.job,
