@@ -37,6 +37,7 @@ export default defineNuxtConfig({
   image: {
     format: ['avif', 'webp', 'png'],
     dir: 'assets/images',
+    provider: 'ipx',
   },
   tailwindcss: {
     exposeConfig: true,
