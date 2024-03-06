@@ -28,7 +28,7 @@
     "git-commit-info": "2.0.2",
     "nuxt": "3.7.4",
     "prettier": "3.2.5",
-    "typescript": "5.3.3",
+    "typescript": "5.4.2",
     "vfonts": "0.0.3",
     "vue-tsc": "1.8.27"
   }
