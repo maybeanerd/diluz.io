@@ -1,7 +1,6 @@
-import type { NuxtI18nOptions } from '@nuxtjs/i18n/dist/module';
-import type { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables';
+import type { NuxtConfig } from 'nuxt/schema';
 
-export const locales: Array<LocaleObject> = [
+export const locales: Array<{ code: string, file: `${string}.json`, name: string }> = [
   {
     code: 'en',
     file: 'en.json',
@@ -18,7 +17,7 @@ export type Locales = 'en' | 'de';
 
 const defaultLocale = 'en';
 
-export const i18n: NuxtI18nOptions = {
+export const i18n: NuxtConfig['i18n'] = {
   locales,
   strategy: 'prefix',
   detectBrowserLanguage: {
