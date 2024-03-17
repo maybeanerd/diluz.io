@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".ts,.vue\" .",
     "lint:fix": "pnpm lint --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "nuxt:upgrade": "nuxi upgrade --force"
   },
   "devDependencies": {
     "@bg-dev/nuxt-naiveui": "1.6.2",
