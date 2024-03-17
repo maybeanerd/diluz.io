@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import type { MenuOption } from 'naive-ui';
-import { type RouteLocationNormalized, RouterLink } from '~/.nuxt/vue-router';
+import { type RouteLocationNormalized, RouterLink } from 'vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { profiles, defaultProfileName } from '~/server/profiles';
 
