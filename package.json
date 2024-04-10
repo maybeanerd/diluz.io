@@ -31,6 +31,6 @@
     "prettier": "3.2.5",
     "typescript": "5.4.4",
     "vfonts": "0.0.3",
-    "vue-tsc": "2.0.11"
+    "vue-tsc": "2.0.12"
   }
 }
