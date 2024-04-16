@@ -14,7 +14,7 @@
     "nuxt:upgrade": "nuxi upgrade --force"
   },
   "devDependencies": {
-    "@bg-dev/nuxt-naiveui": "1.11.0",
+    "@bg-dev/nuxt-naiveui": "1.10.4",
     "@css-render/vue3-ssr": "0.15.12",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.5.0",
