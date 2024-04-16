@@ -48,12 +48,40 @@ export const sebastian: Profile = {
     list: [
       {
         title: { en: 'IU International University' },
+        role: { en: 'Senior Software Engineer' },
+        url: 'https://www.iu.org',
+        image: 'iu.png',
+        timeframe: {
+          start: new Date(2024, 3),
+          end: 'current',
+        },
+        technologies: [
+          { en: 'TypeScript' },
+          { en: 'Node.js' },
+          { en: 'Nest.js' },
+          { en: 'Vue.js' },
+          { en: 'AWS' },
+          { en: 'Docker' },
+        ],
+        description: {
+          en: 'Building and maintaining the foundation of the platform for students.',
+          de: 'Erstellen und Warten der Basis für die Plattform der Studierenden.',
+        },
+        highlights: [
+          { en: 'Enriching the Developer Experience.', de: 'Verbesserung der Developer Experience.' },
+          { en: 'Providing tooling for 9+ dev teams.', de: 'Bereitstellen von Tooling für 9+ Entwicklerteams.' },
+        ],
+        showInProfile: true,
+        type: ProjectType.job,
+      },
+      {
+        title: { en: 'IU International University' },
         role: { en: 'Full Stack Developer' },
         url: 'https://www.iu.org',
         image: 'iu.png',
         timeframe: {
           start: new Date(2021, 9),
-          end: 'current',
+          end: new Date(2024, 2, 31),
         },
         technologies: [
           { en: 'TypeScript' },
@@ -64,6 +92,10 @@ export const sebastian: Profile = {
           { en: 'AWS' },
           { en: 'Docker' },
         ],
+        description: {
+          en: 'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
+          de: 'Das IU Fernstudium bietet ein extrem flexibles Online-Modell, mit dem die Studierenden ihren Abschluss überall und jederzeit erreichen können - inklusive virtuellem Campus und Online-Prüfungen on demand. Das Studienangebot umfasst Bachelor- und Masterstudiengänge in den Bereichen Hospitality, Tourismus & Event, Gesundheit & Soziales, Transport & Logistik, IT & Technik, Wirtschaft & Management und Personal.',
+        },
         highlights: [
           {
             en: 'Backend built using microservice architecture',
@@ -78,10 +110,6 @@ export const sebastian: Profile = {
             de: 'Frontend Architektur und Tooling um 8+ Teams gleichzeitig an einem Produkt arbeiten zu lassen',
           },
         ],
-        description: {
-          en: 'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
-          de: 'Das IU Fernstudium bietet ein extrem flexibles Online-Modell, mit dem die Studierenden ihren Abschluss überall und jederzeit erreichen können - inklusive virtuellem Campus und Online-Prüfungen on demand. Das Studienangebot umfasst Bachelor- und Masterstudiengänge in den Bereichen Hospitality, Tourismus & Event, Gesundheit & Soziales, Transport & Logistik, IT & Technik, Wirtschaft & Management und Personal.',
-        },
         showInProfile: true,
         type: ProjectType.job,
       },
