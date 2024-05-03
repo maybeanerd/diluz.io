@@ -17,7 +17,7 @@
     "@bg-dev/nuxt-naiveui": "1.10.4",
     "@css-render/vue3-ssr": "0.15.12",
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "1.6.0",
+    "@nuxt/image": "1.7.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.3.1",
     "@nuxtjs/tailwindcss": "6.12.0",
