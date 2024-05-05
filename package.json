@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@bg-dev/nuxt-naiveui": "1.10.4",
-    "@css-render/vue3-ssr": "0.15.12",
+    "@css-render/vue3-ssr": "0.15.14",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.7.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
