@@ -294,7 +294,7 @@ export const sebastian: Profile = {
           de: 'Autor',
         },
         url: 'https://github.com/ixy-languages/ixy.js',
-        image: 'ixy_js_logo.jpg',
+        image: 'ixy_js_logo.png',
         timeframe: {
           start: new Date(2018, 9),
           end: new Date(2019, 6),
