@@ -20,8 +20,8 @@ export const sebastian: Profile = {
       { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
     shortText: {
-      en: 'Full Stack Developer, Gamer and TypeScript enthusiast.',
-      de: 'Full Stack Entwickler, Gamer und TypeScript Enthusiast.',
+      en: 'Software Engineer, Gamer and sideproject enthusiast.',
+      de: 'Software Entwickler, Gamer und Nebenprojekt Enthusiast.',
     },
     meta: {
       basedIn: {
