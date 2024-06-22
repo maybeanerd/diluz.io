@@ -8,10 +8,7 @@
       :line-type="index < orderedProjects.length - 1 ? 'default' : 'dashed'"
     />
 
-    <NTimelineItem
-      :title="t('project.endOfTimeline')"
-      :time="stringifyDate(new Date(0))"
-    />
+    <NTimelineItem :title="t('project.endOfTimeline')" :time="stringifyDate(new Date(0))" />
   </NTimeline>
 </template>
 
@@ -26,10 +23,18 @@ const { t } = useI18n();
 
 const props = defineProps<{ projects: Profile['projects']; name: string }>();
 
-function compareProjects (a: Project, b: Project) {
+// Returning a number smaller than 0 implies A should come before B
+function compareProjects (a: Project, b: Project): number {
   if (props.projects.orderBy !== 'timeframe') {
     return 0;
   }
+
+  // prioritize earlier start date
+  const startDateDifference = b.timeframe.start.getTime() - a.timeframe.start.getTime();
+  if (startDateDifference !== 0) {
+    return startDateDifference;
+  }
+  // If start date is the same, we need tie breakers
 
   // prioritize jobs over side projects
   if (a.type === ProjectType.job && b.type !== ProjectType.job) {
@@ -39,7 +44,7 @@ function compareProjects (a: Project, b: Project) {
     return 1;
   }
 
-  // prioritize still working on it over the start date.
+  // prioritize still working on it
   if (a.timeframe.end === 'current' && b.timeframe.end !== 'current') {
     return -1;
   }
@@ -47,7 +52,8 @@ function compareProjects (a: Project, b: Project) {
     return 1;
   }
 
-  return b.timeframe.start.getTime() - a.timeframe.start.getTime();
+  // I we cannot tie break, leave original order
+  return 0;
 }
 
 const orderedProjects = computed(() => {
