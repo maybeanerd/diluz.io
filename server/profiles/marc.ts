@@ -48,7 +48,7 @@ export const marc: Profile = {
     list: [
       {
         title: { en: 'Frontier Developments' },
-        role: { en: 'Principle Engine Devops Engineer' },
+        role: { en: 'Principal Engine Devops Engineer' },
         url: 'https://www.frontier.co.uk/',
         image: 'frontier.png',
         description: {
