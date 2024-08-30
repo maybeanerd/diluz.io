@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@bg-dev/nuxt-naiveui':
-        specifier: 1.10.4
-        version: 1.10.4(rollup@4.14.0)(vue@3.4.21(typescript@5.5.4))
+        specifier: 1.14.0
+        version: 1.14.0(magicast@0.3.4)(rollup@4.14.0)(vue@3.4.21(typescript@5.5.4))
       '@css-render/vue3-ssr':
         specifier: 0.15.14
         version: 0.15.14(vue@3.4.21(typescript@5.5.4))
@@ -76,6 +76,9 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@ant-design/colors@7.1.0':
+    resolution: {integrity: sha512-MMoDGWn1y9LdQJQSHiCC20x3uZ3CwQnv9QMz6pCmJOrqdgM9YxsoVVY0wtrdXbmfSgnV0KNk6zi09NAhMR2jvg==}
 
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
@@ -724,8 +727,8 @@ packages:
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
 
-  '@bg-dev/nuxt-naiveui@1.10.4':
-    resolution: {integrity: sha512-oemSztO1kBK6Rml8kwOBtXbmVxoIBwGoNmDS9atoMOzA9eciPn3igoDoeTyV7FKvqd68r4kXiVfmGiShIQWTyg==}
+  '@bg-dev/nuxt-naiveui@1.14.0':
+    resolution: {integrity: sha512-fzZXKBWjcKbVRies5XRXVcb6JmRBmN+oG5SF8JzRmc7iqctCWz/Hf6S3Ec9CBNyfdixr1yC8SO4BO1XHo24hGg==}
 
   '@cloudflare/kv-asset-handler@0.3.1':
     resolution: {integrity: sha512-lKN2XCfKCmpKb86a1tl4GIwsJYDy9TGuwjhDELLmpKygQhw8X2xR4dusgpC5Tg7q1pB96Eb0rBo81kxSILQMwA==}
@@ -751,6 +754,10 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss-selector-parser: ^6.0.13
+
+  '@ctrl/tinycolor@3.6.1':
+    resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
+    engines: {node: '>=10'}
 
   '@emotion/hash@0.8.0':
     resolution: {integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==}
@@ -935,8 +942,8 @@ packages:
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
-  '@iconify/vue@4.1.1':
-    resolution: {integrity: sha512-RL85Bm/DAe8y6rT6pux7D2FJSiUEM/TPfyK7GrbAOfTSwrhvwJW+S5yijdGcmtXouA8MtuH9C7l4hiSE4mLMjg==}
+  '@iconify/vue@4.1.2':
+    resolution: {integrity: sha512-CQnYqLiQD5LOAaXhBrmj1mdL2/NCJvwcC4jtW2Z8ukhThiFkLDkutarTOV2trfc9EXqUqRs0KqXOL9pZ/IyysA==}
     peerDependencies:
       vue: '>=3'
 
@@ -3852,8 +3859,8 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  naive-ui@2.38.1:
-    resolution: {integrity: sha512-AnU1FQ7K/CbhguAX++V4kCFjk7h7RvWt4nvZPRjORMpq+fUIlzD+EcQ5Cv1VqDloNF8+eMv4Akc2Ogacc9S+5A==}
+  naive-ui@2.39.0:
+    resolution: {integrity: sha512-5oUJzRG+rtLSH8eRU+fJvVYiQids2BxF9jp+fwGoAqHOptEINrBlgBu9uy+95RHE5FLJ7Q/z41o+qkoGnUrKxQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -5678,6 +5685,10 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
+  '@ant-design/colors@7.1.0':
+    dependencies:
+      '@ctrl/tinycolor': 3.6.1
+
   '@antfu/utils@0.7.10': {}
 
   '@apideck/better-ajv-errors@0.3.6(ajv@8.12.0)':
@@ -6507,14 +6518,16 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@bg-dev/nuxt-naiveui@1.10.4(rollup@4.14.0)(vue@3.4.21(typescript@5.5.4))':
+  '@bg-dev/nuxt-naiveui@1.14.0(magicast@0.3.4)(rollup@4.14.0)(vue@3.4.21(typescript@5.5.4))':
     dependencies:
-      '@iconify/vue': 4.1.1(vue@3.4.21(typescript@5.5.4))
-      '@nuxt/kit': 3.11.2(rollup@4.14.0)
+      '@ant-design/colors': 7.1.0
+      '@iconify/vue': 4.1.2(vue@3.4.21(typescript@5.5.4))
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.14.0)
       defu: 6.1.4
       js-cookie: 3.0.5
-      naive-ui: 2.38.1(vue@3.4.21(typescript@5.5.4))
+      naive-ui: 2.39.0(vue@3.4.21(typescript@5.5.4))
     transitivePeerDependencies:
+      - magicast
       - rollup
       - supports-color
       - vue
@@ -6538,6 +6551,8 @@ snapshots:
   '@csstools/selector-specificity@3.1.1(postcss-selector-parser@6.1.0)':
     dependencies:
       postcss-selector-parser: 6.1.0
+
+  '@ctrl/tinycolor@3.6.1': {}
 
   '@emotion/hash@0.8.0': {}
 
@@ -6652,7 +6667,7 @@ snapshots:
 
   '@iconify/types@2.0.0': {}
 
-  '@iconify/vue@4.1.1(vue@3.4.21(typescript@5.5.4))':
+  '@iconify/vue@4.1.2(vue@3.4.21(typescript@5.5.4))':
     dependencies:
       '@iconify/types': 2.0.0
       vue: 3.4.21(typescript@5.5.4)
@@ -10324,7 +10339,7 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  naive-ui@2.38.1(vue@3.4.21(typescript@5.5.4)):
+  naive-ui@2.39.0(vue@3.4.21(typescript@5.5.4)):
     dependencies:
       '@css-render/plugin-bem': 0.15.12(css-render@0.15.12)
       '@css-render/vue3-ssr': 0.15.14(vue@3.4.21(typescript@5.5.4))
