@@ -16,7 +16,7 @@
       </div>
       <ul v-else>
         <li v-for="(fact, index) in localizedFacts" :key="index" class="flex">
-          <NaiveIcon name="ph:dot-outline" /> {{ unref(fact) }}
+          <UIcon name="ph:dot-outline" /> {{ unref(fact) }}
         </li>
       </ul>
     </div>
@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { unref } from 'vue';
 import type { LocalizedString } from '~/server/profile.types';
 
 const props = defineProps<{
