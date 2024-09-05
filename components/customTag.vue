@@ -1,17 +1,16 @@
 <template>
-  <NTag round class="m-1" :type="props.type">
+  <UBadge color="gray" variant="solid" class="m-1">
     <slot />
-    <template v-if="props.icon" #icon>
-      <NaiveIcon :name="props.icon" class="ml-1" />
+    <template v-if="props.icon">
+      <UIcon :name="props.icon" class="ml-1" />
     </template>
-  </NTag>
+  </UBadge>
 </template>
 
 <script setup lang="ts">
-import type { TagProps } from 'naive-ui';
 
 const props = defineProps<{
   icon?: string;
-  type?: TagProps['type'];
+  type?: string; // TODO remove, or rework
 }>();
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <NTimeline>
+  <section>
     <ProfileProjectItem
       v-for="(project, index) in orderedProjects"
       :key="index"
@@ -7,9 +7,9 @@
       :name="props.name"
       :line-type="index < orderedProjects.length - 1 ? 'default' : 'dashed'"
     />
-
-    <NTimelineItem :title="t('project.endOfTimeline')" :time="stringifyDate(new Date(0))" />
-  </NTimeline>
+    <!-- TODO rebuild timeline -->
+    <div :title="t('project.endOfTimeline')" :time="stringifyDate(new Date(0))" />
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +18,7 @@ import {
   type Profile,
   type Project,
 } from '~/server/profile.types';
+import { stringifyDate } from '~/utils/date';
 
 const { t } = useI18n();
 

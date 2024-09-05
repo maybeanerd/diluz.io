@@ -10,6 +10,10 @@
 
       TODO MENU
 
+      <!--
+      <UVerticalNavigation :links="links" />
+      -->
+
       <template #footer>
         <div class="text-center text-xs">
           {{ t('navbar.commit') }}

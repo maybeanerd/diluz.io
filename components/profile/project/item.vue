@@ -1,6 +1,7 @@
 <template>
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
-  <NTimelineItem type="success" :line-type="props.lineType">
+  <!-- TODO recreate timeline item -->
+  <div type="success" :line-type="props.lineType">
     <h3 class="text-base -mt-[3px]">
       {{ title }}
     </h3>
@@ -46,7 +47,7 @@
       variant="list"
       :value="props.project.highlights"
     />
-  </NTimelineItem>
+  </div>
 </template>
 
 <script setup lang="ts">
