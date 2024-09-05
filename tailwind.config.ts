@@ -29,5 +29,4 @@ export default <Partial<Config>>{
       },
     },
   },
-  darkMode: 'class',
 };

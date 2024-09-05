@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
     '@nuxtjs/tailwindcss',
-    '@bg-dev/nuxt-naiveui',
   ],
   pwa: {},
   nitro: {
@@ -43,4 +42,6 @@ export default defineNuxtConfig({
     exposeConfig: true,
   },
   i18n,
+  // TODO move to nuxt4 compatability at some point
+  compatibilityDate: '2024-09-05',
 });

@@ -14,9 +14,7 @@
     "nuxt:upgrade": "nuxi upgrade --force"
   },
   "devDependencies": {
-    "@bg-dev/nuxt-naiveui": "1.10.4",
-    "@css-render/vue3-ssr": "0.15.14",
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "1.4.1",
     "@nuxt/image": "1.8.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.5.1",
@@ -30,7 +28,6 @@
     "nuxt": "3.12.4",
     "prettier": "3.3.3",
     "typescript": "5.5.4",
-    "vfonts": "0.0.3",
     "vue-tsc": "2.1.2"
   }
 }
