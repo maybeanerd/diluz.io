@@ -30,6 +30,8 @@
 import { type RouteLocationNormalized, RouterLink } from 'vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { profiles, defaultProfileName } from '~/server/profiles';
+import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
+import { stringifyDate } from '~/utils/date';
 
 const { t } = useI18n();
 const localePath = useLocalePath();
