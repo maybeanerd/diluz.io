@@ -1,8 +1,7 @@
 <template>
-  <NSelect
-    v-model:value="locale"
+  <USelect
+    v-model="locale"
     :options="languages"
-    class="w-16"
     @update:value="updateLocale"
   />
 </template>
