@@ -1,28 +1,32 @@
 <template>
-  <NDrawer v-model:show="isOpen" placement="left">
-    <NDrawerContent :title="t('navbar.title')" closable>
-      <div class="h-full flex flex-col justify-between">
-        <NMenu v-model:value="selectedProfile" :options="menuOptions" />
-        <div>
-          <NDivider />
-          <div class="text-center text-xs">
-            {{ t('navbar.commit') }}
-            <InlineLink :to="getLinkToCommit(commitHash)">
-              {{ commitHash }}
-            </InlineLink><br>
-            {{ t('navbar.builtOn') }}
-            <InlineLink :to="latestBuildsUrl">
-              {{ stringifyDate(buildDate) }}
-            </InlineLink>
-          </div>
+  <USlideover v-model="isOpen" side="left">
+    <UCard
+      class="flex flex-col flex-1"
+      :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }"
+    >
+      <template #header>
+        {{ t('navbar.title') }}
+      </template>
+
+      TODO MENU
+
+      <template #footer>
+        <div class="text-center text-xs">
+          {{ t('navbar.commit') }}
+          <InlineLink :to="getLinkToCommit(commitHash)">
+            {{ commitHash }}
+          </InlineLink><br>
+          {{ t('navbar.builtOn') }}
+          <InlineLink :to="latestBuildsUrl">
+            {{ stringifyDate(buildDate) }}
+          </InlineLink>
         </div>
-      </div>
-    </NDrawerContent>
-  </NDrawer>
+      </template>
+    </UCard>
+  </USlideover>
 </template>
 
 <script setup lang="ts">
-import type { MenuOption } from 'naive-ui';
 import { type RouteLocationNormalized, RouterLink } from 'vue-router';
 import { useMenu } from '~/composables/useMenu';
 import { profiles, defaultProfileName } from '~/server/profiles';
@@ -34,7 +38,7 @@ const menuOptions = computed(() =>
   profiles.map((profile) => {
     const name = profile.person.name.first.toLowerCase();
 
-    const menuOption: MenuOption = {
+    const menuOption = {
       label: () =>
         h(
           RouterLink,

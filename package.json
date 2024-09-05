@@ -16,6 +16,7 @@
   "devDependencies": {
     "@nuxt/devtools": "1.4.1",
     "@nuxt/image": "1.8.0",
+    "@nuxt/ui": "2.18.4",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.5.1",
     "@nuxtjs/tailwindcss": "6.12.1",

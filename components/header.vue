@@ -2,17 +2,17 @@
   <div
     class="p-2 sticky top-0 flex justify-between z-30 bg-background-light dark:bg-background-dark border-b-[1px] border-content-secondary-light dark:border-content-secondary-dark"
   >
-    <NButton quaternary round @click="toggleMenu">
-      <template #icon>
-        <NaiveIcon :size="26" name="ph:list" />
-      </template>
-    </NButton>
+    <UButton
+      variant="solid"
+      square
+      icon="i-heroicons:bars-3-20-solid"
+      size="lg"
+      @click="toggleMenu"
+    />
     <div class="self-center text-lg">
       <p>{{ profile.person.name.first }}</p>
     </div>
-    <div class="flex space-x-4">
-      <LanguagePicker />
-    </div>
+    <LanguagePicker />
   </div>
 </template>
 
