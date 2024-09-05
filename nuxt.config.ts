@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
     '@nuxtjs/tailwindcss',
+    '@nuxt/ui',
   ],
   pwa: {},
   nitro: {
