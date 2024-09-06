@@ -14,21 +14,20 @@
     "nuxt:upgrade": "nuxi upgrade --force"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "1.2.0",
     "@nuxt/devtools": "1.4.1",
     "@nuxt/image": "1.8.0",
     "@nuxt/ui": "2.18.4",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
-    "@nuxtjs/i18n": "8.5.1",
-    "@nuxtjs/tailwindcss": "6.12.1",
-    "@types/node": "20.16.1",
+    "@nuxtjs/i18n": "8.5.2",
+    "@types/node": "20.16.5",
     "@typescript-eslint/parser": "7.18.0",
-    "@vite-pwa/nuxt": "0.10.1",
+    "@vite-pwa/nuxt": "0.10.5",
     "autoprefixer": "10.4.20",
     "eslint": "8.57.0",
     "git-commit-info": "2.0.2",
     "nuxt": "3.13.1",
     "prettier": "3.3.3",
-    "typescript": "5.5.4",
-    "vue-tsc": "2.1.2"
+    "typescript": "5.5.4"
   }
 }
