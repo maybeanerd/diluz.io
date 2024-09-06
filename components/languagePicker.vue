@@ -2,6 +2,7 @@
   <USelect
     v-model="locale"
     :options="languages"
+    trailing-icon="i-heroicons:language-20-solid"
     @update:value="updateLocale"
   />
 </template>
