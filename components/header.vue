@@ -4,7 +4,7 @@
   >
     <UButton
       variant="ghost"
-      color="white"
+      color="gray"
       icon="i-heroicons:bars-3-20-solid"
       @click="toggleMenu"
     />
