@@ -4,15 +4,15 @@
       class="flex flex-col flex-1"
       :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }"
     >
-      <template #header>
-        {{ t('navbar.title') }}
-      </template>
+      <h3> {{ t('navbar.title') }}</h3>
+      <br>
 
-      TODO MENU
-
-      <!--
-      <UVerticalNavigation :links="links" />
-      -->
+      <UVerticalNavigation
+        :links="menuOptions"
+        :ui="{
+          size: 'text-md',
+        }"
+      />
 
       <template #footer>
         <div class="text-center text-xs">
@@ -31,9 +31,8 @@
 </template>
 
 <script setup lang="ts">
-import { type RouteLocationNormalized, RouterLink } from 'vue-router';
 import { useMenu } from '~/composables/useMenu';
-import { profiles, defaultProfileName } from '~/server/profiles';
+import { profiles } from '~/server/profiles';
 import { getLinkToCommit, latestBuildsUrl } from '~/utils/gitHubRepo';
 import { stringifyDate } from '~/utils/date';
 
@@ -44,44 +43,19 @@ const menuOptions = computed(() =>
   profiles.map((profile) => {
     const name = profile.person.name.first.toLowerCase();
 
-    const menuOption = {
-      label: () =>
-        h(
-          RouterLink,
-          {
-            to: localePath(`/${name}`),
-          },
-          upperCaseFirstLetter(name),
-        ),
-      key: name,
-      // TODO we could add icons of the profiles here if we wanted
-      // icon: renderIcon(profile.icon),
+    return {
+      label: upperCaseFirstLetter(name),
+      // avatar: { src: profile.person.image },
+      to: localePath(`/${name}`),
     };
-
-    return menuOption;
   }),
 );
 
-const route = useRoute();
-
-function getCurrentProfile (to?: RouteLocationNormalized) {
-  return (
-    unref(menuOptions)
-      .find(option =>
-        (to ?? route).path.endsWith(option.key?.toString() ?? ''),
-      )
-      ?.key?.toString() ?? defaultProfileName
-  );
-}
-
-const selectedProfile = ref<string | null>(getCurrentProfile());
-
-const router = useRouter();
 const { isOpen } = useMenu();
 
-router.afterEach((to) => {
-  selectedProfile.value = getCurrentProfile(to);
+const router = useRouter();
 
+router.afterEach(() => {
   // Close navbar when any navigation occurs
   isOpen.value = false;
 });
