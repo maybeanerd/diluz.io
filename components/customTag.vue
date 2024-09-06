@@ -1,5 +1,5 @@
 <template>
-  <UBadge color="gray" variant="solid" class="m-1">
+  <UBadge :color="props.type" variant="solid" class="m-1">
     <slot />
     <template v-if="props.icon">
       <UIcon :name="props.icon" class="ml-1" />
@@ -9,8 +9,11 @@
 
 <script setup lang="ts">
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   icon?: string;
-  type?: string; // TODO remove, or rework
-}>();
+  type?: 'gray' | 'white';
+}>(), {
+  type: 'white',
+  icon: undefined,
+});
 </script>
