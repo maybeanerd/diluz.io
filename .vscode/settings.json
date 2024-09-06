@@ -3,25 +3,7 @@
   "files.eol": "\n",
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
-  "eslint.validate": [
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    }
-  ],
-  "eslint.autoFixOnSave": true,
+  "eslint.validate": ["vue", "typescript", "javascript", "javascriptreact"],
   "editor.formatOnSave": false,
   "vetur.validation.template": false,
   "vetur.format.defaultFormatterOptions": {
@@ -38,8 +20,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "i18n-ally.localesPaths": [
-    "locales"
-  ],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
