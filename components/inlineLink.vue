@@ -1,7 +1,7 @@
 <template>
   <CustomRouterLink
     :to="props.to"
-    class="text-primary-base-light hover:text-primary-highlight-light dark:text-primary-base-dark dark:hover:text-primary-highlight-dark"
+    class="text-base-light hover:text-highlight-light dark:text-base-dark dark:hover:text-highlight-dark"
   >
     <slot />
   </CustomRouterLink>
