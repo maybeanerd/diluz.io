@@ -2,12 +2,9 @@
   <a
     v-if="isUrl(props.to)"
     :href="props.to.toString()"
-    class="[&>*]:cursor-pointer
-    text-primary-base-light dark:text-primary-base-dark
-    hover:text-primary-highlight-light hover:dark:text-primary-highlight-dark"
+    class="text-base-light dark:text-base-dark
+    hover:text-highlight-light hover:dark:text-highlight-dark"
   >
-    <!-- this style enforcement is necessary due to how our UI library generates styles during runtime,
-      and apparently doesn't want pointers on tags -->
     <slot />
   </a>
   <RouterLink v-else :to="props.to">
