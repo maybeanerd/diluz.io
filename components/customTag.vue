@@ -1,9 +1,9 @@
 <template>
-  <UBadge :color="props.type" variant="solid" class="m-1">
-    <slot />
+  <UBadge :color="props.type" variant="solid" size="md" class="m-1">
     <template v-if="props.icon">
-      <UIcon :name="props.icon" class="ml-1" />
+      <UIcon :name="props.icon" class="mr-1" />
     </template>
+    <slot />
   </UBadge>
 </template>
 
