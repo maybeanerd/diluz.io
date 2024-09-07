@@ -1,23 +1,24 @@
 <template>
-  <USelect
+  <USelectMenu
     v-model="locale"
     :options="languages"
-    trailing-icon="i-heroicons:language-20-solid"
-    @update:value="updateLocale"
+    @update:model-value="updateLocale"
   />
 </template>
 
 <script setup lang="ts">
-const { locale, availableLocales } = useI18n();
-const { push } = useRouter();
-const localePath = useSwitchLocalePath();
+const { locale: i18nLocale, availableLocales, setLocale } = useI18n();
 
-const languages = availableLocales.map(locale => ({
-  label: locale.toUpperCase(),
-  value: locale,
+const languages = availableLocales.map(availableLocale => ({
+  label: availableLocale.toUpperCase(),
+  value: availableLocale,
 }));
 
-async function updateLocale (newLocale: string) {
-  await push(localePath(newLocale));
-}
+const locale = ref(languages.find(
+  ({ value }) => value === i18nLocale.value) ?? languages[0]);
+
+function updateLocale (newLocale: { label: string, value: string }) {
+  setLocale(newLocale.value);
+};
+
 </script>
