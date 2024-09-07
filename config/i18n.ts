@@ -19,7 +19,7 @@ export const defaultLocale = 'en';
 
 export const i18n: NuxtConfig['i18n'] = {
   locales,
-  strategy: 'prefix_and_default',
+  strategy: 'prefix',
   detectBrowserLanguage: {
     fallbackLocale: defaultLocale,
   },
