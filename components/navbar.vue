@@ -4,7 +4,9 @@
       class="flex flex-col flex-1"
       :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }"
     >
-      <h3> {{ t('navbar.title') }}</h3>
+      <div class="flex items-center justify-between">
+        <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1 -mt-4 -ml-4" @click="isOpen = false" />
+      </div>
       <br>
 
       <UVerticalNavigation
