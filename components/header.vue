@@ -8,12 +8,9 @@
       icon="i-heroicons:bars-3-20-solid"
       @click="toggleMenu"
     />
-    <div class="self-center text-lg">
-      <p>diluz.io</p>
-    </div>
     <div class="flex gap-2">
-      <LanguagePicker />
       <ColorModePicker />
+      <LanguagePicker />
     </div>
   </div>
 </template>
