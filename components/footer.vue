@@ -27,8 +27,8 @@ const notableDependencies = [
     url: new URL('https://tailwindcss.com/'),
   },
   {
-    name: 'Naive UI',
-    url: new URL('https://www.naiveui.com/'),
+    name: 'NuxtUI',
+    url: new URL('https://ui.nuxt.com/'),
   },
 ];
 </script>
