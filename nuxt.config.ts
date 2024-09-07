@@ -2,8 +2,11 @@ import gitCommitInfo from 'git-commit-info';
 import { profiles } from './server/profiles';
 import { i18n, locales } from './config/i18n';
 
-const routesToPrerender: Array<string> = [];
+const routesToPrerender: Array<string> = ['/'];
 profiles.forEach((profile) => {
+  routesToPrerender.push(
+  `/${profile.person.name.first.toLowerCase()}`,
+  );
   locales.forEach((locale) => {
     routesToPrerender.push(
       `/${locale.code}/${profile.person.name.first.toLowerCase()}`,
