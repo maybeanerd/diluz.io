@@ -43,10 +43,15 @@ const menuOptions = computed(() =>
   profiles.map((profile) => {
     const name = profile.person.name.first.toLowerCase();
 
+    // Sebastians profile is special, as it's the default one.
+    // To make this link always be active, even on initial entry,
+    // we use the default route instead of the profile route for them.
+    const to = name === 'sebastian' ? localePath('/') : localePath(`/${name}`);
+
     return {
       label: upperCaseFirstLetter(name),
       // avatar: { src: profile.person.image },
-      to: localePath(`/${name}`),
+      to,
     };
   }),
 );
