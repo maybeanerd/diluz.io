@@ -1,7 +1,7 @@
 <template>
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <!-- TODO recreate timeline item -->
-  <div class="flex gap-4">
+  <div class="flex">
     <div class="mt-1 shrink-0">
       <div v-if="props.project.image">
         <ProfileProjectPicture :name="props.name" :image-path="props.project.image" />
@@ -15,7 +15,7 @@
       />
     </div>
     <div class="flex flex-col gap-2">
-      <div>
+      <div class="ml-4">
         <h3 class="text-base -mt-[3px]">
           {{ title }}
         </h3>
@@ -26,6 +26,7 @@
           {{ props.project.url }}
         </InlineLink>
       </div>
+
       <h4 class="text-lg">
         {{ role }}
       </h4>
