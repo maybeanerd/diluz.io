@@ -22,9 +22,7 @@
         <p class="text-xs">
           {{ stringifyTimeframe(props.project.timeframe) }}
         </p>
-        <InlineLink v-if="props.project.url" :to="props.project.url" class="text-xs">
-          {{ props.project.url }}
-        </InlineLink>
+        <InlineLink v-if="props.project.url" :to="props.project.url" class="text-xs" />
       </div>
 
       <h4 class="text-lg">
