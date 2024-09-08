@@ -1,6 +1,6 @@
 <template>
   <NuxtPicture
-    sizes="md:48px lg:64px"
+    sizes="sm:48px md:64px"
     class="[&>img]:sm:w-12 [&>img]:md:w-16"
     :src="imagePath"
   />
