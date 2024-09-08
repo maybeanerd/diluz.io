@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="flex flex-col gap-8">
     <ProfileProjectItem
       v-for="(project, index) in orderedProjects"
       :key="index"
@@ -8,7 +8,9 @@
       :line-type="index < orderedProjects.length - 1 ? 'default' : 'dashed'"
     />
     <!-- TODO rebuild timeline -->
-    <div :title="t('project.endOfTimeline')" :time="stringifyDate(new Date(0))" />
+    <div>
+      {{ t('project.endOfTimeline') }} <br> {{ stringifyDate(new Date(0)) }}
+    </div>
   </section>
 </template>
 
