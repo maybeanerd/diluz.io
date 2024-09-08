@@ -5,7 +5,9 @@
     <div class="mt-1 shrink-0">
       <div v-if="props.project.image">
         <ProfileProjectPicture :name="props.name" :image-path="props.project.image" />
-      </div>
+      </div><div v-else>
+        <UIcon name="i-heroicons:command-line-16-solid" class="w-12 h-12 md:w-16 md:h-16" />
+      </div> <!-- TODO fallback image -->
       <div
         v-if="!props.isLast"
         class="m-1 ml-6 md:ml-8 h-full
