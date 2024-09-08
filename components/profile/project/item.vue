@@ -1,21 +1,7 @@
 <template>
   <!-- TODO use project type to add icon to timeline item instead of circle of its type -->
   <!-- TODO recreate timeline item -->
-  <div type="success" :line-type="props.lineType">
-    <h3 class="text-base -mt-[3px]">
-      {{ title }}
-    </h3>
-    <p class="text-xs">
-      {{ stringifyTimeframe(props.project.timeframe) }}
-    </p>
-    <InlineLink
-      v-if="props.project.url"
-      :to="props.project.url"
-      class="text-xs"
-    >
-      {{ props.project.url }}
-    </InlineLink>
-
+  <div class="flex flex-col gap-2">
     <div class="flex mt-4 space-x-4">
       <div v-if="props.project.image" class="mt-1 shrink-0">
         <ProfileProjectPicture
@@ -24,18 +10,32 @@
         />
       </div>
       <div>
-        <p class="text-sm">
-          {{ role }}
+        <h3 class="text-base -mt-[3px]">
+          {{ title }}
+        </h3>
+        <p class="text-xs">
+          {{ stringifyTimeframe(props.project.timeframe) }}
         </p>
-        <ProfileProjectFact
-          v-if="props.project.technologies"
-          class="mt-2"
-          :title="t('project.technologies')"
-          variant="tags"
-          :value="props.project.technologies"
-        />
+        <InlineLink
+          v-if="props.project.url"
+          :to="props.project.url"
+          class="text-xs"
+        >
+          {{ props.project.url }}
+        </InlineLink>
       </div>
     </div>
+    <h4 class="text-lg">
+      {{ role }}
+    </h4>
+
+    <ProfileProjectFact
+      v-if="props.project.technologies"
+      class="mt-2"
+      :title="t('project.technologies')"
+      variant="tags"
+      :value="props.project.technologies"
+    />
 
     <p class="my-2 text-sm">
       {{ description }}
