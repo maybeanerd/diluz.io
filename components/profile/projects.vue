@@ -1,15 +1,11 @@
 <template>
-  <section class="flex flex-col gap-8">
-    <ProfileProjectItem
-      v-for="(project, index) in orderedProjects"
-      :key="index"
-      :project="project"
-      :name="props.name"
-      :line-type="index < orderedProjects.length - 1 ? 'default' : 'dashed'"
-    />
-    <!-- TODO rebuild timeline -->
-    <div>
-      {{ t('project.endOfTimeline') }} <br> {{ stringifyDate(new Date(0)) }}
+  <section class="flex flex-col gap-6">
+    <div v-for="(project, index) in orderedProjects" :key="index">
+      <ProfileProjectItem
+        :project="project"
+        :name="props.name"
+        :is-last="index >= orderedProjects.length - 1"
+      />
     </div>
   </section>
 </template>
@@ -20,9 +16,6 @@ import {
   type Profile,
   type Project,
 } from '~/server/profile.types';
-import { stringifyDate } from '~/utils/date';
-
-const { t } = useI18n();
 
 const props = defineProps<{ projects: Profile['projects']; name: string }>();
 
