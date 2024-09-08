@@ -1,5 +1,5 @@
 <template>
-  <UBadge :color="props.type" variant="solid" size="md" class="m-1">
+  <UBadge :color="props.type" variant="solid" size="md" class="m-1" :ui="{ rounded: 'rounded-full' }">
     <template v-if="props.icon">
       <UIcon :name="props.icon" class="mr-1" />
     </template>
