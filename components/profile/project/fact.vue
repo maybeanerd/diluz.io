@@ -15,8 +15,8 @@
         </CustomTag>
       </div>
       <ul v-else>
-        <li v-for="(fact, index) in localizedFacts" :key="index" class="flex">
-          <UIcon name="ph:dot-outline" /> {{ unref(fact) }}
+        <li v-for="(fact, index) in localizedFacts" :key="index" class="flex items-center gap-1">
+          <UIcon name="i-heroicons:minus-small-20-solid" class="shrink-0" /> {{ unref(fact) }}
         </li>
       </ul>
     </div>

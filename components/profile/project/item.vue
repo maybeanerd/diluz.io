@@ -10,7 +10,7 @@
       </div> <!-- TODO fallback image -->
       <div
         v-if="!props.isLast"
-        class="m-1 ml-6 md:ml-8 h-full
+        class="ml-6 md:ml-8 h-full
                border-gray-600 border-dashed border-l-2"
       />
     </div>
@@ -25,7 +25,7 @@
         <InlineLink v-if="props.project.url" :to="props.project.url" class="text-xs" />
       </div>
 
-      <h4 class="text-lg">
+      <h4 class="text-lg mt-2">
         {{ role }}
       </h4>
 
