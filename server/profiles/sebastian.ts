@@ -20,7 +20,7 @@ export const sebastian: Profile = {
       { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
     shortText: {
-      en: 'Software Engineer, Gamer and sideproject enthusiast.',
+      en: 'Software Engineer, Gamer and Sideproject Enthusiast.',
       de: 'Software Entwickler, Gamer und Nebenprojekt Enthusiast.',
     },
     meta: {
@@ -36,11 +36,11 @@ export const sebastian: Profile = {
     title: { en: 'Favorite Tech Stack', de: 'Lieblings Tech Stack' },
     list: [
       { title: { en: 'TypeScript' } },
-      { title: { en: 'Nuxt.js' } },
-      { title: { en: 'TailwindCSS' } },
-      { title: { en: 'Nest.js' } },
+      { title: { en: 'Nuxt' } },
+      { title: { en: 'Tailwind' } },
       { title: { en: 'Fastify' } },
       { title: { en: 'PostgreSQL' } },
+      { title: { en: 'Drizzle' } },
     ],
   },
   projects: {
@@ -126,9 +126,9 @@ export const sebastian: Profile = {
         url: 'https://github.com/maybeanerd/diluz.io',
         technologies: [
           { en: 'TypeScript' },
-          { en: 'Nuxt.js' },
+          { en: 'Nuxt' },
           { en: 'Vue.js' },
-          { en: 'TailwindCSS' },
+          { en: 'Tailwind' },
         ],
         highlights: [
           { en: 'Open Source' },
@@ -216,7 +216,7 @@ export const sebastian: Profile = {
         technologies: [
           { en: 'TypeScript' },
           { en: 'Node.js' },
-          { en: 'Nuxt.js' },
+          { en: 'Nuxt' },
           { en: 'Vue.js' },
           { en: 'PostgreSQL' },
           { en: 'AWS' },
@@ -265,7 +265,7 @@ export const sebastian: Profile = {
         technologies: [
           { en: 'TypeScript' },
           { en: 'Node.js' },
-          { en: 'Nuxt.js' },
+          { en: 'Nuxt' },
           { en: 'Vue.js' },
           { en: 'PostgreSQL' },
           { en: 'AWS' },
