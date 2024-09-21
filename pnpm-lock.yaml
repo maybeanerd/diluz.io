@@ -24,8 +24,8 @@ importers:
         specifier: 12.1.0
         version: 12.1.0(eslint@8.57.1)(typescript@5.6.2)
       '@nuxtjs/i18n':
-        specifier: 8.5.4
-        version: 8.5.4(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.5(typescript@5.6.2))
+        specifier: 8.5.5
+        version: 8.5.5(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.5(typescript@5.6.2))
       '@types/node':
         specifier: 20.16.5
         version: 20.16.5
@@ -1392,8 +1392,8 @@ packages:
     peerDependencies:
       eslint: ^8.23.0
 
-  '@nuxtjs/i18n@8.5.4':
-    resolution: {integrity: sha512-8onnhHHUhKwZm7CKMDNGmLCJMt7Af0Y4VaYJ/hEvKT9O9sd1MKvGMQKNefBeSOggllRU2iOgcqCsb5qozPVP5A==}
+  '@nuxtjs/i18n@8.5.5':
+    resolution: {integrity: sha512-HVXRy61VBACIwmap1WxuhT9nNf6liU9L9LQSB6D7LDJ+8w57Cc6qWHRJ7dNI9sI/IQ2FQWk7PkTWriybAd3MlQ==}
     engines: {node: ^14.16.0 || >=16.11.0}
 
   '@nuxtjs/tailwindcss@6.12.1':
@@ -7475,7 +7475,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@nuxtjs/i18n@8.5.4(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.5(typescript@5.6.2))':
+  '@nuxtjs/i18n@8.5.5(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.5(typescript@5.6.2))':
     dependencies:
       '@intlify/h3': 0.5.0
       '@intlify/shared': 9.14.0
