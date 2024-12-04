@@ -20,10 +20,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@vite-pwa/nuxt',
     '@nuxt/ui',
   ],
-  pwa: {},
   nitro: {
     prerender: {
       crawlLinks: true,
