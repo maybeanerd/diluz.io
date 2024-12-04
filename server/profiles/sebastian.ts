@@ -33,12 +33,12 @@ export const sebastian: Profile = {
     },
   },
   highlights: {
-    title: { en: 'Favorite Tech Stack', de: 'Lieblings Tech Stack' },
+    title: { en: 'Favored Tech Stack', de: 'Lieblings Tech Stack' },
     list: [
       { title: { en: 'TypeScript' } },
       { title: { en: 'Nuxt' } },
       { title: { en: 'Tailwind' } },
-      { title: { en: 'Fastify' } },
+      { title: { en: 'Nest.js' } },
       { title: { en: 'PostgreSQL' } },
       { title: { en: 'Drizzle' } },
     ],
