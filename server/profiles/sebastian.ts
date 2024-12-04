@@ -48,7 +48,7 @@ export const sebastian: Profile = {
     list: [
       {
         title: { en: 'IU International University' },
-        role: { en: 'Senior Software Engineer' },
+        role: { en: 'Tech Lead, Senior Software Engineer' },
         url: 'https://www.iu.org',
         image: 'iu.png',
         timeframe: {
@@ -64,19 +64,20 @@ export const sebastian: Profile = {
           { en: 'Docker' },
         ],
         description: {
-          en: 'Building and maintaining the foundation of the platform for students.',
-          de: 'Erstellen und Warten der Basis für die Plattform der Studierenden.',
+          en: 'Building and maintaining the foundation of the platform for students. By providing core services and utilities as well as a platform for feature teams to build upon, enable multiple cross department initiatives to bring a new user experience to over 150K students.',
         },
         highlights: [
-          { en: 'Enriching the Developer Experience.', de: 'Verbesserung der Developer Experience.' },
-          { en: 'Providing tooling for 9+ dev teams.', de: 'Bereitstellen von Tooling für 9+ Entwicklerteams.' },
+          { en: 'Enriching the Developer Experience' },
+          { en: 'Orchestration of 15+ Microfrontends by 9+ teams' },
+          { en: 'Stewardship of a shared component library' },
+          { en: 'Created a highly scalable multi-brand setup with minimal overhead by leveraging complex CI/CD pipelines' },
         ],
         showInProfile: true,
         type: ProjectType.job,
       },
       {
         title: { en: 'IU International University' },
-        role: { en: 'Full Stack Developer' },
+        role: { en: 'Software Engineer' },
         url: 'https://www.iu.org',
         image: 'iu.png',
         timeframe: {
@@ -93,21 +94,21 @@ export const sebastian: Profile = {
           { en: 'Docker' },
         ],
         description: {
-          en: 'The IU distance learning offers an extremely flexible online model, with which the students can reach their degree anywhere and anytime - including a virtual campus and online exams on demand. The study programme comprises bachelor and master courses in the fields of hospitality, tourism & event, health care, transport & logistics, IT & engineering, business & management and human resources.',
-          de: 'Das IU Fernstudium bietet ein extrem flexibles Online-Modell, mit dem die Studierenden ihren Abschluss überall und jederzeit erreichen können - inklusive virtuellem Campus und Online-Prüfungen on demand. Das Studienangebot umfasst Bachelor- und Masterstudiengänge in den Bereichen Hospitality, Tourismus & Event, Gesundheit & Soziales, Transport & Logistik, IT & Technik, Wirtschaft & Management und Personal.',
+          en: 'Moving across multiple teams for both existing products as well as new initiatives to bring the product and technical platforms to the next level.',
         },
         highlights: [
           {
-            en: 'Backend built using microservice architecture',
-            de: 'Backend auf Basis von Microservice Architektur',
+            en: 'Microservices providing complex use cases like offline sync for native apps',
+          },
+          { en: 'Leading company wide topics across software engineering guild and community of practices' },
+          {
+            en: 'Microfrontends that are used across platforms within multiple clients',
+            de: 'Microfrontends die über Clients hinweg auf mehreren Plattformen genutzt werden',
           },
           {
-            en: 'Micro-Frontends that are used across platforms within multiple clients',
-            de: 'Micro-Frontends die über Clients hinweg auf mehreren Plattformen genutzt werden',
-          },
-          {
-            en: 'Frontend architecture and tooling to enable 8+ teams to work simultaneously on a single product',
-            de: 'Frontend Architektur und Tooling um 8+ Teams gleichzeitig an einem Produkt arbeiten zu lassen',
+            en: 'Establishing standards for tooling and formatting across multiple teams and projects',
+          }, {
+            en: 'Migrating from Bitbucket to GitLab, reworking CI/CD to provide a shared pipeline approach',
           },
         ],
         showInProfile: true,
@@ -235,8 +236,8 @@ export const sebastian: Profile = {
             de: 'Implementierung mehrerer Game-APIs',
           },
           {
-            en: 'Built core systems like auth, chat, matching, etc.',
-            de: 'Aufbau von Kernsystemen wie Auth, Chat, Matching, etc.',
+            en: 'Built core systems like auth, chat, matching',
+            de: 'Aufbau von Kernsystemen wie Auth, Chat, Matching',
           },
           {
             en: 'Collected 180.000€ in funding',
@@ -244,8 +245,7 @@ export const sebastian: Profile = {
           },
         ],
         description: {
-          en: "flint.gg is the home of every gamers identity. It's a social network that connects gamers across all games and platforms by enabling them to easily represent themselves. This is accomplished with so-called Gamecards, which include favourite loadouts, outfits and items, as well as statistics directly pulled from the game.",
-          de: 'flint.gg ist die Heimat der Identität eines jeden Gamers. Es ist ein soziales Netzwerk, das Gamer über alle Spiele und Plattformen hinweg verbindet, indem es ihnen ermöglicht, sich einfach selbst darzustellen. Dies wird mit sogenannten Gamecards erreicht, die Lieblingsausrüstungen, Outfits und Gegenstände sowie Statistiken enthalten, die direkt aus dem Spiel gezogen werden.',
+          en: 'Founding of startup for a social network that connects gamers across games and platforms by enabling them to easily represent themselves. Worked with designers and developers to bring the product to life from scratch, convincing multiple accelerators and investors.',
         },
         showInProfile: true,
         type: ProjectType.job,
@@ -284,7 +284,7 @@ export const sebastian: Profile = {
           en: 'Getting media, such as screenshots and videos, from your Nintendo Switch or Playstation 4 to your computer, smartphone and social media is difficult. Easyshare takes care of all the difficulties and makes it easy for you.',
           de: 'Medien wie Screenshots und Videos von deiner Nintendo Switch oder Playstation 4 auf deinen Computer, Smartphone und Social-Media-Kanäle zu bekommen, ist schwierig. Easyshare kümmert sich um alle Schwierigkeiten und macht es dir leicht.',
         },
-        showInProfile: true,
+        showInProfile: false,
         type: ProjectType.job,
       },
       {
@@ -317,11 +317,13 @@ export const sebastian: Profile = {
           {
             en: 'Compiled modules into the Node.js engine',
             de: 'Module in die Node.js-Engine kompiliert',
+          }, {
+            en: 'High level of optimization by leveraging flamegraph tooling',
           },
         ],
         description: {
-          en: 'This was part of my Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
-          de: 'Dies war Teil meiner Bachelorarbeit: die JavaScript-Implementierung von ixy. Sie beinhaltet einen modernen Netzwerktreiber im User-Space, der in idiomatischem JavaScript auf Node.js ausgeführt wird.',
+          en: 'Part of Bachelors Thesis: the JavaScript implementation of ixy. It features a state-of-the-art user-space network driver written in idiomatic JavaScript running on Node.js.',
+          de: 'Teil der Bachelorarbeit: die JavaScript-Implementierung von ixy. Sie beinhaltet einen modernen Netzwerktreiber im User-Space, der in idiomatischem JavaScript auf Node.js ausgeführt wird.',
         },
         showInProfile: true,
         type: ProjectType.sideproject,
