@@ -65,13 +65,13 @@ export const sebastian: Profile = {
           { en: 'GitLab' },
         ],
         description: {
-          en: 'Building and maintaining the foundation of the platform for students. By providing core services and utilities as well as a platform for feature teams to build upon, enable multiple cross department initiatives to bring a new user experience to over 150K students.',
+          en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for feature teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
         },
         highlights: [
           { en: 'Enriching the Developer Experience' },
           { en: 'Orchestration of 15+ Microfrontends by 9+ teams' },
           { en: 'Stewardship of a shared component library' },
-          { en: 'Created a highly scalable multi-brand setup with minimal overhead by leveraging complex CI/CD pipelines' },
+          { en: 'Highly scalable multi-brand setup with minimal overhead by leveraging complex CI/CD pipelines' },
         ],
         showInProfile: true,
         type: ProjectType.job,
@@ -228,7 +228,7 @@ export const sebastian: Profile = {
         ],
         highlights: [
           {
-            en: '50k+ users sign-ups.',
+            en: '50k+ user sign-ups.',
             de: '50k+ Nutzeranmeldungen.',
           },
           {
@@ -236,15 +236,15 @@ export const sebastian: Profile = {
             de: 'Dev-Lead für Teams von bis zu 5',
           },
           {
-            en: 'Implemented multiple Game-APIs',
+            en: 'Implementing multiple Game-APIs',
             de: 'Implementierung mehrerer Game-APIs',
           },
           {
-            en: 'Built core systems like auth, chat, matching',
-            de: 'Aufbau von Kernsystemen wie Auth, Chat, Matching',
+            en: 'Building core systems like authentification, chat, matchmaking',
+            de: 'Aufbau von Kernsystemen wie Authentifizierug, Chat, Matching',
           },
           {
-            en: 'Collected 180.000€ in funding',
+            en: 'Collecting 180.000€ in funding',
             de: '180.000€ an Finanzierung gesammelt',
           },
         ],
@@ -315,11 +315,11 @@ export const sebastian: Profile = {
             de: 'Voll funktionsfähiger Netzwerktreiber in idiomatischem JavaScript',
           },
           {
-            en: 'Outperformed Python with low level JavaScript',
+            en: 'Outperforming Python with low level JavaScript',
             de: 'Mit Low-Level-JavaScript Python übertroffen',
           },
           {
-            en: 'Compiled modules into the Node.js engine',
+            en: 'Compiling modules into the Node.js engine',
             de: 'Module in die Node.js-Engine kompiliert',
           }, {
             en: 'High level of optimization by leveraging flamegraph tooling',
