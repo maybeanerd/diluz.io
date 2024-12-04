@@ -68,8 +68,8 @@ export const sebastian: Profile = {
           en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for feature teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
         },
         highlights: [
-          { en: 'Enriching the Developer Experience' },
-          { en: 'Orchestration of 15+ Microfrontends by 9+ teams' },
+          { en: 'Enriching the developer experience' },
+          { en: 'Orchestration of 15+ microfrontends by 9+ teams' },
           { en: 'Stewardship of a shared component library' },
           { en: 'Highly scalable multi-brand setup with minimal overhead by leveraging complex CI/CD pipelines' },
         ],
