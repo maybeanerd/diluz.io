@@ -62,7 +62,7 @@ export const sebastian: Profile = {
           { en: 'Vue.js' },
           { en: 'AWS' },
           { en: 'Docker' },
-          { en: 'GitLab CI/CD' },
+          { en: 'GitLab' },
         ],
         description: {
           en: 'Building and maintaining the foundation of the platform for students. By providing core services and utilities as well as a platform for feature teams to build upon, enable multiple cross department initiatives to bring a new user experience to over 150K students.',
@@ -93,7 +93,7 @@ export const sebastian: Profile = {
           { en: 'Vue.js' },
           { en: 'AWS' },
           { en: 'Docker' },
-          { en: 'GitLab CI/CD' },
+          { en: 'GitLab' },
         ],
         description: {
           en: 'Moving across multiple teams for both existing products as well as new initiatives to bring the product and technical platforms to the next level.',
@@ -164,7 +164,7 @@ export const sebastian: Profile = {
           { en: 'Node.js' },
           { en: 'Discord.js' },
           { en: 'MongoDB' },
-          { en: 'GitHub Actions' },
+          { en: 'GitHub' },
         ],
         description: {
           en: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 guilds.',
@@ -190,7 +190,7 @@ export const sebastian: Profile = {
           { en: 'Node.js' },
           { en: 'Discord.js' },
           { en: 'NPM' },
-          { en: 'GitHub Actions' },
+          { en: 'GitHub' },
         ],
         highlights: [
           { en: 'Open Source' },
