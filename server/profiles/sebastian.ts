@@ -72,6 +72,7 @@ export const sebastian: Profile = {
           { en: 'Orchestration of 15+ microfrontends by 9+ teams' },
           { en: 'Stewardship of a shared component library' },
           { en: 'Highly scalable multi-brand setup with minimal overhead by leveraging complex CI/CD pipelines' },
+          { en: 'Custom communication system between native (iOS, Android) apps and embedded web views' },
         ],
         showInProfile: true,
         type: ProjectType.job,
@@ -228,8 +229,8 @@ export const sebastian: Profile = {
         ],
         highlights: [
           {
-            en: '50k+ user sign-ups.',
-            de: '50k+ Nutzeranmeldungen.',
+            en: '50k+ user sign-ups',
+            de: '50k+ Nutzeranmeldungen',
           },
           {
             en: 'Dev-Lead for teams of up to 5',
