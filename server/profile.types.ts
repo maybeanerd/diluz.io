@@ -32,6 +32,10 @@ export type Image = string;
 // Require en, allow any other language
 export type LocalizedString = { en: string } & Partial<Record<Locales, string>>;
 
+export type Files = {
+  cv? : string
+}
+
 type Person = {
   name: {
     first: string;
@@ -45,6 +49,7 @@ type Person = {
     pronouns?: Array<LocalizedString>;
     languages?: Array<string>;
   };
+  files?: Files
 };
 
 export enum ProjectType {
