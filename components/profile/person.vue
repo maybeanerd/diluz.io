@@ -37,6 +37,13 @@
         :social="social"
       />
     </div>
+    <div v-if="person.files && person.files.cv">
+      <a :href="`/cv/${props.person?.files?.cv}`">
+        <CustomTag type="gray" icon="heroicons-document-text-20-solid">
+          Resume
+        </CustomTag>
+      </a>
+    </div>
   </div>
 </template>
 
