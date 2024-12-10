@@ -169,7 +169,7 @@ export const sebastian: Profile = {
           { en: 'GitHub' },
         ],
         description: {
-          en: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 guilds.',
+          en: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 servers.',
           de: 'Magibot ist ein Discord Bot, der sprachchat-fokussierten Servern hilft, Communities aufzubauen. Er bedient derzeit 1.000.000+ Benutzer in über 2500 Gilden.',
         },
         showInProfile: true,
