@@ -38,9 +38,9 @@
       />
     </div>
     <div v-if="person.files">
-      <template v-for="{filename, title} in person.files" :key="filename">
+      <template v-for="{filename, title, icon} in person.files" :key="filename">
         <a :href="`/files/${filename}`">
-          <CustomTag type="gray" icon="heroicons-document-text-20-solid">
+          <CustomTag type="gray" :icon="icon">
             {{ useLocalizedString(title) }}
           </CustomTag>
         </a>
