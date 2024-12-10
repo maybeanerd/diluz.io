@@ -41,7 +41,7 @@
       <template v-for="{filename, title} in person.files" :key="filename">
         <a :href="`/files/${filename}`">
           <CustomTag type="gray" icon="heroicons-document-text-20-solid">
-            {{ title }}
+            {{ useLocalizedString(title) }}
           </CustomTag>
         </a>
       </template>
