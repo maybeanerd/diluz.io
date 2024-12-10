@@ -31,7 +31,9 @@ export const sebastian: Profile = {
       pronouns: [{ en: 'he', de: 'er' }, { en: 'they' }],
       languages: ['en', 'de'],
     },
-    files: { cv: 'sebastian-di-luzio.pdf' },
+    files: [
+      { title: { en: 'Resume', de: 'Lebenslauf' }, filename: 'sebastian-di-luzio.pdf', icon: 'heroicons-document-text-20-solid' },
+    ],
   },
   highlights: {
     title: { en: 'Favored Tech Stack', de: 'Lieblings Tech Stack' },

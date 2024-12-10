@@ -32,9 +32,11 @@ export type Image = string;
 // Require en, allow any other language
 export type LocalizedString = { en: string } & Partial<Record<Locales, string>>;
 
-export type Files = {
-  cv? : string
-}
+export type Files = Array<{
+  title: LocalizedString,
+  filename: string,
+  icon: string,
+}>
 
 type Person = {
   name: {

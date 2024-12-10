@@ -37,12 +37,14 @@
         :social="social"
       />
     </div>
-    <div v-if="person.files && person.files.cv">
-      <a :href="`/cv/${props.person?.files?.cv}`">
-        <CustomTag type="gray" icon="heroicons-document-text-20-solid">
-          Resume
-        </CustomTag>
-      </a>
+    <div v-if="person.files">
+      <template v-for="{filename, title} in person.files" :key="filename">
+        <a :href="`/files/${filename}`">
+          <CustomTag type="gray" icon="heroicons-document-text-20-solid">
+            {{ title }}
+          </CustomTag>
+        </a>
+      </template>
     </div>
   </div>
 </template>
