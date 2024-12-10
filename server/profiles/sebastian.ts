@@ -31,6 +31,9 @@ export const sebastian: Profile = {
       pronouns: [{ en: 'he', de: 'er' }, { en: 'they' }],
       languages: ['en', 'de'],
     },
+    files: [
+      { title: { en: 'Resume', de: 'Lebenslauf' }, filename: 'sebastian-di-luzio.pdf', icon: 'heroicons-document-text-20-solid' },
+    ],
   },
   highlights: {
     title: { en: 'Favored Tech Stack', de: 'Lieblings Tech Stack' },
@@ -65,7 +68,7 @@ export const sebastian: Profile = {
           { en: 'GitLab' },
         ],
         description: {
-          en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for feature teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
+          en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for domain teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
         },
         highlights: [
           { en: 'Enriching the developer experience' },
@@ -168,7 +171,7 @@ export const sebastian: Profile = {
           { en: 'GitHub' },
         ],
         description: {
-          en: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 guilds.',
+          en: 'Magibot is a Discord bot that helps voice-chat focused servers build communities. It is currently serving 1.000.000+ users in over 2500 servers.',
           de: 'Magibot ist ein Discord Bot, der sprachchat-fokussierten Servern hilft, Communities aufzubauen. Er bedient derzeit 1.000.000+ Benutzer in über 2500 Gilden.',
         },
         showInProfile: true,
