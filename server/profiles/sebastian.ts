@@ -66,7 +66,7 @@ export const sebastian: Profile = {
           { en: 'GitLab' },
         ],
         description: {
-          en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for feature teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
+          en: 'Building and maintaining the foundation of the platform for students. Providing core services and utilities as well as a platform for domain teams to build upon, enabling multiple cross department initiatives to bring a new user experience to over 150K students.',
         },
         highlights: [
           { en: 'Enriching the developer experience' },
