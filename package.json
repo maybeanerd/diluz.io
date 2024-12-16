@@ -14,7 +14,7 @@
     "nuxt:upgrade": "nuxi upgrade --force"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "1.2.1",
+    "@iconify-json/mdi": "1.2.2",
     "@nuxt/devtools": "1.6.0",
     "@nuxt/image": "1.8.1",
     "@nuxt/ui": "2.20.0",
