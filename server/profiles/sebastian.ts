@@ -11,11 +11,6 @@ export const sebastian: Profile = {
     image: 'pp.png',
     socials: [
       { type: BasicSocial.github, userName: 'maybeanerd' },
-      {
-        type: SpecialSocial.mastodon,
-        userName: 'maybeanerd',
-        instance: new URL('https://bumscode.com'),
-      },
       { type: BasicSocial.linkedin, userName: 'sebastian-di-luzio' },
       { type: SpecialSocial.email, email: 'sebastian@diluz.io' },
     ],
