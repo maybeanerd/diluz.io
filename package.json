@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "1.2.3",
-    "@nuxt/devtools": "2.6.3",
+    "@nuxt/devtools": "3.0.1",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "2.22.3",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
